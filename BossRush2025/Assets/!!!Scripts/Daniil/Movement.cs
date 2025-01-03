@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour
         {
             _playerRb.linearVelocity = Direction() * _speed;
         }
+
+        RotatePlayer();
     }
     public void TakeHit()
     {
@@ -33,5 +35,18 @@ public class Movement : MonoBehaviour
         _disable = true;
         yield return new WaitForSeconds(_hitStunTime);
         _disable = false;
+    }
+
+    void RotatePlayer()
+    {
+        Vector2 direction = Direction();
+        if (direction.x > 0)
+        {
+            transform.localScale = new Vector3(1, transform.localScale.y);
+        }
+        else if (direction.x < 0)
+        {
+            transform.localScale = new Vector3(-1, transform.localScale.y);
+        }
     }
 }
