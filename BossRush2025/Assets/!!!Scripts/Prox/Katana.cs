@@ -11,10 +11,6 @@ public class Katana : MonoBehaviour
     [SerializeField] private float _attackDelay = 0.5f;
     [SerializeField] private float _attackRadius = 3f;
 
-    [Header("Katana KnockBack")]
-    [SerializeField] private float _katanaKnockBackStrength = 6f;
-    [SerializeField] private float _katanaKnockBackTime = 1f;
-
     [Space]
     [SerializeField] private Transform _katanaAttackPos;
     [SerializeField] private InputActionReference _katanaAttackKey;
@@ -48,7 +44,11 @@ public class Katana : MonoBehaviour
                     healthManager.TakeDamage(_katanaDamage);
                 }
 
-                enemy.PlayKnockBack(_katanaKnockBackStrength, _katanaKnockBackTime, _katanaAttackPos.position);
+                if (enemy.TryGetComponent<Knockback>(out Knockback knockBack))
+                {
+                    knockBack.PlayKnockBack(_katanaAttackPos.position);
+                }
+
                 CameraShake._instance.Shake();
                 _canAttack = false;
             }

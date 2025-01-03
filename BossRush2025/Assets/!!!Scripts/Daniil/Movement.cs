@@ -11,9 +11,18 @@ public class Movement : MonoBehaviour
     private bool _disable;
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private float _hitStunTime;
+
+    private Knockback _knockBack;
+    private HealthManager _healthManager;
+
     void Start()
     {
         _playerRb = GetComponent<Rigidbody2D>();
+        _healthManager = GetComponent<HealthManager>();
+        _knockBack = GetComponent<Knockback>();
+        
+        _knockBack._onStartKnockback += ()=>{ _disable = true; _healthManager.DisableReceivingDamage(); };
+        _knockBack._onFinishKnockback += ()=>{ _disable = false; _healthManager.EnableReceivingDamage(); };
     }
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
     void FixedUpdate()

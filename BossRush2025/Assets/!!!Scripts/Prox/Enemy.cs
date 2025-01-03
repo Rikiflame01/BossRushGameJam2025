@@ -1,26 +1,33 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private EnemySO _enemySO;
+    [SerializeField] private MeleeDamage _meleeDamage;
     private bool _canMove = true;
-    private bool _haveKnockback = false;
-    private Rigidbody2D _rb;
     private NavMeshAgent _navMeshAgent;
     private Transform _target;
-    private float _speed;
+    private Knockback _knockBack;
+    private HealthManager _healthManager;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _healthManager = GetComponent<HealthManager>();
+        _knockBack = GetComponent<Knockback>();
+
+        _knockBack._onStartKnockback += DisableMovement;
+        _knockBack._onFinishKnockback += EnableMovement;
 
         _navMeshAgent.updateRotation = false;
         _navMeshAgent.updateUpAxis = false;
-        _speed = _navMeshAgent.speed;
+        _navMeshAgent.speed = _enemySO._speed;
 
+        _healthManager.SetHealth(_enemySO._health);
+        _meleeDamage.SetDamage(_enemySO._damage);
+        _meleeDamage.SetAttackInterval(_enemySO._attackInterval);
+        
         _target = GameObject.FindAnyObjectByType<Movement>().transform;
     }
 
@@ -37,28 +44,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.SetDestination(_target.position);
     }
 
-    public void PlayKnockBack(float strength, float time, Vector2 knockBackPoint)
-    {
-        if (_haveKnockback)
-            return;
-
-        DisableMovement();
-        _haveKnockback = true;
-
-        Vector2 position = transform.position;
-        Vector2 direction = (position - knockBackPoint).normalized;
-
-        _rb.AddForce(direction * strength, ForceMode2D.Impulse);
-        StartCoroutine(KnockBackDelay(time));
-    }
-
-    IEnumerator KnockBackDelay(float time)
-    {
-        yield return new WaitForSeconds(time);
-        EnableMovement();
-        _haveKnockback = false;
-    }
-
     public void DisableMovement()
     {
         _canMove = false;
@@ -68,6 +53,6 @@ public class Enemy : MonoBehaviour
     public void EnableMovement()
     {
         _canMove = true;
-        _navMeshAgent.speed = _speed;
+        _navMeshAgent.speed = _enemySO._speed;
     }
 }

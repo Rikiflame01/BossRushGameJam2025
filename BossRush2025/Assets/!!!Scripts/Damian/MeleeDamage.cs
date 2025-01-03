@@ -18,6 +18,13 @@ public class MeleeDamage : MonoBehaviour
             {
                 damageCoroutine = StartCoroutine(DealDamageOverTime(healthManager));
             }
+
+            if (other.TryGetComponent<Knockback>(out Knockback knockBack))
+            {
+                knockBack.PlayKnockBack(transform.position);
+            }
+
+            CameraShake._instance.Shake();
         }
     }
 
@@ -41,5 +48,15 @@ public class MeleeDamage : MonoBehaviour
             healthManager.TakeDamage(damageAmount);
             yield return new WaitForSeconds(damageInterval);
         }
+    }
+
+    public void SetDamage(float damage)
+    {
+        damageAmount = damage;
+    }
+
+    public void SetAttackInterval(float interval)
+    {
+        damageInterval = interval;
     }
 }
