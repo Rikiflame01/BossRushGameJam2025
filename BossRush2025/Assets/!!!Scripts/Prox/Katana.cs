@@ -49,6 +49,7 @@ public class Katana : MonoBehaviour
                 }
 
                 enemy.PlayKnockBack(_katanaKnockBackStrength, _katanaKnockBackTime, _katanaAttackPos.position);
+                CameraShake._instance.Shake();
                 _canAttack = false;
             }
         }
