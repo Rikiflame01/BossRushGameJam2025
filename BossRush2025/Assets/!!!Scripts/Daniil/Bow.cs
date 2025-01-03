@@ -50,11 +50,14 @@ public class Bow : MonoBehaviour
         _isChargeNow = false;
         if (Time.time - _startTime > _chargeTime)
         {
-            SetTarget();
-            float x = _target.position.x;
-            float y = _target.position.y;
-            // will fix this
-            Instantiate(_arrow, transform.position, Quaternion.identity).transform.eulerAngles = new Vector3(0f, 0f, (x >= 0 ? 90 : -90) + (x >= 0 ? -1 : 1) * Mathf.Atan2(Mathf.Abs(x), y) * Mathf.Rad2Deg); ;
+            _target = SetTarget();
+            if (_target != null)
+            {
+                float x = transform.position.x - _target.position.x;
+                float y = transform.position.y - _target.position.y;
+                // will fix this
+                Instantiate(_arrow, transform.position, Quaternion.identity).transform.eulerAngles = new Vector3(0f, 0f, -90 + (x >= 0 ? -1 : 1) * Mathf.Atan2(Mathf.Abs(x), y) * Mathf.Rad2Deg);
+            }
         }
         _bowSlider.gameObject.SetActive(false);
     }
