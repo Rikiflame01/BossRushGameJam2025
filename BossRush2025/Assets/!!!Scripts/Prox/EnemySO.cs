@@ -7,4 +7,5 @@ public class EnemySO : ScriptableObject
     public float _damage;
     public float _speed;
     public float _attackInterval;
+    public float _minStopRadius;
 }

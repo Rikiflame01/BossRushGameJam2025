@@ -4,10 +4,10 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
-    private float _maxHealth;
+    public float _maxHealth { get; private set; }
     private bool _isAlive = true;
     private bool _receivceDamage = true;
-    public event Action _onHit;
+    public event Action<float> _onHit;
     public event Action _onDie;
 
     void Start()
@@ -21,7 +21,7 @@ public class HealthManager : MonoBehaviour
             return;
 
         _health = Math.Clamp(_health - damage, 0, _maxHealth);
-        _onHit?.Invoke();
+        _onHit?.Invoke(_health);
         if (_health == 0)
         {
             _onDie?.Invoke();
