@@ -12,6 +12,14 @@ public class Movement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private float _hitStunTime;
 
+    [Header("Dash Properties")]
+    [SerializeField] private InputActionReference _dashKey;
+    [SerializeField] private float _dashSpeed;
+    [SerializeField] private float _dashTime = 0.15f;
+    [SerializeField] private float _dashDelay = 1f; 
+    private bool _canDash = true;
+    private float _defaultSpeed;
+
     private Knockback _knockBack;
     private HealthManager _healthManager;
 
@@ -23,7 +31,12 @@ public class Movement : MonoBehaviour
         
         _knockBack._onStartKnockback += ()=>{ _disable = true; _healthManager.DisableReceivingDamage(); };
         _knockBack._onFinishKnockback += ()=>{ _disable = false; _healthManager.EnableReceivingDamage(); };
+
+        _dashKey.action.performed += Dash;
+
+        _defaultSpeed = _speed;
     }
+
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
     void FixedUpdate()
     {
@@ -57,5 +70,28 @@ public class Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, transform.localScale.y);
         }
+    }
+
+    public void Dash(InputAction.CallbackContext callback)
+    {
+        if (!_canDash)
+            return;
+
+        _canDash = false;
+        _speed = _dashSpeed;
+        StartCoroutine(DashDelay());
+    }
+
+    IEnumerator DashDelay()
+    {
+        yield return new WaitForSeconds(_dashTime);
+        _speed = _defaultSpeed;
+        yield return new WaitForSeconds(_dashDelay);
+        _canDash = true;
+    }
+
+    void OnDestroy()
+    {
+        _dashKey.action.performed -= Dash;
     }
 }

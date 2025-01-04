@@ -3781,6 +3781,10 @@ MonoBehaviour:
   _speed: 6
   _moveInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _hitStunTime: 1
+  _dashKey: {fileID: 90486819435495137, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _dashSpeed: 20
+  _dashTime: 0.15
+  _dashDelay: 1
 --- !u!114 &2056157876
 MonoBehaviour:
   m_ObjectHideFlags: 0
