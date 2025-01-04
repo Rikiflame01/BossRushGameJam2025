@@ -41,7 +41,23 @@ public class Enemy : MonoBehaviour
         if (!_canMove)
             return;
 
-        _navMeshAgent.SetDestination(_target.position);
+        bool stopEnemy = false;
+        if (_target != null)
+        {
+            if (Vector2.Distance(transform.position, _target.position) > _enemySO._minStopRadius)
+                _navMeshAgent.SetDestination(_target.position);
+            else
+                stopEnemy = true;
+        }
+        else 
+        {
+            stopEnemy = true;
+        }
+
+        if (stopEnemy)
+        {
+            DisableMovement();
+        }
     }
 
     public void DisableMovement()
