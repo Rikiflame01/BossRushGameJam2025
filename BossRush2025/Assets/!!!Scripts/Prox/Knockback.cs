@@ -33,6 +33,20 @@ public class Knockback : MonoBehaviour
         StartCoroutine(KnockBackDelay(_knockBackTime));
     }
 
+    public void PlayKnockBack(Vector2 knockBackPoint, float strength, float time)
+    {
+        float deffaultStrentgh = _knockBackStrength;
+        float deffaultTime = _knockBackTime;
+
+        _knockBackStrength = strength;
+        _knockBackTime = time;
+
+        PlayKnockBack(knockBackPoint);
+
+        _knockBackStrength = deffaultStrentgh;
+        _knockBackTime = deffaultTime;
+    }
+
     IEnumerator KnockBackDelay(float time)
     {
         yield return new WaitForSeconds(time);

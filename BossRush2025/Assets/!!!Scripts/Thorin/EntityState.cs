@@ -10,6 +10,14 @@ public abstract class EntityState : MonoBehaviour
     protected enum State { Idle, Walking, Running }
 
     protected State currentState = State.Idle;
+    protected Movement _playerMovement;
+
+    void Start()
+    {
+        Initialize();
+
+        _playerMovement = GameObject.FindAnyObjectByType<Movement>();
+    }
 
     private void Update()
     {
@@ -35,4 +43,5 @@ public abstract class EntityState : MonoBehaviour
     protected abstract void HandleIdle();
     protected abstract void HandleWalking();
     protected abstract void HandleRunning();
+    protected abstract void Initialize();
 }
