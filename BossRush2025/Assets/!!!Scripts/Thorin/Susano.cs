@@ -12,6 +12,15 @@ public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
 
+    [Header("Shooting")]
+    [SerializeField] private float _chargeTime;
+    [SerializeField] private float _angleBetweenProjectiles;
+    [SerializeField] private float _projectileCount;
+    [SerializeField] private string _shootProjectile;
+
+    private Transform _player;
+    private PoolManager _poolManager;
+
     [Header("Melee Attack")]
     [SerializeField] private float _circualSwordStrikeAttackRadius = 5f;
     [SerializeField] private float _circualSwordStrikeAttackDamage = 6f;
@@ -29,6 +38,10 @@ public class Susano : EntityState
     protected override void Initialize()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _player = FindAnyObjectByType<Movement>().transform;
+        _poolManager = FindAnyObjectByType<PoolManager>();
+
         StartCoroutine(StartAttacks());    
     }
 
@@ -89,6 +102,22 @@ public class Susano : EntityState
         }
 
         _finishedCoroutine = true;
+    }
+
+    private IEnumerator Shooting()
+    {
+        yield return new WaitForSeconds(_chargeTime);
+        Vector2 direction = _player.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        int helpInt = 1;
+        for (int i = 0; i < _projectileCount; i++) 
+        {
+            angle += i * helpInt * _angleBetweenProjectiles;
+            GameObject currentProjectile = _poolManager.GetObject(_shootProjectile);
+            currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, angle + i * helpInt * _angleBetweenProjectiles);
+            currentProjectile.transform.position = transform.position;
+            helpInt *= -1;
+        }
     }
     
     void Disappear()

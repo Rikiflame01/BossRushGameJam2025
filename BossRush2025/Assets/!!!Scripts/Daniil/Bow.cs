@@ -20,7 +20,7 @@ public class Bow : MonoBehaviour
     public Transform _target;
 
     [SerializeField] private InputActionReference _bowKey;
-    void Start()
+    void Start() 
     {
         _bowKey.action.started += StartCharge;
         _bowKey.action.canceled += ReleaseArrow;
@@ -54,12 +54,23 @@ public class Bow : MonoBehaviour
             _target = SetTarget();
             if (_target != null)
             {
-                float x = transform.position.x - _target.position.x;
-                float y = transform.position.y - _target.position.y;
-                // will fix this
+                float x = _target.position.x - transform.position.x;
+                float y = _target.position.y - transform.position.y;
                 GameObject _currentArrow = _poolManager.GetObject(_arrow.name);
                 _currentArrow.transform.position = transform.position;
-                _currentArrow.transform.eulerAngles = new Vector3(0f, 0f, -90 + (x >= 0 ? -1 : 1) * Mathf.Atan2(Mathf.Abs(x), y) * Mathf.Rad2Deg);
+                _currentArrow.transform.eulerAngles = new Vector3 (0f, 0f, Mathf.Atan2(y, x) * Mathf.Rad2Deg);
+
+                /*Vector2 direction = _target.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                int helpInt = 1;
+                for (int i = 0; i < 5; i++)
+                {
+                    angle += i * helpInt * 5;
+                    GameObject currentProjectile = _poolManager.GetObject(_arrow.name);
+                    currentProjectile.transform.position = transform.position;
+                    currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, angle);
+                    helpInt *= -1;
+                }*/
             }
         }
         _bowSlider.gameObject.SetActive(false);
