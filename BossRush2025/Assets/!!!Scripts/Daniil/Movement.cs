@@ -6,6 +6,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
+    private enum State { Run, Ritual };
+    private State _currentState = State.Run;    
+
     private Rigidbody2D _playerRb;
     [SerializeField] private float _speed;
     private bool _disable;
@@ -19,6 +22,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _dashDelay = 1f; 
     private bool _canDash = true;
     private float _defaultSpeed;
+
+    [Header("Ritual Properties")]
+    public Transform _center;
+    public float _radius = 5.0f;
+    public float _ritualSpeed = 5.0f;
+
+    private float _currentAngle;
 
     private Knockback _knockBack;
     private HealthManager _healthManager;
@@ -40,12 +50,21 @@ public class Movement : MonoBehaviour
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
     void FixedUpdate()
     {
-        if (!_disable)
+        switch (_currentState)
         {
-            _playerRb.linearVelocity = Direction() * _speed;
-        }
+            case State.Run:
+                if (!_disable)
+                {
+                    _playerRb.linearVelocity = Direction() * _speed;
+                }
+                RotatePlayer();
+                break;
 
-        RotatePlayer();
+            case State.Ritual:
+                _currentAngle += _ritualSpeed * Time.deltaTime * Direction().x;
+                transform.position = (Vector2)_center.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _radius;
+                break;
+        }
     }
     public void TakeHit()
     {
