@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 
 public class Susano : EntityState
 {
@@ -27,8 +28,10 @@ public class Susano : EntityState
 
     [Space]
     [SerializeField] private float _jumpAttackAppearNearRadius = 6f;
+    [SerializeField] private float _jumpAttackDamage = 8f;
 
     private SpriteRenderer _spriteRenderer;
+    private Collider2D _collider;
     private bool _finishedCoroutine = false;
 
     [Header("Random Shooting")]
@@ -49,6 +52,7 @@ public class Susano : EntityState
     protected override void Initialize()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<Collider2D>();
 
         _player = FindAnyObjectByType<Movement>().transform;
         _poolManager = FindAnyObjectByType<PoolManager>();
@@ -80,9 +84,20 @@ public class Susano : EntityState
                 Disappear();
                 yield return new WaitForSeconds(1.0f);
                 Vector2 playerPosition = _playerMovement.transform.position;
-                Vector2 randomPositionInCircle = Random.insideUnitCircle * _jumpAttackAppearNearRadius;
-                transform.position = playerPosition + randomPositionInCircle;
+                Vector2 bossUpPosition = new Vector2(0, _jumpAttackAppearNearRadius);
+                transform.position = playerPosition + bossUpPosition;
                 Appear();
+
+                float bossDashPositionY = playerPosition.y - 4f;
+                float randomDelay = Random.Range(1.0f, 2.0f);
+
+                yield return new WaitForSeconds(randomDelay);
+                
+                _collider.isTrigger = true;
+                transform.DOMoveY(bossDashPositionY, 0.15f);
+
+                yield return new WaitForSeconds(randomDelay + 0.15f);
+                _collider.isTrigger = false;
             }
             else if (randomAttack == 1)
             {
@@ -176,6 +191,19 @@ public class Susano : EntityState
         foreach (Behaviour component in _componentsToDisableOnDisappear)
         {
             component.enabled = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<Movement>(out Movement playerMovement))
+        {
+            if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
+            {
+                healthManager.TakeDamage(_jumpAttackDamage);
+            }
+
+            CameraShake._instance.Shake(1.0f, 0.25f);
         }
     }
 }
