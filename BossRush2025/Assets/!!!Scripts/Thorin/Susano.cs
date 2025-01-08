@@ -30,9 +30,12 @@ public class Susano : EntityState
     [SerializeField] private float _jumpAttackAppearNearRadius = 6f;
     [SerializeField] private float _jumpAttackDamage = 8f;
 
+    [Header("Summon Enemies")]
+    [SerializeField] private GameObject _enemy;
+
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
-    private bool _finishedCoroutine = false;
+    private bool _finishedCoroutine = true;
 
     [Header("Random Shooting")]
     [SerializeField] private float _randomProjectileCount;
@@ -63,8 +66,43 @@ public class Susano : EntityState
     IEnumerator StartAttacks()
     {
         yield return new WaitForSeconds(1f);
-        StartCoroutine(StartMeleeAttack());
-        yield return new WaitUntil(()=> _finishedCoroutine);
+        int attackTimes = Random.Range(4, 8);
+        int attackedTimes = 0;
+        while (attackedTimes < attackTimes)
+        {
+            int randomAttack = Random.Range(1, 5);
+            switch (randomAttack){
+                case 1:
+                    StartCoroutine(StartMeleeAttack());
+                    break;
+
+                case 2:
+                    SpawnEnemiesAttack();
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    break;
+            }
+
+            attackedTimes++;
+
+            if (!_finishedCoroutine)
+                yield return new WaitUntil(()=> _finishedCoroutine);
+            else
+                yield return new WaitForSeconds(5f);
+        }
+    }
+
+    void SpawnEnemiesAttack()
+    {
+        int enemiesCounts = Random.Range(5, 10);
+        for (int i = 0; i < enemiesCounts; i++)
+        {
+            GameObject spawnedEnemy = Instantiate(_enemy, Random.insideUnitCircle * 9f, Quaternion.identity);
+        }
     }
 
     IEnumerator StartMeleeAttack()
