@@ -21,6 +21,7 @@ public class Susano : EntityState
 
     private Transform _player;
     private PoolManager _poolManager;
+    private GameManager _gameManager;
 
     [Header("Melee Attack")]
     [SerializeField] private float _circualSwordStrikeAttackRadius = 5f;
@@ -48,6 +49,9 @@ public class Susano : EntityState
 
     [SerializeField] private string _randomShootProjectile;
 
+    [Header("Axis Projectile")]
+    [SerializeField] private string _axisProjectile;
+
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
     protected override void HandleWalking() { Debug.Log("Enemy B Walking Behavior"); }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
@@ -59,6 +63,7 @@ public class Susano : EntityState
 
         _player = FindAnyObjectByType<Movement>().transform;
         _poolManager = FindAnyObjectByType<PoolManager>();
+        _gameManager = FindAnyObjectByType<GameManager>();
 
         StartCoroutine(StartAttacks());    
     }
@@ -81,6 +86,7 @@ public class Susano : EntityState
                     break;
 
                 case 3:
+                    StartCoroutine(Shooting());
                     break;
 
                 case 4:
@@ -170,6 +176,7 @@ public class Susano : EntityState
 
     private IEnumerator Shooting()
     {
+        _finishedCoroutine = false;
         yield return new WaitForSeconds(_chargeTime);
         Vector2 direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -182,6 +189,7 @@ public class Susano : EntityState
             currentProjectile.transform.position = transform.position;
             helpInt *= -1;
         }
+        _finishedCoroutine = true;
     }
     private IEnumerator RandomShooting()
     {
@@ -213,6 +221,10 @@ public class Susano : EntityState
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
             yield return new WaitForSeconds(_arcDelay);  
         }
+    }
+    private void AxisShooting()
+    {
+        GameObject currentProjectile = _poolManager.GetObject(_axisProjectile);
     }
     void Disappear()
     {
