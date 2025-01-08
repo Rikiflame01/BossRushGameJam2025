@@ -1126,6 +1126,9 @@ MonoBehaviour:
   _dashSpeed: 20
   _dashTime: 0.15
   _dashDelay: 1
+  _center: {fileID: 0}
+  _radius: 5
+  _ritualSpeed: 5
 --- !u!70 &1302265332
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

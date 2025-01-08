@@ -15,7 +15,6 @@ public class PoolManager : MonoBehaviour
             _poolDictionary.Add(currentPool.poolPrefab.name, currentPool);
         }
     }
-
     public GameObject GetObject(string poolName)
     {
         if (_poolDictionary.ContainsKey(poolName))

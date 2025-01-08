@@ -54,12 +54,10 @@ public class Bow : MonoBehaviour
             _target = SetTarget();
             if (_target != null)
             {
-                float x = _target.position.x - transform.position.x;
-                float y = _target.position.y - transform.position.y;
+                Vector2 direction = _target.position - transform.position;
                 GameObject _currentArrow = _poolManager.GetObject(_arrow.name);
                 _currentArrow.transform.position = transform.position;
-                _currentArrow.transform.eulerAngles = new Vector3 (0f, 0f, Mathf.Atan2(y, x) * Mathf.Rad2Deg);
-
+                _currentArrow.transform.eulerAngles = new Vector3 (0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
                 /*Vector2 direction = _target.position - transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 int helpInt = 1;
@@ -99,4 +97,26 @@ public class Bow : MonoBehaviour
         }
         return _currentTarget;
     }
+    /*
+    private IEnumerator ArcShooting(int currentProjectileCount)
+    {
+        Vector2 direction = _target.position - transform.position;
+        float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angleCof = 0f;
+        if (currentProjectileCount % 2 == 0)
+        {
+            angleCof = 0.5f;
+        }
+        int board = currentProjectileCount / 2;
+        for (int i = -board; i < board + currentProjectileCount % 2; i++)
+        {
+            GameObject currentProjectile = _poolManager.GetObject(_arrow.name);
+            currentProjectile.transform.position = transform.position;
+            float currentAngle = startAngle + (i + angleCof) * 10f;
+            if (currentAngle >= 360f) currentAngle -= 360f;
+            else if (currentAngle < 0f) currentAngle += 360f;
+            currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, startAngle + (i + angleCof) * 10f);
+            yield return new WaitForSeconds(0.3f);
+        }
+    }*/
 }

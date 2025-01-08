@@ -31,6 +31,17 @@ public class Susano : EntityState
     private SpriteRenderer _spriteRenderer;
     private bool _finishedCoroutine = false;
 
+    [Header("Random Shooting")]
+    [SerializeField] private float _randomProjectileCount;
+    [SerializeField] private float _randomDelay = 0.5f;
+
+    [Header("Arc Shooting")]
+    [SerializeField] private int _arcProjectileCount = 10;
+    [SerializeField] private float _arcDelay = 0.2f;
+    [SerializeField] private float _arcAngle = 10f;
+
+    [SerializeField] private string _randomShootProjectile;
+
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
     protected override void HandleWalking() { Debug.Log("Enemy B Walking Behavior"); }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
@@ -49,7 +60,7 @@ public class Susano : EntityState
     {
         yield return new WaitForSeconds(1f);
         StartCoroutine(StartMeleeAttack());
-        yield return new WaitUntil(()=> _finishedCoroutine == true);
+        yield return new WaitUntil(()=> _finishedCoroutine);
     }
 
     IEnumerator StartMeleeAttack()
@@ -119,7 +130,37 @@ public class Susano : EntityState
             helpInt *= -1;
         }
     }
-    
+    private IEnumerator RandomShooting()
+    {
+        for (int i = 0; i < _projectileCount; i++)
+        {
+            GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
+            currentProjectile.transform.position = transform.position;
+            currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, Random.Range(0f, 360f));
+            yield return new WaitForSeconds(_randomDelay);
+        }
+    }
+    private IEnumerator ArcShooting(int currentProjectileCount)
+    {
+        Vector2 direction = _player.transform.position - transform.position;
+        float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angleCof = 0f;
+        if (currentProjectileCount % 2 == 0)
+        {
+            angleCof = 0.5f;
+        }
+        int board = currentProjectileCount / 2;
+        for (int i = -board; i < board + currentProjectileCount % 2 ; i++)
+        {
+            GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
+            currentProjectile.transform.position = transform.position;
+            float currentAngle = startAngle + (i + angleCof) * _arcAngle;
+            if (currentAngle > 360f) currentAngle -= 360f;
+            else if (currentAngle < 0f) currentAngle += 360f;
+            currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
+            yield return new WaitForSeconds(_arcDelay);  
+        }
+    }
     void Disappear()
     {
         _spriteRenderer.enabled = false;
