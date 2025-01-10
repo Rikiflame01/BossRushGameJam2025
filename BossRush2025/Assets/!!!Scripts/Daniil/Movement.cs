@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,12 +25,21 @@ public class Movement : MonoBehaviour
     private float _defaultSpeed;
 
     [Header("Ritual Properties")]
-    public Transform _center;
-    public float _radius = 5.0f;
-    public float _ritualSpeed = 5.0f;
+    [SerializeField] private InputActionReference _ritualKey;
+    [SerializeField] private Image _ritualProgress;
+    [SerializeField] private float _ritualSpeed = 5.0f;
+    private float _ritualRadius;
+    private Transform _ritualCenter;
 
     private float _currentAngle;
+    private float _startRitualAngle;
+    private float _targetRitualAngle;
+    private bool _isRitual = false;
+    private bool _clockwise = false;
+    private int _circleNumber = 0;
+    private RectTransform _progressTransform;
 
+    private GameManager _gameManager;
     private Knockback _knockBack;
     private HealthManager _healthManager;
 
@@ -38,13 +48,20 @@ public class Movement : MonoBehaviour
         _playerRb = GetComponent<Rigidbody2D>();
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
-        
+        _gameManager = FindAnyObjectByType<GameManager>();
+
         _knockBack._onStartKnockback += ()=>{ _disable = true; _healthManager.DisableReceivingDamage(); };
         _knockBack._onFinishKnockback += ()=>{ _disable = false; _healthManager.EnableReceivingDamage(); };
 
         _dashKey.action.performed += Dash;
+        _ritualKey.action.started += StartRitual;
+        _ritualKey.action.canceled += StopRitual;
 
         _defaultSpeed = _speed;
+
+        _ritualRadius = _gameManager.RitualCircleRadius;
+        _ritualCenter = _gameManager.RitualCenter;
+        _progressTransform = _ritualProgress.GetComponent<RectTransform>();
     }
 
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
@@ -59,10 +76,47 @@ public class Movement : MonoBehaviour
                 }
                 RotatePlayer();
                 break;
-
+        }
+    }
+    void Update()
+    {
+        switch (_currentState)
+        {
             case State.Ritual:
                 _currentAngle += _ritualSpeed * Time.deltaTime * Direction().x;
-                transform.position = (Vector2)_center.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _radius;
+                transform.position = (Vector2)_ritualCenter.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _ritualRadius;
+                if (!_isRitual)
+                {
+                    if (_currentAngle > 2 * Mathf.PI)
+                    {
+                        _currentAngle -= 2 * Mathf.PI;
+                    }
+                    else if (_currentAngle < 0)
+                    {
+                        _currentAngle += 2 * Mathf.PI;
+                    }
+                }
+                else
+                {
+                    if (_currentAngle > _startRitualAngle && _clockwise)
+                    {
+                        ChangeRitualDirection(false);
+                    }
+                    else if (_currentAngle < _startRitualAngle && !_clockwise)
+                    {
+                        ChangeRitualDirection(true);
+                    }
+
+                    float targetFloat = Mathf.Abs(_targetRitualAngle - _startRitualAngle);
+                    float currentFloat = Mathf.Abs(_currentAngle - _startRitualAngle);
+                    if (currentFloat > targetFloat)
+                    {
+                        _startRitualAngle = _targetRitualAngle;
+                        _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
+                        _circleNumber++;
+                    }
+                    _ritualProgress.fillAmount = currentFloat / targetFloat;
+                }
                 break;
         }
     }
@@ -112,5 +166,28 @@ public class Movement : MonoBehaviour
     void OnDestroy()
     {
         _dashKey.action.performed -= Dash;
+        _ritualKey.action.started -= StartRitual;
+        _ritualKey.action.canceled -= StopRitual;
+    }
+    private void StartRitual(InputAction.CallbackContext callback)
+    {
+        _isRitual = true;
+        _startRitualAngle = _currentAngle;
+        ChangeRitualDirection(false);
+        _progressTransform.eulerAngles = new Vector3(_progressTransform.eulerAngles.x, _progressTransform.eulerAngles.y, _startRitualAngle * Mathf.Rad2Deg);
+        _ritualProgress.enabled = true;
+    }
+    private void StopRitual(InputAction.CallbackContext callback)
+    {
+        _isRitual = false;
+        _ritualProgress.enabled = false;
+        _gameManager.RitualEnd(_circleNumber);
+        _circleNumber = 0;
+    }
+    private void ChangeRitualDirection(bool Clockwise)
+    {
+        _targetRitualAngle = _startRitualAngle + (Clockwise ? -2 : 2) * Mathf.PI;
+        _clockwise = Clockwise;
+        _ritualProgress.fillClockwise = Clockwise;
     }
 }
