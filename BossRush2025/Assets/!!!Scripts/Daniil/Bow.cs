@@ -45,6 +45,7 @@ public class Bow : MonoBehaviour
         _startTime = Time.time;
         _bowSlider.gameObject.SetActive(true);
         _bowSlider.value = 0f;
+        Debug.Log(4);
     }
     void ReleaseArrow(InputAction.CallbackContext context)
     {
@@ -85,9 +86,9 @@ public class Bow : MonoBehaviour
         List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(transform.position, _targetMaxDistance, Vector2.zero).ToList();
         foreach (RaycastHit2D hit in collidingObjects)
         {
-            Transform currentHit = hit.collider.transform;
-            if (currentHit.TryGetComponent<Enemy>(out Enemy enemy))
+            if (hit.collider.CompareTag("Enemy"))
             {
+                Transform currentHit = hit.collider.transform;
                 if (minDistance > Vector2.Distance(transform.position, currentHit.position))
                 {
                     minDistance = Vector2.Distance(transform.position, currentHit.position);

@@ -4,6 +4,7 @@
  * intention implement custom logic here.
  */
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,18 @@ using DG.Tweening;
 public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
+    [SerializeField] private float _speed;
+    private NavMeshAgent _navMeshAgent;
+
+    private Transform _player;
+    private PoolManager _poolManager;
+    private GameManager _gameManager;
 
     [Header("Shooting")]
     [SerializeField] private float _chargeTime;
     [SerializeField] private float _angleBetweenProjectiles;
     [SerializeField] private float _projectileCount;
     [SerializeField] private string _shootProjectile;
-
-    private Transform _player;
-    private PoolManager _poolManager;
-    private GameManager _gameManager;
 
     [Header("Melee Attack")]
     [SerializeField] private float _circualSwordStrikeAttackRadius = 5f;
@@ -33,6 +36,7 @@ public class Susano : EntityState
 
     [Header("Summon Enemies")]
     [SerializeField] private GameObject _enemy;
+    [SerializeField] private float _summonDelay = 0.3f;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -53,11 +57,12 @@ public class Susano : EntityState
     [SerializeField] private string _axisProjectile;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
-    protected override void HandleWalking() { Debug.Log("Enemy B Walking Behavior"); }
+    protected override void HandleWalking() { if (_player != null) _navMeshAgent.SetDestination(_player.position); }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
 
     protected override void Initialize()
     {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
 
@@ -65,10 +70,15 @@ public class Susano : EntityState
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
 
-        StartCoroutine(StartAttacks());    
+        StartCoroutine(StartAttacks());
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
+        _navMeshAgent.speed = _speed;
+
+        ChangeState(State.Walking);
     }
 
-    IEnumerator StartAttacks()
+    private IEnumerator StartAttacks()
     {
         yield return new WaitForSeconds(1f);
         int attackTimes = Random.Range(4, 8);
@@ -82,7 +92,8 @@ public class Susano : EntityState
                     break;
 
                 case 2:
-                    SpawnEnemiesAttack();
+                    StartCoroutine(SpawnEnemiesAttack());
+                    StartCoroutine(DisableMovementForTime(1f));
                     break;
 
                 case 3:
@@ -102,20 +113,21 @@ public class Susano : EntityState
         }
     }
 
-    void SpawnEnemiesAttack()
+    private IEnumerator SpawnEnemiesAttack()
     {
         int enemiesCounts = Random.Range(5, 10);
         for (int i = 0; i < enemiesCounts; i++)
         {
+            yield return new WaitForSeconds(_summonDelay);
             GameObject spawnedEnemy = Instantiate(_enemy, Random.insideUnitCircle * 9f, Quaternion.identity);
         }
     }
 
-    IEnumerator StartMeleeAttack()
+    private IEnumerator StartMeleeAttack()
     {
         Debug.Log("Start Melee Attack");
         _finishedCoroutine = false;
-
+        DisableMovement();
         int repeatTimes = 5;
         bool lastCircualSwordStrike = false;
         for (int i = 0; i < repeatTimes; i++)
@@ -132,7 +144,7 @@ public class Susano : EntityState
                 transform.position = playerPosition + bossUpPosition;
                 Appear();
 
-                float bossDashPositionY = playerPosition.y - 4f;
+                float bossDashPositionY = playerPosition.y;
                 float randomDelay = Random.Range(1.0f, 2.0f);
 
                 yield return new WaitForSeconds(randomDelay);
@@ -170,13 +182,13 @@ public class Susano : EntityState
 
             yield return new WaitForSeconds(1);
         }
-
+        EnableMovement();
         _finishedCoroutine = true;
     }
 
     private IEnumerator Shooting()
     {
-        _finishedCoroutine = false;
+        DisableMovement();
         yield return new WaitForSeconds(_chargeTime);
         Vector2 direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -189,7 +201,7 @@ public class Susano : EntityState
             currentProjectile.transform.position = transform.position;
             helpInt *= -1;
         }
-        _finishedCoroutine = true;
+        StartCoroutine(DisableMovementForTime(1f));
     }
     private IEnumerator RandomShooting()
     {
@@ -255,5 +267,19 @@ public class Susano : EntityState
 
             CameraShake._instance.Shake(1.0f, 0.25f);
         }
+    }
+    IEnumerator DisableMovementForTime(float duration)
+    {
+        DisableMovement();
+        yield return new WaitForSeconds(duration);
+        EnableMovement();
+    }
+    void DisableMovement()
+    {
+        _navMeshAgent.speed = 0f;
+    }
+    void EnableMovement()
+    {
+        _navMeshAgent.speed = _speed;
     }
 }

@@ -1,10 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class AxisPriojectile : MonoBehaviour
+public class AxisPriojectile : Projectile
 {
     private GameManager _gameManager;
-    private PoolManager _poolManager;
     [SerializeField] private float _maxRadiusSpeed;
     [SerializeField] private float _angleSpeed = 0.25f;
     [SerializeField] private float _maxRadius;
@@ -21,9 +20,9 @@ public class AxisPriojectile : MonoBehaviour
     void Awake()
     {
         _gameManager = FindAnyObjectByType<GameManager>();
-        _poolManager = FindAnyObjectByType<PoolManager>();
         StartNewCycle();
     }
+    protected override void Initialize() { }
     void OnEnable()
     {
         StartNewCycle();
@@ -48,7 +47,7 @@ public class AxisPriojectile : MonoBehaviour
     }
     private void Disappear()
     {
-        _poolManager.ReturnObject(gameObject, "AxisProjectile");
+        ReturnInPool();
     }
     void StartNewCycle()
     {

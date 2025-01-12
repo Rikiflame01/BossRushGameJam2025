@@ -15,14 +15,13 @@ public class ArrowScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.TryGetComponent<Enemy>(out Enemy enemy))
+        if (other.CompareTag("Enemy"))
         {
-            if (enemy.TryGetComponent<HealthManager>(out HealthManager healthManager))
+            if (other.TryGetComponent<HealthManager>(out HealthManager healthManager))
             {
                 healthManager.TakeDamage(_damage);
             }
-
-            if (enemy.TryGetComponent<Knockback>(out Knockback knockBack))
+            if (other.TryGetComponent<Knockback>(out Knockback knockBack))
             {
                 knockBack.PlayKnockBack(transform.position);
             }
