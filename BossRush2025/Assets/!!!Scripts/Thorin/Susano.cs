@@ -38,8 +38,16 @@ public class Susano : EntityState
     [SerializeField] private GameObject _enemy;
     [SerializeField] private float _summonDelay = 0.3f;
 
+    [Header("Acceleration Attck")]
+    [SerializeField] private float _accelerationSpeed = 15f;
+    [SerializeField] private float _accelerationAttack = 10f;
+    [SerializeField] private float _accelerationAttackTime = 5f;
+    private bool _isAccelerationAttack = false;
+    private Vector2 _accelerationDirection;
+
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
+    private Rigidbody2D _rb;
     private bool _finishedCoroutine = true;
 
     [Header("Random Shooting")]
@@ -65,6 +73,7 @@ public class Susano : EntityState
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
+        _rb = GetComponent<Rigidbody2D>();
 
         _player = FindAnyObjectByType<Movement>().transform;
         _poolManager = FindAnyObjectByType<PoolManager>();
@@ -101,6 +110,7 @@ public class Susano : EntityState
                     break;
 
                 case 4:
+                    StartCoroutine(AccelerationAttack());
                     break;
             }
 
@@ -108,9 +118,33 @@ public class Susano : EntityState
 
             if (!_finishedCoroutine)
                 yield return new WaitUntil(()=> _finishedCoroutine);
-            else
-                yield return new WaitForSeconds(5f);
+            
+            yield return new WaitForSeconds(5f);
         }
+    }
+
+    private IEnumerator AccelerationAttack()
+    {
+        _finishedCoroutine = false;
+        _isAccelerationAttack = true;
+
+        DisableMovement();
+
+        Vector2 moveDirection = -(transform.position - _player.transform.position).normalized;
+        _accelerationDirection = moveDirection;
+        _rb.constraints = RigidbodyConstraints2D.None;
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rb.linearVelocity = moveDirection * _accelerationSpeed;
+
+        yield return new WaitForSeconds(_accelerationAttackTime);
+
+        _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        _rb.linearVelocity = Vector2.zero;
+
+        EnableMovement();
+
+        _isAccelerationAttack = false;
+        _finishedCoroutine = true;
     }
 
     private IEnumerator SpawnEnemiesAttack()
@@ -268,6 +302,41 @@ public class Susano : EntityState
             CameraShake._instance.Shake(1.0f, 0.25f);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (_isAccelerationAttack)
+        {
+            Vector2 newDirection = Vector2.Reflect(_accelerationDirection, other.contacts[0].normal);
+            if (other.collider.TryGetComponent<Movement>(out Movement playerMovement))
+            {
+                if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
+                {
+                    healthManager.TakeDamage(_accelerationAttack);
+                }
+
+                if (playerMovement.TryGetComponent<Knockback>(out Knockback knockBack))
+                {
+                    Vector3 knockBackDirection = Vector3.zero;
+                    int randomKnockBackDirection = Random.Range(0, 2);
+
+                    if (randomKnockBackDirection == 0)
+                        knockBackDirection = new Vector3(0, 1f, 0);
+                    else if (randomKnockBackDirection == 1)
+                        knockBackDirection = new Vector3(0, -1f, 0);
+                    
+                    knockBack.PlayKnockBack(_player.position + knockBackDirection, 25f, 0.5f);
+                }
+
+                newDirection = _accelerationDirection;
+                CameraShake._instance.Shake(1.0f, 0.25f);
+            }
+
+            _accelerationDirection = newDirection;
+            _rb.linearVelocity = newDirection * _accelerationSpeed;
+        }
+    }
+
     IEnumerator DisableMovementForTime(float duration)
     {
         DisableMovement();
