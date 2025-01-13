@@ -30,6 +30,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _ritualSpeed = 5.0f;
     private float _ritualRadius;
     private Transform _ritualCenter;
+    private float _maxFloatProportion;
+
+    [Space]
+    [SerializeField] private string _sakuraLeaves;
+    [SerializeField] private float _minLeafSpawnDelay;
+    private List<GameObject> _currentLeavesList = new List<GameObject>();
+    private float _currentTime;
 
     private float _currentAngle;
     private float _startRitualAngle;
@@ -40,6 +47,7 @@ public class Movement : MonoBehaviour
     private RectTransform _progressTransform;
 
     private GameManager _gameManager;
+    private PoolManager _poolManager;
     private Knockback _knockBack;
     private HealthManager _healthManager;
 
@@ -49,6 +57,7 @@ public class Movement : MonoBehaviour
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
         _gameManager = FindAnyObjectByType<GameManager>();
+        _poolManager = FindAnyObjectByType<PoolManager>();
 
         _knockBack._onStartKnockback += ()=>{ _disable = true; _healthManager.DisableReceivingDamage(); };
         _knockBack._onFinishKnockback += ()=>{ _disable = false; _healthManager.EnableReceivingDamage(); };
@@ -106,14 +115,27 @@ public class Movement : MonoBehaviour
                     {
                         ChangeRitualDirection(true);
                     }
-
                     float targetFloat = Mathf.Abs(_targetRitualAngle - _startRitualAngle);
                     float currentFloat = Mathf.Abs(_currentAngle - _startRitualAngle);
+                    if (_maxFloatProportion < currentFloat / targetFloat)
+                    {
+                        _maxFloatProportion = currentFloat / targetFloat;
+                        _currentTime += Time.deltaTime;
+                        if(_currentTime >= _minLeafSpawnDelay)
+                        {
+                            _currentTime = 0f;
+                            GameObject currentLeaf = _poolManager.GetObject(_sakuraLeaves);
+                            currentLeaf.transform.position = (Vector2)_ritualCenter.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * (_ritualRadius + Random.Range(-0.3f, 0.3f));
+                            currentLeaf.transform.Rotate(Vector3.forward * Random.Range(0, 360));
+                            _currentLeavesList.Add(currentLeaf);
+                        }
+                    }
                     if (currentFloat > targetFloat)
                     {
                         _startRitualAngle = _targetRitualAngle;
                         _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
                         _circleNumber++;
+                        ClearLeafs();
                     }
                     _ritualProgress.fillAmount = currentFloat / targetFloat;
                 }
@@ -179,6 +201,7 @@ public class Movement : MonoBehaviour
     }
     private void StopRitual(InputAction.CallbackContext callback)
     {
+        ClearLeafs();
         _isRitual = false;
         _ritualProgress.enabled = false;
         _gameManager.RitualEnd(_circleNumber);
@@ -189,5 +212,16 @@ public class Movement : MonoBehaviour
         _targetRitualAngle = _startRitualAngle + (Clockwise ? -2 : 2) * Mathf.PI;
         _clockwise = Clockwise;
         _ritualProgress.fillClockwise = Clockwise;
+        ClearLeafs();
+    }
+    private void ClearLeafs()
+    {
+        foreach(GameObject leaf in _currentLeavesList)
+        {
+            _poolManager.ReturnObject(leaf, _sakuraLeaves);
+        }
+        _currentLeavesList.Clear();
+        _maxFloatProportion = 0;
+        _currentTime = 0;
     }
 }

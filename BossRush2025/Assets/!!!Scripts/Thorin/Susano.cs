@@ -14,11 +14,21 @@ public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
     [SerializeField] private float _speed;
+    [SerializeField] private float _maxMoveDistance;
     private NavMeshAgent _navMeshAgent;
+    private bool _moveWaiting = false;
 
     private Transform _player;
     private PoolManager _poolManager;
     private GameManager _gameManager;
+    private Rigidbody2D _rb;
+
+    [Header("Acceleration Attck")]
+    [SerializeField] private float _accelerationSpeed = 15f;
+    [SerializeField] private float _accelerationAttack = 10f;
+    [SerializeField] private float _accelerationAttackTime = 5f;
+    private bool _isAccelerationAttack = false;
+    private Vector2 _accelerationDirection;
 
     [Header("Shooting")]
     [SerializeField] private float _chargeTime;
@@ -32,22 +42,15 @@ public class Susano : EntityState
 
     [Space]
     [SerializeField] private float _jumpAttackAppearNearRadius = 6f;
-    [SerializeField] private float _jumpAttackDamage = 8f;
+    [SerializeField] private float _jumpAttackRadius = 3f;
+    [SerializeField] private float _jumpAttackDamage = 6f;
 
     [Header("Summon Enemies")]
     [SerializeField] private GameObject _enemy;
     [SerializeField] private float _summonDelay = 0.3f;
 
-    [Header("Acceleration Attck")]
-    [SerializeField] private float _accelerationSpeed = 15f;
-    [SerializeField] private float _accelerationAttack = 10f;
-    [SerializeField] private float _accelerationAttackTime = 5f;
-    private bool _isAccelerationAttack = false;
-    private Vector2 _accelerationDirection;
-
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
-    private Rigidbody2D _rb;
     private bool _finishedCoroutine = true;
 
     [Header("Random Shooting")]
@@ -65,7 +68,7 @@ public class Susano : EntityState
     [SerializeField] private string _axisProjectile;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
-    protected override void HandleWalking() { if (_player != null) _navMeshAgent.SetDestination(_player.position); }
+    protected override void HandleWalking() { if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
 
     protected override void Initialize()
@@ -95,7 +98,8 @@ public class Susano : EntityState
         while (attackedTimes < attackTimes)
         {
             int randomAttack = Random.Range(1, 5);
-            switch (randomAttack){
+            switch (randomAttack)
+            {
                 case 1:
                     StartCoroutine(StartMeleeAttack());
                     break;
@@ -117,8 +121,7 @@ public class Susano : EntityState
             attackedTimes++;
 
             if (!_finishedCoroutine)
-                yield return new WaitUntil(()=> _finishedCoroutine);
-            
+                yield return new WaitUntil(() => _finishedCoroutine);
             yield return new WaitForSeconds(5f);
         }
     }
@@ -182,36 +185,19 @@ public class Susano : EntityState
                 float randomDelay = Random.Range(1.0f, 2.0f);
 
                 yield return new WaitForSeconds(randomDelay);
-                
+
                 _collider.isTrigger = true;
                 transform.DOMoveY(bossDashPositionY, 0.15f);
+                yield return new WaitForSeconds(0.15f);
+                AreaDamage(_jumpAttackRadius, _jumpAttackDamage, transform.position);
 
-                yield return new WaitForSeconds(randomDelay + 0.15f);
                 _collider.isTrigger = false;
             }
             else if (randomAttack == 1)
             {
                 lastCircualSwordStrike = true;
 
-                List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(transform.position, _circualSwordStrikeAttackRadius, Vector2.zero).ToList();
-                foreach (RaycastHit2D hit in collidingObjects)
-                {
-                    if (hit.collider.transform.TryGetComponent<Movement>(out Movement playerMovement))
-                    {
-                        if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
-                        {
-                            healthManager.TakeDamage(_circualSwordStrikeAttackDamage);
-                        }
-
-                        if (playerMovement.TryGetComponent<Knockback>(out Knockback knockBack))
-                        {
-                            knockBack.PlayKnockBack(transform.position, 15f, 0.5f);
-                        }
-
-                        CameraShake._instance.Shake(0.5f, 0.5f);
-                        break;
-                    }
-                }
+                AreaDamage(_circualSwordStrikeAttackRadius, _circualSwordStrikeAttackDamage, transform.position);
             }
 
             yield return new WaitForSeconds(1);
@@ -227,7 +213,7 @@ public class Susano : EntityState
         Vector2 direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         int helpInt = 1;
-        for (int i = 0; i < _projectileCount; i++) 
+        for (int i = 0; i < _projectileCount; i++)
         {
             angle += i * helpInt * _angleBetweenProjectiles;
             GameObject currentProjectile = _poolManager.GetObject(_shootProjectile);
@@ -257,7 +243,7 @@ public class Susano : EntityState
             angleCof = 0.5f;
         }
         int board = currentProjectileCount / 2;
-        for (int i = -board; i < board + currentProjectileCount % 2 ; i++)
+        for (int i = -board; i < board + currentProjectileCount % 2; i++)
         {
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
             currentProjectile.transform.position = transform.position;
@@ -265,7 +251,7 @@ public class Susano : EntityState
             if (currentAngle > 360f) currentAngle -= 360f;
             else if (currentAngle < 0f) currentAngle += 360f;
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
-            yield return new WaitForSeconds(_arcDelay);  
+            yield return new WaitForSeconds(_arcDelay);
         }
     }
     private void AxisShooting()
@@ -289,20 +275,7 @@ public class Susano : EntityState
             component.enabled = true;
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.TryGetComponent<Movement>(out Movement playerMovement))
-        {
-            if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
-            {
-                healthManager.TakeDamage(_jumpAttackDamage);
-            }
-
-            CameraShake._instance.Shake(1.0f, 0.25f);
-        }
-    }
-
+    
     void OnCollisionEnter2D(Collision2D other)
     {
         if (_isAccelerationAttack)
@@ -337,6 +310,18 @@ public class Susano : EntityState
         }
     }
 
+    /*void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<Movement>(out Movement playerMovement))
+        {
+            if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
+            {
+                healthManager.TakeDamage(_jumpAttackDamage);
+            }
+
+            CameraShake._instance.Shake(1.0f, 0.25f);
+        }
+    }*/
     IEnumerator DisableMovementForTime(float duration)
     {
         DisableMovement();
@@ -350,5 +335,57 @@ public class Susano : EntityState
     void EnableMovement()
     {
         _navMeshAgent.speed = _speed;
+    }
+    private void AreaDamage(float radius, float damage, Vector2 point)
+    {
+        List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(point, radius, Vector2.zero).ToList();
+        foreach (RaycastHit2D hit in collidingObjects)
+        {
+            if (hit.collider.transform.TryGetComponent<Movement>(out Movement playerMovement))
+            {
+                if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
+                {
+                    healthManager.TakeDamage(damage);
+                }
+
+                if (playerMovement.TryGetComponent<Knockback>(out Knockback knockBack))
+                {
+                    knockBack.PlayKnockBack(transform.position, 15f, 0.5f);
+                }
+                CameraShake._instance.Shake(0.5f, 0.5f);
+                break;
+            }
+        }
+    }
+    private IEnumerator MoveWaiting()
+    {
+        _moveWaiting = true;
+        yield return new WaitForSeconds(Random.Range(0.8f, 2f));
+        MoveToRandomPoint();
+        _moveWaiting = false;
+    }
+    void MoveToRandomPoint()
+    {
+        Vector3 randomPoint;
+        for (int i = 0; i < 100; i++)
+        {
+            randomPoint = Random.insideUnitCircle * _maxMoveDistance;
+
+            if (IsPointReachable(randomPoint))
+            {
+                _navMeshAgent.SetDestination(randomPoint);
+                Debug.Log(3);
+                break;
+            }
+        }
+    }
+    bool IsPointReachable(Vector2 point)
+    {
+        NavMeshHit hit;
+        if(NavMesh.Raycast(transform.position, point, out hit, NavMesh.AllAreas))
+        {
+            if (hit.position != transform.position) return false;
+        }
+        return true;
     }
 }
