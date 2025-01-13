@@ -129,8 +129,10 @@ GameObject:
   m_Component:
   - component: {fileID: 30192516}
   - component: {fileID: 30192519}
+  - component: {fileID: 30192520}
   - component: {fileID: 30192518}
   - component: {fileID: 30192517}
+  - component: {fileID: 30192521}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -148,7 +150,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.35, y: 0.46, z: 0}
-  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1534129304}
@@ -167,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentsToDisableOnDisappear:
   - {fileID: 30192518}
+  _speed: 0
   _chargeTime: 0
   _angleBetweenProjectiles: 0
   _projectileCount: 0
@@ -176,12 +179,17 @@ MonoBehaviour:
   _jumpAttackAppearNearRadius: 6
   _jumpAttackDamage: 8
   _enemy: {fileID: 6564380006802709355, guid: 3070adafcb9bbc2419c4e0febd0c8ea1, type: 3}
+  _summonDelay: 0.3
+  _accelerationSpeed: 10
+  _accelerationAttack: 10
+  _accelerationAttackTime: 3
   _randomProjectileCount: 0
   _randomDelay: 0.5
   _arcProjectileCount: 10
   _arcDelay: 0.2
   _arcAngle: 10
   _randomShootProjectile: 
+  _axisProjectile: 
 --- !u!61 &30192518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -283,6 +291,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &30192520
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30192515}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!195 &30192521
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30192515}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 0.7
+  m_Acceleration: 5
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &70506451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1342447997
 Transform:
   m_ObjectHideFlags: 0
@@ -1958,8 +2015,8 @@ Transform:
   m_GameObject: {fileID: 1492905616}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2194, y: -9.78, z: 0}
-  m_LocalScale: {x: 7.0944557, y: 2.6419692, z: 1}
+  m_LocalPosition: {x: -2.0055, y: -9.78, z: 0}
+  m_LocalScale: {x: 11.462111, y: 2.6419692, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 276075761}
@@ -2482,7 +2539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1636451965
 Transform:
   m_ObjectHideFlags: 0
@@ -3562,7 +3619,7 @@ Transform:
   m_GameObject: {fileID: 2056157868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.31, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3615,8 +3672,8 @@ MonoBehaviour:
   _dashSpeed: 20
   _dashTime: 0.15
   _dashDelay: 1
-  _center: {fileID: 0}
-  _radius: 5
+  _ritualKey: {fileID: 0}
+  _ritualProgress: {fileID: 0}
   _ritualSpeed: 5
 --- !u!114 &2056157876
 MonoBehaviour:

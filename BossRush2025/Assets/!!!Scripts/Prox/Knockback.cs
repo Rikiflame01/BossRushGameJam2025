@@ -9,6 +9,7 @@ public class Knockback : MonoBehaviour
     [SerializeField] private float _knockBackTime = 1f;
 
     private Rigidbody2D _rb;
+    private Collider2D _collider;
     private bool _haveKnockback = false;
     public event Action _onStartKnockback;
     public event Action _onFinishKnockback;
@@ -16,6 +17,7 @@ public class Knockback : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
     }
 
     public void PlayKnockBack(Vector2 knockBackPoint)
@@ -41,6 +43,8 @@ public class Knockback : MonoBehaviour
         _knockBackStrength = strength;
         _knockBackTime = time;
 
+        _collider.isTrigger = true;
+
         PlayKnockBack(knockBackPoint);
 
         _knockBackStrength = deffaultStrentgh;
@@ -50,6 +54,7 @@ public class Knockback : MonoBehaviour
     IEnumerator KnockBackDelay(float time)
     {
         yield return new WaitForSeconds(time);
+        _collider.isTrigger = false;
         _onFinishKnockback?.Invoke();
         _haveKnockback = false;
     }
