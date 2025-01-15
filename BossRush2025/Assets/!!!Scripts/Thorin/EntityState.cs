@@ -9,6 +9,7 @@ public abstract class EntityState : MonoBehaviour
 {
     protected enum State { Idle, Walking, Running }
 
+    protected int _phase = 1;
     protected State currentState = State.Idle;
     protected Movement _playerMovement;
 

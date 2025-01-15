@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemySO _enemySO;
     [SerializeField] private MeleeDamage _meleeDamage;
     private bool _canMove = true;
+    private PoolManager _poolManager;
     private NavMeshAgent _navMeshAgent;
     private Transform _target;
     private Knockback _knockBack;
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
 
+        _poolManager = FindAnyObjectByType<PoolManager>();
+
         _knockBack._onStartKnockback += DisableMovement;
         _knockBack._onFinishKnockback += EnableMovement;
 
@@ -25,6 +28,7 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.speed = _enemySO._speed;
 
         _healthManager.SetHealth(_enemySO._health);
+        _healthManager._onDie += ReturnInPool;
         _meleeDamage.SetDamage(_enemySO._damage);
         _meleeDamage.SetAttackInterval(_enemySO._attackInterval);
         
@@ -70,5 +74,9 @@ public class Enemy : MonoBehaviour
     {
         _canMove = true;
         _navMeshAgent.speed = _enemySO._speed;
+    }
+    private void ReturnInPool()
+    {
+        _poolManager.ReturnObject(gameObject, _enemySO._name);
     }
 }

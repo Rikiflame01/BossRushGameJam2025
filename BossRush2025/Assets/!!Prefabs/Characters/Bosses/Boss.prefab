@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8989028932586246324}
   - component: {fileID: 3780742884025277583}
   - component: {fileID: 3044510176484587180}
+  - component: {fileID: 604447345512464825}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -184,15 +185,17 @@ MonoBehaviour:
   _accelerationAttack: 10
   _accelerationAttackTime: 5
   _chargeTime: 1
-  _angleBetweenProjectiles: 15
-  _projectileCount: 5
+  _angleBetweenProjectiles: 30
+  _projectileCount: 3
   _shootProjectile: DirectProjectile
   _circualSwordStrikeAttackRadius: 5
   _circualSwordStrikeAttackDamage: 6
   _jumpAttackAppearNearRadius: 6
   _jumpAttackRadius: 3
   _jumpAttackDamage: 8
-  _enemy: {fileID: 6564380006802709355, guid: 3070adafcb9bbc2419c4e0febd0c8ea1, type: 3}
+  _minEnemyCount: 2
+  _maxEnemyCount: 4
+  _enemy: Enemy
   _summonDelay: 0.3
   _randomProjectileCount: 0
   _randomDelay: 0.5
@@ -223,3 +226,16 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &604447345512464825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692907461223059489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 10

@@ -37,8 +37,9 @@ public class Katana : MonoBehaviour
         List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(_katanaAttackPos.position, _attackRadius, Vector2.zero).ToList();
         foreach (RaycastHit2D hit in collidingObjects)
         {
-            if (hit.collider.transform.TryGetComponent<Enemy>(out Enemy enemy))
+            if (hit.collider.CompareTag("Enemy"))
             {
+                GameObject enemy = hit.collider.gameObject;
                 if (enemy.TryGetComponent<HealthManager>(out HealthManager healthManager))
                 {
                     healthManager.TakeDamage(_katanaDamage);

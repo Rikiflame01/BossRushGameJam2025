@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17f09b1049e4b44ebec34e6f06b4349, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
+  _name: Enemy
   _health: 10
   _damage: 5
   _speed: 3
+  _attackInterval: 0
+  _minStopRadius: 0

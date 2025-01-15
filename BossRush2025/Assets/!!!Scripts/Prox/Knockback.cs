@@ -32,7 +32,8 @@ public class Knockback : MonoBehaviour
         Vector2 direction = (position - knockBackPoint).normalized;
 
         _rb.AddForce(direction * _knockBackStrength, ForceMode2D.Impulse);
-        StartCoroutine(KnockBackDelay(_knockBackTime));
+        if(gameObject.activeSelf)
+            StartCoroutine(KnockBackDelay(_knockBackTime));
     }
 
     public void PlayKnockBack(Vector2 knockBackPoint, float strength, float time)

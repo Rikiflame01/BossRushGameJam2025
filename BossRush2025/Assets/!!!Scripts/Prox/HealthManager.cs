@@ -21,11 +21,13 @@ public class HealthManager : MonoBehaviour
             return;
 
         _health = Math.Clamp(_health - damage, 0, _maxHealth);
-        _onHit?.Invoke(_health);
+        _onHit?.Invoke(_health / _maxHealth);
         if (_health == 0)
         {
-            _onDie?.Invoke();
-            Destroy(gameObject);
+            if (_onDie != null)
+                _onDie.Invoke();
+            else
+                Destroy(gameObject);
         }
     }
 

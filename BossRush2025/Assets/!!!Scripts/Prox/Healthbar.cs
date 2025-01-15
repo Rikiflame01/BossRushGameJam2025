@@ -11,8 +11,8 @@ public class Healthbar : MonoBehaviour
         _healthManager._onHit += UpdateHealthBar;
     }
 
-    void UpdateHealthBar(float health)
+    void UpdateHealthBar(float healthPart)
     {
-        _healthBar.fillAmount = health / _healthManager._maxHealth;
+        _healthBar.fillAmount = healthPart;
     }
 }
