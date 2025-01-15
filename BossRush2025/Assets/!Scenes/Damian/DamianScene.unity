@@ -228,7 +228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &276075761
 Transform:
   m_ObjectHideFlags: 0
@@ -1289,8 +1289,6 @@ MonoBehaviour:
   _katanaDamage: 5
   _attackDelay: 0.5
   _attackRadius: 3
-  _katanaKnockBackStrength: 6
-  _katanaKnockBackTime: 1
   _katanaAttackPos: {fileID: 1089673596}
   _katanaAttackKey: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!114 &1283566261
@@ -1678,7 +1676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1539011866
 Transform:
   m_ObjectHideFlags: 0
@@ -1720,6 +1718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eb27ebb55f66e41aea6ec658e0d57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemySO: {fileID: 0}
+  _meleeDamage: {fileID: 0}
 --- !u!195 &1539011869
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2325,6 +2325,7 @@ GameObject:
   - component: {fileID: 1750746036}
   - component: {fileID: 1750746032}
   - component: {fileID: 1750746031}
+  - component: {fileID: 1750746037}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2342,7 +2343,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.77, y: 8.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.6605, y: 3.6605, z: 3.6605}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1001271286}
@@ -2368,11 +2369,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750746029}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4eb27ebb55f66e41aea6ec658e0d57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemySO: {fileID: 0}
+  _meleeDamage: {fileID: 0}
 --- !u!61 &1750746033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2523,6 +2526,30 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1750746037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750746029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baf878aabf3f1a408036e0d9f6a599e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
+  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  arenaBounds: {fileID: 2019178156}
+  player: {fileID: 2056157872}
+  projectileCount: 12
+  projectileSpeed: 5
+  teleportDelay: 3
+  attackInterval: 3
+  pointDuration: 10
+  minDistanceFromPlayer: 6
+  maxDistanceFromPlayer: 10
+  minDistanceBetweenPoints: 10
 --- !u!1 &1759380575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,7 +2680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1883131146
 Transform:
   m_ObjectHideFlags: 0
@@ -2695,6 +2722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eb27ebb55f66e41aea6ec658e0d57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemySO: {fileID: 0}
+  _meleeDamage: {fileID: 0}
 --- !u!61 &1883131149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2866,7 +2895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985434223
 Transform:
   m_ObjectHideFlags: 0
@@ -2908,6 +2937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eb27ebb55f66e41aea6ec658e0d57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemySO: {fileID: 0}
+  _meleeDamage: {fileID: 0}
 --- !u!61 &1985434226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3346,6 +3377,15 @@ MonoBehaviour:
   _speed: 6
   _moveInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _hitStunTime: 1
+  _dashKey: {fileID: 0}
+  _dashSpeed: 0
+  _dashTime: 0.15
+  _dashDelay: 1
+  _ritualKey: {fileID: 0}
+  _ritualProgress: {fileID: 0}
+  _ritualSpeed: 5
+  _sakuraLeaves: 
+  _minLeafSpawnDelay: 0
 --- !u!114 &2128348857
 MonoBehaviour:
   m_ObjectHideFlags: 0
