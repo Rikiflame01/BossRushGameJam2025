@@ -20,7 +20,17 @@ public class Teleport : MonoBehaviour
 
     private List<Vector3> teleportPoints = new List<Vector3>();
     private Vector3 originalPosition;
+    private void Start()
+    {
+        originalPosition = transform.position;
 
+        TsukuyomiBoss.TsukuyomiTeleport += StartTeleportSequence;
+    }
+
+    private void OnDestroy()
+    {
+        TsukuyomiBoss.TsukuyomiTeleport -= StartTeleportSequence;
+    }
     private void StartTeleportSequence()
     {
         StartCoroutine(TeleportAndAttackRoutine());
