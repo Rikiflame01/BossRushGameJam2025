@@ -2542,14 +2542,14 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
   arenaBounds: {fileID: 2019178156}
   player: {fileID: 2056157872}
-  projectileCount: 12
-  projectileSpeed: 5
-  teleportDelay: 3
+  projectileCount: 25
+  projectileSpeed: 6
+  teleportDuration: 0
   attackInterval: 3
-  pointDuration: 10
-  minDistanceFromPlayer: 6
+  minDistanceFromPlayer: 8
   maxDistanceFromPlayer: 10
   minDistanceBetweenPoints: 10
+  projectileLifetime: 6
 --- !u!1 &1759380575
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,19 +11,30 @@ public class Teleport : MonoBehaviour
     public Transform player;
     public int projectileCount = 12;
     public float projectileSpeed = 5f;
-    public float teleportDelay = 1f;
+    public float teleportDuration = 0.5f;
     public float attackInterval = 1f;
-    public float pointDuration = 10f;
     public float minDistanceFromPlayer = 2f;
     public float maxDistanceFromPlayer = 5f;
     public float minDistanceBetweenPoints = 2f;
+    public float projectileLifetime = 5f;
 
-    private List<Transform> points = new List<Transform>();
+    private List<Vector3> teleportPoints = new List<Vector3>();
     private Vector3 originalPosition;
 
     private void Start()
     {
         originalPosition = transform.position;
+
+        HealthManager.TsukuyomiTeleport += StartTeleportSequence;
+    }
+
+    private void OnDestroy()
+    {
+        HealthManager.TsukuyomiTeleport -= StartTeleportSequence;
+    }
+
+    private void StartTeleportSequence()
+    {
         StartCoroutine(TeleportAndAttackRoutine());
     }
 
@@ -30,63 +42,72 @@ public class Teleport : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
     }
-    private IEnumerator TeleportAndAttackRoutine()
+private IEnumerator TeleportAndAttackRoutine()
+{
+    teleportPoints.Clear();
+    List<GameObject> instantiatedPoints = new List<GameObject>();
+
+    FireProjectiles(transform.position);
+    yield return new WaitForSeconds(attackInterval);
+
+    for (int i = 0; i < 3; i++)
     {
-        for (int i = 0; i < 3; i++)
-        {
-            Vector3 randomPosition;
-            int maxAttempts = 10;
-            int attempts = 0;
+        Vector3 randomPosition;
+        int maxAttempts = 10;
+        int attempts = 0;
 
-            do
+        do
+        {
+            Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
+            float randomDistance = UnityEngine.Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
+            randomPosition = (Vector3)(randomDirection * randomDistance) + player.position;
+            randomPosition.z = 0;
+
+            attempts++;
+            if (attempts > maxAttempts)
             {
-                Vector2 randomDirection = Random.insideUnitCircle.normalized;
-                float randomDistance = Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
-                randomPosition = (Vector3)(randomDirection * randomDistance) + player.position;
-                randomPosition.z = 0;
-
-                attempts++;
-                if (attempts > maxAttempts)
-                {
-                    Debug.LogWarning("Failed to place a point at a valid distance.");
-                    break;
-                }
+                Debug.LogWarning("Failed to place a point at a valid distance.");
+                break;
             }
-            while (!IsValidPoint(randomPosition));
-
-            GameObject point = Instantiate(pointPrefab, randomPosition, Quaternion.identity);
-            points.Add(point.transform);
         }
+        while (!IsValidPoint(randomPosition));
 
-        FireProjectiles(originalPosition);
+        teleportPoints.Add(randomPosition);
 
-        foreach (Transform point in points)
+        GameObject point = Instantiate(pointPrefab, randomPosition, Quaternion.identity);
+        instantiatedPoints.Add(point);
+    }
+
+    foreach (Vector3 point in teleportPoints)
+    {
+        yield return StartCoroutine(SmoothTeleport(point));
+        FireProjectiles(point);
+        yield return new WaitForSeconds(attackInterval);
+    }
+
+    yield return StartCoroutine(SmoothTeleport(originalPosition));
+
+    foreach (GameObject point in instantiatedPoints)
+    {
+        Destroy(point);
+    }
+
+    teleportPoints.Clear();
+}
+
+    private IEnumerator SmoothTeleport(Vector3 targetPosition)
+    {
+        Vector3 startPosition = transform.position;
+        float elapsedTime = 0;
+
+        while (elapsedTime < teleportDuration)
         {
-            yield return new WaitForSeconds(teleportDelay);
-
-            transform.position = point.position;
-
-            transform.rotation = Quaternion.identity;
-
-            foreach (Transform attackPoint in points)
-            {
-                FireProjectiles(attackPoint.position);
-            }
-
-            FireProjectiles(originalPosition);
-
-            yield return new WaitForSeconds(attackInterval);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / teleportDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
-        foreach (Transform point in points)
-        {
-            Destroy(point.gameObject);
-        }
-        points.Clear();
-
-        transform.position = originalPosition;
-
-        transform.rotation = Quaternion.identity;
+        transform.position = targetPosition;
     }
 
     private bool IsValidPoint(Vector3 position)
@@ -103,9 +124,9 @@ public class Teleport : MonoBehaviour
             }
         }
 
-        foreach (Transform point in points)
+        foreach (Vector3 point in teleportPoints)
         {
-            if (Vector3.Distance(position, point.position) < minDistanceBetweenPoints)
+            if (Vector3.Distance(position, point) < minDistanceBetweenPoints)
             {
                 return false;
             }
@@ -118,7 +139,7 @@ private void FireProjectiles(Vector3 position)
 {
     for (int i = 0; i < projectileCount; i++)
     {
-        float randomAngle = Random.Range(0f, 360f);
+        float randomAngle = UnityEngine.Random.Range(0f, 360f);
         float projectileDirX = Mathf.Cos(randomAngle * Mathf.Deg2Rad);
         float projectileDirY = Mathf.Sin(randomAngle * Mathf.Deg2Rad);
 
@@ -132,11 +153,9 @@ private void FireProjectiles(Vector3 position)
             rb.gravityScale = 0;
         }
 
-        Destroy(projectile, 5f);
+        Destroy(projectile, projectileLifetime);
     }
 }
-
-
 
     private void OnDrawGizmos()
     {
