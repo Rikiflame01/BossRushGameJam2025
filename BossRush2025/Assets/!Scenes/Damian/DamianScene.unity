@@ -2326,8 +2326,10 @@ GameObject:
   - component: {fileID: 1750746032}
   - component: {fileID: 1750746031}
   - component: {fileID: 1750746037}
+  - component: {fileID: 1750746038}
+  - component: {fileID: 1750746039}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2550,6 +2552,37 @@ MonoBehaviour:
   maxDistanceFromPlayer: 10
   minDistanceBetweenPoints: 10
   projectileLifetime: 6
+--- !u!114 &1750746038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750746029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1750746039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750746029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3a7fc7e930b0e4e919248bec7c63e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  rows: 3
+  projectilesPerRow: 6
+  angleOffset: 15
+  projectileSpeed: 4
+  projectileLifetime: 5
+  rowDelay: 0.2
 --- !u!1 &1759380575
 GameObject:
   m_ObjectHideFlags: 0
