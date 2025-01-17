@@ -17,6 +17,8 @@ public class Susano : EntityState
     [SerializeField] private float _maxMoveDistance;
     private NavMeshAgent _navMeshAgent;
     private bool _moveWaiting = false;
+    private Coroutine _currentAttack;
+    private bool _isRitual = false;
 
     private Transform _player;
     private PoolManager _poolManager;
@@ -24,7 +26,7 @@ public class Susano : EntityState
     private HealthManager _healthManager;
     private Rigidbody2D _rb;
 
-    [Header("Acceleration Attck")]
+    [Header("Acceleration Attack")]
     [SerializeField] private float _accelerationSpeed = 15f;
     [SerializeField] private float _accelerationAttack = 10f;
     [SerializeField] private float _accelerationAttackTime = 5f;
@@ -45,6 +47,7 @@ public class Susano : EntityState
     [SerializeField] private float _jumpAttackAppearNearRadius = 6f;
     [SerializeField] private float _jumpAttackRadius = 3f;
     [SerializeField] private float _jumpAttackDamage = 6f;
+    [SerializeField] private string _jumpShadow;
 
     [Header("Summon Enemies")]
     [SerializeField] private int _minEnemyCount = 2;
@@ -69,6 +72,8 @@ public class Susano : EntityState
 
     [Header("Axis Projectile")]
     [SerializeField] private string _axisProjectile;
+    [SerializeField] private float _axisDelay;
+    private bool _canAxisProjectile = true;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
     protected override void HandleWalking() { if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); }
@@ -91,6 +96,7 @@ public class Susano : EntityState
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
         _healthManager._onHit += CheckPhaseTransition;
+        _gameManager.RitualFinished += FinishRitual;
 
         ChangeState(State.Walking);
     }
@@ -106,20 +112,20 @@ public class Susano : EntityState
             switch (randomAttack)
             {
                 case 1:
-                    StartCoroutine(StartMeleeAttack());
+                    _currentAttack = StartCoroutine(StartMeleeAttack());
                     break;
 
                 case 2:
-                    StartCoroutine(SpawnEnemiesAttack());
+                    _currentAttack = StartCoroutine(SpawnEnemiesAttack());
                     StartCoroutine(DisableMovementForTime(1f));
                     break;
 
                 case 3:
-                    StartCoroutine(Shooting());
+                    _currentAttack = StartCoroutine(Shooting());
                     break;
 
                 case 4:
-                    StartCoroutine(AccelerationAttack());
+                    _currentAttack = StartCoroutine(AccelerationAttack());
                     break;
             }
 
@@ -128,6 +134,35 @@ public class Susano : EntityState
             if (!_finishedCoroutine)
                 yield return new WaitUntil(() => _finishedCoroutine);
             yield return new WaitForSeconds(5f);
+        }
+        ChangeState(State.Idle);
+        _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
+        _isRitual = true;
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance == 0 && !_navMeshAgent.pathPending);
+        _gameManager.RitualBegin();
+        while (_isRitual)
+        {
+            int randomAttack = Random.Range(1, 4);
+            if (randomAttack == 3 && !_canAxisProjectile)
+                randomAttack = Random.Range(1, 3);
+            switch (randomAttack)
+            {
+                case 1:
+                    _currentAttack = StartCoroutine(RandomShooting());
+                    break;
+
+                case 2:
+                    _currentAttack = StartCoroutine(ArcShooting(_arcProjectileCount));
+                    break;
+
+                case 3:
+                    AxisShooting();
+                    StartCoroutine(NoAxisAttack());
+                    break;
+            }
+            if (!_finishedCoroutine)
+                yield return new WaitUntil(() => _finishedCoroutine);
+            yield return new WaitForSeconds(3f);
         }
     }
 
@@ -188,15 +223,15 @@ public class Susano : EntityState
 
                 Disappear();
                 yield return new WaitForSeconds(1.0f);
+
                 Vector2 playerPosition = _playerMovement.transform.position;
                 Vector2 bossUpPosition = new Vector2(0, _jumpAttackAppearNearRadius);
                 transform.position = playerPosition + bossUpPosition;
-                Appear();
 
                 float bossDashPositionY = playerPosition.y;
-                float randomDelay = Random.Range(1.0f, 2.0f);
-
-                yield return new WaitForSeconds(randomDelay);
+                _poolManager.GetObject(_jumpShadow).transform.position = playerPosition;
+                yield return new WaitForSeconds(1.5f);
+                Appear();
 
                 _collider.isTrigger = true;
                 transform.DOMoveY(bossDashPositionY, 0.15f);
@@ -237,6 +272,7 @@ public class Susano : EntityState
     }
     private IEnumerator RandomShooting()
     {
+        _finishedCoroutine = false;
         for (int i = 0; i < _projectileCount; i++)
         {
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
@@ -244,9 +280,11 @@ public class Susano : EntityState
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, Random.Range(0f, 360f));
             yield return new WaitForSeconds(_randomDelay);
         }
+        _finishedCoroutine = true;
     }
     private IEnumerator ArcShooting(int currentProjectileCount)
     {
+        _finishedCoroutine = false;
         Vector2 direction = _player.transform.position - transform.position;
         float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float angleCof = 0f;
@@ -265,6 +303,7 @@ public class Susano : EntityState
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
             yield return new WaitForSeconds(_arcDelay);
         }
+        _finishedCoroutine = true;
     }
     private void AxisShooting()
     {
@@ -373,7 +412,10 @@ public class Susano : EntityState
     {
         _moveWaiting = true;
         yield return new WaitForSeconds(Random.Range(0.8f, 2f));
-        MoveToRandomPoint();
+        if (!_isRitual)
+        {
+            MoveToRandomPoint();
+        }
         _moveWaiting = false;
     }
     void MoveToRandomPoint()
@@ -386,7 +428,6 @@ public class Susano : EntityState
             if (IsPointReachable(randomPoint))
             {
                 _navMeshAgent.SetDestination(randomPoint);
-                Debug.Log(3);
                 break;
             }
         }
@@ -412,5 +453,18 @@ public class Susano : EntityState
             _circualSwordStrikeAttackRadius += 3;
             _navMeshAgent.speed = _speed + 2;
         }
+    }
+    private IEnumerator NoAxisAttack()
+    {
+        _canAxisProjectile = false;
+        yield return new WaitForSeconds(_axisDelay);
+        _canAxisProjectile = true;
+    }
+    private void FinishRitual()
+    {
+        _isRitual = false;
+        _finishedCoroutine = true;
+        _currentAttack = null;
+        ChangeState(State.Walking);
     }
 }

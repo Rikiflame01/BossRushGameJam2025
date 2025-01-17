@@ -224,4 +224,12 @@ public class Movement : MonoBehaviour
         _maxFloatProportion = 0;
         _currentTime = 0;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ritual"))
+        {
+            _currentState = State.Ritual;
+            _currentAngle = Mathf.Atan2(transform.position.y, transform.position.x);
+        }
+    }
 }

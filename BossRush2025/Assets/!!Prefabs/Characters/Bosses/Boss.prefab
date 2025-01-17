@@ -193,6 +193,7 @@ MonoBehaviour:
   _jumpAttackAppearNearRadius: 6
   _jumpAttackRadius: 3
   _jumpAttackDamage: 8
+  _jumpShadow: JumpShadow
   _minEnemyCount: 2
   _maxEnemyCount: 4
   _enemy: Enemy
@@ -204,6 +205,7 @@ MonoBehaviour:
   _arcAngle: 10
   _randomShootProjectile: DirectProjectile
   _axisProjectile: AxisProjectile
+  _axisDelay: 8
 --- !u!195 &3044510176484587180
 NavMeshAgent:
   m_ObjectHideFlags: 0
