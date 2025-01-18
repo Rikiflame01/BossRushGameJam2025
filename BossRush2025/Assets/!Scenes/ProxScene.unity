@@ -1325,11 +1325,6 @@ Transform:
   - {fileID: 1119039254}
   m_Father: {fileID: 1726448487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &674772365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7692907461223059489, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-  m_PrefabInstance: {fileID: 1861428268}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723910992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,6 +4170,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1534129304}
     m_Modifications:
+    - target: {fileID: 1631012741786938865, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
+      propertyPath: _upSpawnWavePosition
+      value: 
+      objectReference: {fileID: 271237882}
+    - target: {fileID: 1631012741786938865, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
+      propertyPath: _downSpawnWavePosition
+      value: 
+      objectReference: {fileID: 1119039254}
     - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: _axisDelay
       value: 8
@@ -4233,15 +4236,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692907461223059489, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7692907461223059489, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1998259177}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
 --- !u!1 &1883131145
 GameObject:
@@ -4740,23 +4740,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4312701852677153529, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
   m_PrefabInstance: {fileID: 1861428268}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1998259177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674772365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceae66aefae084141a47914a2e015825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wavePrefab: {fileID: 46356732875172744, guid: a35de16856b9b7a478eeef33c8466ead, type: 3}
-  _countOfWavesInAttack: 5
-  _waveSpawnDelay: 3
-  _upSpawnWavePosition: {fileID: 0}
-  _downSpawnWavePosition: {fileID: 0}
 --- !u!1 &2019178155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &8305689632746120551
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -75,6 +75,9 @@ public class Susano : EntityState
     [SerializeField] private float _axisDelay;
     private bool _canAxisProjectile = true;
 
+    public static event System.Action _sussanoWaveAttack;
+    private WaveAttack _waveAttack;
+
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
     protected override void HandleWalking() { if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
@@ -88,6 +91,7 @@ public class Susano : EntityState
         _healthManager = GetComponent<HealthManager>();
 
         _player = FindAnyObjectByType<Movement>().transform;
+        _waveAttack = GetComponent<WaveAttack>();
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
 
@@ -142,7 +146,7 @@ public class Susano : EntityState
         _gameManager.RitualBegin();
         while (_isRitual)
         {
-            int randomAttack = Random.Range(1, 4);
+            int randomAttack = Random.Range(1, 5);
             if (randomAttack == 3 && !_canAxisProjectile)
                 randomAttack = Random.Range(1, 3);
             switch (randomAttack)
@@ -158,6 +162,11 @@ public class Susano : EntityState
                 case 3:
                     AxisShooting();
                     StartCoroutine(NoAxisAttack());
+                    break;
+                
+                case 4:
+                    _sussanoWaveAttack?.Invoke();
+                    yield return new WaitForSeconds(_waveAttack.GetAttackTime());
                     break;
             }
             if (!_finishedCoroutine)

@@ -12,7 +12,7 @@ public class WaveAttack : MonoBehaviour
     
     void Start()
     {
-        TsukuyomiBoss._tsukuyomiWaveAttack += StartWaveAttack;
+        Susano._sussanoWaveAttack += StartWaveAttack;
     }
 
     void Update()
@@ -49,8 +49,13 @@ public class WaveAttack : MonoBehaviour
         SpawnWave();
     }
 
+    public float GetAttackTime()
+    {
+        return _countOfWavesInAttack * _waveSpawnDelay;
+    }
+
     void OnDestroy()
     {
-        TsukuyomiBoss._tsukuyomiWaveAttack -= StartWaveAttack;
+        Susano._sussanoWaveAttack -= StartWaveAttack;
     }
 }
