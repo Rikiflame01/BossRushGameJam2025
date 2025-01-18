@@ -28,6 +28,11 @@ public class Movement : MonoBehaviour
     [SerializeField] private InputActionReference _ritualKey;
     [SerializeField] private Image _ritualProgress;
     [SerializeField] private float _ritualSpeed = 5.0f;
+
+    [SerializeField] private InputActionReference _setFireKey;
+    [SerializeField] private Image _fireProgress;
+    [SerializeField] private float _fireChargeTime;
+    private Coroutine _fireCoroutine;
     private float _ritualRadius;
     private Transform _ritualCenter;
     private float _maxFloatProportion;
@@ -65,6 +70,8 @@ public class Movement : MonoBehaviour
         _dashKey.action.performed += Dash;
         _ritualKey.action.started += StartRitual;
         _ritualKey.action.canceled += StopRitual;
+        _setFireKey.action.started += StartSettingFire;
+        _setFireKey.action.canceled += EndSettingFire;
 
         _defaultSpeed = _speed;
 
@@ -190,6 +197,8 @@ public class Movement : MonoBehaviour
         _dashKey.action.performed -= Dash;
         _ritualKey.action.started -= StartRitual;
         _ritualKey.action.canceled -= StopRitual;
+        _setFireKey.action.started -= StartSettingFire;
+        _setFireKey.action.canceled -= EndSettingFire;
     }
     private void StartRitual(InputAction.CallbackContext callback)
     {
@@ -204,8 +213,34 @@ public class Movement : MonoBehaviour
         ClearLeafs();
         _isRitual = false;
         _ritualProgress.enabled = false;
+    }
+    private void StartSettingFire(InputAction.CallbackContext callback)
+    {
+        if (_circleNumber > 0)
+        {
+            _fireCoroutine = StartCoroutine(FireRitual());
+        }
+    }
+    private void EndSettingFire(InputAction.CallbackContext callback)
+    {
+        if (_fireCoroutine == null) return;
+        StopCoroutine(_fireCoroutine);
+        _fireCoroutine = null;
+    }
+    private IEnumerator FireRitual()
+    {
+        _fireProgress.enabled = true;
+        float startTime = Time.time;
+        while(Time.time - startTime < _fireChargeTime)
+        {
+            _fireProgress.fillAmount = (Time.time - startTime) / _fireChargeTime;
+            yield return null;
+        }
         _gameManager.RitualEnd(_circleNumber);
         _circleNumber = 0;
+        _fireProgress.enabled = false;
+        _currentTime = 0;
+        _currentState = State.Run;
     }
     private void ChangeRitualDirection(bool Clockwise)
     {

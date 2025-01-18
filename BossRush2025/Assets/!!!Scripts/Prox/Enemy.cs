@@ -5,14 +5,14 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemySO _enemySO;
     [SerializeField] private MeleeDamage _meleeDamage;
-    private bool _canMove = true;
+    private bool _canMove = false;
     private PoolManager _poolManager;
     private NavMeshAgent _navMeshAgent;
-    private Transform _target;
+    [SerializeField] private Transform _target;
     private Knockback _knockBack;
     private HealthManager _healthManager;
 
-    void Start()
+    void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _healthManager = GetComponent<HealthManager>();
@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         _meleeDamage.SetAttackInterval(_enemySO._attackInterval);
         
         _target = GameObject.FindAnyObjectByType<Movement>().transform;
+        _canMove = true;
     }
 
     void Update()
@@ -51,7 +52,9 @@ public class Enemy : MonoBehaviour
             if (Vector2.Distance(transform.position, _target.position) > _enemySO._minStopRadius)
                 _navMeshAgent.SetDestination(_target.position);
             else
+            {
                 stopEnemy = true;
+            }    
         }
         else 
         {
@@ -63,7 +66,10 @@ public class Enemy : MonoBehaviour
             DisableMovement();
         }
     }
-
+    void OnDisable()
+    {
+        EnableMovement();
+    }
     public void DisableMovement()
     {
         _canMove = false;
@@ -73,7 +79,8 @@ public class Enemy : MonoBehaviour
     public void EnableMovement()
     {
         _canMove = true;
-        _navMeshAgent.speed = _enemySO._speed;
+        if(_navMeshAgent != null)
+            _navMeshAgent.speed = _enemySO._speed;
     }
     private void ReturnInPool()
     {

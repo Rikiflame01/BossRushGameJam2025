@@ -45,7 +45,6 @@ public class Bow : MonoBehaviour
         _startTime = Time.time;
         _bowSlider.gameObject.SetActive(true);
         _bowSlider.value = 0f;
-        Debug.Log(4);
     }
     void ReleaseArrow(InputAction.CallbackContext context)
     {
@@ -73,6 +72,12 @@ public class Bow : MonoBehaviour
             }
         }
         _bowSlider.gameObject.SetActive(false);
+    }
+    void OnDisable()
+    {
+        _isChargeNow = false;
+        _bowSlider.gameObject.SetActive(false);
+        _bowSlider.value = 0f;
     }
     void OnDestroy()
     {

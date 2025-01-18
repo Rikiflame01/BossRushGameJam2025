@@ -112,7 +112,11 @@ public class Susano : EntityState
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
         {
-            int randomAttack = Random.Range(1, 5);
+            int randomAttack = Random.Range(1, 6);
+            if(_phase < 2 && randomAttack == 5)
+            {
+                randomAttack = Random.Range(1, 5);
+            }
             switch (randomAttack)
             {
                 case 1:
@@ -131,6 +135,11 @@ public class Susano : EntityState
                 case 4:
                     _currentAttack = StartCoroutine(AccelerationAttack());
                     break;
+
+                case 5:
+                    _sussanoWaveAttack?.Invoke();
+                    yield return new WaitForSeconds(_waveAttack.GetAttackTime());
+                    break;
             }
 
             attackedTimes++;
@@ -146,7 +155,7 @@ public class Susano : EntityState
         _gameManager.RitualBegin();
         while (_isRitual)
         {
-            int randomAttack = Random.Range(1, 5);
+            int randomAttack = Random.Range(1, 4);
             if (randomAttack == 3 && !_canAxisProjectile)
                 randomAttack = Random.Range(1, 3);
             switch (randomAttack)
@@ -162,11 +171,6 @@ public class Susano : EntityState
                 case 3:
                     AxisShooting();
                     StartCoroutine(NoAxisAttack());
-                    break;
-                
-                case 4:
-                    _sussanoWaveAttack?.Invoke();
-                    yield return new WaitForSeconds(_waveAttack.GetAttackTime());
                     break;
             }
             if (!_finishedCoroutine)
@@ -473,7 +477,9 @@ public class Susano : EntityState
     {
         _isRitual = false;
         _finishedCoroutine = true;
+        StopCoroutine(_currentAttack);
         _currentAttack = null;
         ChangeState(State.Walking);
+        StartCoroutine(StartAttacks());
     }
 }
