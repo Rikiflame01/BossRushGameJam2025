@@ -25,6 +25,7 @@ public class ArrowScript : MonoBehaviour
             {
                 knockBack.PlayKnockBack(transform.position);
             }
+            Disappear();
         }
     }
     private void Disappear()

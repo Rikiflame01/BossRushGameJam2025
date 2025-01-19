@@ -19,8 +19,7 @@ public abstract class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            HealthManager healthManager = other.GetComponent<HealthManager>();
-            if (healthManager != null)
+            if (other.TryGetComponent<HealthManager>(out HealthManager healthManager))
             {
                 healthManager.TakeDamage(_damage);
             }
@@ -29,6 +28,7 @@ public abstract class Projectile : MonoBehaviour
                 knockBack.PlayKnockBack(transform.position);
             }
             CameraShake._instance.Shake();
+            ReturnInPool();
         }
     }
 }

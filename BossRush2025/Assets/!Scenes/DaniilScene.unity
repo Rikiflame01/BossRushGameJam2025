@@ -14464,14 +14464,6 @@ PrefabInstance:
       propertyPath: _downSpawnWavePosition
       value: 
       objectReference: {fileID: 1548823354}
-    - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: _maxEnemyCount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: _minEnemyCount
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4312701852677153529, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

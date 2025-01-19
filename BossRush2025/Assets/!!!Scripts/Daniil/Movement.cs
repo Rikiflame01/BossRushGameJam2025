@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private InputActionReference _setFireKey;
     [SerializeField] private Image _fireProgress;
     [SerializeField] private float _fireChargeTime;
+    [SerializeField] private string _burnParticles;
+    
     private Coroutine _fireCoroutine;
     private float _ritualRadius;
     private Transform _ritualCenter;
@@ -236,6 +238,16 @@ public class Movement : MonoBehaviour
             _fireProgress.fillAmount = (Time.time - startTime) / _fireChargeTime;
             yield return null;
         }
+        ClearLeafs();
+        _isRitual = false;
+        _ritualProgress.enabled = false;
+
+        GameObject _currentParticles = _poolManager.GetObject(_burnParticles);
+        if (_currentParticles.TryGetComponent<RitualParticlesScript>(out RitualParticlesScript particleScript))
+        {
+            particleScript.SetCircleNumber(_circleNumber);
+        }
+
         _gameManager.RitualEnd(_circleNumber);
         _circleNumber = 0;
         _fireProgress.enabled = false;

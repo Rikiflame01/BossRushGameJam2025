@@ -66,6 +66,10 @@ public class Enemy : MonoBehaviour
             DisableMovement();
         }
     }
+    void OnEnable()
+    {
+        EnableMovement();
+    }
     void OnDisable()
     {
         EnableMovement();
