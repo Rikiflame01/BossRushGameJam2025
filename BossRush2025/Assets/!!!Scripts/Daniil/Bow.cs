@@ -78,6 +78,12 @@ public class Bow : MonoBehaviour
         _isChargeNow = false;
         _bowSlider.gameObject.SetActive(false);
         _bowSlider.value = 0f;
+        _bowKey.action.started -= StartCharge;
+        _bowKey.action.canceled -= ReleaseArrow;
+    }void OnEnable()
+    {
+        _bowKey.action.started += StartCharge;
+        _bowKey.action.canceled += ReleaseArrow;
     }
     void OnDestroy()
     {

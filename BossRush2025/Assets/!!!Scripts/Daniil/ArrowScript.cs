@@ -27,6 +27,10 @@ public class ArrowScript : MonoBehaviour
             }
             Disappear();
         }
+        else if (other.CompareTag("Ritual"))
+        {
+            Disappear();
+        }
     }
     private void Disappear()
     {

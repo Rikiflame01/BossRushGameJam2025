@@ -153,6 +153,7 @@ public class Susano : EntityState
         _isRitual = true;
         yield return new WaitUntil(() => _navMeshAgent.remainingDistance == 0 && !_navMeshAgent.pathPending);
         _gameManager.RitualBegin();
+        yield return new WaitForSeconds(1f);
         while (_isRitual)
         {
             int randomAttack = Random.Range(1, 4);

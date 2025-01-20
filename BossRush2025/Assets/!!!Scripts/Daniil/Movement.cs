@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private float _hitStunTime;
 
+    [SerializeField] private List<Component> _componentsToDisable;
+
     [Header("Dash Properties")]
     [SerializeField] private InputActionReference _dashKey;
     [SerializeField] private float _dashSpeed;
@@ -32,7 +34,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private InputActionReference _setFireKey;
     [SerializeField] private Image _fireProgress;
     [SerializeField] private float _fireChargeTime;
-    [SerializeField] private string _burnParticles;
     
     private Coroutine _fireCoroutine;
     private float _ritualRadius;
@@ -242,13 +243,8 @@ public class Movement : MonoBehaviour
         _isRitual = false;
         _ritualProgress.enabled = false;
 
-        GameObject _currentParticles = _poolManager.GetObject(_burnParticles);
-        if (_currentParticles.TryGetComponent<RitualParticlesScript>(out RitualParticlesScript particleScript))
-        {
-            particleScript.SetCircleNumber(_circleNumber);
-        }
-
         _gameManager.RitualEnd(_circleNumber);
+        EnableComponents();
         _circleNumber = 0;
         _fireProgress.enabled = false;
         _currentTime = 0;
@@ -277,6 +273,21 @@ public class Movement : MonoBehaviour
         {
             _currentState = State.Ritual;
             _currentAngle = Mathf.Atan2(transform.position.y, transform.position.x);
+            DisableComponents();
+        }
+    }
+    private void EnableComponents()
+    {
+        foreach (Behaviour component in _componentsToDisable)
+        {
+            component.enabled = true;
+        }
+    }
+    private void DisableComponents()
+    {
+        foreach (Behaviour component in _componentsToDisable)
+        {
+            component.enabled = false;
         }
     }
 }

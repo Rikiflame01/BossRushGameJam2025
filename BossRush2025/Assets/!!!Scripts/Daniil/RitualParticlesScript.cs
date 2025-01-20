@@ -22,10 +22,6 @@ public class RitualParticlesScript : MonoBehaviour
         _light2D = GetComponentInChildren<Light2D>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
-    void Start()
-    {
-        SetCircleNumber(2);
-    }
     public void SetCircleNumber(int circleNumber)
     {
         StartCoroutine(StartParticles(circleNumber));
