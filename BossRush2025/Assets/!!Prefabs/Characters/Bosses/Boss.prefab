@@ -154,7 +154,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.19526975}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -199,6 +199,7 @@ MonoBehaviour:
   _maxEnemyCount: 4
   _enemy: Enemy
   _summonDelay: 0.3
+  _enemyAppearParticle: WaterAppearParticles
   _randomProjectileCount: 0
   _randomDelay: 0.5
   _arcProjectileCount: 10

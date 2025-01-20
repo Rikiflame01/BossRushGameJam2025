@@ -204,6 +204,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemySO: {fileID: 11400000, guid: 56bbf1fb17d87644fb822e4b0fbeb574, type: 2}
   _meleeDamage: {fileID: 3142533996933633578}
+  _appearDelay: 1
+  _target: {fileID: 0}
+  _componentsToDisable:
+  - {fileID: 7489239248823100792}
+  - {fileID: 1659499698888272645}
 --- !u!114 &5974231797828322153
 MonoBehaviour:
   m_ObjectHideFlags: 0

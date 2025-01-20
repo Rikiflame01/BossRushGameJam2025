@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemySO _enemySO;
     [SerializeField] private MeleeDamage _meleeDamage;
-    private bool _canMove = false;
+    [SerializeField] private float _appearDelay;
+    private bool _canMove = false, _isAppear = false;
     private PoolManager _poolManager;
     private NavMeshAgent _navMeshAgent;
     [SerializeField] private Transform _target;
     private Knockback _knockBack;
     private HealthManager _healthManager;
+    [SerializeField] private List<Component> _componentsToDisable; 
 
     void Awake()
     {
@@ -35,7 +39,10 @@ public class Enemy : MonoBehaviour
         _target = GameObject.FindAnyObjectByType<Movement>().transform;
         _canMove = true;
     }
-
+    void Start()
+    {
+        if(!_isAppear) StartCoroutine(DisableMovementForTime(_appearDelay));
+    }
     void Update()
     {
         Move();
@@ -68,7 +75,7 @@ public class Enemy : MonoBehaviour
     }
     void OnEnable()
     {
-        EnableMovement();
+        StartCoroutine(DisableMovementForTime(_appearDelay));
     }
     void OnDisable()
     {
@@ -89,5 +96,21 @@ public class Enemy : MonoBehaviour
     private void ReturnInPool()
     {
         _poolManager.ReturnObject(gameObject, _enemySO._name);
+    }
+    private IEnumerator DisableMovementForTime(float _disableTime)
+    {
+        _isAppear = true;
+        DisableMovement();
+        foreach (Behaviour component in _componentsToDisable)
+        {
+            component.enabled = false;
+        }
+        yield return new WaitForSeconds(_disableTime);
+        EnableMovement();
+        foreach (Behaviour component in _componentsToDisable)
+        {
+            component.enabled = true;
+        }
+        _isAppear = false;
     }
 }

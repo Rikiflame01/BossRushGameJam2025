@@ -63,9 +63,21 @@ public class Katana : MonoBehaviour
         yield return new WaitForSeconds(_attackDelay);
         _canAttack = true;
     }
-
+    void OnDisable()
+    {
+        _katanaAttackKey.action.performed -= Attack;
+    }
+    void OnEnable()
+    {
+        _katanaAttackKey.action.performed += Attack;
+    }
     void OnDestroy()
     {
         _katanaAttackKey.action.performed -= Attack;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(_katanaAttackPos.position, _attackRadius);
     }
 }

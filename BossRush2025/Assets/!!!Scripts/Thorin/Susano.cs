@@ -54,6 +54,7 @@ public class Susano : EntityState
     [SerializeField] private int _maxEnemyCount = 4;
     [SerializeField] private string _enemy;
     [SerializeField] private float _summonDelay = 0.3f;
+    [SerializeField] private string _enemyAppearParticle;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -218,6 +219,7 @@ public class Susano : EntityState
                 randomPlace = (randomPlace - (Vector2)transform.position).normalized * (3 - distanceToBoss);
             }
             spawnedEnemy.transform.position = randomPlace;
+            _poolManager.GetObject(_enemyAppearParticle).transform.position = randomPlace;
         }
     }
 
@@ -482,5 +484,11 @@ public class Susano : EntityState
         _currentAttack = null;
         ChangeState(State.Walking);
         StartCoroutine(StartAttacks());
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _jumpAttackRadius);
+        Gizmos.DrawWireSphere(transform.position, _circualSwordStrikeAttackRadius);
     }
 }
