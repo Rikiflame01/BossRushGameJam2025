@@ -17,9 +17,11 @@ public class GameManager : MonoBehaviour
     public float RitualCircleRadius;
     public Transform RitualCenter;
     public event Action RitualStart, RitualFinished;
+    public event Action PlayerDie, BossDefeat;
     void Start()
     {
         _poolManager = FindAnyObjectByType<PoolManager>();
+        FindAnyObjectByType<Movement>().GetComponent<HealthManager>()._onDie += GameOver;
     }
     public void RitualBegin()
     {
@@ -46,5 +48,9 @@ public class GameManager : MonoBehaviour
             _bossHealth.TakeDamage(singleDamage);
             yield return new WaitForSeconds(_burnDelay);
         }
+    }
+    private void GameOver()
+    {
+        PlayerDie?.Invoke();
     }
 }

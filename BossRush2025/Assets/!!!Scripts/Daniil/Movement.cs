@@ -76,6 +76,8 @@ public class Movement : MonoBehaviour
         _setFireKey.action.started += StartSettingFire;
         _setFireKey.action.canceled += EndSettingFire;
 
+        _gameManager.PlayerDie += Die;
+
         _defaultSpeed = _speed;
 
         _ritualRadius = _gameManager.RitualCircleRadius;
@@ -289,5 +291,10 @@ public class Movement : MonoBehaviour
         {
             component.enabled = false;
         }
+    }
+    private void Die()
+    {
+        DisableComponents();
+        this.enabled = false;
     }
 }

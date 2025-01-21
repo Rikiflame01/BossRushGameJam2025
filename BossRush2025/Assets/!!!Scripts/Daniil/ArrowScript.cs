@@ -1,17 +1,28 @@
 using UnityEngine;
+using System.Collections;
 
 public class ArrowScript : MonoBehaviour
 {
-    [SerializeField] float _speed;
-    [SerializeField] float _damage;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _damage;
+    [SerializeField] private ParticleSystem _splash;
+
     private PoolManager _poolManager;
+    private Collider2D _collider;
+    private SpriteRenderer _spriteRenderer;
+
+    private bool _canMove = true;
+
     void Start()
     {
+        _collider = GetComponent<Collider2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _poolManager = FindAnyObjectByType<PoolManager>();
     }
     void Update()
     {
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
+        if(_canMove)
+            transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,15 +36,27 @@ public class ArrowScript : MonoBehaviour
             {
                 knockBack.PlayKnockBack(transform.position);
             }
-            Disappear();
+            SplashDisappear();
         }
         else if (other.CompareTag("Ritual"))
         {
-            Disappear();
+            SplashDisappear();
         }
     }
-    private void Disappear()
+    private void SplashDisappear()
     {
+        _splash.Play();
+        _spriteRenderer.enabled = false;
+        StartCoroutine(Disappear());
+    }
+    private IEnumerator Disappear()
+    {
+        _canMove = false;
+        _collider.enabled = false;
+        yield return new WaitForSeconds(3f);
+        _collider.enabled = true;
+        _spriteRenderer.enabled = true;
+        _canMove = true;
         _poolManager.ReturnObject(gameObject, "Arrow");
     }
 }

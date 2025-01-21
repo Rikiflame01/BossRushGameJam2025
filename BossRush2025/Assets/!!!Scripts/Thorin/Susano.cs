@@ -17,7 +17,7 @@ public class Susano : EntityState
     [SerializeField] private float _maxMoveDistance;
     private NavMeshAgent _navMeshAgent;
     private bool _moveWaiting = false;
-    private Coroutine _currentAttack;
+    private Coroutine _currentAttack, _attackCycle;
     private bool _isRitual = false;
 
     private Transform _player;
@@ -96,12 +96,13 @@ public class Susano : EntityState
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
 
-        StartCoroutine(StartAttacks());
+        _attackCycle = StartCoroutine(StartAttacks());
         _navMeshAgent.updateRotation = false;
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
         _healthManager._onHit += CheckPhaseTransition;
         _gameManager.RitualFinished += FinishRitual;
+        _gameManager.PlayerDie += StopAttack;
 
         ChangeState(State.Walking);
     }
@@ -462,12 +463,18 @@ public class Susano : EntityState
         if(healthPart <= 0.5f && _phase < 2)
         {
             _phase = 2;
+
             _projectileCount += 2;
             _minEnemyCount += 2;
             _maxEnemyCount += 2;
             _jumpAttackRadius += 1;
             _circualSwordStrikeAttackRadius += 3;
             _navMeshAgent.speed = _speed + 2;
+
+            _randomDelay -= 0.2f;
+            _axisDelay /= 2f;
+            _arcProjectileCount += 4;
+            StartCoroutine(PhaseTranslate());
         }
     }
     private IEnumerator NoAxisAttack()
@@ -484,6 +491,21 @@ public class Susano : EntityState
         _currentAttack = null;
         ChangeState(State.Walking);
         StartCoroutine(StartAttacks());
+    }
+    private IEnumerator PhaseTranslate()
+    {
+        StopCoroutine(_attackCycle);
+        CameraShake._instance.Shake(1.0f, 1f);
+        yield return new WaitForSeconds(2f);
+        _attackCycle = StartCoroutine(StartAttacks());
+    }
+    private void StopAttack()
+    {
+        StopCoroutine(_currentAttack);
+        _currentAttack = null;
+        StopCoroutine(_attackCycle);
+        _attackCycle = null;
+        ChangeState(State.Idle);
     }
     private void OnDrawGizmosSelected()
     {
