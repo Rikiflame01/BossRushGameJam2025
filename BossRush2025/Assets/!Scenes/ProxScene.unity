@@ -171,6 +171,7 @@ MonoBehaviour:
   - {fileID: 30192518}
   _speed: 0
   _maxMoveDistance: 0
+  _attackDelay: 0
   _accelerationSpeed: 10
   _accelerationAttack: 10
   _accelerationAttackTime: 3
@@ -565,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 20
+  _takeDamageSFX: 
 --- !u!114 &178331544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,6 +3439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _takeDamageSFX: 
 --- !u!114 &1539011868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4270,7 +4273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cbaaa7549fdb34b9cfc724f103d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolManager: {fileID: 0}
   _bowSlider: {fileID: 1207520712}
   _arrow: {fileID: 5436074031425866473, guid: ad5d0b186ae955341b4be4a7a3a3434a, type: 3}
   _offset: {x: 0, y: 2.3, z: 0}
@@ -4472,6 +4474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _takeDamageSFX: 
 --- !u!114 &1883131148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,6 +4724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _takeDamageSFX: 
 --- !u!114 &1985434225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5062,6 +5066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 20
+  _takeDamageSFX: 
 --- !u!70 &2056157870
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5330,6 +5335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _takeDamageSFX: 
 --- !u!1001 &1996681852940144123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5506,6 +5512,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1001 &5806407527420928744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_Name
+      value: CrescentAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3206582
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5722675
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921122276398222548, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
 --- !u!1001 &5849778764541973921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5704,3 +5767,4 @@ SceneRoots:
   - {fileID: 324019529}
   - {fileID: 1602107661}
   - {fileID: 1535671421}
+  - {fileID: 5806407527420928744}

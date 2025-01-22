@@ -17,12 +17,12 @@ public class TsukuyomiBoss : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-        
+
     }
 
     void OnDestroy()
