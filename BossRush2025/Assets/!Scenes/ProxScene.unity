@@ -5659,6 +5659,7 @@ GameObject:
   - component: {fileID: 8305689632746120553}
   - component: {fileID: 8305689632746120552}
   - component: {fileID: 8305689632746120554}
+  - component: {fileID: 8305689632746120555}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -5754,6 +5755,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _crescentMoonPrefab: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+--- !u!114 &8305689632746120555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295404875366409714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a23c7ee4df60b44a1312faeb25613a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
