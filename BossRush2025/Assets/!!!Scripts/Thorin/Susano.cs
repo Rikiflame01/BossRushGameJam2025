@@ -464,7 +464,7 @@ public class Susano : EntityState
     }
     private void CheckPhaseTransition(float healthPart)
     {
-        if(healthPart <= 0.5f && _phase < 2)
+        if(_healthManager.GetHealth() / _healthManager._maxHealth <= 0.5f && _phase < 2)
         {
             _phase = 2;
 

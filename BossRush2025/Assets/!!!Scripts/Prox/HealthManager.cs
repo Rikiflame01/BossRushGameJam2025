@@ -29,7 +29,7 @@ public class HealthManager : MonoBehaviour
             return;
 
         _health = Math.Clamp(_health - damage, 0, _maxHealth);
-        _onHit?.Invoke(_health / _maxHealth);
+        _onHit?.Invoke(damage);
         if(_audioManager!= null)
             _audioManager.PlaySFX(_takeDamageSFX);
         if (_health == 0)
@@ -54,6 +54,11 @@ public class HealthManager : MonoBehaviour
             return;
 
         _health = Math.Clamp(health, 0, _maxHealth);
+    }
+
+    public float GetHealth()
+    {
+        return _health;
     }
 
     public void EnableReceivingDamage()

@@ -13,6 +13,6 @@ public class Healthbar : MonoBehaviour
 
     void UpdateHealthBar(float healthPart)
     {
-        _healthBar.fillAmount = healthPart;
+        _healthBar.fillAmount = _healthManager.GetHealth()  / _healthManager._maxHealth;
     }
 }
