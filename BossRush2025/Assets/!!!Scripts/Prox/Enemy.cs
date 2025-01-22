@@ -54,6 +54,7 @@ public class Enemy : MonoBehaviour
         _currentParticlesRotate = _walkParticles.transform.eulerAngles;
 
         _gameManager.PlayerDie += StopChasing;
+        _gameManager.RitualStart += ReturnInPool;
     }
     void Start()
     {

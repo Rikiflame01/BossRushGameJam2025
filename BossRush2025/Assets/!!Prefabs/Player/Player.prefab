@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cbaaa7549fdb34b9cfc724f103d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolManager: {fileID: 0}
   _bowSlider: {fileID: 2828413968393018562}
   _arrow: {fileID: 5436074031425866473, guid: ad5d0b186ae955341b4be4a7a3a3434a, type: 3}
   _offset: {x: 0, y: 2.3, z: 0}
@@ -634,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 20
+  _takeDamageSFX: Damage player
 --- !u!114 &7636613203868545502
 MonoBehaviour:
   m_ObjectHideFlags: 0

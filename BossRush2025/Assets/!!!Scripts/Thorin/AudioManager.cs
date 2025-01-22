@@ -1,7 +1,7 @@
 /*
  * Author : thorin
  * desc: audio manager using singleton pattern
- * intention: to be used accross the hwole game
+ * intention: to be used accross the whole game
  */
 using UnityEngine;
 

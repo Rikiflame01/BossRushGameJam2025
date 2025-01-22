@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class Bow : MonoBehaviour
 {
-    [SerializeField] private PoolManager _poolManager;
+    private PoolManager _poolManager;
+    private AudioManager _audioManager;
+
     [SerializeField] private Slider _bowSlider;
     [SerializeField] private GameObject _arrow;
     [SerializeField] Vector3 _offset;
@@ -22,6 +24,9 @@ public class Bow : MonoBehaviour
     [SerializeField] private InputActionReference _bowKey;
     void Start() 
     {
+        _poolManager = FindAnyObjectByType<PoolManager>();
+        _audioManager = FindAnyObjectByType<AudioManager>();
+
         _bowKey.action.started += StartCharge;
         _bowKey.action.canceled += ReleaseArrow;
         _bowSlider.maxValue = _chargeTime;
@@ -45,6 +50,7 @@ public class Bow : MonoBehaviour
         _startTime = Time.time;
         _bowSlider.gameObject.SetActive(true);
         _bowSlider.value = 0f;
+        _audioManager.PlaySFX("Tension");
     }
     void ReleaseArrow(InputAction.CallbackContext context)
     {
@@ -69,6 +75,7 @@ public class Bow : MonoBehaviour
                     currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, angle);
                     helpInt *= -1;
                 }*/
+                _audioManager.PlaySFX("Shot");
             }
         }
         _bowSlider.gameObject.SetActive(false);

@@ -4,6 +4,10 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
+    [SerializeField] private string _takeDamageSFX;
+
+    private AudioManager _audioManager;
+
     public float _maxHealth { get; private set; }
     private bool _isAlive = true;
     private bool _receivceDamage = true;
@@ -13,6 +17,10 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         _maxHealth = _health;
+        if (_takeDamageSFX != null)
+        {
+            _audioManager = FindAnyObjectByType<AudioManager>();
+        }
     }
 
     public void TakeDamage(float damage)
@@ -22,6 +30,8 @@ public class HealthManager : MonoBehaviour
 
         _health = Math.Clamp(_health - damage, 0, _maxHealth);
         _onHit?.Invoke(_health / _maxHealth);
+        if(_audioManager!= null)
+            _audioManager.PlaySFX(_takeDamageSFX);
         if (_health == 0)
         {
             if (_onDie != null)
@@ -30,7 +40,6 @@ public class HealthManager : MonoBehaviour
                 Destroy(gameObject);
         }
     }
-
     public void AddHealth(float health)
     {
         if (!_isAlive)

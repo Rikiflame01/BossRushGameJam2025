@@ -15,6 +15,8 @@ public class Susano : EntityState
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
     [SerializeField] private float _speed;
     [SerializeField] private float _maxMoveDistance;
+    [SerializeField] private float _attackDelay;
+
     private NavMeshAgent _navMeshAgent;
     private bool _moveWaiting = false;
     private Coroutine _currentAttack, _attackCycle;
@@ -148,7 +150,7 @@ public class Susano : EntityState
 
             if (!_finishedCoroutine)
                 yield return new WaitUntil(() => _finishedCoroutine);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(_attackDelay);
         }
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
@@ -178,7 +180,7 @@ public class Susano : EntityState
             }
             if (!_finishedCoroutine)
                 yield return new WaitUntil(() => _finishedCoroutine);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(_attackDelay);
         }
     }
 
@@ -272,6 +274,7 @@ public class Susano : EntityState
 
     private IEnumerator Shooting()
     {
+        _finishedCoroutine = false;
         DisableMovement();
         yield return new WaitForSeconds(_chargeTime);
         Vector2 direction = _player.transform.position - transform.position;
@@ -285,7 +288,8 @@ public class Susano : EntityState
             currentProjectile.transform.position = transform.position;
             helpInt *= -1;
         }
-        StartCoroutine(DisableMovementForTime(1f));
+        StartCoroutine(DisableMovementForTime(0.5f));
+        _finishedCoroutine = true;
     }
     private IEnumerator RandomShooting()
     {
@@ -428,7 +432,7 @@ public class Susano : EntityState
     private IEnumerator MoveWaiting()
     {
         _moveWaiting = true;
-        yield return new WaitForSeconds(Random.Range(0.8f, 2f));
+        yield return new WaitForSeconds(Random.Range(0.4f, 1.4f));
         if (!_isRitual)
         {
             MoveToRandomPoint();

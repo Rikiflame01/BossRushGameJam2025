@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _takeDamageSFX: Boss damage
 --- !u!114 &1661312183191083227
 MonoBehaviour:
   m_ObjectHideFlags: 0

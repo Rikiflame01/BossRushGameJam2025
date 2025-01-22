@@ -7,6 +7,8 @@ public class ArrowScript : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private ParticleSystem _splash;
 
+    private string _obstacleLayerName = "Obstacles";
+
     private PoolManager _poolManager;
     private Collider2D _collider;
     private SpriteRenderer _spriteRenderer;
@@ -21,7 +23,7 @@ public class ArrowScript : MonoBehaviour
     }
     void Update()
     {
-        if(_canMove)
+        if (_canMove)
             transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +41,10 @@ public class ArrowScript : MonoBehaviour
             SplashDisappear();
         }
         else if (other.CompareTag("Ritual"))
+        {
+            SplashDisappear();
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer(_obstacleLayerName))
         {
             SplashDisappear();
         }

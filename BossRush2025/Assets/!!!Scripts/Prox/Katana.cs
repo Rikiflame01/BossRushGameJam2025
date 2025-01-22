@@ -16,8 +16,13 @@ public class Katana : MonoBehaviour
     [SerializeField] private InputActionReference _katanaAttackKey;
     private bool _canAttack = true;
 
+    private string _katanaSound = "Katana ";
+    private AudioManager _audioManager;
+
     void Start()
     {
+        _audioManager = FindAnyObjectByType<AudioManager>();
+
         _katanaAttackKey.action.performed += Attack;
     }
 
@@ -54,6 +59,7 @@ public class Katana : MonoBehaviour
                 _canAttack = false;
             }
         }
+        _audioManager.PlaySFX(_katanaSound + Random.Range(1, 4));
 
         StartCoroutine(AttackDelay());
     }

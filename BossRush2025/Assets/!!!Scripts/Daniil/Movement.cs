@@ -207,11 +207,14 @@ public class Movement : MonoBehaviour
     }
     private void StartRitual(InputAction.CallbackContext callback)
     {
-        _isRitual = true;
-        _startRitualAngle = _currentAngle;
-        ChangeRitualDirection(false);
-        _progressTransform.eulerAngles = new Vector3(_progressTransform.eulerAngles.x, _progressTransform.eulerAngles.y, _startRitualAngle * Mathf.Rad2Deg);
-        _ritualProgress.enabled = true;
+        if (_currentState == State.Ritual)
+        {
+            _isRitual = true;
+            _startRitualAngle = _currentAngle;
+            ChangeRitualDirection(false);
+            _progressTransform.eulerAngles = new Vector3(_progressTransform.eulerAngles.x, _progressTransform.eulerAngles.y, _startRitualAngle * Mathf.Rad2Deg);
+            _ritualProgress.enabled = true;
+        }
     }
     private void StopRitual(InputAction.CallbackContext callback)
     {

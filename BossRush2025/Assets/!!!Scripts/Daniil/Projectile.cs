@@ -4,6 +4,9 @@ public abstract class Projectile : MonoBehaviour
 {
     [SerializeField] protected string _name;
     [SerializeField] private float _damage;
+
+    private string _obstacleLayerName = "Obstacles";
+
     protected PoolManager _poolManager;
     void Start()
     {
@@ -28,6 +31,10 @@ public abstract class Projectile : MonoBehaviour
                 knockBack.PlayKnockBack(transform.position);
             }
             CameraShake._instance.Shake();
+            ReturnInPool();
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer(_obstacleLayerName))
+        {
             ReturnInPool();
         }
     }

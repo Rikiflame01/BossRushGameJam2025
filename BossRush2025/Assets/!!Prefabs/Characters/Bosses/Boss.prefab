@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 8989028932586246324}
   _speed: 4
   _maxMoveDistance: 5
+  _attackDelay: 1
   _accelerationSpeed: 15
   _accelerationAttack: 10
   _accelerationAttackTime: 5
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 300
+  _takeDamageSFX: Boss damage
 --- !u!114 &1631012741786938865
 MonoBehaviour:
   m_ObjectHideFlags: 0
