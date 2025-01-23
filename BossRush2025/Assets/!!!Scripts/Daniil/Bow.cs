@@ -9,6 +9,7 @@ public class Bow : MonoBehaviour
 {
     private PoolManager _poolManager;
     private AudioManager _audioManager;
+    private Knockback _knockback;
 
     [SerializeField] private Slider _bowSlider;
     [SerializeField] private GameObject _arrow;
@@ -26,6 +27,8 @@ public class Bow : MonoBehaviour
     {
         _poolManager = FindAnyObjectByType<PoolManager>();
         _audioManager = FindAnyObjectByType<AudioManager>();
+
+        _knockback = GetComponentInParent<Knockback>();
 
         _bowKey.action.started += StartCharge;
         _bowKey.action.canceled += ReleaseArrow;
@@ -76,6 +79,7 @@ public class Bow : MonoBehaviour
                     helpInt *= -1;
                 }*/
                 _audioManager.PlaySFX("Shot");
+                _knockback.PlayKnockBack(direction, 4f, 0.5f);
             }
         }
         _bowSlider.gameObject.SetActive(false);

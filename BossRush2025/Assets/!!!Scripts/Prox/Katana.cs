@@ -56,9 +56,9 @@ public class Katana : MonoBehaviour
                 }
 
                 CameraShake._instance.Shake();
-                _canAttack = false;
             }
         }
+        _canAttack = false;
         _audioManager.PlaySFX(_katanaSound + Random.Range(1, 4));
 
         StartCoroutine(AttackDelay());

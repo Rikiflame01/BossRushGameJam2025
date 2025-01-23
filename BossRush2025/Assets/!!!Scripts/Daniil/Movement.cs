@@ -146,7 +146,7 @@ public class Movement : MonoBehaviour
                     {
                         _startRitualAngle = _targetRitualAngle;
                         _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
-                        _circleNumber++;
+                        if(_circleNumber < 3) _circleNumber++;
                         ClearLeafs();
                     }
                     _ritualProgress.fillAmount = currentFloat / targetFloat;
@@ -234,6 +234,7 @@ public class Movement : MonoBehaviour
         if (_fireCoroutine == null) return;
         StopCoroutine(_fireCoroutine);
         _fireCoroutine = null;
+        _fireProgress.enabled = false;
     }
     private IEnumerator FireRitual()
     {

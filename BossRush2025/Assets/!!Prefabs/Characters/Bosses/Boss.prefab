@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3044510176484587180}
   - component: {fileID: 604447345512464825}
   - component: {fileID: 1631012741786938865}
+  - component: {fileID: 7327401580434499403}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -183,6 +184,9 @@ MonoBehaviour:
   _speed: 4
   _maxMoveDistance: 5
   _attackDelay: 1
+  _attackIconName: 
+  _attackActiveIcons: []
+  _attackPassiveIcons: []
   _accelerationSpeed: 15
   _accelerationAttack: 10
   _accelerationAttackTime: 5
@@ -243,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 300
+  _health: 150
   _takeDamageSFX: Boss damage
 --- !u!114 &1631012741786938865
 MonoBehaviour:
@@ -262,3 +266,16 @@ MonoBehaviour:
   _waveSpawnDelay: 3
   _upSpawnWavePosition: {fileID: 0}
   _downSpawnWavePosition: {fileID: 0}
+--- !u!114 &7327401580434499403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692907461223059489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a23c7ee4df60b44a1312faeb25613a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}

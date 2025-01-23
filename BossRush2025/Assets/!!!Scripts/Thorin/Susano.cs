@@ -4,6 +4,7 @@
  * intention implement custom logic here.
  */
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using DG.Tweening;
 public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
+
     [SerializeField] private float _speed;
     [SerializeField] private float _maxMoveDistance;
     [SerializeField] private float _attackDelay;
@@ -28,18 +30,11 @@ public class Susano : EntityState
     private HealthManager _healthManager;
     private Rigidbody2D _rb;
 
-    [Header("Acceleration Attack")]
-    [SerializeField] private float _accelerationSpeed = 15f;
-    [SerializeField] private float _accelerationAttack = 10f;
-    [SerializeField] private float _accelerationAttackTime = 5f;
-    private bool _isAccelerationAttack = false;
-    private Vector2 _accelerationDirection;
+    [SerializeField] private GameObject _attackIcon;
+    [SerializeField] private Vector3 _offsetIcon;
+    [SerializeField] private List<Sprite> _attackActiveIcons;
+    [SerializeField] private List<Sprite> _attackPassiveIcons;
 
-    [Header("Shooting")]
-    [SerializeField] private float _chargeTime;
-    [SerializeField] private float _angleBetweenProjectiles;
-    [SerializeField] private float _projectileCount;
-    [SerializeField] private string _shootProjectile;
 
     [Header("Melee Attack")]
     [SerializeField] private float _circualSwordStrikeAttackRadius = 5f;
@@ -57,6 +52,19 @@ public class Susano : EntityState
     [SerializeField] private string _enemy;
     [SerializeField] private float _summonDelay = 0.3f;
     [SerializeField] private string _enemyAppearParticle;
+
+    [Header("Shooting")]
+    [SerializeField] private float _chargeTime;
+    [SerializeField] private float _angleBetweenProjectiles;
+    [SerializeField] private float _projectileCount;
+    [SerializeField] private string _shootProjectile;
+
+    [Header("Acceleration Attack")]
+    [SerializeField] private float _accelerationSpeed = 15f;
+    [SerializeField] private float _accelerationAttack = 10f;
+    [SerializeField] private float _accelerationAttackTime = 5f;
+    private bool _isAccelerationAttack = false;
+    private Vector2 _accelerationDirection;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -121,6 +129,11 @@ public class Susano : EntityState
             {
                 randomAttack = Random.Range(1, 5);
             }
+
+            GameObject currentAttackIcon = Instantiate(_attackIcon, transform.position + _offsetIcon, Quaternion.identity);
+            currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackActiveIcons[randomAttack - 1];
+            yield return new WaitForSeconds(1f);
+
             switch (randomAttack)
             {
                 case 1:
@@ -163,6 +176,11 @@ public class Susano : EntityState
             int randomAttack = Random.Range(1, 4);
             if (randomAttack == 3 && !_canAxisProjectile)
                 randomAttack = Random.Range(1, 3);
+
+            GameObject currentAttackIcon = Instantiate(_attackIcon, transform.position + _offsetIcon, Quaternion.identity);
+            currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackPassiveIcons[randomAttack - 1];
+            yield return new WaitForSeconds(1f);
+
             switch (randomAttack)
             {
                 case 1:
@@ -178,6 +196,7 @@ public class Susano : EntityState
                     StartCoroutine(NoAxisAttack());
                     break;
             }
+
             if (!_finishedCoroutine)
                 yield return new WaitUntil(() => _finishedCoroutine);
             yield return new WaitForSeconds(_attackDelay);
@@ -493,6 +512,11 @@ public class Susano : EntityState
         _finishedCoroutine = true;
         StopCoroutine(_currentAttack);
         _currentAttack = null;
+        StartCoroutine(DisableAfterRitual());
+    }
+    private IEnumerator DisableAfterRitual()
+    {
+        yield return new WaitForSeconds(2f);
         ChangeState(State.Walking);
         StartCoroutine(StartAttacks());
     }
