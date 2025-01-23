@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: DirectProjectile
-  _damage: 1
+  _damage: 3
   _speed: 8
 --- !u!58 &-3756458164658544003
 CircleCollider2D:

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 604447345512464825}
   - component: {fileID: 1631012741786938865}
   - component: {fileID: 7327401580434499403}
+  - component: {fileID: 2736274151627132651}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -34,8 +35,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 4, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,12 +84,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -4772570147578233537, guid: 442234191a351664ea063280ef831af5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 4.2, y: 5.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -158,14 +159,14 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.2}
+    oldSize: {x: 0.56, y: 0.75}
+    newSize: {x: 4.2, y: 5.625}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.6094605}
+  m_Size: {x: 2.24, y: 2.24}
   m_EdgeRadius: 0
 --- !u!114 &3780742884025277583
 MonoBehaviour:
@@ -184,16 +185,20 @@ MonoBehaviour:
   _speed: 4
   _maxMoveDistance: 5
   _attackDelay: 1
-  _attackIconName: 
-  _attackActiveIcons: []
-  _attackPassiveIcons: []
-  _accelerationSpeed: 15
-  _accelerationAttack: 10
-  _accelerationAttackTime: 5
-  _chargeTime: 1
-  _angleBetweenProjectiles: 30
-  _projectileCount: 3
-  _shootProjectile: DirectProjectile
+  _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
+  _offsetIcon: {x: 0, y: 0, z: 0}
+  _attackActiveIcons:
+  - {fileID: -357941818, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
+  - {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
+  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
+  - {fileID: 21300000, guid: 296577371c75b0a4293775feb44690ad, type: 3}
+  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  _attackPassiveIcons:
+  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
+  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
+  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
+  _splash: {fileID: 1798653627627826021, guid: 4f2ceaf078106bc46936bac0c0c6ceda, type: 3}
+  _meleeAttackDelay: 1
   _circualSwordStrikeAttackRadius: 5
   _circualSwordStrikeAttackDamage: 6
   _jumpAttackAppearNearRadius: 6
@@ -205,6 +210,14 @@ MonoBehaviour:
   _enemy: Enemy
   _summonDelay: 0.3
   _enemyAppearParticle: WaterAppearParticles
+  _chargeTime: 1
+  _angleBetweenProjectiles: 30
+  _projectileCount: 3
+  _shootProjectile: DirectProjectile
+  _accelerationSpeed: 15
+  _accelerationAttack: 10
+  _accelerationAttackTime: 5
+  _finishedCoroutine: 1
   _randomProjectileCount: 0
   _randomDelay: 0.5
   _arcProjectileCount: 10
@@ -279,3 +292,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}
+--- !u!95 &2736274151627132651
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692907461223059489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fdab4da625a5ea4694d6f36ab02ac6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

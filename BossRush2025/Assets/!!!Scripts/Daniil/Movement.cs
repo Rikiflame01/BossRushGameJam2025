@@ -3,11 +3,12 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    private enum State { Run, Ritual };
+    private enum State { Run, Ritual , Disable};
     private State _currentState = State.Run;    
 
     private Rigidbody2D _playerRb;
@@ -277,10 +278,24 @@ public class Movement : MonoBehaviour
     {
         if (other.CompareTag("Ritual"))
         {
-            _currentState = State.Ritual;
             _currentAngle = Mathf.Atan2(transform.position.y, transform.position.x);
             DisableComponents();
+            if(Vector2.Distance(transform.position, _gameManager.RitualCenter.position) < _gameManager.RitualCircleRadius - 1f)
+            {
+                StartCoroutine(MoveToCircle());
+            }
+            else
+            {
+                _currentState = State.Ritual;
+            }
         }
+    }
+    private IEnumerator MoveToCircle()
+    {
+        _currentState = State.Disable;
+        transform.DOMove((Vector2)_ritualCenter.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _ritualRadius, 0.25f);
+        yield return new WaitForSeconds(0.25f);
+        _currentState = State.Ritual;
     }
     private void EnableComponents()
     {

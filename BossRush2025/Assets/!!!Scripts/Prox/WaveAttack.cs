@@ -14,12 +14,7 @@ public class WaveAttack : MonoBehaviour
     {
         Susano._sussanoWaveAttack += StartWaveAttack;
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     public void StartWaveAttack()
     {
         _countOfWaves = 0;

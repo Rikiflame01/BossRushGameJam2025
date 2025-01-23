@@ -28,15 +28,18 @@ public class Susano : EntityState
     private PoolManager _poolManager;
     private GameManager _gameManager;
     private HealthManager _healthManager;
+    private Animator _animator;
     private Rigidbody2D _rb;
 
     [SerializeField] private GameObject _attackIcon;
-    [SerializeField] private Vector3 _offsetIcon;
     [SerializeField] private List<Sprite> _attackActiveIcons;
     [SerializeField] private List<Sprite> _attackPassiveIcons;
 
 
     [Header("Melee Attack")]
+    [SerializeField] private GameObject _splash;
+    [SerializeField] private float _meleeAttackDelay = 1f;
+
     [SerializeField] private float _circualSwordStrikeAttackRadius = 5f;
     [SerializeField] private float _circualSwordStrikeAttackDamage = 6f;
 
@@ -65,10 +68,11 @@ public class Susano : EntityState
     [SerializeField] private float _accelerationAttackTime = 5f;
     private bool _isAccelerationAttack = false;
     private Vector2 _accelerationDirection;
+    private int _accelerationAnim = Animator.StringToHash("acceleration");
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
-    private bool _finishedCoroutine = true;
+    [SerializeField] private bool _finishedCoroutine = true;
 
     [Header("Random Shooting")]
     [SerializeField] private float _randomProjectileCount;
@@ -88,9 +92,25 @@ public class Susano : EntityState
 
     public static event System.Action _sussanoWaveAttack;
     private WaveAttack _waveAttack;
+    private bool _canWaveAttack;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
-    protected override void HandleWalking() { if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); }
+    protected override void HandleWalking() 
+    { 
+        if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); 
+        if(_finishedCoroutine)
+        {
+            Vector2 direction = _player.position - transform.position;
+            if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y);
+            }
+            else if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y);
+            }
+        }
+    }
     protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
 
     protected override void Initialize()
@@ -100,6 +120,7 @@ public class Susano : EntityState
         _collider = GetComponent<Collider2D>();
         _rb = GetComponent<Rigidbody2D>();
         _healthManager = GetComponent<HealthManager>();
+        _animator = GetComponent<Animator>();
 
         _player = FindAnyObjectByType<Movement>().transform;
         _waveAttack = GetComponent<WaveAttack>();
@@ -125,13 +146,14 @@ public class Susano : EntityState
         while (attackedTimes < attackTimes)
         {
             int randomAttack = Random.Range(1, 6);
-            if(_phase < 2 && randomAttack == 5)
+            if((_phase < 2 && randomAttack == 5) || !_canWaveAttack)
             {
                 randomAttack = Random.Range(1, 5);
             }
 
-            GameObject currentAttackIcon = Instantiate(_attackIcon, transform.position + _offsetIcon, Quaternion.identity);
+            GameObject currentAttackIcon = Instantiate(_attackIcon, transform);
             currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackActiveIcons[randomAttack - 1];
+            Destroy(currentAttackIcon, 2f);
             yield return new WaitForSeconds(1f);
 
             switch (randomAttack)
@@ -155,7 +177,7 @@ public class Susano : EntityState
 
                 case 5:
                     _sussanoWaveAttack?.Invoke();
-                    yield return new WaitForSeconds(_waveAttack.GetAttackTime());
+                    StartCoroutine(NoWaveAttack());
                     break;
             }
 
@@ -177,8 +199,10 @@ public class Susano : EntityState
             if (randomAttack == 3 && !_canAxisProjectile)
                 randomAttack = Random.Range(1, 3);
 
-            GameObject currentAttackIcon = Instantiate(_attackIcon, transform.position + _offsetIcon, Quaternion.identity);
+            GameObject currentAttackIcon = Instantiate(_attackIcon, transform);
             currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackPassiveIcons[randomAttack - 1];
+            Destroy(currentAttackIcon, 2f);
+
             yield return new WaitForSeconds(1f);
 
             switch (randomAttack)
@@ -207,8 +231,11 @@ public class Susano : EntityState
     {
         _finishedCoroutine = false;
         _isAccelerationAttack = true;
+        _animator.SetBool(_accelerationAnim, true);
 
         DisableMovement();
+
+        yield return new WaitForSeconds(0.8f);
 
         Vector2 moveDirection = -(transform.position - _player.transform.position).normalized;
         _accelerationDirection = moveDirection;
@@ -223,7 +250,9 @@ public class Susano : EntityState
 
         EnableMovement();
 
+        _animator.SetBool(_accelerationAnim, false);
         _isAccelerationAttack = false;
+        yield return new WaitForSeconds(0.5f);
         _finishedCoroutine = true;
     }
 
@@ -247,11 +276,11 @@ public class Susano : EntityState
 
     private IEnumerator StartMeleeAttack()
     {
-        Debug.Log("Start Melee Attack");
         _finishedCoroutine = false;
         DisableMovement();
         int repeatTimes = 5;
         bool lastCircualSwordStrike = true;
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < repeatTimes; i++)
         {
             int randomAttack = Random.Range(0, 2);
@@ -260,7 +289,6 @@ public class Susano : EntityState
                 lastCircualSwordStrike = false;
 
                 Disappear();
-                yield return new WaitForSeconds(1.0f);
 
                 Vector2 playerPosition = _playerMovement.transform.position;
                 Vector2 bossUpPosition = new Vector2(0, _jumpAttackAppearNearRadius);
@@ -268,12 +296,18 @@ public class Susano : EntityState
 
                 float bossDashPositionY = playerPosition.y;
                 _poolManager.GetObject(_jumpShadow).transform.position = playerPosition;
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(1f);
                 Appear();
 
                 _collider.isTrigger = true;
                 transform.DOMoveY(bossDashPositionY, 0.15f);
-                yield return new WaitForSeconds(0.15f);
+                yield return new WaitForSeconds(0.13f);
+
+                GameObject currentSplash = Instantiate(_splash, playerPosition + Vector2.down * 2, Quaternion.identity);
+                currentSplash.transform.localScale = Vector3.one * 1.5f;
+                Destroy(currentSplash, 1f);
+
+                yield return new WaitForSeconds(0.2f);
                 AreaDamage(_jumpAttackRadius, _jumpAttackDamage, transform.position);
 
                 _collider.isTrigger = false;
@@ -281,11 +315,13 @@ public class Susano : EntityState
             else if (randomAttack == 1)
             {
                 lastCircualSwordStrike = true;
-
+                GameObject currentSplash = Instantiate(_splash, (Vector2)transform.position + Vector2.down * 2.7f, Quaternion.identity);
+                currentSplash.transform.localScale = Vector3.one * 3f;
+                yield return new WaitForSeconds(0.2f);
                 AreaDamage(_circualSwordStrikeAttackRadius, _circualSwordStrikeAttackDamage, transform.position);
             }
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(_meleeAttackDelay);
         }
         EnableMovement();
         _finishedCoroutine = true;
@@ -490,8 +526,7 @@ public class Susano : EntityState
             _projectileCount += 2;
             _minEnemyCount += 2;
             _maxEnemyCount += 2;
-            _jumpAttackRadius += 1;
-            _circualSwordStrikeAttackRadius += 3;
+            _meleeAttackDelay -= 0.3f;
             _navMeshAgent.speed = _speed + 2;
 
             _randomDelay -= 0.2f;
@@ -505,6 +540,12 @@ public class Susano : EntityState
         _canAxisProjectile = false;
         yield return new WaitForSeconds(_axisDelay);
         _canAxisProjectile = true;
+    }
+    private IEnumerator NoWaveAttack()
+    {
+        _canWaveAttack = false;
+        yield return new WaitForSeconds(_waveAttack.GetAttackTime());
+        _canWaveAttack = true;
     }
     private void FinishRitual()
     {
@@ -523,6 +564,12 @@ public class Susano : EntityState
     private IEnumerator PhaseTranslate()
     {
         StopCoroutine(_attackCycle);
+        if (_currentAttack != null)
+        {
+            StopCoroutine(_currentAttack);
+            _currentAttack = null;
+        }
+        _finishedCoroutine = true;
         CameraShake._instance.Shake(1.0f, 1f);
         yield return new WaitForSeconds(2f);
         _attackCycle = StartCoroutine(StartAttacks());

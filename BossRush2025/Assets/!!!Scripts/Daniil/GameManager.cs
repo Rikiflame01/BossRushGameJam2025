@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _ritualCircle;
     [SerializeField] private string _burnParticles;
+    [SerializeField] private string _sakuraWave;
 
     [SerializeField] private HealthManager _bossHealth;
     [SerializeField] private List<float> _burnDamage;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     {
         RitualStart?.Invoke();
         _ritualCircle.SetActive(true);
+        GameObject _currentParticles = _poolManager.GetObject(_sakuraWave);
+        _currentParticles.transform.position = Vector3.zero;
     }
     public void RitualEnd(int circleNumber)
     {
