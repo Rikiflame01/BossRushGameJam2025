@@ -132,6 +132,8 @@ public class Susano : EntityState
         _gameManager.RitualFinished += FinishRitual;
         _gameManager.PlayerDie += StopAttack;
 
+        _healthManager._onDie += GameManager._instance.DefeatedBoss;
+
         ChangeState(State.Walking);
     }
 
