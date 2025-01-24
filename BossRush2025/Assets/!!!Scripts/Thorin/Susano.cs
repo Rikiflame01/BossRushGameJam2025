@@ -27,9 +27,14 @@ public class Susano : EntityState
     private Transform _player;
     private PoolManager _poolManager;
     private GameManager _gameManager;
+    private AudioManager _audioManager;
+
     private HealthManager _healthManager;
     private Animator _animator;
     private Rigidbody2D _rb;
+
+    private string _firstTrack = "Susanoo Phase 1";
+    private string _secondTrack = "Susanoo Phase 2";
 
     private int __phaseAnim = Animator.StringToHash("phase");
 
@@ -123,6 +128,7 @@ public class Susano : EntityState
         _waveAttack = GetComponent<WaveAttack>();
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
+        _audioManager = FindAnyObjectByType<AudioManager>();
 
         _attackCycle = StartCoroutine(StartAttacks());
         _navMeshAgent.updateRotation = false;
@@ -133,7 +139,7 @@ public class Susano : EntityState
         _gameManager.PlayerDie += StopAttack;
 
         _healthManager._onDie += GameManager._instance.DefeatedBoss;
-
+        _audioManager.PlayBGM(_firstTrack);
         ChangeState(State.Walking);
     }
 
@@ -528,10 +534,11 @@ public class Susano : EntityState
     }
     private void CheckPhaseTransition(float healthPart)
     {
-        if(_healthManager.GetHealth() / _healthManager._maxHealth <= 0.5f && _phase < 2)
+        if(_healthManager.GetHealth() / _healthManager._maxHealth <= 0.6f && _phase < 2)
         {
             _phase = 2;
             _animator.SetInteger(__phaseAnim, 2);
+            _audioManager.PlayBGM(_secondTrack);
 
             _projectileCount += 2;
             _minEnemyCount += 2;

@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxX: 5
-  _maxY: 5
+  _maxY: 11
   _maxPlayerDistance: 1.5
   _player: {fileID: 1302265335}
   _speed: 5
@@ -6611,7 +6611,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &701423668
 RectTransform:
@@ -25028,7 +25028,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759380575}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -25117,7 +25117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 544839949}
   sfxSource: {fileID: 544839949}
-  bgmClips: []
+  bgmClips:
+  - {fileID: 8300000, guid: 908d671bc942d754aad6429b65159bcd, type: 3}
+  - {fileID: 8300000, guid: 63e5065acc59d0145849a1a529be7d87, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: f44ebc0571d47ef44bdd9621f5ec3568, type: 3}
   - {fileID: 8300000, guid: 19288630322b28b4787710eb0d436e58, type: 3}
@@ -26223,6 +26225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossNameText
       objectReference: {fileID: 0}
+    - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9062341925854113668, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -26249,7 +26255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062341925854113668, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 9062341925854113668, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_SizeDelta.y
