@@ -18,16 +18,31 @@ public class GameManager : MonoBehaviour
     public Transform RitualCenter;
     public event Action RitualStart, RitualFinished;
     public event Action PlayerDie, BossDefeat;
+
+    public static GameManager _instance;
+
     void Start()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         _poolManager = FindAnyObjectByType<PoolManager>();
         FindAnyObjectByType<Movement>().GetComponent<HealthManager>()._onDie += GameOver;
     }
+
     public void RitualBegin()
     {
         RitualStart?.Invoke();
         _ritualCircle.SetActive(true);
     }
+
     public void RitualEnd(int circleNumber)
     {
         RitualFinished?.Invoke();
@@ -40,6 +55,7 @@ public class GameManager : MonoBehaviour
 
         _ritualCircle.SetActive(false);
     }
+
     private IEnumerator BurnBoss(int circleNumber)
     {
         float singleDamage = _burnDamage[circleNumber] / _numberOfBurns;
@@ -49,8 +65,14 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(_burnDelay);
         }
     }
+
     private void GameOver()
     {
         PlayerDie?.Invoke();
+    }
+
+    public void DefeatedBoss()
+    {
+        BossDefeat?.Invoke();
     }
 }
