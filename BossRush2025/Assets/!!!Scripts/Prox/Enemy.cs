@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     private HealthManager _healthManager;
     private SpriteRenderer _spriteRenderer;
     private Coroutine _disableCoroutine;
+    private Animator _animator;
+
+    private int _appearAnim = Animator.StringToHash("appear");
 
     private ParticleSystem _walkParticles;
     private Vector3 _currentParticlesRotate;
@@ -31,6 +34,7 @@ public class Enemy : MonoBehaviour
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
 
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
@@ -127,6 +131,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator DisableMovementForTime(float _disableTime)
     {
         _isAppear = true;
+        _animator.SetTrigger(_appearAnim);
         DisableMovement();
         foreach (Behaviour component in _componentsToDisable)
         {

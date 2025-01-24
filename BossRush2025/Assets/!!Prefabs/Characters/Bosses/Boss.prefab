@@ -37,7 +37,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 3416088346581060315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4743655587631230876
@@ -186,17 +187,16 @@ MonoBehaviour:
   _maxMoveDistance: 5
   _attackDelay: 1
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _offsetIcon: {x: 0, y: 0, z: 0}
   _attackActiveIcons:
   - {fileID: -357941818, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
   - {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-  - {fileID: 21300000, guid: 296577371c75b0a4293775feb44690ad, type: 3}
+  - {fileID: 2276937417260167175, guid: 287d077fd140bda4eb7069698217e721, type: 3}
   - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   _attackPassiveIcons:
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
+  - {fileID: -1860743042, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
   _splash: {fileID: 1798653627627826021, guid: 4f2ceaf078106bc46936bac0c0c6ceda, type: 3}
   _meleeAttackDelay: 1
   _circualSwordStrikeAttackRadius: 5
@@ -275,8 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wavePrefab: {fileID: 46356732875172744, guid: a35de16856b9b7a478eeef33c8466ead, type: 3}
-  _countOfWavesInAttack: 5
-  _waveSpawnDelay: 3
+  _countOfWavesInAttack: 10
+  _waveSpawnDelay: 1.5
   _upSpawnWavePosition: {fileID: 0}
   _downSpawnWavePosition: {fileID: 0}
 --- !u!114 &7327401580434499403
@@ -314,3 +314,101 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7701889654280185052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3416088346581060315}
+  - component: {fileID: 9048529175016233149}
+  - component: {fileID: 2058108250184538580}
+  m_Layer: 0
+  m_Name: SphereLIght
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3416088346581060315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701889654280185052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.864, y: 1.072, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4312701852677153529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9048529175016233149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701889654280185052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.09657478, g: 0, b: 1, a: 1}
+  m_Intensity: 13.69
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 0
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &2058108250184538580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701889654280185052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625cd3cf63b6a57429e58e191af92dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light2D: {fileID: 0}

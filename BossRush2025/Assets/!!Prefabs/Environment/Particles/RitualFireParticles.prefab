@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6321948306043115629}
   - component: {fileID: 8672319639800984217}
+  - component: {fileID: 5162974560876023904}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: RitualLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +85,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5162974560876023904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223106571772574789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625cd3cf63b6a57429e58e191af92dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2773757735692605520
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +149,7 @@ MonoBehaviour:
   - 8
   - 14
   _lightAccelerateDuration: 0.2
+  _lightDuration: 0.8
   _particleSpeed:
   - 32
   - 29
