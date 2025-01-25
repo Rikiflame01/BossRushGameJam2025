@@ -68,14 +68,14 @@ public class AxisPriojectile : Projectile
         _center = _gameManager.RitualCenter.position;
         _radius = _gameManager.RitualCircleRadius;
         if (Random.Range(0, 2) == 0) _angleSpeed = -_angleSpeed;
-        Vector2 currentPos = (Vector2)transform.position - _center;
-        _currentAngle = Random.Range(0f, Mathf.PI * 2f); ;
         _currentSpeed = 0f;
+
+        _currentAngle = Random.Range(0f, Mathf.PI * 2f);
         _currentRadius = _radius;
         transform.position = _center + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _currentRadius;
 
         _animator.SetBool(_appearAnim, true);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.3f);
 
         _canMove = true;
         _collider.enabled = true;

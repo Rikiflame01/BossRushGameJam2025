@@ -222,10 +222,11 @@ MonoBehaviour:
   _randomDelay: 0.5
   _arcProjectileCount: 10
   _arcDelay: 0.2
-  _arcAngle: 10
+  _arcAngle: 27
   _randomShootProjectile: DirectProjectile
   _axisProjectile: AxisProjectile
   _axisDelay: 8
+  _bossRoar: Roar
 --- !u!195 &3044510176484587180
 NavMeshAgent:
   m_ObjectHideFlags: 0

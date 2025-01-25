@@ -101,6 +101,7 @@ public class Susano : EntityState
     private WaveAttack _waveAttack;
     private bool _canWaveAttack = true;
 
+    [SerializeField] private string _bossRoar;
     private Flash _flash;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
@@ -315,13 +316,13 @@ public class Susano : EntityState
 
                 _collider.isTrigger = true;
                 transform.DOMoveY(bossDashPositionY, 0.15f);
-                yield return new WaitForSeconds(0.13f);
+                yield return new WaitForSeconds(0.135f);
 
                 GameObject currentSplash = Instantiate(_splash, playerPosition + Vector2.down * 2, Quaternion.identity);
                 currentSplash.transform.localScale = Vector3.one * 1.5f;
                 Destroy(currentSplash, 1f);
 
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.15f);
                 AreaDamage(_jumpAttackRadius, _jumpAttackDamage, transform.position);
 
                 _collider.isTrigger = false;
@@ -331,7 +332,7 @@ public class Susano : EntityState
                 lastCircualSwordStrike = true;
                 GameObject currentSplash = Instantiate(_splash, (Vector2)transform.position + Vector2.down * 2.7f, Quaternion.identity);
                 currentSplash.transform.localScale = Vector3.one * 3f;
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.15f);
                 AreaDamage(_circualSwordStrikeAttackRadius, _circualSwordStrikeAttackDamage, transform.position);
             }
 
@@ -538,7 +539,6 @@ public class Susano : EntityState
         {
             _phase = 2;
             _animator.SetInteger(__phaseAnim, 2);
-            _audioManager.PlayBGM(_secondTrack);
 
             _projectileCount += 2;
             _minEnemyCount += 2;
@@ -581,8 +581,18 @@ public class Susano : EntityState
             _currentAttack = null;
         }
         _finishedCoroutine = true;
+
         CameraShake._instance.Shake(1.0f, 1f);
-        yield return new WaitForSeconds(2f);
+
+        GameObject _currentRoar = _poolManager.GetObject(_bossRoar);
+        _currentRoar.transform.position = transform.position;
+        yield return new WaitForSeconds(0.6f); 
+        _currentRoar = _poolManager.GetObject(_bossRoar);
+        _currentRoar.transform.position = transform.position;
+
+        _audioManager.PlayBGM(_secondTrack);
+
+        yield return new WaitForSeconds(1f);
         _attackCycle = StartCoroutine(StartAttacks());
     }
     private void StopAttack()

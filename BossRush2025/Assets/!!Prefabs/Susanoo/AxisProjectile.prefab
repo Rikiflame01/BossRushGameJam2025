@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: AxisProjectile
   _damage: 4
+  _destroyParticles: WaterSplash
   _maxRadiusSpeed: 5
   _angleSpeed: 0.35
   _maxRadius: 2.5

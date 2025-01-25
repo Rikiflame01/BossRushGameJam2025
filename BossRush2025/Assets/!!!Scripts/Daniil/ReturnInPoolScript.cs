@@ -9,6 +9,7 @@ public class ReturnInPoolScript : MonoBehaviour
     void Start()
     {
         _poolManager = FindAnyObjectByType<PoolManager>();
+        StartCoroutine(ReturnInPool());
     }
     private IEnumerator ReturnInPool()
     {
