@@ -41,6 +41,7 @@ public class RoomsChanger : MonoBehaviour
 
     private IEnumerator ChangeRoomWithDelay()
     {
+        _fade.FadeIn();
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(_nextRoomIndex);
     }
