@@ -56,6 +56,7 @@ public class Movement : MonoBehaviour
     private RectTransform _progressTransform;
 
     private GameManager _gameManager;
+    private AudioManager _audioManager;
     private PoolManager _poolManager;
     private Knockback _knockBack;
     private HealthManager _healthManager;
@@ -66,6 +67,7 @@ public class Movement : MonoBehaviour
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
         _gameManager = FindAnyObjectByType<GameManager>();
+        _audioManager = FindAnyObjectByType<AudioManager>();
         _poolManager = FindAnyObjectByType<PoolManager>();
 
         _knockBack._onStartKnockback += ()=>{ _disable = true; _healthManager.DisableReceivingDamage(); };
@@ -184,9 +186,9 @@ public class Movement : MonoBehaviour
     {
         if (!_canDash)
             return;
-
         _canDash = false;
         _speed = _dashSpeed;
+        _audioManager.PlaySFX("Dash");
         StartCoroutine(DashDelay());
     }
 

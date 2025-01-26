@@ -131,23 +131,22 @@ public class Susano : EntityState
         _gameManager = FindAnyObjectByType<GameManager>();
         _audioManager = FindAnyObjectByType<AudioManager>();
 
-        _attackCycle = StartCoroutine(StartAttacks());
         _navMeshAgent.updateRotation = false;
         _navMeshAgent.updateUpAxis = false;
         _navMeshAgent.speed = _speed;
         _healthManager._onHit += CheckPhaseTransition;
+        _gameManager.StartFight += StartGame;
         _gameManager.RitualFinished += FinishRitual;
         _gameManager.PlayerDie += StopAttack;
-
         _healthManager._onDie += GameManager._instance.DefeatedBoss;
-        _audioManager.PlayBGM(_firstTrack);
-        ChangeState(State.Walking);
+
+        ChangeState(State.Idle);
+        _collider.enabled = false;
     }
 
     private IEnumerator StartAttacks()
     {
         _collider.isTrigger = false;
-
         ChangeState(State.Idle);
         yield return new WaitForSeconds(2f);
         ChangeState(State.Walking);
@@ -582,17 +581,11 @@ public class Susano : EntityState
         }
         _finishedCoroutine = true;
 
-        CameraShake._instance.Shake(1.0f, 1f);
-
-        GameObject _currentRoar = _poolManager.GetObject(_bossRoar);
-        _currentRoar.transform.position = transform.position;
-        yield return new WaitForSeconds(0.6f); 
-        _currentRoar = _poolManager.GetObject(_bossRoar);
-        _currentRoar.transform.position = transform.position;
+        StartCoroutine(BossRoar());
+        yield return new WaitForSeconds(0.6f);
 
         _audioManager.PlayBGM(_secondTrack);
 
-        yield return new WaitForSeconds(1f);
         _attackCycle = StartCoroutine(StartAttacks());
     }
     private void StopAttack()
@@ -625,4 +618,28 @@ public class Susano : EntityState
             transform.localScale = new Vector3(-1, transform.localScale.y);
         }
     }
+    private void StartGame()
+    {
+        _collider.enabled = true;
+        StartCoroutine(BossRoar());
+        StartCoroutine(PlayFirstTrack());
+        _attackCycle = StartCoroutine(StartAttacks());
+    }
+    private IEnumerator BossRoar()
+    {
+        CameraShake._instance.Shake(1.0f, 1f);
+        _audioManager.PlaySFX("Boss Growl");
+
+        GameObject _currentRoar = _poolManager.GetObject(_bossRoar);
+        _currentRoar.transform.position = transform.position;
+        yield return new WaitForSeconds(0.6f);
+        _currentRoar = _poolManager.GetObject(_bossRoar);
+        _currentRoar.transform.position = transform.position;
+    }
+    private IEnumerator PlayFirstTrack()
+    {
+        yield return new WaitForSeconds(1.8f);
+        _audioManager.PlayBGM(_firstTrack);
+    }
+
 }

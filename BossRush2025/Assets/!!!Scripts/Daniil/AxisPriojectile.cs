@@ -65,6 +65,8 @@ public class AxisPriojectile : Projectile
     }
     private IEnumerator StartNewCycle()
     {
+        _collider.enabled = false;
+
         _center = _gameManager.RitualCenter.position;
         _radius = _gameManager.RitualCircleRadius;
         if (Random.Range(0, 2) == 0) _angleSpeed = -_angleSpeed;
