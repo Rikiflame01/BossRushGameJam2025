@@ -103,6 +103,7 @@ public class Susano : EntityState
 
     [SerializeField] private string _bossRoar;
     private Flash _flash;
+    [SerializeField] private GameObject _deathBossPrefab;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
     protected override void HandleWalking() 
@@ -139,6 +140,7 @@ public class Susano : EntityState
         _gameManager.RitualFinished += FinishRitual;
         _gameManager.PlayerDie += StopAttack;
         _healthManager._onDie += GameManager._instance.DefeatedBoss;
+        _healthManager._onDie += BossDie;
 
         ChangeState(State.Idle);
         _collider.enabled = false;
@@ -573,6 +575,8 @@ public class Susano : EntityState
     }
     private IEnumerator PhaseTranslate()
     {
+        _collider.enabled = false;
+        _animator.SetBool(_accelerationAnim, false);
         StopCoroutine(_attackCycle);
         if (_currentAttack != null)
         {
@@ -581,19 +585,33 @@ public class Susano : EntityState
         }
         _finishedCoroutine = true;
 
-        StartCoroutine(BossRoar());
-        yield return new WaitForSeconds(0.6f);
+        _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        _rb.linearVelocity = Vector2.zero;
+        EnableMovement();
+        _animator.SetBool(_accelerationAnim, false);
+        _isAccelerationAttack = false;
 
+        _audioManager.StopBGM();
+        StartCoroutine(BossRoar());
+        yield return new WaitForSeconds(2f);
+
+        _collider.enabled = true;
         _audioManager.PlayBGM(_secondTrack);
 
         _attackCycle = StartCoroutine(StartAttacks());
     }
     private void StopAttack()
     {
-        StopCoroutine(_currentAttack);
-        _currentAttack = null;
-        StopCoroutine(_attackCycle);
-        _attackCycle = null;
+        if (_currentAttack != null)
+        {
+            StopCoroutine(_currentAttack);
+            _currentAttack = null;
+        }
+        if (_attackCycle != null)
+        {
+            StopCoroutine(_attackCycle);
+            _attackCycle = null;
+        }
         ChangeState(State.Idle);
     }
     private void OnDrawGizmosSelected()
@@ -641,5 +659,22 @@ public class Susano : EntityState
         yield return new WaitForSeconds(1.8f);
         _audioManager.PlayBGM(_firstTrack);
     }
-
+    private void BossDie()
+    {
+        _audioManager.StopBGM();
+        _collider.enabled = false;
+        _healthManager._onDie -= BossDie;
+        StopAttack();
+        DisableMovement();
+        ChangeState(State.Idle);
+        Instantiate(_deathBossPrefab, transform.position, Quaternion.identity);
+        _spriteRenderer.enabled = false;
+        StartCoroutine(LastCameraShake());
+    }
+    private IEnumerator LastCameraShake()
+    {
+        yield return new WaitForSeconds(3f);
+        CameraShake._instance.Shake(1f, 1.9f);
+        this.enabled = false;
+    }
 }

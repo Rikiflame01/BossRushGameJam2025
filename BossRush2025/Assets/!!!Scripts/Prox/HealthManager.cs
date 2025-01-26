@@ -5,8 +5,10 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
     [SerializeField] private string _takeDamageSFX;
+    [SerializeField] private string _dieParticles;
 
     private AudioManager _audioManager;
+    private PoolManager _poolManager;
 
     public float _maxHealth { get; private set; }
     private bool _isAlive = true;
@@ -17,9 +19,13 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         _maxHealth = _health;
-        if (_takeDamageSFX != null)
+        if (_takeDamageSFX != "")
         {
             _audioManager = FindAnyObjectByType<AudioManager>();
+        }
+        if (_dieParticles != "")
+        {
+            _poolManager = FindAnyObjectByType<PoolManager>();
         }
     }
 
@@ -34,6 +40,12 @@ public class HealthManager : MonoBehaviour
             _audioManager.PlaySFX(_takeDamageSFX);
         if (_health == 0)
         {
+            if (_poolManager != null)
+            {
+                GameObject _currentParticles = _poolManager.GetObject(_dieParticles);
+                _currentParticles.transform.position = transform.position;
+                _currentParticles.GetComponent<ParticleSystem>().Play();
+            }
             if (_onDie != null)
                 _onDie.Invoke();
             else

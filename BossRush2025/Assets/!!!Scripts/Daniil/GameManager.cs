@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         _backgroundMask.DOScale(15f, 0.8f);
         _sakuraLeaves.Play();
         _audioManager.PlaySFX("StartBossFight");
+        CameraFollow._instance.ToCenter(5.5f);
         yield return new WaitForSeconds(4f);
         _bossNameText.SetActive(true);
         StartFight?.Invoke();
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void RitualEnd(int circleNumber)
     {
         RitualFinished?.Invoke();
+        CameraFollow._instance.ToCenter();
         StartCoroutine(BurnBoss(circleNumber-1));
         GameObject _currentParticles = _poolManager.GetObject(_burnParticles);
         if (_currentParticles.TryGetComponent<RitualParticlesScript>(out RitualParticlesScript particleScript))
@@ -87,8 +89,11 @@ public class GameManager : MonoBehaviour
         float singleDamage = _burnDamage[circleNumber] / _numberOfBurns;
         for (int i = 0; i < _numberOfBurns; i++)
         {
-            _bossHealth.TakeDamage(singleDamage);
-            yield return new WaitForSeconds(_burnDelay);
+            if (_bossHealth.enabled)
+            {
+                _bossHealth.TakeDamage(singleDamage);
+                yield return new WaitForSeconds(_burnDelay);
+            }
         }
     }
 

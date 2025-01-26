@@ -3,15 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
-    private GameManager _gameManager;
-
     private int _appearAnim = Animator.StringToHash("Appear");
     private Animator _animatorUI;
 
     void Start()
     {
-        _gameManager = FindAnyObjectByType<GameManager>();
-        _gameManager.PlayerDie += ActiveUI;
+        GameManager._instance.PlayerDie += ActiveUI;
     }
     private void ActiveUI()
     {

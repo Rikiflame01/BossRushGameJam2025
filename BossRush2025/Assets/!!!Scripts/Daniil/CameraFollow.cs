@@ -15,11 +15,19 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float _specialMovementDuration = 0.5f;
     private bool _canMove = true;
 
+    public static CameraFollow _instance;
     void Start()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         _offset = transform.position - _player.position;
         _gameManager = FindAnyObjectByType<GameManager>();
-        _gameManager.RitualFinished += ToCenter;
     }
     void FixedUpdate()
     {
@@ -46,10 +54,10 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, vectorToMove + _offset, _speed * Time.fixedDeltaTime);
     }
-    void ToCenter()
+    public void ToCenter(float duration = 1.5f)
     {
         transform.DOMove(_gameManager.RitualCenter.position + _offset, _specialMovementDuration);
-        StartCoroutine(DisableForTime(1.5f));
+        StartCoroutine(DisableForTime(duration));
     }
     private IEnumerator DisableForTime(float time)
     {

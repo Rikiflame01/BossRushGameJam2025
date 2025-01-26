@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/!Scenes/Damian/MainMenu.unity
     guid: 372d7a58da0e5dd4a9c51de6938452bc
   - enabled: 1
