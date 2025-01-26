@@ -9,6 +9,7 @@ public class TsukuyomiBoss : MonoBehaviour
     //TsukuyomiAllRoundFire?.Invoke(); to trigger the attack
 
     public static event Action _tsukuyomiCrescentAttack;
+    public static event Action _tsukuyomiSwordStrikeAttack;
 
     void Awake()
     {
@@ -17,7 +18,7 @@ public class TsukuyomiBoss : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()

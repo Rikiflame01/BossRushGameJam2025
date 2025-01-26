@@ -172,13 +172,11 @@ MonoBehaviour:
   _speed: 0
   _maxMoveDistance: 0
   _attackDelay: 0
-  _accelerationSpeed: 10
-  _accelerationAttack: 10
-  _accelerationAttackTime: 3
-  _chargeTime: 0
-  _angleBetweenProjectiles: 0
-  _projectileCount: 0
-  _shootProjectile: 
+  _attackIcon: {fileID: 0}
+  _attackActiveIcons: []
+  _attackPassiveIcons: []
+  _splash: {fileID: 0}
+  _meleeAttackDelay: 1
   _circualSwordStrikeAttackRadius: 5
   _circualSwordStrikeAttackDamage: 6
   _jumpAttackAppearNearRadius: 6
@@ -190,6 +188,14 @@ MonoBehaviour:
   _enemy: 
   _summonDelay: 0.3
   _enemyAppearParticle: 
+  _chargeTime: 0
+  _angleBetweenProjectiles: 0
+  _projectileCount: 0
+  _shootProjectile: 
+  _accelerationSpeed: 10
+  _accelerationAttack: 10
+  _accelerationAttackTime: 3
+  _finishedCoroutine: 1
   _randomProjectileCount: 0
   _randomDelay: 0.5
   _arcProjectileCount: 10
@@ -198,6 +204,7 @@ MonoBehaviour:
   _randomShootProjectile: 
   _axisProjectile: 
   _axisDelay: 0
+  _bossRoar: 
 --- !u!61 &30192518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -857,6 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ritualCircle: {fileID: 1398404258}
   _burnParticles: 
+  _sakuraWave: 
   _bossHealth: {fileID: 0}
   _burnDamage: []
   _burnDelay: 0
@@ -5456,7 +5464,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &5631776728582412879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5660,6 +5668,7 @@ GameObject:
   - component: {fileID: 8305689632746120552}
   - component: {fileID: 8305689632746120554}
   - component: {fileID: 8305689632746120555}
+  - component: {fileID: 8305689632746120556}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -5768,6 +5777,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}
+--- !u!114 &8305689632746120556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295404875366409714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e6e6daabaf8ed488344f15fd6fcc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
+  _followSpeed: 10
+  _followTime: 0.5
+  _areaDamageSize: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
