@@ -15,22 +15,17 @@ public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
 
-    [SerializeField] private float _speed;
     [SerializeField] private float _maxMoveDistance;
     [SerializeField] private float _attackDelay;
 
-    private NavMeshAgent _navMeshAgent;
     private bool _moveWaiting = false;
     private Coroutine _currentAttack, _attackCycle;
     private bool _isRitual = false;
 
-    private Transform _player;
     private PoolManager _poolManager;
     private GameManager _gameManager;
     private AudioManager _audioManager;
 
-    private HealthManager _healthManager;
-    private Animator _animator;
     private Rigidbody2D _rb;
 
     private string _firstTrack = "Susanoo Phase 1";
@@ -102,7 +97,7 @@ public class Susano : EntityState
     private bool _canWaveAttack = true;
 
     [SerializeField] private string _bossRoar;
-    private Flash _flash;
+    private Flash _sphereFlash;
     [SerializeField] private GameObject _deathBossPrefab;
 
     protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
@@ -118,28 +113,23 @@ public class Susano : EntityState
 
     protected override void Initialize()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
         _rb = GetComponent<Rigidbody2D>();
-        _healthManager = GetComponent<HealthManager>();
-        _animator = GetComponent<Animator>();
-        _flash = GetComponentInChildren<Flash>();
+        
+        _sphereFlash = GetComponentInChildren<Flash>();
 
-        _player = FindAnyObjectByType<Movement>().transform;
         _waveAttack = GetComponent<WaveAttack>();
         _poolManager = FindAnyObjectByType<PoolManager>();
         _gameManager = FindAnyObjectByType<GameManager>();
         _audioManager = FindAnyObjectByType<AudioManager>();
 
-        _navMeshAgent.updateRotation = false;
-        _navMeshAgent.updateUpAxis = false;
-        _navMeshAgent.speed = _speed;
+        
         _healthManager._onHit += CheckPhaseTransition;
         _gameManager.StartFight += StartGame;
         _gameManager.RitualFinished += FinishRitual;
         _gameManager.PlayerDie += StopAttack;
-        _healthManager._onDie += GameManager._instance.DefeatedBoss;
+        _healthManager._onDie += _gameManager.DefeatedBoss;
         _healthManager._onDie += BossDie;
 
         ChangeState(State.Idle);
@@ -305,7 +295,7 @@ public class Susano : EntityState
 
                 Disappear();
 
-                Vector2 playerPosition = _playerMovement.transform.position;
+                Vector2 playerPosition = _player.position;
                 Vector2 bossUpPosition = new Vector2(0, _jumpAttackAppearNearRadius);
                 transform.position = playerPosition + bossUpPosition;
 
@@ -466,20 +456,6 @@ public class Susano : EntityState
             CameraShake._instance.Shake(1.0f, 0.25f);
         }
     }*/
-    IEnumerator DisableMovementForTime(float duration)
-    {
-        DisableMovement();
-        yield return new WaitForSeconds(duration);
-        EnableMovement();
-    }
-    void DisableMovement()
-    {
-        _navMeshAgent.speed = 0f;
-    }
-    void EnableMovement()
-    {
-        _navMeshAgent.speed = _speed;
-    }
     private void AreaDamage(float radius, float damage, Vector2 point)
     {
         List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(point, radius, Vector2.zero).ToList();
@@ -622,7 +598,7 @@ public class Susano : EntityState
     }
     private void FlashSphere()
     {
-        _flash.LightOn(3, 0.2f, 0.8f);
+        _sphereFlash.LightOn(3, 0.2f, 0.8f);
     }
     private void FlipToPlayer()
     {

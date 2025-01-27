@@ -1,0 +1,901 @@
+fileFormatVersion: 2
+guid: 0931b0b912cc465418ad9b825035e398
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2228230614089128673
+    second: SusanooMap_0
+  - first:
+      213: -8347270562608841494
+    second: SusanooMap_1
+  - first:
+      213: 6019598715984648649
+    second: SusanooMap_2
+  - first:
+      213: 6891671242200605392
+    second: SusanooMap_3
+  - first:
+      213: -1187334077587174265
+    second: SusanooMap_4
+  - first:
+      213: 2565084641635272853
+    second: SusanooMap_5
+  - first:
+      213: -5282698562245283675
+    second: SusanooMap_6
+  - first:
+      213: -1747738733017939058
+    second: SusanooMap_7
+  - first:
+      213: 8098178444228339641
+    second: SusanooMap_8
+  - first:
+      213: 7556462087961628337
+    second: SusanooMap_9
+  - first:
+      213: -1961122997285323027
+    second: SusanooMap_10
+  - first:
+      213: 3837946758904462560
+    second: SusanooMap_11
+  - first:
+      213: 4896497478490063416
+    second: SusanooMap_12
+  - first:
+      213: 4158998638821390249
+    second: SusanooMap_13
+  - first:
+      213: 6890585783256057195
+    second: SusanooMap_14
+  - first:
+      213: 209382894404916601
+    second: SusanooMap_15
+  - first:
+      213: -4675809946974333540
+    second: SusanooMap_16
+  - first:
+      213: 4949723905703285892
+    second: SusanooMap_17
+  - first:
+      213: 1254869001953550312
+    second: SusanooMap_18
+  - first:
+      213: 33973138217508333
+    second: SusanooMap_19
+  - first:
+      213: 2650343344743108055
+    second: SusanooMap_20
+  - first:
+      213: 920196943490811268
+    second: SusanooMap_21
+  - first:
+      213: -2016513773097584715
+    second: SusanooMap_22
+  - first:
+      213: 5444271072211719173
+    second: SusanooMap_23
+  - first:
+      213: 5179981246540499434
+    second: SusanooMap_24
+  - first:
+      213: -811069312167095420
+    second: SusanooMap_25
+  - first:
+      213: -1125630258735438950
+    second: SusanooMap_26
+  - first:
+      213: -497108623835577769
+    second: SusanooMap_27
+  - first:
+      213: -8286937473686881814
+    second: SusanooMap_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SusanooGround
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 289
+        width: 371
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eade6610f34cee10800000000000000
+      internalID: 2228230614089128673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 464
+        width: 61
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aecff9726a9882c80800000000000000
+      internalID: -8347270562608841494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn4
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 313
+        width: 65
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c999a49329e98350800000000000000
+      internalID: 6019598715984648649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooPlate
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 234
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c43bb72fdb58fe0800000000000000
+      internalID: -1187334077587174265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooGrass
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 178
+        width: 508
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5980b7324e2099320800000000000000
+      internalID: 2565084641635272853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooStairs
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 248
+        width: 223
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a037e585a510b6b0800000000000000
+      internalID: -5282698562245283675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooGrassPlate
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 129
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee75f14601b8c4e0800000000000000
+      internalID: -1961122997285323027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 110
+        width: 121
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b658551134740af50800000000000000
+      internalID: 6890585783256057195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 92
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9755c0312a0e7e200800000000000000
+      internalID: 209382894404916601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 102
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c955b5170af2c1fb0800000000000000
+      internalID: -4675809946974333540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail5
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 104
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48414bfdaa3f0b440800000000000000
+      internalID: 4949723905703285892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 101
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef171d65b03a6110800000000000000
+      internalID: 1254869001953550312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 101
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded1c53a362b87000800000000000000
+      internalID: 33973138217508333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 94
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddcb3cda39e7c420800000000000000
+      internalID: 2650343344743108055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 96
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4858b24ae3235cc00800000000000000
+      internalID: 920196943490811268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooRoadPlate
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7f5d54867e304e0800000000000000
+      internalID: -2016513773097584715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooMap_23
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 68
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5045d18f1bfed8b40800000000000000
+      internalID: 5444271072211719173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail12
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 70
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae94b3fbf7df2e740800000000000000
+      internalID: 5179981246540499434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail11
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 65
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4835f0002c08eb4f0800000000000000
+      internalID: -811069312167095420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 81
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93a4a75e35f060f0800000000000000
+      internalID: -1125630258735438950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooDetail6
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 60
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7524f75275ae919f0800000000000000
+      internalID: -497108623835577769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooWater
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2
+        width: 508
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae935051642eefc80800000000000000
+      internalID: -8286937473686881814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooGroundUpPart
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 536
+        width: 123
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29081d8eefabad842a6cbca0fb1b887f
+      internalID: 240691281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooGroundDownPart
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 259
+        width: 123
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3bb8b221683db44bf12130552d36f4
+      internalID: -1876953177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn2
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 467
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b255f6294522b43af4adeaafb93ced
+      internalID: -187580448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn3
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 467
+        width: 73
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7e644442a160f4cbefcf6f02ae7597
+      internalID: -1587773462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn5
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 365
+        width: 61
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a10d41f90c2d447a37346609558dd7
+      internalID: -1894000085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooColumn6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 364
+        width: 55
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc85f755935d80a458e58f9e19d9bc3b
+      internalID: 1936047941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooPlateBoard
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 195
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2743155f6ca562f43a15603d7d090665
+      internalID: 437007972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SusanooStackPlates
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 234
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef34de8b909c974e871f04f44aae480
+      internalID: 2075238517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85409476ab40b3544932e066c1b642cd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SusanooColumn1: -8347270562608841494
+      SusanooColumn2: -187580448
+      SusanooColumn3: -1587773462
+      SusanooColumn4: 6019598715984648649
+      SusanooColumn5: -1894000085
+      SusanooColumn6: 1936047941
+      SusanooDetail1: 6890585783256057195
+      SusanooDetail10: -1125630258735438950
+      SusanooDetail11: -811069312167095420
+      SusanooDetail12: 5179981246540499434
+      SusanooDetail2: 920196943490811268
+      SusanooDetail3: 209382894404916601
+      SusanooDetail4: -4675809946974333540
+      SusanooDetail5: 4949723905703285892
+      SusanooDetail6: -497108623835577769
+      SusanooDetail7: 2650343344743108055
+      SusanooDetail8: 1254869001953550312
+      SusanooDetail9: 33973138217508333
+      SusanooGrass: 2565084641635272853
+      SusanooGrassPlate: -1961122997285323027
+      SusanooGround: 2228230614089128673
+      SusanooGroundDownPart: -1876953177
+      SusanooGroundUpPart: 240691281
+      SusanooMap_11: 3837946758904462560
+      SusanooMap_12: 4896497478490063416
+      SusanooMap_13: 4158998638821390249
+      SusanooMap_23: 5444271072211719173
+      SusanooMap_3: 6891671242200605392
+      SusanooMap_7: -1747738733017939058
+      SusanooMap_8: 8098178444228339641
+      SusanooMap_9: 7556462087961628337
+      SusanooPlate: -1187334077587174265
+      SusanooPlateBoard: 437007972
+      SusanooRoadPlate: -2016513773097584715
+      SusanooStackPlates: 2075238517
+      SusanooStairs: -5282698562245283675
+      SusanooWater: -8286937473686881814
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

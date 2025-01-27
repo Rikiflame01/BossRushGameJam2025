@@ -19,12 +19,12 @@ GameObject:
   - component: {fileID: 7327401580434499403}
   - component: {fileID: 2736274151627132651}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: SusanooBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4312701852677153529
 Transform:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 1
 --- !u!50 &5222435565286213862
 Rigidbody2D:
@@ -181,9 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067822bcec8c4db4885ea4690a33d442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
   _componentsToDisableOnDisappear:
   - {fileID: 8989028932586246324}
-  _speed: 4
   _maxMoveDistance: 5
   _attackDelay: 1
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}

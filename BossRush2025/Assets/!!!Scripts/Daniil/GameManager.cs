@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator StartBossFight()
     {
         _boss.SetActive(true);
-        _backgroundMask.DOScale(15f, 0.8f);
+        _backgroundMask.DOScale(15f, 2f);
         _sakuraLeaves.Play();
         _audioManager.PlaySFX("StartBossFight");
         CameraFollow._instance.ToCenter(5.5f);
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void DefeatedBoss()
     {
+        _backgroundMask.DOScale(0f, 2f);
         BossDefeat?.Invoke();
     }
 }
