@@ -28,17 +28,14 @@ public class Katana : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Attack(new InputAction.CallbackContext());
-        }
+
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
         if (!_canAttack)
             return;
-        
+
         List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(_katanaAttackPos.position, _attackRadius, Vector2.zero).ToList();
         foreach (RaycastHit2D hit in collidingObjects)
         {
