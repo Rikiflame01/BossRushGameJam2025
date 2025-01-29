@@ -11,6 +11,8 @@ public class TsukuyomiBoss : EntityState
     //TsukuyomiAllRoundFire?.Invoke(); to trigger the attack
     public static event Action _tsukuyomiCrescentAttack;
     public static event Action _tsukuyomiSwordStrikeAttack;
+
+     public static event Action<string> _TsukuyomiGravityPull;
     [SerializeField] float _attackDelay;
 
     private bool _finishedCoroutine = true;
