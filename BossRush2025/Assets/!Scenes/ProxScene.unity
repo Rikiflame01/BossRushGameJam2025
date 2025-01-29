@@ -167,14 +167,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067822bcec8c4db4885ea4690a33d442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentsToDisableOnDisappear:
-  - {fileID: 30192518}
+  _firstTrack: 
+  _secondTrack: 
   _speed: 0
   _maxMoveDistance: 0
-  _attackDelay: 0
   _attackIcon: {fileID: 0}
   _attackActiveIcons: []
   _attackPassiveIcons: []
+  _bossRoar: 
+  _componentsToDisableOnDisappear:
+  - {fileID: 30192518}
+  _attackDelay: 0
   _splash: {fileID: 0}
   _meleeAttackDelay: 1
   _circualSwordStrikeAttackRadius: 5
@@ -204,7 +207,7 @@ MonoBehaviour:
   _randomShootProjectile: 
   _axisProjectile: 
   _axisDelay: 0
-  _bossRoar: 
+  _deathBossPrefab: {fileID: 0}
 --- !u!61 &30192518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -574,6 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 20
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!114 &178331544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +594,7 @@ MonoBehaviour:
   _moveInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _hitStunTime: 1
   _componentsToDisable: []
+  _stepDelay: 0
   _dashKey: {fileID: 90486819435495137, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _dashSpeed: 20
   _dashTime: 0.15
@@ -600,8 +605,13 @@ MonoBehaviour:
   _setFireKey: {fileID: 0}
   _fireProgress: {fileID: 0}
   _fireChargeTime: 0
+  _circleTxt: {fileID: 0}
   _sakuraLeaves: SakuraLeaf
   _minLeafSpawnDelay: 0.3
+  _currentAngle: 0
+  _startRitualAngle: 0
+  _targetRitualAngle: 0
+  _clockwise: 0
 --- !u!70 &178331545
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -869,6 +879,11 @@ MonoBehaviour:
   _burnDamage: []
   _burnDelay: 0
   _numberOfBurns: 0
+  _backgroundMask: {fileID: 0}
+  _boss: {fileID: 0}
+  _bossStatue: {fileID: 0}
+  _bossNameText: {fileID: 0}
+  _sakuraLeaves: {fileID: 0}
   RitualCircleRadius: 10
   RitualCenter: {fileID: 1398404259}
 --- !u!1 &324019528
@@ -2129,6 +2144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 356373533}
   _healthManager: {fileID: 253848396}
+  _healthBarEffect: {fileID: 0}
+  _takeDamageAnimSpeed: 3
+  _startAnimDelay: 0.5
 --- !u!114 &1075178544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3448,6 +3466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!114 &1539011868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4483,6 +4502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!114 &1883131148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4733,6 +4753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!114 &1985434225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5075,6 +5096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 20
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!70 &2056157870
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5226,6 +5248,7 @@ MonoBehaviour:
   _moveInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _hitStunTime: 1
   _componentsToDisable: []
+  _stepDelay: 0
   _dashKey: {fileID: 90486819435495137, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _dashSpeed: 20
   _dashTime: 0.15
@@ -5236,8 +5259,13 @@ MonoBehaviour:
   _setFireKey: {fileID: 0}
   _fireProgress: {fileID: 0}
   _fireChargeTime: 0
+  _circleTxt: {fileID: 0}
   _sakuraLeaves: 
   _minLeafSpawnDelay: 0
+  _currentAngle: 0
+  _startRitualAngle: 0
+  _targetRitualAngle: 0
+  _clockwise: 0
 --- !u!114 &2056157876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5268,6 +5296,7 @@ MonoBehaviour:
   _moveInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _hitStunTime: 1
   _componentsToDisable: []
+  _stepDelay: 0
   _dashKey: {fileID: 90486819435495137, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _dashSpeed: 20
   _dashTime: 0.15
@@ -5278,8 +5307,13 @@ MonoBehaviour:
   _setFireKey: {fileID: 0}
   _fireProgress: {fileID: 0}
   _fireChargeTime: 0
+  _circleTxt: {fileID: 0}
   _sakuraLeaves: SakuraLeaf
   _minLeafSpawnDelay: 0.3
+  _currentAngle: 0
+  _startRitualAngle: 0
+  _targetRitualAngle: 0
+  _clockwise: 0
 --- !u!1 &2062946564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,6 +5378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _takeDamageSFX: 
+  _dieParticles: 
 --- !u!1001 &1996681852940144123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5669,6 +5704,7 @@ GameObject:
   - component: {fileID: 8305689632746120554}
   - component: {fileID: 8305689632746120555}
   - component: {fileID: 8305689632746120556}
+  - component: {fileID: 8305689632746120557}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -5751,6 +5787,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstTrack: 
+  _secondTrack: 
+  _speed: 0.03
+  _maxMoveDistance: 0
+  _attackIcon: {fileID: 0}
+  _attackActiveIcons: []
+  _attackPassiveIcons: []
+  _bossRoar: 
+  _attackDelay: 0
 --- !u!114 &8305689632746120554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5793,6 +5838,20 @@ MonoBehaviour:
   _followSpeed: 10
   _followTime: 0.5
   _areaDamageSize: 3
+--- !u!114 &8305689632746120557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295404875366409714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725fb19308232aa45ab8d256a81c5898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _needlesProjectilePrefab: {fileID: 3445519810601986421, guid: 10437457974ffb446bfffeac858cc8f2, type: 3}
+  _circleRadius: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
