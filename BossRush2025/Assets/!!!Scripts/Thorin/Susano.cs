@@ -21,7 +21,6 @@ public class Susano : EntityState
 
     private Rigidbody2D _rb;
 
-    [SerializeField] private List<Sprite> _attackPassiveIcons;
     private int _lastAttack = -1;
 
 
