@@ -2,36 +2,54 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TsukuyomiBoss : EntityState
 {
     public static event Action TsukuyomiTeleport;
-    //TsukuyomiTeleport?.Invoke(); to trigger the attack
+    private Teleport _teleport;
+
     public static event Action TsukuyomiAllRoundFire;
-    //TsukuyomiAllRoundFire?.Invoke(); to trigger the attack
+    private AllRoundFire _allRoundFire;
+
     public static event Action _tsukuyomiCrescentAttack;
+
     public static event Action _tsukuyomiSwordStrikeAttack;
+    private SwordStrikeAttack _swordAttacks;
+
     public static event Action _tsukuyomiNeedlesAttack;
 
      public static event Action<string> _TsukuyomiGravityPull;
+
     [SerializeField] float _attackDelay;
 
-    private bool _finishedCoroutine = true;
+    [Header("Arc Shooting")]
+    [SerializeField] private int _arcProjectileCount = 5;
+    [SerializeField] private float _arcDelay = 0.2f;
+    [SerializeField] private float _arcAngle = 40f;
+    [SerializeField] private float _arcWaveDelay = 0.7f;
+    [SerializeField] private string _arcProjectile;
+
+    private bool _finishedArcAttack = true;
     private int _lastAttack = -1;
 
-    protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
+    protected override void HandleIdle() { }
     protected override void HandleWalking()
     {
         if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting());
-        if (_finishedCoroutine)
+        if (_finishedArcAttack)
         {
             FlipToPlayer();
         }
     }
-    protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
+    protected override void HandleRunning() {  }
     
     protected override void Initialize()
     {
+        _swordAttacks = GetComponent<SwordStrikeAttack>();
+        _teleport = GetComponent<Teleport>();
+        _allRoundFire = GetComponent<AllRoundFire>();
+
         _healthManager._onHit += CheckPhaseTransition;
         _gameManager.StartFight += StartGame;
         _gameManager.RitualFinished += FinishRitual;
@@ -71,22 +89,26 @@ public class TsukuyomiBoss : EntityState
             switch (randomAttack)
             {
                 case 1:
+                    _tsukuyomiSwordStrikeAttack?.Invoke();
+                    yield return new WaitUntil(() => _swordAttacks._finishedAttack);
                     break;
 
                 case 2:
+                    TsukuyomiTeleport?.Invoke();
+                    yield return new WaitUntil(() => _teleport._finishedAttack);
                     break;
 
                 case 3:
+                    TsukuyomiAllRoundFire?.Invoke();
+                    yield return new WaitUntil(() => _allRoundFire._finishedAttack);
                     break;
 
                 case 4:
+                    _TsukuyomiGravityPull?.Invoke("Start");
                     break;
             }
 
             attackedTimes++;
-
-            if (!_finishedCoroutine)
-                yield return new WaitUntil(() => _finishedCoroutine);
             yield return new WaitForSeconds(_attackDelay);
         }
         ChangeState(State.Idle);
@@ -107,19 +129,51 @@ public class TsukuyomiBoss : EntityState
             switch (randomAttack)
             {
                 case 1:
+                    StartCoroutine(ArcShooting(_arcProjectileCount));
+                    yield return new WaitUntil(() => _finishedArcAttack);
                     break;
-
                 case 2:
+                    TsukuyomiAllRoundFire?.Invoke();
+                    yield return new WaitForSeconds(0.6f);
                     break;
-
                 case 3:
+                    _tsukuyomiNeedlesAttack?.Invoke();
+                    break;
+                case 4:
+                    _tsukuyomiCrescentAttack?.Invoke();
                     break;
             }
-
-            if (!_finishedCoroutine)
-                yield return new WaitUntil(() => _finishedCoroutine);
             yield return new WaitForSeconds(_attackDelay);
         }
+    }
+    private IEnumerator ArcShooting(int currentProjectileCount)
+    {
+        _finishedArcAttack = false;
+        for (int j = 0; j < 3; j++)
+        {
+            Vector2 direction = _player.transform.position - transform.position;
+            float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angleCof = 0f;
+            float currentAttackAngle = UnityEngine.Random.Range(0, 2) == 0 ? _arcAngle : -_arcAngle;
+            if (currentProjectileCount % 2 == 0)
+            {
+                angleCof = 0.5f;
+            }
+            int board = currentProjectileCount / 2;
+
+            for (int i = -board; i < board + currentProjectileCount % 2; i++)
+            {
+                GameObject currentProjectile = _poolManager.GetObject(_arcProjectile);
+                currentProjectile.transform.position = transform.position;
+                float currentAngle = startAngle + (i + angleCof) * currentAttackAngle;
+                if (currentAngle > 360f) currentAngle -= 360f;
+                else if (currentAngle < 0f) currentAngle += 360f;
+                currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
+                yield return new WaitForSeconds(_arcDelay);
+            }
+            yield return new WaitForSeconds(_arcWaveDelay);
+        }
+        _finishedArcAttack = true;
     }
     private void StopAttack()
     {
@@ -132,7 +186,7 @@ public class TsukuyomiBoss : EntityState
     }
     private void BossDie()
     {
-
+        _bossHealth.DOScale(0f, 0.35f);
     }
     void OnDestroy()
     {

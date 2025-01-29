@@ -37,13 +37,6 @@ public class Susano : EntityState
     [SerializeField] private float _jumpAttackDamage = 6f;
     [SerializeField] private string _jumpShadow;
 
-    [Header("Summon Enemies")]
-    [SerializeField] private int _minEnemyCount = 2;
-    [SerializeField] private int _maxEnemyCount = 4;
-    [SerializeField] private string _enemy;
-    [SerializeField] private float _summonDelay = 0.3f;
-    [SerializeField] private string _enemyAppearParticle;
-
     [Header("Shooting")]
     [SerializeField] private float _chargeTime;
     [SerializeField] private float _angleBetweenProjectiles;
@@ -57,6 +50,13 @@ public class Susano : EntityState
     private bool _isAccelerationAttack = false;
     private Vector2 _accelerationDirection;
     private int _accelerationAnim = Animator.StringToHash("acceleration");
+
+    [Header("Summon Enemies")]
+    [SerializeField] private int _minEnemyCount = 2;
+    [SerializeField] private int _maxEnemyCount = 4;
+    [SerializeField] private string _enemy;
+    [SerializeField] private float _summonDelay = 0.3f;
+    [SerializeField] private string _enemyAppearParticle;
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -132,16 +132,23 @@ public class Susano : EntityState
         while (attackedTimes < attackTimes)
         {
             int randomAttack;
-            if (_phase > 1 && _canWaveAttack && Random.Range(0, 2) == 0)
+            if (attackedTimes + 1 == attackTimes)
             {
-                randomAttack = 5;
+                randomAttack = Random.Range(1, 4);
             }
             else
             {
-                randomAttack = Random.Range(1, 5);
-                if (randomAttack == _lastAttack) randomAttack = Random.Range(1, 5);
-                _lastAttack = randomAttack;
+                if (_phase > 1 && _canWaveAttack && Random.Range(0, 2) == 0)
+                {
+                    randomAttack = 5;
+                }
+                else
+                {
+                    randomAttack = Random.Range(1, 5);
+                    if (randomAttack == _lastAttack) randomAttack = Random.Range(1, 5);
+                    _lastAttack = randomAttack;
 
+                }
             }
 
             SignToNextAttack(randomAttack - 1, true);
@@ -152,20 +159,18 @@ public class Susano : EntityState
                 case 1:
                     _currentAttack = StartCoroutine(StartMeleeAttack());
                     break;
-
                 case 2:
-                    _currentAttack = StartCoroutine(SpawnEnemiesAttack());
-                    StartCoroutine(DisableMovementForTime(1f));
-                    break;
-
-                case 3:
                     _currentAttack = StartCoroutine(Shooting());
                     break;
 
-                case 4:
+                case 3:
                     _currentAttack = StartCoroutine(AccelerationAttack());
                     break;
 
+                case 4:
+                    _currentAttack = StartCoroutine(SpawnEnemiesAttack());
+                    StartCoroutine(DisableMovementForTime(1f));
+                    break;
                 case 5:
                     _sussanoWaveAttack?.Invoke();
                     StartCoroutine(NoWaveAttack());
@@ -572,6 +577,7 @@ public class Susano : EntityState
         Instantiate(_deathBossPrefab, transform.position, Quaternion.identity);
         _spriteRenderer.enabled = false;
         StartCoroutine(LastCameraShake());
+        _bossHealth.DOScale(0, 0.35f);
     }
     private IEnumerator LastCameraShake()
     {

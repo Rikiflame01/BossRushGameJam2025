@@ -8,6 +8,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public abstract class EntityState : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public abstract class EntityState : MonoBehaviour
     protected AudioManager _audioManager;
 
     [SerializeField] private string _bossRoar;
+    [SerializeField] protected RectTransform _bossHealth;
 
     void Start()
     {
@@ -88,6 +90,7 @@ public abstract class EntityState : MonoBehaviour
         StartCoroutine(BossRoar());
         StartCoroutine(PlayTrackWithDelay(_firstTrack));
         _attackCycle = StartCoroutine(StartAttacks());
+        _bossHealth.DOScale(1f, 0.35f);
     }
 
     protected IEnumerator PlayTrackWithDelay(string _name, float _duration = 1.8f)

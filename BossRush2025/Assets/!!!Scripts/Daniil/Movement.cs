@@ -59,11 +59,12 @@ public class Movement : MonoBehaviour
     private List<GameObject> _currentLeavesList = new List<GameObject>();
     private float _currentTime;
 
-    public float _currentAngle;
-    public float _startRitualAngle;
-    public float _targetRitualAngle;
+    private float _currentAngle;
+    private float _startRitualAngle;
+    private float _targetRitualAngle;
+
     private bool _isRitual = false;
-    public bool _clockwise = false;
+    private bool _clockwise = false;
     private int _circleNumber = 0;
     private RectTransform _progressTransform;
 
@@ -204,7 +205,7 @@ public class Movement : MonoBehaviour
             transform.localScale = new Vector3(-_originalScale, transform.localScale.y);
         }
     }
-
+    #region Dash
     public void Dash(InputAction.CallbackContext callback)
     {
         if (!_canDash || (Direction().x == 0f && Direction().y == 0))
@@ -226,7 +227,7 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(_dashDelay);
         _canDash = true;
     }
-
+    #endregion
     void OnDestroy()
     {
         _dashKey.action.performed -= Dash;
@@ -235,6 +236,8 @@ public class Movement : MonoBehaviour
         _setFireKey.action.started -= StartSettingFire;
         _setFireKey.action.canceled -= EndSettingFire;
     }
+
+    #region Rutual
     private void StartRitual(InputAction.CallbackContext callback)
     {
         if (_currentState == State.Ritual)
@@ -330,6 +333,8 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         _currentState = State.Ritual;
     }
+    #endregion
+
     private void EnableComponents()
     {
         foreach (Behaviour component in _componentsToDisable)

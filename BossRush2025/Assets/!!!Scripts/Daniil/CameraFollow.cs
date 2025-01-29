@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float _maxX, _maxY;
     [SerializeField] private float _maxPlayerDistance;
 
-    [SerializeField] private Transform _player;
+    private Transform _player;
     [SerializeField] private int _speed;
     private Vector3 _offset;
 
@@ -26,6 +26,7 @@ public class CameraFollow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _player = FindAnyObjectByType<Movement>().transform;
         _offset = transform.position - _player.position;
         _gameManager = FindAnyObjectByType<GameManager>();
     }

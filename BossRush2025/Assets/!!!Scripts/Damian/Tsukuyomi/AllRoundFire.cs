@@ -11,6 +11,7 @@ public class AllRoundFire : MonoBehaviour
     public float projectileLifetime = 5f;
     public float rowDelay = 0.2f;
 
+    public bool _finishedAttack { get; private set; }
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class AllRoundFire : MonoBehaviour
 
     private IEnumerator FireAllRoundWithDelay()
     {
+        _finishedAttack = false;
         for (int row = 0; row < rows; row++)
         {
             float baseAngle = row * angleOffset;
@@ -52,6 +54,7 @@ public class AllRoundFire : MonoBehaviour
 
             yield return new WaitForSeconds(rowDelay);
         }
+        _finishedAttack = true;
     }
 
 }

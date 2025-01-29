@@ -6,8 +6,18 @@ public class PoolManager : MonoBehaviour
     public List<Pool> Pools = new List<Pool>();
     private Dictionary<string, Pool> _poolDictionary;
 
+    public static PoolManager _instance;
     void Awake()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
         _poolDictionary = new Dictionary<string, Pool>();
         foreach (Pool currentPool in Pools)
         {

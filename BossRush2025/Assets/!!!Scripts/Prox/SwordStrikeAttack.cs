@@ -23,11 +23,6 @@ public class SwordStrikeAttack : MonoBehaviour
         TsukuyomiBoss._tsukuyomiSwordStrikeAttack += ()=> StartCoroutine(StartSwordStrikeAttack());
     }
 
-    void Update()
-    {
-        
-    }
-
     public IEnumerator StartSwordStrikeAttack()
     {
         _finishedAttack = false;

@@ -12,12 +12,17 @@ GameObject:
   - component: {fileID: 6140146649278711121}
   - component: {fileID: 8068414319991072475}
   - component: {fileID: 547896105872602037}
-  - component: {fileID: 6136902648872359153}
+  - component: {fileID: 710706479680296983}
   - component: {fileID: 1467371767876974972}
   - component: {fileID: 3591398715027487629}
-  - component: {fileID: 979375389470133741}
   - component: {fileID: 5174361049791288082}
-  - component: {fileID: 1029624494476316100}
+  - component: {fileID: 734943896742578331}
+  - component: {fileID: 6184101790751449854}
+  - component: {fileID: 8416561198155043603}
+  - component: {fileID: 6482276214057807117}
+  - component: {fileID: 6610105203751622982}
+  - component: {fileID: 4705249475966182169}
+  - component: {fileID: 1102787513799217760}
   m_Layer: 0
   m_Name: TsukuyomiBoss
   m_TagString: Enemy
@@ -161,7 +166,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4, y: 0.17}
-    oldSize: {x: 1.15, y: 0.74}
+    oldSize: {x: 13.218391, y: 8.505747}
     newSize: {x: 8.625, y: 5.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -169,7 +174,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.24, y: 2.24}
   m_EdgeRadius: 0
---- !u!114 &6136902648872359153
+--- !u!114 &710706479680296983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,56 +183,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134342089851537814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067822bcec8c4db4885ea4690a33d442, type: 3}
+  m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentsToDisableOnDisappear:
-  - {fileID: 547896105872602037}
-  _speed: 4
-  _maxMoveDistance: 5
-  _attackDelay: 1
+  _firstTrack: 
+  _secondTrack: 
+  _speed: 8
+  _maxMoveDistance: 6
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _attackActiveIcons:
-  - {fileID: -357941818, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
-  - {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
-  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-  - {fileID: 2276937417260167175, guid: 287d077fd140bda4eb7069698217e721, type: 3}
-  - {fileID: -428795043, guid: bc3ce6a717c580148ad975d07bb51280, type: 3}
-  _attackPassiveIcons:
-  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-  - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-  - {fileID: -1860743042, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
-  _splash: {fileID: 1798653627627826021, guid: 4f2ceaf078106bc46936bac0c0c6ceda, type: 3}
-  _meleeAttackDelay: 1
-  _circualSwordStrikeAttackRadius: 5
-  _circualSwordStrikeAttackDamage: 6
-  _jumpAttackAppearNearRadius: 6
-  _jumpAttackRadius: 3
-  _jumpAttackDamage: 8
-  _jumpShadow: JumpShadow
-  _minEnemyCount: 2
-  _maxEnemyCount: 4
-  _enemy: Enemy
-  _summonDelay: 0.3
-  _enemyAppearParticle: WaterAppearParticles
-  _chargeTime: 1
-  _angleBetweenProjectiles: 30
-  _projectileCount: 3
-  _shootProjectile: DirectProjectile
-  _accelerationSpeed: 15
-  _accelerationAttack: 10
-  _accelerationAttackTime: 5
-  _finishedCoroutine: 1
-  _randomProjectileCount: 0
-  _randomDelay: 0.5
-  _arcProjectileCount: 10
-  _arcDelay: 0.2
-  _arcAngle: 27
-  _randomShootProjectile: DirectProjectile
-  _axisProjectile: AxisProjectile
-  _axisDelay: 8
+  _attackActiveIcons: []
+  _attackPassiveIcons: []
   _bossRoar: Roar
-  _deathBossPrefab: {fileID: 9021655028957973101, guid: 7b30d38368b616c44863dc78d70b0903, type: 3}
+  _bossHealth: {fileID: 0}
+  _attackDelay: 0.5
+  _arcProjectileCount: 5
+  _arcDelay: 0.2
+  _arcAngle: 40
+  _arcWaveDelay: 0.7
+  _arcProjectile: ArcProjectile
 --- !u!195 &1467371767876974972
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -265,23 +238,6 @@ MonoBehaviour:
   _health: 150
   _takeDamageSFX: Boss damage
   _dieParticles: 
---- !u!114 &979375389470133741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134342089851537814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceae66aefae084141a47914a2e015825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wavePrefab: {fileID: 46356732875172744, guid: a35de16856b9b7a478eeef33c8466ead, type: 3}
-  _countOfWavesInAttack: 10
-  _waveSpawnDelay: 1.5
-  _upSpawnWavePosition: {fileID: 0}
-  _downSpawnWavePosition: {fileID: 0}
 --- !u!114 &5174361049791288082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}
---- !u!95 &1029624494476316100
+--- !u!95 &734943896742578331
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -305,7 +261,7 @@ Animator:
   m_GameObject: {fileID: 2134342089851537814}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fdab4da625a5ea4694d6f36ab02ac6d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 52f55ab538e2ba246adedc35ffc30db0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -317,6 +273,107 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6184101790751449854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baf878aabf3f1a408036e0d9f6a599e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
+  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  arenaBounds: {fileID: 0}
+  projectileCount: 12
+  projectileSpeed: 5
+  teleportDuration: 0.5
+  attackInterval: 1
+  minDistanceFromPlayer: 2
+  maxDistanceFromPlayer: 5
+  minDistanceBetweenPoints: 2
+  projectileLifetime: 5
+--- !u!114 &8416561198155043603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec70a6c03ac268b4ab73bdc65ca52798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preparationTime: 1
+  pullStrength: 5
+  pullDuration: 3
+  shakeMagnitude: 0.1
+--- !u!114 &6482276214057807117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3a7fc7e930b0e4e919248bec7c63e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  rows: 3
+  projectilesPerRow: 6
+  angleOffset: 10
+  projectileSpeed: 2
+  projectileLifetime: 5
+  rowDelay: 0.2
+--- !u!114 &6610105203751622982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e6e6daabaf8ed488344f15fd6fcc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
+  _followSpeed: 5
+  _followTime: 1
+  _areaDamageSize: 3
+--- !u!114 &4705249475966182169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725fb19308232aa45ab8d256a81c5898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _needlesProjectilePrefab: {fileID: 3445519810601986421, guid: 10437457974ffb446bfffeac858cc8f2, type: 3}
+  _circleRadius: 3
+--- !u!114 &1102787513799217760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a696bc7bc035f26439e1b370323af39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crescentMoonPrefab: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
 --- !u!1 &8796119640942387622
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,4 +471,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625cd3cf63b6a57429e58e191af92dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _light2D: {fileID: 0}
