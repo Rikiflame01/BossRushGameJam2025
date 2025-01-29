@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Wave : MonoBehaviour
 {
@@ -6,10 +7,13 @@ public class Wave : MonoBehaviour
     [SerializeField] private float _waveDamage = 2f;
     private int _horizontalMoveDirection = 0;
     private WaveAttack _waveAttack;
-
+    private SpriteRenderer _spriteRenderer;
+    private bool _canDamage = true;
     void Start()
     {
-
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        GameManager._instance.RitualStart += Disappear;
+        GameManager._instance.BossDefeat += Disappear;
     }
 
     void Update()
@@ -19,6 +23,7 @@ public class Wave : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (!_canDamage) return;
         if (other.TryGetComponent<Movement>(out Movement playerMovement))
         {
             if (playerMovement.TryGetComponent<HealthManager>(out HealthManager healthManager))
@@ -58,5 +63,22 @@ public class Wave : MonoBehaviour
     public void SetWaveAttack(WaveAttack waveAttack)
     {
         _waveAttack = waveAttack;
+    }
+    private void Disappear()
+    {
+        StartCoroutine(DisappearCoroutine());
+    }
+    private IEnumerator DisappearCoroutine()
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+        _spriteRenderer.enabled = false;
+        _canDamage = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
+    void OnDestroy()
+    {
+        GameManager._instance.RitualStart -= Disappear;
+        GameManager._instance.BossDefeat -= Disappear;
     }
 }

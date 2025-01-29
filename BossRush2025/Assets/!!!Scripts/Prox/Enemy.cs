@@ -58,7 +58,8 @@ public class Enemy : MonoBehaviour
         _currentParticlesRotate = _walkParticles.transform.eulerAngles;
 
         _gameManager.PlayerDie += StopChasing;
-        _gameManager.RitualStart += ReturnInPool;
+        _gameManager.RitualStart += DestroyEnemy;
+        _gameManager.BossDefeat += DestroyEnemy;
     }
     void Start()
     {
@@ -153,6 +154,10 @@ public class Enemy : MonoBehaviour
             _disableCoroutine = null;
         }
         DisableMovement();
+    }
+    private void DestroyEnemy()
+    {
+        _healthManager.TakeDamage(_enemySO._health);
     }
 }
 

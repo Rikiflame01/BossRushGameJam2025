@@ -13,14 +13,8 @@ public class RoomsChanger : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         GameManager._instance.BossDefeat += ()=> {
-            _canChangeRoom = true;
-            _spriteRenderer.enabled = true;
+            StartCoroutine(Appear());
         };
-    }
-
-    void Update()
-    {
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,7 +32,12 @@ public class RoomsChanger : MonoBehaviour
     {
         StartCoroutine(ChangeRoomWithDelay());
     }
-
+    private IEnumerator Appear()
+    {
+        yield return new WaitForSeconds(3f);
+        _canChangeRoom = true;
+        _spriteRenderer.enabled = true;
+    }
     private IEnumerator ChangeRoomWithDelay()
     {
         _fade.FadeIn();

@@ -31,6 +31,7 @@ public class AxisPriojectile : Projectile
         _gameManager = FindAnyObjectByType<GameManager>();
         _collider = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+        _gameManager.BossDefeat += ReturnInPool;
     }
     protected override void Initialize() { }
     void OnEnable()
@@ -65,6 +66,7 @@ public class AxisPriojectile : Projectile
     }
     private IEnumerator StartNewCycle()
     {
+        _canMove = false;
         _collider.enabled = false;
 
         _center = _gameManager.RitualCenter.position;

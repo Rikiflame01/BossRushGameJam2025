@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     [Header("Start BossFight")]
     [SerializeField] private Transform _backgroundMask;
     [SerializeField] private GameObject _boss;
+    [SerializeField] private GameObject _bossStatue;
     [SerializeField] private GameObject _bossNameText;
     [SerializeField] private ParticleSystem _sakuraLeaves;
 
     private PoolManager _poolManager;
-    private AudioManager _audioManager;
     public float RitualCircleRadius;
     public Transform RitualCenter;
 
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public event Action PlayerDie, BossDefeat;
 
     public static GameManager _instance;
+
     void Start()
     {
         if (_instance == null)
@@ -44,7 +45,6 @@ public class GameManager : MonoBehaviour
         }
 
         _poolManager = FindAnyObjectByType<PoolManager>();
-        _audioManager = FindAnyObjectByType<AudioManager>();
         FindAnyObjectByType<Movement>().GetComponent<HealthManager>()._onDie += GameOver;
     }
     public void StartGame()
@@ -53,19 +53,22 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator StartBossFight()
     {
+        CameraFollow._instance.ToCenter(6f);
+        yield return new WaitForSeconds(0.5f);
         _boss.SetActive(true);
         _backgroundMask.DOScale(15f, 2f);
         _sakuraLeaves.Play();
-        _audioManager.PlaySFX("StartBossFight");
-        CameraFollow._instance.ToCenter(5.5f);
+        AudioManager._instance.PlaySFX("StartBossFight");
         yield return new WaitForSeconds(4f);
         _bossNameText.SetActive(true);
+        _bossStatue.SetActive(false);
         StartFight?.Invoke();
     }
     public void RitualBegin()
     {
         RitualStart?.Invoke();
         _ritualCircle.SetActive(true);
+        _ritualCircle.GetComponent<Collider2D>().enabled = true;
         GameObject _currentParticles = _poolManager.GetObject(_sakuraWave);
         _currentParticles.transform.position = Vector3.zero;
     }
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
         RitualFinished?.Invoke();
         CameraFollow._instance.ToCenter();
         StartCoroutine(BurnBoss(circleNumber-1));
+        AudioManager._instance.PlaySFX("Seal and burn");
         GameObject _currentParticles = _poolManager.GetObject(_burnParticles);
         if (_currentParticles.TryGetComponent<RitualParticlesScript>(out RitualParticlesScript particleScript))
         {
@@ -104,7 +108,12 @@ public class GameManager : MonoBehaviour
 
     public void DefeatedBoss()
     {
-        _backgroundMask.DOScale(0f, 2f);
         BossDefeat?.Invoke();
+        StartCoroutine(WaitToMask());
+    }
+    private IEnumerator WaitToMask()
+    {
+        yield return new WaitForSeconds(3f);
+        _backgroundMask.DOScale(0f, 2f);
     }
 }

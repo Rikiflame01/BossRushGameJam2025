@@ -36,7 +36,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3416088346581060315}
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: -4772570147578233537, guid: 442234191a351664ea063280ef831af5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,11 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067822bcec8c4db4885ea4690a33d442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstTrack: Susanoo Phase 1
+  _secondTrack: Susanoo Phase 2
   _speed: 4
-  _componentsToDisableOnDisappear:
-  - {fileID: 8989028932586246324}
   _maxMoveDistance: 5
-  _attackDelay: 1
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
   _attackActiveIcons:
   - {fileID: -357941818, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
@@ -197,6 +196,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: -1860743042, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
+  _bossRoar: Roar
+  _componentsToDisableOnDisappear:
+  - {fileID: 8989028932586246324}
+  _attackDelay: 1
   _splash: {fileID: 1798653627627826021, guid: 4f2ceaf078106bc46936bac0c0c6ceda, type: 3}
   _meleeAttackDelay: 1
   _circualSwordStrikeAttackRadius: 5
@@ -215,18 +218,17 @@ MonoBehaviour:
   _projectileCount: 3
   _shootProjectile: DirectProjectile
   _accelerationSpeed: 15
-  _accelerationAttack: 10
+  _accelerationAttack: 7
   _accelerationAttackTime: 5
   _finishedCoroutine: 1
   _randomProjectileCount: 0
-  _randomDelay: 0.5
+  _randomDelay: 0.3
   _arcProjectileCount: 10
-  _arcDelay: 0.2
+  _arcDelay: 0.15
   _arcAngle: 27
   _randomShootProjectile: DirectProjectile
   _axisProjectile: AxisProjectile
   _axisDelay: 8
-  _bossRoar: Roar
   _deathBossPrefab: {fileID: 9021655028957973101, guid: 7b30d38368b616c44863dc78d70b0903, type: 3}
 --- !u!195 &3044510176484587180
 NavMeshAgent:
@@ -262,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 150
+  _health: 200
   _takeDamageSFX: Boss damage
   _dieParticles: 
 --- !u!114 &1631012741786938865
@@ -367,7 +369,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.09657478, g: 0, b: 1, a: 1}
-  m_Intensity: 13.69
+  m_Intensity: 7
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -414,4 +416,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625cd3cf63b6a57429e58e191af92dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _light2D: {fileID: 0}

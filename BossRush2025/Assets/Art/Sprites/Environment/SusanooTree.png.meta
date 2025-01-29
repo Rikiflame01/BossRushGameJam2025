@@ -3,17 +3,11 @@ guid: b7925f003f7a3f34cba81cd89a1b88f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4625342244268804210
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142808_0"
+      213: 1136238806268335990
+    second: SusanooTree_0
   - first:
-      213: 2398004872598252669
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142808_1"
-  - first:
-      213: -8162654694371440005
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142808_2"
-  - first:
-      213: 2957138645911097866
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142808_3"
+      213: -791831290598503661
+    second: SusanooTree_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,10 +116,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 39c8c65b7c979794ab4aa2c645db3aae
-      internalID: 196179990
+      spriteID: 67753ab9c2bb4cf00800000000000000
+      internalID: 1136238806268335990
       vertices: []
       indices: 
       edges: []
@@ -144,10 +138,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bc28e1a48ea456b4f9aa69e2dfbfd515
-      internalID: -804990359
+      spriteID: 31b46d1f2a9d205f0800000000000000
+      internalID: -791831290598503661
       vertices: []
       indices: 
       edges: []
@@ -156,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c66dd878c345ddd4494afafffa73d827
+    spriteID: 347943e472c32bc4a8648182c7790671
     internalID: 0
     vertices: []
     indices: 
@@ -166,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SusanooTree_0: 196179990
-      SusanooTree_1: -804990359
+      SusanooTree_0: 1136238806268335990
+      SusanooTree_1: -791831290598503661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
