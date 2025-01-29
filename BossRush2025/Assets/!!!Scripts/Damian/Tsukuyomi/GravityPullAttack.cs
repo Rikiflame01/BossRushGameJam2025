@@ -117,4 +117,6 @@ public class GravityPullAttack : MonoBehaviour
         if (playerMovement != null)
             playerMovement.enabled = true;
     }
+
+
 }

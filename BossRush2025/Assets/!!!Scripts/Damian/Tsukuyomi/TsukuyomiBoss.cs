@@ -19,7 +19,12 @@ public class TsukuyomiBoss : EntityState
 
     public static event Action _tsukuyomiNeedlesAttack;
 
-     public static event Action<string> _TsukuyomiGravityPull;
+    public static Action<string> _TsukuyomiGravityPull;
+
+    public static Action<string> _tsukuyomiLunarDiskAttack;
+
+    //for triggering the string Actions from another script: TsukuyomiBoss._tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
+    //for triggerig the string Actions from this script _tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
 
     [SerializeField] float _attackDelay;
 
@@ -191,5 +196,29 @@ public class TsukuyomiBoss : EntityState
     void OnDestroy()
     {
         
+    }
+
+    [ContextMenu("Lunar Disk - Start Attack")]
+    private void TestLunarDiskStart()
+    {
+        _tsukuyomiLunarDiskAttack?.Invoke("Start");
+    }
+
+    [ContextMenu("Lunar Disk - Pause Attack")]
+    private void TestLunarDiskPause()
+    {
+        _tsukuyomiLunarDiskAttack?.Invoke("Pause");
+    }
+
+    [ContextMenu("Lunar Disk - Resume Attack")]
+    private void TestLunarDiskResume()
+    {
+        _tsukuyomiLunarDiskAttack?.Invoke("Resume");
+    }
+
+    [ContextMenu("Lunar Disk - Stop Attack")]
+    private void TestLunarDiskStop()
+    {
+        _tsukuyomiLunarDiskAttack?.Invoke("Stop");
     }
 }
