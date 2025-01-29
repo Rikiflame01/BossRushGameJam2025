@@ -3,17 +3,11 @@ guid: eeb98372b90af0e469115f534d206c36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5145227541070855873
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142813_0"
+      213: 6392457931556468649
+    second: ClassicTree_0
   - first:
-      213: -1254604294569714671
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142813_1"
-  - first:
-      213: -1659640908161334396
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142813_2"
-  - first:
-      213: 1145026230535611587
-    second: "\u0411\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F556_20250127142813_3"
+      213: -8609376877931375067
+    second: ClassicTree_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,10 +116,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dad729fc12618b84997a98f1c73a659e
-      internalID: -1788234655
+      spriteID: 9a73d0cbe9296b850800000000000000
+      internalID: 6392457931556468649
       vertices: []
       indices: 
       edges: []
@@ -144,10 +138,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8826c331534e45c4e83d0a60a582c09d
-      internalID: -1160653295
+      spriteID: 526507d0859558880800000000000000
+      internalID: -8609376877931375067
       vertices: []
       indices: 
       edges: []
@@ -156,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 33aa7bcf712652a4889ad31646255571
+    spriteID: 9714fcb893c12f2478aac1c31a878710
     internalID: 0
     vertices: []
     indices: 
@@ -166,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ClassicTree_0: -1788234655
-      ClassicTree_1: -1160653295
+      ClassicTree_0: 6392457931556468649
+      ClassicTree_1: -8609376877931375067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

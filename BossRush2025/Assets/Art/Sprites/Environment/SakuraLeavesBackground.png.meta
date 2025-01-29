@@ -1,0 +1,565 @@
+fileFormatVersion: 2
+guid: f5eaa285cd54b234b96d4017ec3a7af1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1630726652978913990
+    second: SakuraLeavesBackground_0
+  - first:
+      213: 6847155658910446140
+    second: SakuraLeavesBackground_1
+  - first:
+      213: 7683526108940548882
+    second: SakuraLeavesBackground_2
+  - first:
+      213: -4246725375194632697
+    second: SakuraLeavesBackground_3
+  - first:
+      213: 2564789364194971891
+    second: SakuraLeavesBackground_4
+  - first:
+      213: 895956437637796623
+    second: SakuraLeavesBackground_5
+  - first:
+      213: -6397096113619695745
+    second: SakuraLeavesBackground_6
+  - first:
+      213: -1370960790296022424
+    second: SakuraLeavesBackground_7
+  - first:
+      213: 1420527948617442991
+    second: SakuraLeavesBackground_8
+  - first:
+      213: 5924764997153771205
+    second: SakuraLeavesBackground_9
+  - first:
+      213: 1221852016134235138
+    second: SakuraLeavesBackground_10
+  - first:
+      213: 2446007620819281313
+    second: SakuraLeavesBackground_11
+  - first:
+      213: 533582657269092467
+    second: SakuraLeavesBackground_12
+  - first:
+      213: 8174833251201058188
+    second: SakuraLeavesBackground_13
+  - first:
+      213: 4620496375400934881
+    second: SakuraLeavesBackground_14
+  - first:
+      213: 7625736735280568998
+    second: SakuraLeavesBackground_15
+  - first:
+      213: -5121747745174721835
+    second: SakuraLeavesBackground_16
+  - first:
+      213: 5294331598604939170
+    second: SakuraLeavesBackground_17
+  - first:
+      213: 5479229557407240781
+    second: SakuraLeavesBackground_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 992
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2e19c304181a610800000000000000
+      internalID: 1630726652978913990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 930
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32b9234bcbf50f50800000000000000
+      internalID: 6847155658910446140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 868
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b37d9794e51aa60800000000000000
+      internalID: 7683526108940548882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 806
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ee2e875c99015c0800000000000000
+      internalID: -4246725375194632697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f09a808656f79320800000000000000
+      internalID: 2564789364194971891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 682
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0310af02a31f6c00800000000000000
+      internalID: 895956437637796623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 620
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f778aa95af2f837a0800000000000000
+      internalID: -6397096113619695745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 558
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862ba65cc6e59fce0800000000000000
+      internalID: -1370960790296022424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 496
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa66bda94aab6b310800000000000000
+      internalID: 1420527948617442991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 434
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cec409cf5ef83250800000000000000
+      internalID: 5924764997153771205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204a6cd5fe3e4f010800000000000000
+      internalID: 1221852016134235138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5e4dcb8f6f1f120800000000000000
+      internalID: 2446007620819281313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37055d8899aa76700800000000000000
+      internalID: 533582657269092467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8504e3a787d27170800000000000000
+      internalID: 8174833251201058188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eda0c519fc4f1040800000000000000
+      internalID: 4620496375400934881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa9b09682f04d960800000000000000
+      internalID: 7625736735280568998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakuraLeavesBackground_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 301
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dae3bbdf85ebe8b0800000000000000
+      internalID: -5121747745174721835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 849a3622fe4408245ad0dcbd98b7aad4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SakuraLeavesBackground_0: 1630726652978913990
+      SakuraLeavesBackground_1: 6847155658910446140
+      SakuraLeavesBackground_10: 1221852016134235138
+      SakuraLeavesBackground_11: 2446007620819281313
+      SakuraLeavesBackground_12: 533582657269092467
+      SakuraLeavesBackground_13: 8174833251201058188
+      SakuraLeavesBackground_14: 4620496375400934881
+      SakuraLeavesBackground_15: 7625736735280568998
+      SakuraLeavesBackground_16: -5121747745174721835
+      SakuraLeavesBackground_2: 7683526108940548882
+      SakuraLeavesBackground_3: -4246725375194632697
+      SakuraLeavesBackground_4: 2564789364194971891
+      SakuraLeavesBackground_5: 895956437637796623
+      SakuraLeavesBackground_6: -6397096113619695745
+      SakuraLeavesBackground_7: -1370960790296022424
+      SakuraLeavesBackground_8: 1420527948617442991
+      SakuraLeavesBackground_9: 5924764997153771205
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

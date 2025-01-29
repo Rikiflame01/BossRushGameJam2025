@@ -6,7 +6,7 @@ using System.Collections;
 
 public class Flash : MonoBehaviour
 {
-    public Light2D _light2D;
+    private Light2D _light2D;
 
     void Awake()
     {

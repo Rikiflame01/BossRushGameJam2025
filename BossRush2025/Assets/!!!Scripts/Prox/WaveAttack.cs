@@ -9,10 +9,15 @@ public class WaveAttack : MonoBehaviour
     [SerializeField] private Transform _upSpawnWavePosition, _downSpawnWavePosition;
     private int _countOfWaves = 0;
     private bool _finishedAttack = false;
+
+    private Coroutine _waveCoroutine;
     
     void Start()
     {
         Susano._sussanoWaveAttack += StartWaveAttack;
+        GameManager gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.RitualStart += StopWaveAttack;
+        gameManager.BossDefeat += StopWaveAttack;
     }
     
     public void StartWaveAttack()
@@ -35,7 +40,7 @@ public class WaveAttack : MonoBehaviour
         wave.SetMoveDirection(-1);
         _countOfWaves++;
 
-        StartCoroutine(SpawnWavesDelay());
+        _waveCoroutine = StartCoroutine(SpawnWavesDelay());
     }
 
     private IEnumerator SpawnWavesDelay()
@@ -52,5 +57,13 @@ public class WaveAttack : MonoBehaviour
     void OnDestroy()
     {
         Susano._sussanoWaveAttack -= StartWaveAttack;
+    }
+    private void StopWaveAttack()
+    {
+        if(_waveCoroutine != null)
+        {
+            StopCoroutine(_waveCoroutine);
+            _waveCoroutine = null;
+        }
     }
 }

@@ -15,27 +15,14 @@ public class Susano : EntityState
 {
     [SerializeField] private List<Component> _componentsToDisableOnDisappear;
 
-    [SerializeField] private float _maxMoveDistance;
     [SerializeField] private float _attackDelay;
 
-    private bool _moveWaiting = false;
-    private Coroutine _currentAttack, _attackCycle;
-    private bool _isRitual = false;
-
-    private PoolManager _poolManager;
-    private GameManager _gameManager;
-    private AudioManager _audioManager;
+    private Coroutine _currentAttack;
 
     private Rigidbody2D _rb;
 
-    private string _firstTrack = "Susanoo Phase 1";
-    private string _secondTrack = "Susanoo Phase 2";
-
-    private int __phaseAnim = Animator.StringToHash("phase");
-
-    [SerializeField] private GameObject _attackIcon;
-    [SerializeField] private List<Sprite> _attackActiveIcons;
     [SerializeField] private List<Sprite> _attackPassiveIcons;
+    private int _lastAttack = -1;
 
 
     [Header("Melee Attack")]
@@ -96,11 +83,10 @@ public class Susano : EntityState
     private WaveAttack _waveAttack;
     private bool _canWaveAttack = true;
 
-    [SerializeField] private string _bossRoar;
     private Flash _sphereFlash;
     [SerializeField] private GameObject _deathBossPrefab;
 
-    protected override void HandleIdle() { Debug.Log("Enemy B Idle Behavior"); }
+    protected override void HandleIdle() { }
     protected override void HandleWalking() 
     { 
         if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting()); 
@@ -109,7 +95,7 @@ public class Susano : EntityState
             FlipToPlayer();
         }
     }
-    protected override void HandleRunning() { Debug.Log("Enemy B Running Behavior"); }
+    protected override void HandleRunning() { }
 
     protected override void Initialize()
     {
@@ -120,10 +106,6 @@ public class Susano : EntityState
         _sphereFlash = GetComponentInChildren<Flash>();
 
         _waveAttack = GetComponent<WaveAttack>();
-        _poolManager = FindAnyObjectByType<PoolManager>();
-        _gameManager = FindAnyObjectByType<GameManager>();
-        _audioManager = FindAnyObjectByType<AudioManager>();
-
         
         _healthManager._onHit += CheckPhaseTransition;
         _gameManager.StartFight += StartGame;
@@ -136,14 +118,17 @@ public class Susano : EntityState
         _collider.enabled = false;
     }
 
-    private IEnumerator StartAttacks()
+    protected override IEnumerator StartAttacks()
     {
-        _collider.isTrigger = false;
-        ChangeState(State.Idle);
-        yield return new WaitForSeconds(2f);
-        ChangeState(State.Walking);
+        _animator.SetBool(_stateAnim, false);
 
-        int attackTimes = Random.Range(4, 7);
+        _collider.enabled = true;
+        _collider.isTrigger = false;
+
+        ChangeState(State.Idle);
+        yield return new WaitForSeconds(1.3f);
+        ChangeState(State.Walking);
+        int attackTimes = Random.Range(3 + _phase, 5 + _phase);
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
         {
@@ -153,11 +138,14 @@ public class Susano : EntityState
                 randomAttack = 5;
             }
             else
+            {
                 randomAttack = Random.Range(1, 5);
+                if (randomAttack == _lastAttack) randomAttack = Random.Range(1, 5);
+                _lastAttack = randomAttack;
 
-            GameObject currentAttackIcon = Instantiate(_attackIcon, transform);
-            currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackActiveIcons[randomAttack - 1];
-            Destroy(currentAttackIcon, 2f);
+            }
+
+            SignToNextAttack(randomAttack - 1, true);
             yield return new WaitForSeconds(1f);
 
             switch (randomAttack)
@@ -194,7 +182,9 @@ public class Susano : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance == 0 && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.1f && !_navMeshAgent.pathPending);
+        transform.position = _gameManager.RitualCenter.position;
+        _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
         yield return new WaitForSeconds(1f);
         while (_isRitual)
@@ -203,10 +193,7 @@ public class Susano : EntityState
             if (randomAttack == 3 && !_canAxisProjectile)
                 randomAttack = Random.Range(1, 3);
 
-            GameObject currentAttackIcon = Instantiate(_attackIcon, transform);
-            currentAttackIcon.GetComponentInChildren<Image>().sprite = _attackPassiveIcons[randomAttack - 1];
-            Destroy(currentAttackIcon, 2f);
-
+            SignToNextAttack(randomAttack - 1, false);
             yield return new WaitForSeconds(1f);
 
             switch (randomAttack)
@@ -230,7 +217,7 @@ public class Susano : EntityState
             yield return new WaitForSeconds(_attackDelay);
         }
     }
-
+    #region Attacks
     private IEnumerator AccelerationAttack()
     {
         _finishedCoroutine = false;
@@ -283,7 +270,7 @@ public class Susano : EntityState
     {
         _finishedCoroutine = false;
         DisableMovement();
-        int repeatTimes = 5;
+        int repeatTimes = 3;
         bool lastCircualSwordStrike = true;
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < repeatTimes; i++)
@@ -371,16 +358,18 @@ public class Susano : EntityState
         Vector2 direction = _player.transform.position - transform.position;
         float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float angleCof = 0f;
+        float currentAttackAngle = Random.Range(0, 2) == 0 ? _arcAngle : -_arcAngle;
         if (currentProjectileCount % 2 == 0)
         {
             angleCof = 0.5f;
         }
         int board = currentProjectileCount / 2;
+
         for (int i = -board; i < board + currentProjectileCount % 2; i++)
         {
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
             currentProjectile.transform.position = transform.position;
-            float currentAngle = startAngle + (i + angleCof) * _arcAngle;
+            float currentAngle = startAngle + (i + angleCof) * currentAttackAngle;
             if (currentAngle > 360f) currentAngle -= 360f;
             else if (currentAngle < 0f) currentAngle += 360f;
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, currentAngle);
@@ -477,45 +466,26 @@ public class Susano : EntityState
             }
         }
     }
-    private IEnumerator MoveWaiting()
+    private IEnumerator NoAxisAttack()
     {
-        _moveWaiting = true;
-        yield return new WaitForSeconds(Random.Range(0.4f, 1.4f));
-        if (!_isRitual)
-        {
-            MoveToRandomPoint();
-        }
-        _moveWaiting = false;
+        _canAxisProjectile = false;
+        yield return new WaitForSeconds(_axisDelay);
+        _canAxisProjectile = true;
     }
-    void MoveToRandomPoint()
+    private IEnumerator NoWaveAttack()
     {
-        Vector3 randomPoint;
-        for (int i = 0; i < 100; i++)
-        {
-            randomPoint = Random.insideUnitCircle * _maxMoveDistance;
+        _canWaveAttack = false;
+        yield return new WaitForSeconds(_waveAttack.GetAttackTime());
+        _canWaveAttack = true;
+    }
+    #endregion
 
-            if (IsPointReachable(randomPoint))
-            {
-                _navMeshAgent.SetDestination(randomPoint);
-                break;
-            }
-        }
-    }
-    bool IsPointReachable(Vector2 point)
-    {
-        NavMeshHit hit;
-        if(NavMesh.Raycast(transform.position, point, out hit, NavMesh.AllAreas))
-        {
-            if (hit.position != transform.position) return false;
-        }
-        return true;
-    }
     private void CheckPhaseTransition(float healthPart)
     {
-        if(_healthManager.GetHealth() / _healthManager._maxHealth <= 0.6f && _phase < 2)
+        if (_healthManager.GetHealth() / _healthManager._maxHealth <= 0.6f && _phase < 2)
         {
             _phase = 2;
-            _animator.SetInteger(__phaseAnim, 2);
+            _animator.SetInteger(_phaseAnim, 2);
 
             _projectileCount += 2;
             _minEnemyCount += 2;
@@ -529,18 +499,6 @@ public class Susano : EntityState
             StartCoroutine(PhaseTranslate());
         }
     }
-    private IEnumerator NoAxisAttack()
-    {
-        _canAxisProjectile = false;
-        yield return new WaitForSeconds(_axisDelay);
-        _canAxisProjectile = true;
-    }
-    private IEnumerator NoWaveAttack()
-    {
-        _canWaveAttack = false;
-        yield return new WaitForSeconds(_waveAttack.GetAttackTime());
-        _canWaveAttack = true;
-    }
     private void FinishRitual()
     {
         _isRitual = false;
@@ -552,6 +510,7 @@ public class Susano : EntityState
     private IEnumerator PhaseTranslate()
     {
         _collider.enabled = false;
+        _animator.SetBool(_stateAnim, false);
         _animator.SetBool(_accelerationAnim, false);
         StopCoroutine(_attackCycle);
         if (_currentAttack != null)
@@ -576,6 +535,7 @@ public class Susano : EntityState
 
         _attackCycle = StartCoroutine(StartAttacks());
     }
+
     private void StopAttack()
     {
         if (_currentAttack != null)
@@ -600,46 +560,13 @@ public class Susano : EntityState
     {
         _sphereFlash.LightOn(3, 0.2f, 0.8f);
     }
-    private void FlipToPlayer()
-    {
-        Vector2 direction = _player.position - transform.position;
-        if (direction.x < 0)
-        {
-            transform.localScale = new Vector3(1, transform.localScale.y);
-        }
-        else if (direction.x > 0)
-        {
-            transform.localScale = new Vector3(-1, transform.localScale.y);
-        }
-    }
-    private void StartGame()
-    {
-        _collider.enabled = true;
-        StartCoroutine(BossRoar());
-        StartCoroutine(PlayFirstTrack());
-        _attackCycle = StartCoroutine(StartAttacks());
-    }
-    private IEnumerator BossRoar()
-    {
-        CameraShake._instance.Shake(1.0f, 1f);
-        _audioManager.PlaySFX("Boss Growl");
-
-        GameObject _currentRoar = _poolManager.GetObject(_bossRoar);
-        _currentRoar.transform.position = transform.position;
-        yield return new WaitForSeconds(0.6f);
-        _currentRoar = _poolManager.GetObject(_bossRoar);
-        _currentRoar.transform.position = transform.position;
-    }
-    private IEnumerator PlayFirstTrack()
-    {
-        yield return new WaitForSeconds(1.8f);
-        _audioManager.PlayBGM(_firstTrack);
-    }
     private void BossDie()
     {
         _audioManager.StopBGM();
         _collider.enabled = false;
         _healthManager._onDie -= BossDie;
+        _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        _rb.linearVelocity = Vector2.zero;
         StopAttack();
         DisableMovement();
         ChangeState(State.Idle);

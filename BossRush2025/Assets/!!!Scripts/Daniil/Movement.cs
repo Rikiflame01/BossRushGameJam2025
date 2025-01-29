@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
@@ -14,10 +15,18 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _playerRb;
     [SerializeField] private float _speed;
     private bool _disable;
+    private Vector2 _lastDirection;
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private float _hitStunTime;
+    private float _originalScale;
 
     [SerializeField] private List<Component> _componentsToDisable;
+
+    [Header("Steps Properties")]
+    [SerializeField] float _stepDelay;
+    private float _stepTime;
+    private bool _playStep = true;
+    private int _currentStep = 1;
 
     [Header("Dash Properties")]
     [SerializeField] private InputActionReference _dashKey;
@@ -25,6 +34,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _dashTime = 0.15f;
     [SerializeField] private float _dashDelay = 1f; 
     private bool _canDash = true;
+    private bool _isDash  = false;
     private float _defaultSpeed;
 
     [Header("Ritual Properties")]
@@ -42,16 +52,18 @@ public class Movement : MonoBehaviour
     private float _maxFloatProportion;
 
     [Space]
+    [SerializeField] private TextMeshProUGUI _circleTxt;
+
     [SerializeField] private string _sakuraLeaves;
     [SerializeField] private float _minLeafSpawnDelay;
     private List<GameObject> _currentLeavesList = new List<GameObject>();
     private float _currentTime;
 
-    private float _currentAngle;
-    private float _startRitualAngle;
-    private float _targetRitualAngle;
+    public float _currentAngle;
+    public float _startRitualAngle;
+    public float _targetRitualAngle;
     private bool _isRitual = false;
-    private bool _clockwise = false;
+    public bool _clockwise = false;
     private int _circleNumber = 0;
     private RectTransform _progressTransform;
 
@@ -86,6 +98,8 @@ public class Movement : MonoBehaviour
         _ritualRadius = _gameManager.RitualCircleRadius;
         _ritualCenter = _gameManager.RitualCenter;
         _progressTransform = _ritualProgress.GetComponent<RectTransform>();
+        _originalScale = transform.localScale.x;
+
     }
 
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
@@ -96,9 +110,28 @@ public class Movement : MonoBehaviour
             case State.Run:
                 if (!_disable)
                 {
-                    _playerRb.linearVelocity = Direction() * _speed;
+                    if (!_isDash) 
+                    {
+                        _lastDirection = Direction();
+                        RotatePlayer();
+                    }
+                    _playerRb.linearVelocity = _lastDirection * _speed;
+                    if (!_isDash)
+                    {
+                        _playStep = _playerRb.linearVelocity.x != 0f || _playerRb.linearVelocity.y != 0f;
+                    }
                 }
-                RotatePlayer();
+                if (_playStep)
+                {
+                    _stepTime += Time.deltaTime;
+                    if(_stepTime >= _stepDelay)
+                    {
+                        _stepTime = 0;
+                        AudioManager._instance.PlaySFX("Step " + _currentStep);
+                        _currentStep++;
+                        if (_currentStep > 4) _currentStep = 1;
+                    }
+                }
                 break;
         }
     }
@@ -109,18 +142,7 @@ public class Movement : MonoBehaviour
             case State.Ritual:
                 _currentAngle += _ritualSpeed * Time.deltaTime * Direction().x;
                 transform.position = (Vector2)_ritualCenter.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _ritualRadius;
-                if (!_isRitual)
-                {
-                    if (_currentAngle > 2 * Mathf.PI)
-                    {
-                        _currentAngle -= 2 * Mathf.PI;
-                    }
-                    else if (_currentAngle < 0)
-                    {
-                        _currentAngle += 2 * Mathf.PI;
-                    }
-                }
-                else
+                if (_isRitual)
                 {
                     if (_currentAngle > _startRitualAngle && _clockwise)
                     {
@@ -150,6 +172,7 @@ public class Movement : MonoBehaviour
                         _startRitualAngle = _targetRitualAngle;
                         _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
                         if(_circleNumber < 3) _circleNumber++;
+                        _circleTxt.text = _circleNumber.ToString();
                         ClearLeafs();
                     }
                     _ritualProgress.fillAmount = currentFloat / targetFloat;
@@ -174,19 +197,20 @@ public class Movement : MonoBehaviour
         Vector2 direction = Direction();
         if (direction.x > 0)
         {
-            transform.localScale = new Vector3(1, transform.localScale.y);
+            transform.localScale = new Vector3(_originalScale, transform.localScale.y);
         }
         else if (direction.x < 0)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y);
+            transform.localScale = new Vector3(-_originalScale, transform.localScale.y);
         }
     }
 
     public void Dash(InputAction.CallbackContext callback)
     {
-        if (!_canDash)
+        if (!_canDash || (Direction().x == 0f && Direction().y == 0))
             return;
         _canDash = false;
+        _isDash = true;
         _speed = _dashSpeed;
         _audioManager.PlaySFX("Dash");
         StartCoroutine(DashDelay());
@@ -194,8 +218,11 @@ public class Movement : MonoBehaviour
 
     IEnumerator DashDelay()
     {
+        _playStep = false;
         yield return new WaitForSeconds(_dashTime);
         _speed = _defaultSpeed;
+        _playStep = true;
+        _isDash = false;
         yield return new WaitForSeconds(_dashDelay);
         _canDash = true;
     }
@@ -255,6 +282,7 @@ public class Movement : MonoBehaviour
         _gameManager.RitualEnd(_circleNumber);
         EnableComponents();
         _circleNumber = 0;
+        _circleTxt.enabled = false;
         _fireProgress.enabled = false;
         _currentTime = 0;
         _currentState = State.Run;
@@ -280,6 +308,7 @@ public class Movement : MonoBehaviour
     {
         if (other.CompareTag("Ritual"))
         {
+            other.enabled = false;
             _currentAngle = Mathf.Atan2(transform.position.y, transform.position.x);
             DisableComponents();
             if(Vector2.Distance(transform.position, _gameManager.RitualCenter.position) < _gameManager.RitualCircleRadius - 1f)
@@ -290,6 +319,8 @@ public class Movement : MonoBehaviour
             {
                 _currentState = State.Ritual;
             }
+            _circleTxt.enabled = true;
+            _circleTxt.text = _circleNumber.ToString();
         }
     }
     private IEnumerator MoveToCircle()
@@ -316,6 +347,11 @@ public class Movement : MonoBehaviour
     private void Die()
     {
         DisableComponents();
+        _dashKey.action.performed -= Dash;
+        _ritualKey.action.started -= StartRitual;
+        _ritualKey.action.canceled -= StopRitual;
+        _setFireKey.action.started -= StartSettingFire;
+        _setFireKey.action.canceled -= EndSettingFire;
         this.enabled = false;
     }
 }
