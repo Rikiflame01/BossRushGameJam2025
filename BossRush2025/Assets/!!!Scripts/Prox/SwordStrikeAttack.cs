@@ -12,6 +12,7 @@ public class SwordStrikeAttack : MonoBehaviour
     [SerializeField] private float _areaDamageSize = 3f;
     private GameObject _player;
     private Rigidbody2D _rb;
+    private bool _stopAttack = false;
     public bool _finishedAttack { get; private set;}
 
     void Start()
@@ -34,7 +35,22 @@ public class SwordStrikeAttack : MonoBehaviour
         int repeatTimes = 3;
         for (int i = 0; i < repeatTimes; i++)
         {
+            if (_stopAttack)
+            {
+                _stopAttack = false;
+                _finishedAttack = true;
+                yield break;
+            }
+
             yield return new WaitForSeconds(1f);
+
+            if (_stopAttack)
+            {
+                _stopAttack = false;
+                _finishedAttack = true;
+                yield break;
+            }
+
             _rb.linearVelocity = -(transform.position - _player.transform.position).normalized * _followSpeed;
             yield return new WaitForSeconds(_followTime);
             _rb.linearVelocity = Vector2.zero;
@@ -65,5 +81,10 @@ public class SwordStrikeAttack : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void StopAttack()
+    {
+        _stopAttack = true;
     }
 }
