@@ -20,7 +20,8 @@ public class TsukuyomiBoss : EntityState
 
     //for triggering the string Actions from another script: TsukuyomiBoss._tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
     //for triggerig the string Actions from this script _tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
-
+    private bool _canCrescent = true;
+    private bool _canGravity = true;
 
     [SerializeField] float _attackDelay;
 
@@ -79,8 +80,8 @@ public class TsukuyomiBoss : EntityState
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
         {
-            int randomAttack = UnityEngine.Random.Range(1, 5);
-            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 5);
+            int randomAttack = UnityEngine.Random.Range(1, 6);
+            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 6);
             _lastAttack = randomAttack;
 
 
@@ -145,6 +146,7 @@ public class TsukuyomiBoss : EntityState
                     break;
                 case 4:
                     _tsukuyomiCrescentAttack?.Invoke();
+                    StartCoroutine(NoCrescent());
                     break;
             }
             yield return new WaitForSeconds(_attackDelay);
@@ -206,6 +208,13 @@ public class TsukuyomiBoss : EntityState
         _healthManager._onDie -= _gameManager.DefeatedBoss;
         _healthManager._onDie -= BossDie;
     }
+    private IEnumerator NoCrescent()
+    {
+        _canCrescent = false;
+        yield return new WaitForSeconds(7f);
+        _canCrescent = true;
+    }
+    #region LunarDisk
     [ContextMenu("Lunar Disk - Start Attack")]
     private void TestLunarDiskStart()
     {
@@ -229,4 +238,5 @@ public class TsukuyomiBoss : EntityState
     {
         _tsukuyomiLunarDiskAttack?.Invoke("Stop");
     }
+    #endregion
 }

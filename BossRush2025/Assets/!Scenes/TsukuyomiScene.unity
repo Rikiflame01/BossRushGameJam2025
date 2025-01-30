@@ -1052,6 +1052,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8209114420021179794, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
   m_PrefabInstance: {fileID: 175739355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &171347061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171347041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e0926195b2ed543936d609c8962ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lunarDiskPrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  spawnPoint: {fileID: 171347060}
+  diskLifetime: 5
+  diskSpeed: 2
+  spinSpeed: 50
+  projectilePrefab: {fileID: 8609673021236226423, guid: 832c971c629c72e489ff2718e837c7da, type: 3}
+  projectileSpeed: 4
+  projectileLifetime: 3
 --- !u!1001 &175739355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,7 +1094,7 @@ PrefabInstance:
       objectReference: {fileID: 1056040231}
     - target: {fileID: 710706479680296983, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       propertyPath: _attackActiveIcons.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 710706479680296983, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       propertyPath: _attackPassiveIcons.Array.size
@@ -1096,6 +1116,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6140146649278711121, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6184101790751449854, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1104,6 +1128,10 @@ PrefabInstance:
       propertyPath: arenaBounds
       value: 
       objectReference: {fileID: 2085158202}
+    - target: {fileID: 6184101790751449854, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8609673021236226423, guid: f7a164218460a594ba34ef3652b63c4f, type: 3}
     - target: {fileID: 6184101790751449854, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       propertyPath: _teleportParticles
       value: TeleportParticles
@@ -1124,6 +1152,10 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6482276214057807117, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8609673021236226423, guid: f7a164218460a594ba34ef3652b63c4f, type: 3}
     - target: {fileID: 6610105203751622982, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1206,7 +1238,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8209114420021179794, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1806654379}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2134342089851537814, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171347061}
   m_SourcePrefab: {fileID: 100100000, guid: 5341fc9e26d72f145a39b8c1511366ca, type: 3}
 --- !u!1 &181689096
 GameObject:
@@ -58659,11 +58694,13 @@ MonoBehaviour:
     initialSize: 1
   - poolPrefab: {fileID: 6110334454872371786, guid: 6a683b1a7f1ba7544a2fe7ac67fd24ce, type: 3}
     initialSize: 1
-  - poolPrefab: {fileID: 1344474935023243406, guid: b8fc47c389f2c3648ab049137f0be07e, type: 3}
-    initialSize: 1
-  - poolPrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  - poolPrefab: {fileID: 8609673021236226423, guid: f7a164218460a594ba34ef3652b63c4f, type: 3}
     initialSize: 10
   - poolPrefab: {fileID: 1344474935023243406, guid: c814630f1c9261542b739a5e9907159f, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 1344474935023243406, guid: 3325218fccbb4d345bb4bd667016b600, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 1344474935023243406, guid: d3e2ccd077311e44bac65475042ebc96, type: 3}
     initialSize: 10
 --- !u!4 &2063118322
 Transform:
@@ -63956,7 +63993,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000ddfbc116
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

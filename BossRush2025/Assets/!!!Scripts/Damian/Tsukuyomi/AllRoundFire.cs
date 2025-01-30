@@ -11,7 +11,7 @@ public class AllRoundFire : MonoBehaviour
     public float projectileLifetime = 5f;
     public float rowDelay = 0.2f;
 
-    public bool _finishedAttack { get; private set; }
+    public bool _finishedAttack { get; private set; } = true;
 
     private void Start()
     {

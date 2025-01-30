@@ -4,7 +4,7 @@ public class CollisionEnemyDamage : MonoBehaviour
 {    
     [SerializeField] private float _damage = 5f;
     [SerializeField] private float _lifetime = 3f;
-
+    [SerializeField] private string _destroyParticles;
     private Rigidbody2D rb;
     private Vector2 savedVelocity;
     private bool isPaused = false;
@@ -23,6 +23,7 @@ public class CollisionEnemyDamage : MonoBehaviour
     private void OnDisable()
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack -= OnBossCommand;
+        PoolManager._instance.GetObject(_destroyParticles).transform.position = transform.position;
     }
 
     private void OnBossCommand(string command)

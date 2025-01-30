@@ -18,7 +18,7 @@ public class SwordStrikeAttack : MonoBehaviour
     private bool _needMove = false;
     private Vector2 _direction;
 
-    public bool _finishedAttack { get; private set;}
+    public bool _finishedAttack { get; private set; } = true;
 
     void Start()
     {

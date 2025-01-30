@@ -4,12 +4,13 @@ using UnityEngine;
 public class NeedlessAttack : MonoBehaviour
 {
     [SerializeField] private GameObject _needlesProjectilePrefab;
-    [SerializeField] private float _circleRadius = 3f;
-    private int _countOfProjectiles = 8;
+    [SerializeField] private float _circleRadius = 2f;
+    [SerializeField] private float _delay = 1f;
+    [SerializeField] private int _countOfProjectiles = 8;
     private GameObject _player;
     private bool _stopAttack = false;
 
-    public bool _finishedAttack { get; private set; }
+    public bool _finishedAttack { get; private set; } = true;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class NeedlessAttack : MonoBehaviour
                 yield break;
             }
 
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(_delay);
 
             if (_stopAttack)
             {
@@ -37,13 +38,21 @@ public class NeedlessAttack : MonoBehaviour
                 yield break;
             }
 
-            Vector3 spawnProjectilePos = Random.insideUnitCircle * _circleRadius;
+            Vector2 spawnProjectilePos = GetRandomPointOnCircle();
             GameObject spawnedProjectile = Instantiate(_needlesProjectilePrefab, spawnProjectilePos, Quaternion.identity);
             spawnedProjectile.GetComponent<NeedlesProjectile>().SetTarget(_player);
         }
         _finishedAttack = false;
     }
-
+    Vector2 GetRandomPointOnCircle()
+    {
+        Vector2 center = GameManager._instance.RitualCenter.position;
+        float radius = GameManager._instance.RitualCircleRadius + _circleRadius;
+        float angle = Random.Range(0f, Mathf.PI * 2);
+        float x = center.x + Mathf.Cos(angle) * radius;
+        float y = center.y + Mathf.Sin(angle) * radius;
+        return new Vector2(x, y);
+    }
     public void StopAttack()
     {
         _stopAttack = true;

@@ -16,7 +16,8 @@ public class CrescentAttack : MonoBehaviour
     public void StartCrescentAttack()
     {
         GameObject spawnedPrefab = Instantiate(_crescentMoonPrefab, _gameManager.RitualCenter.position, Quaternion.identity);
-        spawnedPrefab.transform.localScale = new Vector3(Random.Range(0, 2) == 0 ? 2 : -2, 2, 2) * _gameManager.RitualCircleRadius;
+        spawnedPrefab.transform.localScale = Vector3.one * 2 * _gameManager.RitualCircleRadius;
+        spawnedPrefab.transform.Rotate(Vector3.forward, 180f);
     }
 
     void OnDestroy()

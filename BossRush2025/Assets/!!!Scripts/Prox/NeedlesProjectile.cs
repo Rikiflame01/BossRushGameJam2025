@@ -6,6 +6,9 @@ public class NeedlesProjectile : MonoBehaviour
     [SerializeField] private float _damage = 5f;
     [SerializeField] private float _rotateSpeed = 5f;
     [SerializeField] private float _flySpeed = 8f;
+
+    [SerializeField] private string _destroyParticles = "CrystalSplash";
+ 
     private GameObject _target;
     private Vector3 _flyDirection;
     private bool _attack = false;
@@ -60,8 +63,6 @@ public class NeedlesProjectile : MonoBehaviour
         _attack = true;
 
         _flyDirection = -(transform.position - _target.transform.position).normalized;
-        
-        Destroy(gameObject, 4f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -81,6 +82,12 @@ public class NeedlesProjectile : MonoBehaviour
                 }
 
                 CameraShake._instance.Shake(0.5f, 0.5f);
+                PoolManager._instance.GetObject(_destroyParticles).transform.position = transform.position;
+                Destroy(gameObject);
+            }
+            else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+            {
+                PoolManager._instance.GetObject(_destroyParticles).transform.position = transform.position;
                 Destroy(gameObject);
             }
         }

@@ -20,7 +20,7 @@ public class Teleport : MonoBehaviour
     public float projectileLifetime = 5f;
 
     [SerializeField] private string _teleportParticles;
-    public bool _finishedAttack { get; private set; }
+    public bool _finishedAttack { get; private set; } = true;
 
     private List<Vector3> teleportPoints = new List<Vector3>();
     private Vector3 originalPosition;
