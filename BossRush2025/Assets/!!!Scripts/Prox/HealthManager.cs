@@ -7,6 +7,9 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private string _takeDamageSFX;
     [SerializeField] private string _dieParticles;
 
+    [Header("Properties")]
+    [SerializeField] private bool _immortal = false;
+
     private AudioManager _audioManager;
     private PoolManager _poolManager;
 
@@ -34,7 +37,9 @@ public class HealthManager : MonoBehaviour
         if (!_isAlive || !_receivceDamage)
             return;
 
-        _health = Math.Clamp(_health - damage, 0, _maxHealth);
+        if (!_immortal)
+            _health = Math.Clamp(_health - damage, 0, _maxHealth);
+
         _onHit?.Invoke(damage);
         if(_audioManager!= null)
             _audioManager.PlaySFX(_takeDamageSFX);
