@@ -11925,6 +11925,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &206066488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6144235480962404279, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+  m_PrefabInstance: {fileID: 833986479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222280670
 GameObject:
   m_ObjectHideFlags: 0
@@ -18161,11 +18172,11 @@ PrefabInstance:
     - target: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _fireProgress
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1308747855}
     - target: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _ritualProgress
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1507926461}
     - target: {fileID: 7665682072808817288, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19178,7 +19189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &950569304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34722,7 +34733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 2088919462}
-  _healthManager: {fileID: 0}
+  _healthManager: {fileID: 206066488}
   _healthBarEffect: {fileID: 881366811}
   _takeDamageAnimSpeed: 3
   _startAnimDelay: 0.5
