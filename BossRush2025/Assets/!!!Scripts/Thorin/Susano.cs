@@ -285,7 +285,7 @@ public class Susano : EntityState
                 lastCircualSwordStrike = false;
 
                 Disappear();
-
+                _audioManager.PlaySFX("Jump Falling attack");
                 Vector2 playerPosition = _player.position;
                 Vector2 bossUpPosition = new Vector2(0, _jumpAttackAppearNearRadius);
                 transform.position = playerPosition + bossUpPosition;
@@ -295,7 +295,7 @@ public class Susano : EntityState
                 yield return new WaitForSeconds(1f);
                 FlipToPlayer();
                 Appear();
-
+                _audioManager.PlaySFX("Falling attack");
                 _collider.isTrigger = true;
                 transform.DOMoveY(bossDashPositionY, 0.15f);
                 yield return new WaitForSeconds(0.135f);
@@ -311,6 +311,7 @@ public class Susano : EntityState
             }
             else if (randomAttack == 1)
             {
+                _audioManager.PlaySFX("Falling attack");
                 lastCircualSwordStrike = true;
                 GameObject currentSplash = Instantiate(_splash, (Vector2)transform.position + Vector2.down * 2.7f, Quaternion.identity);
                 currentSplash.transform.localScale = Vector3.one * 3f;
@@ -529,7 +530,6 @@ public class Susano : EntityState
         EnableMovement();
         _animator.SetBool(_accelerationAnim, false);
         _isAccelerationAttack = false;
-
         _audioManager.StopBGM();
         StartCoroutine(BossRoar());
         yield return new WaitForSeconds(2f);
@@ -576,13 +576,16 @@ public class Susano : EntityState
         ChangeState(State.Idle);
         Instantiate(_deathBossPrefab, transform.position, Quaternion.identity);
         _spriteRenderer.enabled = false;
-        StartCoroutine(LastCameraShake());
+        StartCoroutine(LastEffect());
         _bossHealth.DOScale(0, 0.35f);
     }
-    private IEnumerator LastCameraShake()
+    private IEnumerator LastEffect()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.75f);
+        _audioManager.PlaySFX("Boss death");
+        yield return new WaitForSeconds(2.25f);
         CameraShake._instance.Shake(1f, 1.9f);
+        _audioManager.PlayBGM("Victory");
         this.enabled = false;
     }
 }

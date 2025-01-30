@@ -5,7 +5,7 @@ public class ProjectileCollisionHandler : MonoBehaviour
     [SerializeField] private string _name;
     [SerializeField] private float _damage = 5f;
     [SerializeField] private string _destroyParticles;
-    private string _obstacleLayerName = "Ground";
+    private string _obstacleLayerName = "Obstacles";
     private Collider2D projectileCollider;
 
     private void Start()

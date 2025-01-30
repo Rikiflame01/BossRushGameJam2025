@@ -173,6 +173,7 @@ public class Movement : MonoBehaviour
                         _startRitualAngle = _targetRitualAngle;
                         _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
                         if(_circleNumber < 3) _circleNumber++;
+                        AudioManager._instance.PlaySFX("Circle complete");
                         _circleTxt.text = _circleNumber.ToString();
                         ClearLeafs();
                     }
@@ -247,6 +248,7 @@ public class Movement : MonoBehaviour
             ChangeRitualDirection(false);
             _progressTransform.eulerAngles = new Vector3(_progressTransform.eulerAngles.x, _progressTransform.eulerAngles.y, _startRitualAngle * Mathf.Rad2Deg);
             _ritualProgress.enabled = true;
+            AudioManager._instance.PlaySFX("Begin ritual");
         }
     }
     private void StopRitual(InputAction.CallbackContext callback)
@@ -257,7 +259,7 @@ public class Movement : MonoBehaviour
     }
     private void StartSettingFire(InputAction.CallbackContext callback)
     {
-        if (_circleNumber > 0)
+        if (_circleNumber > 0 && !_isRitual)
         {
             _fireCoroutine = StartCoroutine(FireRitual());
         }

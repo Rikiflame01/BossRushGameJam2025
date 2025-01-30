@@ -17,10 +17,12 @@ public abstract class Projectile : MonoBehaviour
     protected abstract void Initialize();
     protected void ReturnInPool()
     {
-        GameObject _currentParticles = _poolManager.GetObject(_destroyParticles);
-        _currentParticles.transform.position = transform.position;
-        _currentParticles.GetComponent<ParticleSystem>().Play();
-        _poolManager.ReturnObject(gameObject, _name);
+        if (gameObject.activeSelf)
+        {
+            GameObject _currentParticles = _poolManager.GetObject(_destroyParticles);
+            _currentParticles.transform.position = transform.position;
+            _poolManager.ReturnObject(gameObject, _name);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -9,6 +9,8 @@ public class NeedlessAttack : MonoBehaviour
     private GameObject _player;
     private bool _stopAttack = false;
 
+    public bool _finishedAttack { get; private set; }
+
     void Start()
     {
         TsukuyomiBoss._tsukuyomiNeedlesAttack += ()=> StartCoroutine(SpawnProjectiles());
@@ -18,6 +20,7 @@ public class NeedlessAttack : MonoBehaviour
 
     private IEnumerator SpawnProjectiles()
     {
+        _finishedAttack = false;
         for (int i = 0; i < _countOfProjectiles; i++)
         {
             if (_stopAttack)
@@ -38,6 +41,7 @@ public class NeedlessAttack : MonoBehaviour
             GameObject spawnedProjectile = Instantiate(_needlesProjectilePrefab, spawnProjectilePos, Quaternion.identity);
             spawnedProjectile.GetComponent<NeedlesProjectile>().SetTarget(_player);
         }
+        _finishedAttack = false;
     }
 
     public void StopAttack()

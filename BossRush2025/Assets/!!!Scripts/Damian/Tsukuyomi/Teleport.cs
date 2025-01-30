@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Teleport : MonoBehaviour
 {
@@ -10,14 +11,15 @@ public class Teleport : MonoBehaviour
     public Transform arenaBounds;
     private Transform player;
     public int projectileCount = 12;
-    public float projectileSpeed = 5f;
+    public float projectileSpeed = 10f;
     public float teleportDuration = 0.5f;
     public float attackInterval = 1f;
     public float minDistanceFromPlayer = 2f;
-    public float maxDistanceFromPlayer = 5f;
+    public float maxDistanceFromPlayer = 10f;
     public float minDistanceBetweenPoints = 2f;
     public float projectileLifetime = 5f;
 
+    [SerializeField] private string _teleportParticles;
     public bool _finishedAttack { get; private set; }
 
     private List<Vector3> teleportPoints = new List<Vector3>();
@@ -97,8 +99,26 @@ public class Teleport : MonoBehaviour
         teleportPoints.Clear();
         _finishedAttack = true;
     }
-
     private IEnumerator SmoothTeleport(Vector3 targetPosition)
+    {
+        float index = 1f;
+        for(float i = 1f; i >= 0f; i -= 0.2f)
+        {
+            transform.DOScaleX(i * index, 0.15f * Mathf.Abs(i));
+            Debug.Log(i * index);
+            index *= -1f;
+            yield return new WaitForSeconds(0.15f * Mathf.Abs(i));
+        }
+        PoolManager._instance.GetObject(_teleportParticles).transform.position = transform.position;
+        yield return new WaitForSeconds(0.5f);
+        PoolManager._instance.GetObject(_teleportParticles).transform.position = targetPosition;
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1, 0.15f);
+
+
+        transform.position = targetPosition;
+    }
+    /*private IEnumerator SmoothTeleport(Vector3 targetPosition)
     {
         Vector3 startPosition = transform.position;
         float elapsedTime = 0;
@@ -111,7 +131,7 @@ public class Teleport : MonoBehaviour
         }
 
         transform.position = targetPosition;
-    }
+    }*/
 
     private bool IsValidPoint(Vector3 position)
     {
@@ -155,8 +175,6 @@ public class Teleport : MonoBehaviour
                 rb.linearVelocity = projectileMoveDirection * projectileSpeed;
                 rb.gravityScale = 0;
             }
-
-            Destroy(projectile, projectileLifetime);
         }
     }
 

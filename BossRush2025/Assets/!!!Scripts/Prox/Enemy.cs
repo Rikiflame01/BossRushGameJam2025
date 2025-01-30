@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<Component> _componentsToDisable;
 
     private bool _canMove = false, _isAppear = false, _isFlip = false;
+    private bool _isAlive = true;
 
     private PoolManager _poolManager;
     private GameManager _gameManager;
@@ -105,6 +106,7 @@ public class Enemy : MonoBehaviour
     void OnEnable()
     {
         _healthManager.SetHealth(_enemySO._health);
+        _isAlive = true;
         _disableCoroutine = StartCoroutine(DisableMovementForTime(_appearDelay));
     }
     void OnDisable()
@@ -127,6 +129,7 @@ public class Enemy : MonoBehaviour
     }
     private void ReturnInPool()
     {
+        _isAlive = false;
         _poolManager.ReturnObject(gameObject, _enemySO._name);
     }
     private IEnumerator DisableMovementForTime(float _disableTime)
@@ -157,7 +160,11 @@ public class Enemy : MonoBehaviour
     }
     private void DestroyEnemy()
     {
-        _healthManager.TakeDamage(_enemySO._health);
+        if (_isAlive)
+        {
+            _healthManager.TakeDamage(_enemySO._health);
+            _isAlive = false;
+        }
     }
 }
 

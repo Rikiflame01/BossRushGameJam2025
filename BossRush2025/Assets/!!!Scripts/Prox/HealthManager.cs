@@ -44,7 +44,6 @@ public class HealthManager : MonoBehaviour
             {
                 GameObject _currentParticles = _poolManager.GetObject(_dieParticles);
                 _currentParticles.transform.position = transform.position;
-                _currentParticles.GetComponent<ParticleSystem>().Play();
             }
             if (_onDie != null)
                 _onDie.Invoke();

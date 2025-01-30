@@ -132,7 +132,7 @@ public abstract class EntityState : MonoBehaviour
     protected IEnumerator MoveWaiting()
     {
         _moveWaiting = true;
-        yield return new WaitForSeconds(Random.Range(0.4f, 1.4f));
+        yield return new WaitForSeconds(Random.Range(0.2f, 0.9f));
         if (!_isRitual)
         {
             MoveToRandomPoint();

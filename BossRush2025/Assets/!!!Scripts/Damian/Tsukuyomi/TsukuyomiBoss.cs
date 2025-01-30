@@ -8,17 +8,12 @@ public class TsukuyomiBoss : EntityState
 {
     public static event Action TsukuyomiTeleport;
     private Teleport _teleport;
-
     public static event Action TsukuyomiAllRoundFire;
     private AllRoundFire _allRoundFire;
-
     public static event Action _tsukuyomiCrescentAttack;
-
     public static event Action _tsukuyomiSwordStrikeAttack;
     private SwordStrikeAttack _swordAttacks;
-
     public static event Action _tsukuyomiNeedlesAttack;
-
     public static Action<string> _TsukuyomiGravityPull;
 
     public static Action<string> _tsukuyomiLunarDiskAttack;
@@ -26,7 +21,10 @@ public class TsukuyomiBoss : EntityState
     //for triggering the string Actions from another script: TsukuyomiBoss._tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
     //for triggerig the string Actions from this script _tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
 
+
     [SerializeField] float _attackDelay;
+
+    private Collider2D _collider;
 
     [Header("Arc Shooting")]
     [SerializeField] private int _arcProjectileCount = 5;
@@ -42,18 +40,19 @@ public class TsukuyomiBoss : EntityState
     protected override void HandleWalking()
     {
         if (!(_navMeshAgent.pathPending || _moveWaiting || _navMeshAgent.remainingDistance != 0)) StartCoroutine(MoveWaiting());
-        if (_finishedArcAttack)
+        if (_finishedArcAttack && _teleport._finishedAttack)
         {
             FlipToPlayer();
         }
     }
-    protected override void HandleRunning() {  }
-    
+    protected override void HandleRunning() { }
+
     protected override void Initialize()
     {
         _swordAttacks = GetComponent<SwordStrikeAttack>();
         _teleport = GetComponent<Teleport>();
         _allRoundFire = GetComponent<AllRoundFire>();
+        _collider = GetComponent<Collider2D>();
 
         _healthManager._onHit += CheckPhaseTransition;
         _gameManager.StartFight += StartGame;
@@ -68,10 +67,6 @@ public class TsukuyomiBoss : EntityState
     {
 
     }
-    private void FinishRitual()
-    {
-
-    }
     protected override IEnumerator StartAttacks()
     {
         _animator.SetBool(_stateAnim, false);
@@ -79,18 +74,19 @@ public class TsukuyomiBoss : EntityState
         ChangeState(State.Idle);
         yield return new WaitForSeconds(1.3f);
         ChangeState(State.Walking);
+        _collider.enabled = true;
         int attackTimes = UnityEngine.Random.Range(3 + _phase, 5 + _phase);
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
         {
-            int randomAttack;
-            randomAttack = UnityEngine.Random.Range(1, 5);
-            if (randomAttack == _lastAttack) randomAttack = UnityEngine.Random.Range(1, 5);
+            int randomAttack = UnityEngine.Random.Range(1, 5);
+            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 5);
             _lastAttack = randomAttack;
+
 
             SignToNextAttack(randomAttack - 1, true);
             yield return new WaitForSeconds(1f);
-
+            DisableMovement();
             switch (randomAttack)
             {
                 case 1:
@@ -107,13 +103,16 @@ public class TsukuyomiBoss : EntityState
                     TsukuyomiAllRoundFire?.Invoke();
                     yield return new WaitUntil(() => _allRoundFire._finishedAttack);
                     break;
-
                 case 4:
+                    TestLunarDiskStart();
+                    break;
+                case 5:
                     _TsukuyomiGravityPull?.Invoke("Start");
                     break;
             }
 
             attackedTimes++;
+            EnableMovement();
             yield return new WaitForSeconds(_attackDelay);
         }
         ChangeState(State.Idle);
@@ -126,7 +125,7 @@ public class TsukuyomiBoss : EntityState
         yield return new WaitForSeconds(1f);
         while (_isRitual)
         {
-            int randomAttack = UnityEngine.Random.Range(1, 4);
+            int randomAttack = UnityEngine.Random.Range(1, 5);
 
             SignToNextAttack(randomAttack - 1, false);
             yield return new WaitForSeconds(1f);
@@ -189,15 +188,24 @@ public class TsukuyomiBoss : EntityState
         }
         ChangeState(State.Idle);
     }
+    private void FinishRitual()
+    {
+        _isRitual = false;
+        _attackCycle = StartCoroutine(StartAttacks());
+    }
     private void BossDie()
     {
         _bossHealth.DOScale(0f, 0.35f);
     }
     void OnDestroy()
     {
-        
+        _healthManager._onHit -= CheckPhaseTransition;
+        _gameManager.StartFight -= StartGame;
+        _gameManager.RitualFinished -= FinishRitual;
+        _gameManager.PlayerDie -= StopAttack;
+        _healthManager._onDie -= _gameManager.DefeatedBoss;
+        _healthManager._onDie -= BossDie;
     }
-
     [ContextMenu("Lunar Disk - Start Attack")]
     private void TestLunarDiskStart()
     {

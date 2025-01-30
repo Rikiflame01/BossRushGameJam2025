@@ -13,7 +13,7 @@ public class MeleeDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_canAttack && other.CompareTag(playerTag))
+        if (_canAttack && other.CompareTag(playerTag) && gameObject.activeSelf)
         {
             HealthManager healthManager = other.GetComponent<HealthManager>();
             if (healthManager != null)

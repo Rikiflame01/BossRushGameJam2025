@@ -6,23 +6,33 @@ using UnityEngine;
 
 public class SwordStrikeAttack : MonoBehaviour
 {
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _attackDelay = 0.35f;
     [SerializeField] private float _damage = 5f;
     [SerializeField] private float _followSpeed = 5f;
     [SerializeField] private float _followTime = 1f;
     [SerializeField] private float _areaDamageSize = 3f;
     private GameObject _player;
-    private Rigidbody2D _rb;
     private bool _stopAttack = false;
+
+    private bool _needMove = false;
+    private Vector2 _direction;
+
     public bool _finishedAttack { get; private set;}
 
     void Start()
     {
         _player = GameObject.FindFirstObjectByType<Movement>().gameObject;
-        _rb = GetComponent<Rigidbody2D>();
 
         TsukuyomiBoss._tsukuyomiSwordStrikeAttack += ()=> StartCoroutine(StartSwordStrikeAttack());
     }
-
+    void FixedUpdate()
+    {
+        if (_needMove)
+        {
+            transform.Translate(_direction * _followSpeed * Time.fixedDeltaTime);
+        }
+    }
     public IEnumerator StartSwordStrikeAttack()
     {
         _finishedAttack = false;
@@ -36,20 +46,18 @@ public class SwordStrikeAttack : MonoBehaviour
                 _finishedAttack = true;
                 yield break;
             }
-
-            yield return new WaitForSeconds(1f);
-
+            _needMove = true;
+            _direction = -(transform.position - _player.transform.position).normalized;
+            yield return new WaitForSeconds(_followTime);
+            _needMove = false;
+            AreaDamage();
+            yield return new WaitForSeconds(_attackDelay);
             if (_stopAttack)
             {
                 _stopAttack = false;
                 _finishedAttack = true;
                 yield break;
             }
-
-            _rb.linearVelocity = -(transform.position - _player.transform.position).normalized * _followSpeed;
-            yield return new WaitForSeconds(_followTime);
-            _rb.linearVelocity = Vector2.zero;
-            AreaDamage();
         }
 
         _finishedAttack = true;
@@ -57,7 +65,7 @@ public class SwordStrikeAttack : MonoBehaviour
 
     void AreaDamage()
     {
-        List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(transform.position, _areaDamageSize, Vector2.zero).ToList();
+        List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(_attackPoint.position, _areaDamageSize, Vector2.zero).ToList();
         foreach (RaycastHit2D hit in collidingObjects)
         {
             if (hit.collider.transform.TryGetComponent<Movement>(out Movement playerMovement))
@@ -69,7 +77,7 @@ public class SwordStrikeAttack : MonoBehaviour
 
                 if (playerMovement.TryGetComponent<Knockback>(out Knockback knockBack))
                 {
-                    knockBack.PlayKnockBack(transform.position, 5f, 0.25f);
+                    knockBack.PlayKnockBack(_attackPoint.position, 5f, 0.25f);
                 }
 
                 CameraShake._instance.Shake(0.5f, 0.5f);
@@ -81,5 +89,11 @@ public class SwordStrikeAttack : MonoBehaviour
     public void StopAttack()
     {
         _stopAttack = true;
+        _needMove = false;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_attackPoint.position, _areaDamageSize);
     }
 }
