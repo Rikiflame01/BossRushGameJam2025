@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     private Vector2 _lastDirection;
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private float _hitStunTime;
-    private float _originalScale;
+    public float _originalScale { get; private set; }
 
     [SerializeField] private List<Component> _componentsToDisable;
 
@@ -73,10 +73,13 @@ public class Movement : MonoBehaviour
     private PoolManager _poolManager;
     private Knockback _knockBack;
     private HealthManager _healthManager;
+    private Animator _animator;   
+    private bool _canRotate = true;
 
     void Start()
     {
         _playerRb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _healthManager = GetComponent<HealthManager>();
         _knockBack = GetComponent<Knockback>();
         _gameManager = FindAnyObjectByType<GameManager>();
@@ -140,6 +143,10 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        Vector2 direction = Direction();
+        _animator.SetFloat("InputX", direction.x);
+        _animator.SetFloat("InputY", direction.y);
+
         switch (_currentState)
         {
             case State.Ritual:
@@ -198,6 +205,9 @@ public class Movement : MonoBehaviour
 
     void RotatePlayer()
     {
+        if (!_canRotate)
+            return;
+
         Vector2 direction = Direction();
         if (direction.x > 0)
         {
@@ -208,6 +218,12 @@ public class Movement : MonoBehaviour
             transform.localScale = new Vector3(-_originalScale, transform.localScale.y);
         }
     }
+
+    public void SetCanRotate(bool canRotate)
+    {
+        _canRotate = canRotate;
+    }
+
     #region Dash
     public void Dash(InputAction.CallbackContext callback)
     {
@@ -217,6 +233,7 @@ public class Movement : MonoBehaviour
         _isDash = true;
         _speed = _dashSpeed;
         _audioManager.PlaySFX("Dash");
+        _animator.SetBool("IsDashing", true);
         StartCoroutine(DashDelay());
     }
 
@@ -227,6 +244,7 @@ public class Movement : MonoBehaviour
         _speed = _defaultSpeed;
         _playStep = true;
         _isDash = false;
+        _animator.SetBool("IsDashing", false);
         yield return new WaitForSeconds(_dashDelay);
         _canDash = true;
     }
@@ -361,6 +379,7 @@ public class Movement : MonoBehaviour
         _ritualKey.action.canceled -= StopRitual;
         _setFireKey.action.started -= StartSettingFire;
         _setFireKey.action.canceled -= EndSettingFire;
+        _animator.SetBool("Die", true);
         this.enabled = false;
     }
     private IEnumerator DisableForTime()

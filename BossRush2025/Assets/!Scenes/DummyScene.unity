@@ -17010,6 +17010,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &755536956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+  m_PrefabInstance: {fileID: 833986479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b21f239b4161814cbbf1ed33a858a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &772704677
 GameObject:
   m_ObjectHideFlags: 0
@@ -18161,6 +18172,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3188223377830208523, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 755536956}
     - target: {fileID: 3720756962741641989, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18177,6 +18192,10 @@ PrefabInstance:
       propertyPath: _ritualProgress
       value: 
       objectReference: {fileID: 1507926461}
+    - target: {fileID: 5421945043435906448, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: _attackRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7665682072808817288, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
