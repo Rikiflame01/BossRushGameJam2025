@@ -15637,7 +15637,7 @@ Transform:
   m_GameObject: {fileID: 544839943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11, z: -10}
+  m_LocalPosition: {x: 0, y: 11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15716,7 +15716,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26689,7 +26689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &701423664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56009,11 +56009,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 727779b7f961b4144983fa2e9f543727, type: 3}
   - {fileID: 8300000, guid: 183f7b978f4d7a64cbf134e5878788ff, type: 3}
   - {fileID: 8300000, guid: 5b492b4d0fa367b40a77641587dd12b8, type: 3}
-  - {fileID: 8300000, guid: 9c763294a66596345b2ab02afdc145c9, type: 3}
-  - {fileID: 8300000, guid: 6087e2616d745dc45876116e0a1b9dc8, type: 3}
+  - {fileID: 8300000, guid: f69ad20d763a556418259203d61faa80, type: 3}
+  - {fileID: 8300000, guid: a6b67de3d0a17a143a22634a4f55e7a8, type: 3}
   - {fileID: 8300000, guid: 914d923ac64bead4686f971cdb1bf865, type: 3}
   - {fileID: 8300000, guid: c8368d6134fa7ea45ac8648a97bc803d, type: 3}
   - {fileID: 8300000, guid: 6b1e6476329c43946b77e94d85654723, type: 3}
+  - {fileID: 8300000, guid: ce30bbfe4f77fcb428815dfc12b6b213, type: 3}
+  - {fileID: 8300000, guid: 2047bee9b5f0883489a4b532ddc7b528, type: 3}
+  - {fileID: 8300000, guid: 943749d05d7befc4490f259baf5bf8fc, type: 3}
+  - {fileID: 8300000, guid: 83ef1b795341cdb47b72a91e78edc7c3, type: 3}
+  - {fileID: 8300000, guid: b2d9e0458bdc6d648bee9b9193569091, type: 3}
+  - {fileID: 8300000, guid: baddf900746d2084f91d367d92b3aae0, type: 3}
+  - {fileID: 8300000, guid: def6c31950335f34480274c916c75919, type: 3}
+  - {fileID: 8300000, guid: a431426b35b907047939c308a14a6514, type: 3}
 --- !u!1 &1786443161
 GameObject:
   m_ObjectHideFlags: 0
@@ -65648,7 +65656,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 604447345512464825, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: _health
-      value: 40
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1631012741786938865, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: _upSpawnWavePosition

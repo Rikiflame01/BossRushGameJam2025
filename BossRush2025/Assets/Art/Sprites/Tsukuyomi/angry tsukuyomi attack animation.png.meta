@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 484ef453b112d3649bd7a49ad8e01242
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9064539449076367717
+    second: angry tsukuyomi attack animation_0
+  - first:
+      213: -4371888443737741838
+    second: angry tsukuyomi attack animation_1
+  - first:
+      213: 8578326469244433928
+    second: angry tsukuyomi attack animation_2
+  - first:
+      213: 457450816098697870
+    second: angry tsukuyomi attack animation_3
+  - first:
+      213: 4254154336587914232
+    second: angry tsukuyomi attack animation_4
+  - first:
+      213: 6490174090626764354
+    second: angry tsukuyomi attack animation_5
+  - first:
+      213: -2844689165973387817
+    second: angry tsukuyomi attack animation_6
+  - first:
+      213: -7791404642736871180
+    second: angry tsukuyomi attack animation_7
+  - first:
+      213: -5586648818224001697
+    second: angry tsukuyomi attack animation_8
+  - first:
+      213: -8116525343210039475
+    second: angry tsukuyomi attack animation_9
+  - first:
+      213: -2950505113993556502
+    second: angry tsukuyomi attack animation_10
+  - first:
+      213: 4255368645251312388
+    second: angry tsukuyomi attack animation_11
+  - first:
+      213: 9056887521095119916
+    second: angry tsukuyomi attack animation_12
+  - first:
+      213: -6617596163575227528
+    second: angry tsukuyomi attack animation_13
+  - first:
+      213: -4804681888833651322
+    second: angry tsukuyomi attack animation_14
+  - first:
+      213: 863794917837536015
+    second: angry tsukuyomi attack animation_15
+  - first:
+      213: 2358066478291560241
+    second: angry tsukuyomi attack animation_16
+  - first:
+      213: -7913038380751791215
+    second: angry tsukuyomi attack animation_17
+  - first:
+      213: -4965254004910160473
+    second: angry tsukuyomi attack animation_18
+  - first:
+      213: -8505807778571358009
+    second: angry tsukuyomi attack animation_19
+  - first:
+      213: -7233834901280265978
+    second: angry tsukuyomi attack animation_20
+  - first:
+      213: 864294316679090883
+    second: angry tsukuyomi attack animation_21
+  - first:
+      213: 6538642422830348310
+    second: angry tsukuyomi attack animation_22
+  - first:
+      213: -8416161946929828081
+    second: angry tsukuyomi attack animation_23
+  - first:
+      213: 1709549914564237660
+    second: angry tsukuyomi attack animation_24
+  - first:
+      213: -2502950256602068913
+    second: angry tsukuyomi attack animation_25
+  - first:
+      213: -9077536721804198111
+    second: angry tsukuyomi attack animation_26
+  - first:
+      213: -2407488469351151522
+    second: angry tsukuyomi attack animation_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d472c18eefabc47b5a16538e575dbe
+      internalID: 691880679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ed9002d7c4afa4cb56243251ec65bc
+      internalID: 589633793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03b1fb93a76938429dbaf384a0f76dc
+      internalID: -292592247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf7d22b9f23ee644974214ee4bf8d60
+      internalID: 1486335810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b478641e059b9b4fab397de976ca60f
+      internalID: -41868359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb6b319b5e2e274dbb0909f67f61ea5
+      internalID: 1765972149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9028f98811d8e84bbf6de213d588431
+      internalID: -1184887562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a789416e5c15ec41959d0932f565b9e
+      internalID: 842283062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c04f0c7e85fe44d9037fa662909c0d
+      internalID: 1547403977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fd38dbdcfb1734fba6011c2637ac4a
+      internalID: -2137273529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_10
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220e45cebd0e3394d8921aaca28808ed
+      internalID: 891263562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_11
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c5fd2789c0e9b449baa0951592ef5a
+      internalID: 863268693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c905a39cc678641a76d3fc156de3de
+      internalID: 1024817224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_13
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f21c840ff17114fa437daabf0f2852
+      internalID: -108360231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angry tsukuyomi attack animation_14
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551da931a4f5e6c46a793603355c05d7
+      internalID: -1253694602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7edd39080e91932408bfcafe38cbb4d4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      angry tsukuyomi attack animation_0: 691880679
+      angry tsukuyomi attack animation_1: 589633793
+      angry tsukuyomi attack animation_10: 891263562
+      angry tsukuyomi attack animation_11: 863268693
+      angry tsukuyomi attack animation_12: 1024817224
+      angry tsukuyomi attack animation_13: -108360231
+      angry tsukuyomi attack animation_14: -1253694602
+      angry tsukuyomi attack animation_2: -292592247
+      angry tsukuyomi attack animation_3: 1486335810
+      angry tsukuyomi attack animation_4: -41868359
+      angry tsukuyomi attack animation_5: 1765972149
+      angry tsukuyomi attack animation_6: -1184887562
+      angry tsukuyomi attack animation_7: 842283062
+      angry tsukuyomi attack animation_8: 1547403977
+      angry tsukuyomi attack animation_9: -2137273529
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

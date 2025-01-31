@@ -9,10 +9,15 @@ public class SwordStrikeAttack : MonoBehaviour
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _attackDelay = 0.35f;
     [SerializeField] private float _damage = 5f;
-    [SerializeField] private float _followSpeed = 5f;
+    public float followSpeed = 5f;
+    public int repeatTimes = 3;
     [SerializeField] private float _followTime = 1f;
     [SerializeField] private float _areaDamageSize = 3f;
     private GameObject _player;
+
+    private Animator _animator;
+    private int _attackAnim = Animator.StringToHash("attack");
+
     private bool _stopAttack = false;
 
     private bool _needMove = false;
@@ -23,21 +28,19 @@ public class SwordStrikeAttack : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindFirstObjectByType<Movement>().gameObject;
-
+        _animator = GetComponent<Animator>();
         TsukuyomiBoss._tsukuyomiSwordStrikeAttack += ()=> StartCoroutine(StartSwordStrikeAttack());
     }
     void FixedUpdate()
     {
         if (_needMove)
         {
-            transform.Translate(_direction * _followSpeed * Time.fixedDeltaTime);
+            transform.Translate(_direction * followSpeed * Time.fixedDeltaTime);
         }
     }
     public IEnumerator StartSwordStrikeAttack()
     {
         _finishedAttack = false;
-
-        int repeatTimes = 3;
         for (int i = 0; i < repeatTimes; i++)
         {
             if (_stopAttack)
@@ -46,6 +49,8 @@ public class SwordStrikeAttack : MonoBehaviour
                 _finishedAttack = true;
                 yield break;
             }
+            _animator.SetTrigger(_attackAnim);
+
             _needMove = true;
             _direction = -(transform.position - _player.transform.position).normalized;
             yield return new WaitForSeconds(_followTime);
@@ -90,6 +95,7 @@ public class SwordStrikeAttack : MonoBehaviour
     {
         _stopAttack = true;
         _needMove = false;
+        _finishedAttack = true;
     }
     private void OnDrawGizmosSelected()
     {

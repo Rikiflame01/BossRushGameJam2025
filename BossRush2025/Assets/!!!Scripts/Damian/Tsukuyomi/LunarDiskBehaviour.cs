@@ -7,9 +7,9 @@ public class LunarDiskBehaviour : MonoBehaviour
     [SerializeField] private float _damage = 5f;
     [SerializeField] private string _destroyParticles = "CrystalSplash";
 
-    private float moveSpeed;
-    private float rotateSpeed;
-    private float lifeTime;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private float lifeTime;
 
     private GameObject projectilePrefab;
     private float projectileSpeed;
@@ -18,6 +18,7 @@ public class LunarDiskBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     private int obstacleLayer;
 
+    private bool isVertical;
     private bool isPaused = false;
     private Vector2 savedVelocity;
     private float savedRotateSpeed;
@@ -49,7 +50,7 @@ public class LunarDiskBehaviour : MonoBehaviour
 
     public void Initialize(
         float diskSpeed, float spinSpeed, float diskLifetime,
-        GameObject projectilePrefab, float projectileSpeed, float projectileLifetime)
+        GameObject projectilePrefab, float projectileSpeed, float projectileLifetime, bool isVertical)
     {
         this.moveSpeed = diskSpeed;
         this.rotateSpeed = spinSpeed;
@@ -58,6 +59,7 @@ public class LunarDiskBehaviour : MonoBehaviour
         this.projectilePrefab = projectilePrefab;
         this.projectileSpeed = projectileSpeed;
         this.projectileLifeTime = projectileLifetime;
+        this.isVertical = isVertical;
     }
 
     private void Awake()
@@ -70,9 +72,16 @@ public class LunarDiskBehaviour : MonoBehaviour
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack += HandleLunarDisk;
 
-        Vector2 randomDir = Random.insideUnitCircle.normalized;
-        rb.linearVelocity = randomDir * moveSpeed;
-
+        if(!isVertical)
+        {
+            Vector2 randomDir = Random.Range(0, 2) == 0 ? Vector2.right : Vector2.left;
+            rb.linearVelocity = randomDir * moveSpeed;
+        }
+        else
+        {
+            Vector2 randomDir = Random.Range(0, 2) == 0 ? Vector2.up : Vector2.down;
+            rb.linearVelocity = randomDir * moveSpeed;
+        }
         StartCoroutine(DiskLifetimeRoutine());
     }
 
@@ -143,29 +152,33 @@ public class LunarDiskBehaviour : MonoBehaviour
         Destroy(projObj, projectileLifeTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider, true);
-            return;
-        }
-
         if (collision.gameObject.layer == obstacleLayer)
         {
-            Vector2 normal = collision.contacts[0].normal;
-            Vector2 oppositeDirection = -normal.normalized;
-            float bounceForce = moveSpeed;
-
-            rb.AddForce(oppositeDirection * bounceForce, ForceMode2D.Impulse);
+            if (isVertical)
+            {
+                if ((rb.linearVelocity.y > 0 && transform.position.y > 0) || (rb.linearVelocity.y < 0 && transform.position.y < 0))
+                    rb.linearVelocity = -rb.linearVelocity;
+            }
+            else
+            {
+                if ((rb.linearVelocity.x > 0 && transform.position.x > 0) || (rb.linearVelocity.x < 0 && transform.position.x < 0))
+                    rb.linearVelocity = -rb.linearVelocity;
+            }
         }
 
-        if (collision.gameObject.CompareTag("Player")){
-            if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (collision.TryGetComponent<HealthManager>(out HealthManager healthManager))
             {
                 healthManager.TakeDamage(_damage);
             }
+            if (collision.TryGetComponent<Knockback>(out Knockback knockBack))
+            {
+                knockBack.PlayKnockBack(transform.position);
+            }
+            CameraShake._instance.Shake();
         }
     }
 }

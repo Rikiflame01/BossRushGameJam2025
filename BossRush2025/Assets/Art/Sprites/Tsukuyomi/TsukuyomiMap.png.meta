@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: 37843012626ac274fba7782f77505d98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2512349251479736301
+    second: TsukuyomiMap_0
+  - first:
+      213: -6793578073079798894
+    second: TsukuyomiMap_1
+  - first:
+      213: -3206372116766036812
+    second: TsukuyomiMap_2
+  - first:
+      213: 4886061703426909296
+    second: TsukuyomiMap_3
+  - first:
+      213: -1311653295326876544
+    second: TsukuyomiMap_4
+  - first:
+      213: 1091989722023990211
+    second: TsukuyomiMap_5
+  - first:
+      213: -8163829483158625025
+    second: TsukuyomiMap_6
+  - first:
+      213: 3053315739395828048
+    second: TsukuyomiMap_7
+  - first:
+      213: 4704089604532264741
+    second: TsukuyomiMap_8
+  - first:
+      213: -644130130728721956
+    second: TsukuyomiMap_9
+  - first:
+      213: 9022468431934632583
+    second: TsukuyomiMap_10
+  - first:
+      213: -5769546503269345899
+    second: TsukuyomiMap_11
+  - first:
+      213: 491580585348693318
+    second: TsukuyomiMap_12
+  - first:
+      213: -4610385434801815544
+    second: TsukuyomiMap_13
+  - first:
+      213: 8887487711859345571
+    second: TsukuyomiMap_14
+  - first:
+      213: -8160628445155589751
+    second: TsukuyomiMap_15
+  - first:
+      213: -8141235975751919533
+    second: TsukuyomiMap_16
+  - first:
+      213: -4518831971392394948
+    second: TsukuyomiMap_17
+  - first:
+      213: 1163534861940558787
+    second: TsukuyomiMap_18
+  - first:
+      213: -6586478329243315617
+    second: TsukuyomiMap_19
+  - first:
+      213: -4042664847488210267
+    second: TsukuyomiMap_20
+  - first:
+      213: -6967536092867224873
+    second: TsukuyomiMap_21
+  - first:
+      213: 2405559383279210948
+    second: TsukuyomiMap_22
+  - first:
+      213: 6767607217289918456
+    second: TsukuyomiMap_23
+  - first:
+      213: 6373399178631883777
+    second: TsukuyomiMap_24
+  - first:
+      213: 1145547575145952660
+    second: TsukuyomiMap_25
+  - first:
+      213: -3110400407613904469
+    second: TsukuyomiMap_26
+  - first:
+      213: 4597446197804344026
+    second: TsukuyomiMap_27
+  - first:
+      213: -2807174395210544756
+    second: TsukuyomiMap_28
+  - first:
+      213: 6808785543478760865
+    second: TsukuyomiMap_29
+  - first:
+      213: 4656242716521161841
+    second: TsukuyomiMap_30
+  - first:
+      213: -3828436357884389501
+    second: TsukuyomiMap_31
+  - first:
+      213: -2469089367433993344
+    second: TsukuyomiMap_32
+  - first:
+      213: 1804327584655431457
+    second: TsukuyomiMap_33
+  - first:
+      213: -7102944103364518994
+    second: TsukuyomiMap_34
+  - first:
+      213: 6188483992512239122
+    second: TsukuyomiMap_35
+  - first:
+      213: -3776350505857051444
+    second: TsukuyomiMap_36
+  - first:
+      213: -6379583595685120686
+    second: TsukuyomiMap_37
+  - first:
+      213: 5221687161040982404
+    second: TsukuyomiMap_38
+  - first:
+      213: -5252604893945559800
+    second: TsukuyomiMap_39
+  - first:
+      213: 2297154838863289077
+    second: TsukuyomiMap_40
+  - first:
+      213: 2490931624524575352
+    second: TsukuyomiMap_41
+  - first:
+      213: -4734214363151206881
+    second: TsukuyomiMap_42
+  - first:
+      213: -6705165836847138898
+    second: TsukuyomiMap_43
+  - first:
+      213: -214155023900254673
+    second: TsukuyomiMap_44
+  - first:
+      213: 2545160237888377379
+    second: TsukuyomiMap_45
+  - first:
+      213: -314525676494984869
+    second: TsukuyomiMap_46
+  - first:
+      213: -9026455786320455984
+    second: TsukuyomiMap_47
+  - first:
+      213: 3933707035767386490
+    second: TsukuyomiMap_48
+  - first:
+      213: 5009023711618588992
+    second: TsukuyomiMap_49
+  - first:
+      213: 8217356195989067490
+    second: TsukuyomiMap_50
+  - first:
+      213: 2282405193385283981
+    second: TsukuyomiMap_51
+  - first:
+      213: -4859368159065515909
+    second: TsukuyomiMap_52
+  - first:
+      213: -7957698723637936385
+    second: TsukuyomiMap_53
+  - first:
+      213: -7966113316243900241
+    second: TsukuyomiMap_54
+  - first:
+      213: 8780976477952366223
+    second: TsukuyomiMap_55
+  - first:
+      213: -3241442093785567407
+    second: TsukuyomiMap_56
+  - first:
+      213: 8875199001811021664
+    second: TsukuyomiMap_57
+  - first:
+      213: 4307127187538996374
+    second: TsukuyomiMap_58
+  - first:
+      213: 1925220811092670120
+    second: TsukuyomiMap_59
+  - first:
+      213: -393184488371156059
+    second: TsukuyomiMap_60
+  - first:
+      213: 8827740265170703143
+    second: TsukuyomiMap_61
+  - first:
+      213: 2819400295368301104
+    second: TsukuyomiMap_62
+  - first:
+      213: 4862282655300403960
+    second: TsukuyomiMap_63
+  - first:
+      213: 2077933124040120629
+    second: TsukuyomiMap_64
+  - first:
+      213: 248644391204263971
+    second: TsukuyomiMap_65
+  - first:
+      213: -1009183713742019678
+    second: TsukuyomiMap_66
+  - first:
+      213: -1878784758035688179
+    second: TsukuyomiMap_67
+  - first:
+      213: 6916189325482869609
+    second: TsukuyomiMap_68
+  - first:
+      213: -3451293203738168245
+    second: TsukuyomiMap_69
+  - first:
+      213: -2665087937376262839
+    second: TsukuyomiMap_70
+  - first:
+      213: -7026203817717606896
+    second: TsukuyomiMap_71
+  - first:
+      213: -4391915933832629191
+    second: TsukuyomiMap_72
+  - first:
+      213: 6793374367392530108
+    second: TsukuyomiMap_73
+  - first:
+      213: -8464604290822122033
+    second: TsukuyomiMap_74
+  - first:
+      213: -6048858524888600803
+    second: TsukuyomiMap_75
+  - first:
+      213: 6097972556081792152
+    second: TsukuyomiMap_76
+  - first:
+      213: -7998877837612178680
+    second: TsukuyomiMap_77
+  - first:
+      213: 1558955320673863795
+    second: TsukuyomiMap_78
+  - first:
+      213: 9010505927812822012
+    second: TsukuyomiMap_79
+  - first:
+      213: 2020353405576230551
+    second: TsukuyomiMap_80
+  - first:
+      213: 8458807632093619100
+    second: TsukuyomiMap_81
+  - first:
+      213: -722744191821013865
+    second: TsukuyomiMap_82
+  - first:
+      213: -7474333297669773030
+    second: TsukuyomiMap_83
+  - first:
+      213: 1586902482976760047
+    second: TsukuyomiMap_84
+  - first:
+      213: 963465383023946798
+    second: TsukuyomiMap_85
+  - first:
+      213: -4490750428807728457
+    second: TsukuyomiMap_86
+  - first:
+      213: 140323061222120297
+    second: TsukuyomiMap_87
+  - first:
+      213: -881334843528255187
+    second: TsukuyomiMap_88
+  - first:
+      213: -2342692560843057758
+    second: TsukuyomiMap_89
+  - first:
+      213: -2718449715458427019
+    second: TsukuyomiMap_90
+  - first:
+      213: -2285263066289873647
+    second: TsukuyomiMap_91
+  - first:
+      213: -346563660772822915
+    second: TsukuyomiMap_92
+  - first:
+      213: 1363663215716120658
+    second: TsukuyomiMap_93
+  - first:
+      213: -4618443418900307653
+    second: TsukuyomiMap_94
+  - first:
+      213: -3852220075260407478
+    second: TsukuyomiMap_95
+  - first:
+      213: 4255180773314956280
+    second: TsukuyomiMap_96
+  - first:
+      213: -2926568055087309133
+    second: TsukuyomiMap_97
+  - first:
+      213: 8293276579248258901
+    second: TsukuyomiMap_98
+  - first:
+      213: -4996944716318901369
+    second: TsukuyomiMap_99
+  - first:
+      213: 2038090171828187392
+    second: TsukuyomiMap_100
+  - first:
+      213: 6561818181649591363
+    second: TsukuyomiMap_101
+  - first:
+      213: 8554056980012312340
+    second: TsukuyomiMap_102
+  - first:
+      213: 270235878075043450
+    second: TsukuyomiMap_103
+  - first:
+      213: 3249232258599155924
+    second: TsukuyomiMap_104
+  - first:
+      213: -6621948990660075751
+    second: TsukuyomiMap_105
+  - first:
+      213: 5502607487840034040
+    second: TsukuyomiMap_106
+  - first:
+      213: 1187340070637146890
+    second: TsukuyomiMap_107
+  - first:
+      213: 6927619926811651464
+    second: TsukuyomiMap_108
+  - first:
+      213: -8320288046553316327
+    second: TsukuyomiMap_109
+  - first:
+      213: 6642520516334560161
+    second: TsukuyomiMap_110
+  - first:
+      213: 1891131104887167668
+    second: TsukuyomiMap_111
+  - first:
+      213: 5285226738144631251
+    second: TsukuyomiMap_112
+  - first:
+      213: 20083424991689186
+    second: TsukuyomiMap_113
+  - first:
+      213: -7549897065999729295
+    second: TsukuyomiMap_114
+  - first:
+      213: -9044263891003319489
+    second: TsukuyomiMap_115
+  - first:
+      213: -8933401509190838265
+    second: TsukuyomiMap_116
+  - first:
+      213: 2244328133942150476
+    second: TsukuyomiMap_117
+  - first:
+      213: 6900753814447550224
+    second: TsukuyomiMap_118
+  - first:
+      213: 680862599908448117
+    second: TsukuyomiMap_119
+  - first:
+      213: -7293428005761619957
+    second: TsukuyomiMap_120
+  - first:
+      213: 2375931722331343103
+    second: TsukuyomiMap_121
+  - first:
+      213: -1131415113854824829
+    second: TsukuyomiMap_122
+  - first:
+      213: 909160214121239085
+    second: TsukuyomiMap_123
+  - first:
+      213: -3102703428496308943
+    second: TsukuyomiMap_124
+  - first:
+      213: 4574547732011562165
+    second: TsukuyomiMap_125
+  - first:
+      213: -8351536727577368399
+    second: TsukuyomiMap_126
+  - first:
+      213: 8014251856601756549
+    second: TsukuyomiMap_127
+  - first:
+      213: -5007785926245931481
+    second: TsukuyomiMap_128
+  - first:
+      213: 3597705108548051752
+    second: TsukuyomiMap_129
+  - first:
+      213: -8286135934978670773
+    second: TsukuyomiMap_130
+  - first:
+      213: 7158486658805504171
+    second: TsukuyomiMap_131
+  - first:
+      213: 1197273351116914153
+    second: TsukuyomiMap_132
+  - first:
+      213: 1554985539266371304
+    second: TsukuyomiMap_133
+  - first:
+      213: -5027681502334920521
+    second: TsukuyomiMap_134
+  - first:
+      213: -5734617346961847307
+    second: TsukuyomiMap_135
+  - first:
+      213: 8002642609891332675
+    second: TsukuyomiMap_136
+  - first:
+      213: -3765161928007577203
+    second: TsukuyomiMap_137
+  - first:
+      213: 8992119923529683554
+    second: TsukuyomiMap_138
+  - first:
+      213: 6953888044409963541
+    second: TsukuyomiMap_139
+  - first:
+      213: -3342747020600927394
+    second: TsukuyomiMap_140
+  - first:
+      213: 8640070705722683412
+    second: TsukuyomiMap_141
+  - first:
+      213: -7112228329270088900
+    second: TsukuyomiMap_142
+  - first:
+      213: -3440961379694265227
+    second: TsukuyomiMap_143
+  - first:
+      213: -6030909339913828471
+    second: TsukuyomiMap_144
+  - first:
+      213: -3687987503575467424
+    second: TsukuyomiMap_145
+  - first:
+      213: 1366554349442291539
+    second: TsukuyomiMap_146
+  - first:
+      213: 5460046795991625216
+    second: TsukuyomiMap_147
+  - first:
+      213: -6432287454178675507
+    second: TsukuyomiMap_148
+  - first:
+      213: 2122643381579726493
+    second: TsukuyomiMap_149
+  - first:
+      213: -3006573528692691576
+    second: TsukuyomiMap_150
+  - first:
+      213: 4567359585933466203
+    second: TsukuyomiMap_151
+  - first:
+      213: -7532969543609462590
+    second: TsukuyomiMap_152
+  - first:
+      213: -8213671112582217331
+    second: TsukuyomiMap_153
+  - first:
+      213: 4329901974899965306
+    second: TsukuyomiMap_154
+  - first:
+      213: 1047466685710092698
+    second: TsukuyomiMap_155
+  - first:
+      213: -8162774718882279255
+    second: TsukuyomiMap_156
+  - first:
+      213: -1472049599876822262
+    second: TsukuyomiMap_157
+  - first:
+      213: -4527919059972361716
+    second: TsukuyomiMap_158
+  - first:
+      213: -250647047213634194
+    second: TsukuyomiMap_159
+  - first:
+      213: 7761973101383349376
+    second: TsukuyomiMap_160
+  - first:
+      213: 5417553151030017044
+    second: TsukuyomiMap_161
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TsukuyomiMap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945
+        width: 509
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310f4d1baa7522dd0800000000000000
+      internalID: -2512349251479736301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 827
+        width: 508
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29322388cbc58b1a0800000000000000
+      internalID: -6793578073079798894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 885
+        width: 508
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc61724c8da083d0800000000000000
+      internalID: -3206372116766036812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 767
+        width: 510
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c229ff6421ccde0800000000000000
+      internalID: -1311653295326876544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 694
+        width: 510
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c31e97ddd6872f00800000000000000
+      internalID: 1091989722023990211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 371
+        width: 510
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52fd0cd6298484140800000000000000
+      internalID: 4704089604532264741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_9
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 444
+        width: 373
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1e9c01f079f07f0800000000000000
+      internalID: -644130130728721956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_42
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 295
+        width: 143
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16f1d1ae11bc4eb0800000000000000
+      internalID: -4734214363151206881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_44
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 314
+        width: 59
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e5f81f32b270df0800000000000000
+      internalID: -214155023900254673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_77
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 106
+        width: 98
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803a16f8cf64ef090800000000000000
+      internalID: -7998877837612178680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_78
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 183
+        width: 64
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378887dba9582a510800000000000000
+      internalID: 1558955320673863795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_79
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 191
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3b5d1d66fbb0d70800000000000000
+      internalID: 9010505927812822012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 306
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3305e0977d9a7be4bb86db80dbb9cd6b
+      internalID: 4886061703426909296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 306
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4893af1170cccee4e86245d4a83f9a2c
+      internalID: 3053315739395828048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cec0c0c69a3be45847338e25e6197c
+      internalID: 9022468431934632583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TsukuyomiMap_6
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 315
+        width: 56
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4fdc041d98b3948a43b02fa0b26d55
+      internalID: -8163829483158625025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 944f6ebf0f7f2bc4386f33e89bb5c9f6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TsukuyomiMap_0: -2512349251479736301
+      TsukuyomiMap_1: -6793578073079798894
+      TsukuyomiMap_10: 9022468431934632583
+      TsukuyomiMap_100: 2038090171828187392
+      TsukuyomiMap_101: 6561818181649591363
+      TsukuyomiMap_102: 8554056980012312340
+      TsukuyomiMap_103: 270235878075043450
+      TsukuyomiMap_104: 3249232258599155924
+      TsukuyomiMap_105: -6621948990660075751
+      TsukuyomiMap_106: 5502607487840034040
+      TsukuyomiMap_107: 1187340070637146890
+      TsukuyomiMap_108: 6927619926811651464
+      TsukuyomiMap_109: -8320288046553316327
+      TsukuyomiMap_11: -5769546503269345899
+      TsukuyomiMap_110: 6642520516334560161
+      TsukuyomiMap_111: 1891131104887167668
+      TsukuyomiMap_112: 5285226738144631251
+      TsukuyomiMap_113: 20083424991689186
+      TsukuyomiMap_114: -7549897065999729295
+      TsukuyomiMap_115: -9044263891003319489
+      TsukuyomiMap_116: -8933401509190838265
+      TsukuyomiMap_117: 2244328133942150476
+      TsukuyomiMap_118: 6900753814447550224
+      TsukuyomiMap_119: 680862599908448117
+      TsukuyomiMap_12: 491580585348693318
+      TsukuyomiMap_120: -7293428005761619957
+      TsukuyomiMap_121: 2375931722331343103
+      TsukuyomiMap_122: -1131415113854824829
+      TsukuyomiMap_123: 909160214121239085
+      TsukuyomiMap_124: -3102703428496308943
+      TsukuyomiMap_125: 4574547732011562165
+      TsukuyomiMap_126: -8351536727577368399
+      TsukuyomiMap_127: 8014251856601756549
+      TsukuyomiMap_128: -5007785926245931481
+      TsukuyomiMap_129: 3597705108548051752
+      TsukuyomiMap_13: -4610385434801815544
+      TsukuyomiMap_130: -8286135934978670773
+      TsukuyomiMap_131: 7158486658805504171
+      TsukuyomiMap_132: 1197273351116914153
+      TsukuyomiMap_133: 1554985539266371304
+      TsukuyomiMap_134: -5027681502334920521
+      TsukuyomiMap_135: -5734617346961847307
+      TsukuyomiMap_136: 8002642609891332675
+      TsukuyomiMap_137: -3765161928007577203
+      TsukuyomiMap_138: 8992119923529683554
+      TsukuyomiMap_139: 6953888044409963541
+      TsukuyomiMap_14: 8887487711859345571
+      TsukuyomiMap_140: -3342747020600927394
+      TsukuyomiMap_141: 8640070705722683412
+      TsukuyomiMap_142: -7112228329270088900
+      TsukuyomiMap_143: -3440961379694265227
+      TsukuyomiMap_144: -6030909339913828471
+      TsukuyomiMap_145: -3687987503575467424
+      TsukuyomiMap_146: 1366554349442291539
+      TsukuyomiMap_147: 5460046795991625216
+      TsukuyomiMap_148: -6432287454178675507
+      TsukuyomiMap_149: 2122643381579726493
+      TsukuyomiMap_15: -8160628445155589751
+      TsukuyomiMap_150: -3006573528692691576
+      TsukuyomiMap_151: 4567359585933466203
+      TsukuyomiMap_152: -7532969543609462590
+      TsukuyomiMap_153: -8213671112582217331
+      TsukuyomiMap_154: 4329901974899965306
+      TsukuyomiMap_155: 1047466685710092698
+      TsukuyomiMap_156: -8162774718882279255
+      TsukuyomiMap_157: -1472049599876822262
+      TsukuyomiMap_158: -4527919059972361716
+      TsukuyomiMap_159: -250647047213634194
+      TsukuyomiMap_16: -8141235975751919533
+      TsukuyomiMap_160: 7761973101383349376
+      TsukuyomiMap_161: 5417553151030017044
+      TsukuyomiMap_162: -1716490608
+      TsukuyomiMap_17: -4518831971392394948
+      TsukuyomiMap_18: 1163534861940558787
+      TsukuyomiMap_19: -6586478329243315617
+      TsukuyomiMap_2: -3206372116766036812
+      TsukuyomiMap_20: -4042664847488210267
+      TsukuyomiMap_21: -6967536092867224873
+      TsukuyomiMap_22: 2405559383279210948
+      TsukuyomiMap_23: 6767607217289918456
+      TsukuyomiMap_24: 6373399178631883777
+      TsukuyomiMap_25: 1145547575145952660
+      TsukuyomiMap_26: -3110400407613904469
+      TsukuyomiMap_27: 4597446197804344026
+      TsukuyomiMap_28: -2807174395210544756
+      TsukuyomiMap_29: 6808785543478760865
+      TsukuyomiMap_3: 4886061703426909296
+      TsukuyomiMap_30: 4656242716521161841
+      TsukuyomiMap_31: -3828436357884389501
+      TsukuyomiMap_32: -2469089367433993344
+      TsukuyomiMap_33: 1804327584655431457
+      TsukuyomiMap_34: -7102944103364518994
+      TsukuyomiMap_35: 6188483992512239122
+      TsukuyomiMap_36: -3776350505857051444
+      TsukuyomiMap_37: -6379583595685120686
+      TsukuyomiMap_38: 5221687161040982404
+      TsukuyomiMap_39: -5252604893945559800
+      TsukuyomiMap_4: -1311653295326876544
+      TsukuyomiMap_40: 2297154838863289077
+      TsukuyomiMap_41: 2490931624524575352
+      TsukuyomiMap_42: -4734214363151206881
+      TsukuyomiMap_43: -6705165836847138898
+      TsukuyomiMap_44: -214155023900254673
+      TsukuyomiMap_45: 2545160237888377379
+      TsukuyomiMap_46: -314525676494984869
+      TsukuyomiMap_47: -9026455786320455984
+      TsukuyomiMap_48: 3933707035767386490
+      TsukuyomiMap_49: 5009023711618588992
+      TsukuyomiMap_5: 1091989722023990211
+      TsukuyomiMap_50: 8217356195989067490
+      TsukuyomiMap_51: 2282405193385283981
+      TsukuyomiMap_52: -4859368159065515909
+      TsukuyomiMap_53: -7957698723637936385
+      TsukuyomiMap_54: -7966113316243900241
+      TsukuyomiMap_55: 8780976477952366223
+      TsukuyomiMap_56: -3241442093785567407
+      TsukuyomiMap_57: 8875199001811021664
+      TsukuyomiMap_58: 4307127187538996374
+      TsukuyomiMap_59: 1925220811092670120
+      TsukuyomiMap_6: -8163829483158625025
+      TsukuyomiMap_60: -393184488371156059
+      TsukuyomiMap_61: 8827740265170703143
+      TsukuyomiMap_62: 2819400295368301104
+      TsukuyomiMap_63: 4862282655300403960
+      TsukuyomiMap_64: 2077933124040120629
+      TsukuyomiMap_65: 248644391204263971
+      TsukuyomiMap_66: -1009183713742019678
+      TsukuyomiMap_67: -1878784758035688179
+      TsukuyomiMap_68: 6916189325482869609
+      TsukuyomiMap_69: -3451293203738168245
+      TsukuyomiMap_7: 3053315739395828048
+      TsukuyomiMap_70: -2665087937376262839
+      TsukuyomiMap_71: -7026203817717606896
+      TsukuyomiMap_72: -4391915933832629191
+      TsukuyomiMap_73: 6793374367392530108
+      TsukuyomiMap_74: -8464604290822122033
+      TsukuyomiMap_75: -6048858524888600803
+      TsukuyomiMap_76: 6097972556081792152
+      TsukuyomiMap_77: -7998877837612178680
+      TsukuyomiMap_78: 1558955320673863795
+      TsukuyomiMap_79: 9010505927812822012
+      TsukuyomiMap_8: 4704089604532264741
+      TsukuyomiMap_80: 2020353405576230551
+      TsukuyomiMap_81: 8458807632093619100
+      TsukuyomiMap_82: -722744191821013865
+      TsukuyomiMap_83: -7474333297669773030
+      TsukuyomiMap_84: 1586902482976760047
+      TsukuyomiMap_85: 963465383023946798
+      TsukuyomiMap_86: -4490750428807728457
+      TsukuyomiMap_87: 140323061222120297
+      TsukuyomiMap_88: -881334843528255187
+      TsukuyomiMap_89: -2342692560843057758
+      TsukuyomiMap_9: -644130130728721956
+      TsukuyomiMap_90: -2718449715458427019
+      TsukuyomiMap_91: -2285263066289873647
+      TsukuyomiMap_92: -346563660772822915
+      TsukuyomiMap_93: 1363663215716120658
+      TsukuyomiMap_94: -4618443418900307653
+      TsukuyomiMap_95: -3852220075260407478
+      TsukuyomiMap_96: 4255180773314956280
+      TsukuyomiMap_97: -2926568055087309133
+      TsukuyomiMap_98: 8293276579248258901
+      TsukuyomiMap_99: -4996944716318901369
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
         _ritualCircle.GetComponent<Collider2D>().enabled = true;
         GameObject _currentParticles = _poolManager.GetObject(_sakuraWave);
         _currentParticles.transform.position = Vector3.zero;
+        AudioManager._instance.PlaySFX("Boss sitting");
     }
 
     public void RitualEnd(int circleNumber)

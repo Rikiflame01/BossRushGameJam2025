@@ -14,18 +14,27 @@ public class TsukuyomiBoss : EntityState
     public static event Action _tsukuyomiSwordStrikeAttack;
     private SwordStrikeAttack _swordAttacks;
     public static event Action _tsukuyomiNeedlesAttack;
+    private NeedlessAttack _needlesAttack;
     public static Action<string> _TsukuyomiGravityPull;
 
     public static Action<string> _tsukuyomiLunarDiskAttack;
+    private LunarDiskAttack _lunarDiskAttack;
+
+    private Coroutine _inScriptAttack;
 
     //for triggering the string Actions from another script: TsukuyomiBoss._tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
     //for triggerig the string Actions from this script _tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
     private bool _canCrescent = true;
     private bool _canGravity = true;
+    private int _currentAttackIndex;
+
+    private bool _canNeedles = true;
+    private bool _canLunarDisk = true;
 
     [SerializeField] float _attackDelay;
 
     private Collider2D _collider;
+    private Flash _flash;
 
     [Header("Arc Shooting")]
     [SerializeField] private int _arcProjectileCount = 5;
@@ -53,6 +62,8 @@ public class TsukuyomiBoss : EntityState
         _swordAttacks = GetComponent<SwordStrikeAttack>();
         _teleport = GetComponent<Teleport>();
         _allRoundFire = GetComponent<AllRoundFire>();
+        _needlesAttack = GetComponent<NeedlessAttack>();
+        _lunarDiskAttack = GetComponent<LunarDiskAttack>();
         _collider = GetComponent<Collider2D>();
 
         _healthManager._onHit += CheckPhaseTransition;
@@ -63,10 +74,6 @@ public class TsukuyomiBoss : EntityState
         _healthManager._onDie += BossDie;
 
         ChangeState(State.Idle);
-    }
-    private void CheckPhaseTransition(float damage)
-    {
-
     }
     protected override IEnumerator StartAttacks()
     {
@@ -80,10 +87,15 @@ public class TsukuyomiBoss : EntityState
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
         {
-            int randomAttack = UnityEngine.Random.Range(1, 6);
-            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 6);
+            int randomAttack = UnityEngine.Random.Range(1, 5);
+            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 5);
+            if(randomAttack == 4 && !_canLunarDisk)
+            {
+                randomAttack = UnityEngine.Random.Range(1, 4);
+                if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 4);
+            }
             _lastAttack = randomAttack;
-
+            _currentAttackIndex = randomAttack;
 
             SignToNextAttack(randomAttack - 1, true);
             yield return new WaitForSeconds(1f);
@@ -106,6 +118,8 @@ public class TsukuyomiBoss : EntityState
                     break;
                 case 4:
                     TestLunarDiskStart();
+                    StartCoroutine(NoLunarDisk());
+                    yield return new WaitForSeconds(0.8f);
                     break;
                 case 5:
                     _TsukuyomiGravityPull?.Invoke("Start");
@@ -126,7 +140,15 @@ public class TsukuyomiBoss : EntityState
         yield return new WaitForSeconds(1f);
         while (_isRitual)
         {
-            int randomAttack = UnityEngine.Random.Range(1, 5);
+            int randomAttack = UnityEngine.Random.Range(1, 4);
+            if(_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 4);
+            if (!_canNeedles && randomAttack == 3)
+            {
+                randomAttack = UnityEngine.Random.Range(1, 3);
+                if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 3);
+            }
+            _lastAttack = randomAttack;
+            _currentAttackIndex = randomAttack + 4;
 
             SignToNextAttack(randomAttack - 1, false);
             yield return new WaitForSeconds(1f);
@@ -134,7 +156,7 @@ public class TsukuyomiBoss : EntityState
             switch (randomAttack)
             {
                 case 1:
-                    StartCoroutine(ArcShooting(_arcProjectileCount));
+                    _inScriptAttack = StartCoroutine(ArcShooting(_arcProjectileCount));
                     yield return new WaitUntil(() => _finishedArcAttack);
                     break;
                 case 2:
@@ -143,6 +165,7 @@ public class TsukuyomiBoss : EntityState
                     break;
                 case 3:
                     _tsukuyomiNeedlesAttack?.Invoke();
+                    yield return new WaitUntil(() => _needlesAttack._finishedAttack);
                     break;
                 case 4:
                     _tsukuyomiCrescentAttack?.Invoke();
@@ -188,11 +211,13 @@ public class TsukuyomiBoss : EntityState
             StopCoroutine(_attackCycle);
             _attackCycle = null;
         }
+        StopCurrentAttack();
         ChangeState(State.Idle);
     }
     private void FinishRitual()
     {
         _isRitual = false;
+        StopCurrentAttack();
         _attackCycle = StartCoroutine(StartAttacks());
     }
     private void BossDie()
@@ -208,11 +233,114 @@ public class TsukuyomiBoss : EntityState
         _healthManager._onDie -= _gameManager.DefeatedBoss;
         _healthManager._onDie -= BossDie;
     }
+
+    #region NoAttackCoroutines
+    private IEnumerator NoNeedles()
+    {
+        _canNeedles = false;
+        yield return new WaitUntil(() => _needlesAttack._finishedAttack);
+        _canNeedles = true;
+    }
+    private IEnumerator NoLunarDisk()
+    {
+        _canLunarDisk = false;
+        yield return new WaitForSeconds(_lunarDiskAttack.diskLifetime + 0.8f);
+        _canLunarDisk = true;
+    }
     private IEnumerator NoCrescent()
     {
         _canCrescent = false;
         yield return new WaitForSeconds(7f);
         _canCrescent = true;
+    }
+    private void StopCurrentAttack()
+    {
+        switch(_currentAttackIndex)
+        {
+            case 1:
+                _swordAttacks.StopAttack();
+                break;
+            case 2:
+                _teleport.StopTeleport();
+                break;
+            case 3:
+                _allRoundFire.StopAttack();
+                break;
+            case 4:
+                TestLunarDiskStop();
+                break;
+            case 5:
+                if (_inScriptAttack != null)
+                {
+                    StopCoroutine(_inScriptAttack);
+                    _inScriptAttack = null;
+                }
+                _finishedArcAttack = true;
+                break;
+            case 6:
+                _allRoundFire.StopAttack();
+                break;
+            case 7:
+                _needlesAttack.StopAttack();
+                break;
+        }
+    }
+    #endregion
+
+    private void CheckPhaseTransition(float healthPart)
+    {
+        if (_healthManager.GetHealth() / _healthManager._maxHealth <= 0.5f && _phase < 2)
+        {
+            _phase = 2;
+            _animator.SetInteger(_phaseAnim, 2);
+
+            _swordAttacks.followSpeed += 2.5f;
+            _swordAttacks.repeatTimes += 1;
+
+            _teleport.repeatTimes += 1;
+            _teleport.teleportDuration -= 0.2f;
+            _teleport.projectileCount += 4;
+            _teleport.attackInterval -= 0.5f;
+
+            _allRoundFire.rows += 1;
+            _allRoundFire.rowDelay += 0.2f;
+            _allRoundFire.projectileSpeed += 1;
+
+            _needlesAttack.delay -= 0.5f;
+            _needlesAttack.countOfProjectiles += 2;
+
+            _lunarDiskAttack.repeatTimes++;
+
+            StartCoroutine(PhaseTranslate());
+        }
+    }
+    private IEnumerator PhaseTranslate()
+    {
+        _collider.enabled = false;
+        _animator.SetBool(_stateAnim, false);
+        if (_attackCycle != null)
+        {
+            StopCoroutine(_attackCycle);
+            _attackCycle = null;
+        }
+        StopCurrentAttack();
+        ChangeState(State.Idle);
+
+        EnableMovement();
+
+        _audioManager.StopBGM();
+        StartCoroutine(BossRoar());
+        yield return new WaitForSeconds(2f);
+
+        _collider.enabled = true;
+        _audioManager.PlayBGM(_secondTrack);
+
+        _attackCycle = StartCoroutine(StartAttacks());
+    }
+    private void FlashSphere()
+    {
+        _audioManager.PlaySFX("Boss Casting");
+        _flash.LightOn(3, 0.2f, 0.8f);
     }
     #region LunarDisk
     [ContextMenu("Lunar Disk - Start Attack")]

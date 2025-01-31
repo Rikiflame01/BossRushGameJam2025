@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 4be902695bceb4b45b72d8ff1cfc5abc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2992908530541434891
+    second: tsukuyomi attack animation_0
+  - first:
+      213: 5378645517384496134
+    second: tsukuyomi attack animation_1
+  - first:
+      213: 6826740701306633944
+    second: tsukuyomi attack animation_2
+  - first:
+      213: -1897806214121666961
+    second: tsukuyomi attack animation_3
+  - first:
+      213: 2603811160445967334
+    second: tsukuyomi attack animation_4
+  - first:
+      213: 6194380647787129726
+    second: tsukuyomi attack animation_5
+  - first:
+      213: 6204710929222479220
+    second: tsukuyomi attack animation_6
+  - first:
+      213: -3411880892900608697
+    second: tsukuyomi attack animation_7
+  - first:
+      213: 6925031547856559740
+    second: tsukuyomi attack animation_8
+  - first:
+      213: -2702869278651115768
+    second: tsukuyomi attack animation_9
+  - first:
+      213: 7996349311198570580
+    second: tsukuyomi attack animation_10
+  - first:
+      213: 8492544486458906509
+    second: tsukuyomi attack animation_11
+  - first:
+      213: -309110856038353447
+    second: tsukuyomi attack animation_12
+  - first:
+      213: 7438692470678912584
+    second: tsukuyomi attack animation_13
+  - first:
+      213: 7249723035210555053
+    second: tsukuyomi attack animation_14
+  - first:
+      213: -4656351622541779060
+    second: tsukuyomi attack animation_15
+  - first:
+      213: -2755471042148771542
+    second: tsukuyomi attack animation_16
+  - first:
+      213: -3596995655381698286
+    second: tsukuyomi attack animation_17
+  - first:
+      213: 520562915426237006
+    second: tsukuyomi attack animation_18
+  - first:
+      213: 1657926083435036796
+    second: tsukuyomi attack animation_19
+  - first:
+      213: -5005368584893795498
+    second: tsukuyomi attack animation_20
+  - first:
+      213: -1980131671372513857
+    second: tsukuyomi attack animation_21
+  - first:
+      213: 333172227387924524
+    second: tsukuyomi attack animation_22
+  - first:
+      213: 8662515721853980162
+    second: tsukuyomi attack animation_23
+  - first:
+      213: 4589326831980922313
+    second: tsukuyomi attack animation_24
+  - first:
+      213: 7566260949120773200
+    second: tsukuyomi attack animation_25
+  - first:
+      213: 772444360270212011
+    second: tsukuyomi attack animation_26
+  - first:
+      213: 4899339159590096810
+    second: tsukuyomi attack animation_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0898209372f88920800000000000000
+      internalID: 2992908530541434891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01c56f532457cc43ac03904c6b977d4
+      internalID: 5378645517384496134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80c6f382916cae49b77106935a6c3c1
+      internalID: 6826740701306633944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0478005a2d011f043883592e55f83489
+      internalID: -1897806214121666961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fea9179f505c5047aeee5cd068de584
+      internalID: 2603811160445967334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53d3f782d4d3694daa023f86b726089
+      internalID: 6194380647787129726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc19ab24fb86bda4fb0ff984ca0b032d
+      internalID: 6204710929222479220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f26b9171472f04ca97e0abfdfb9836
+      internalID: -3411880892900608697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410a1ec0ec8c1b34baac87d2126d6722
+      internalID: 6925031547856559740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8df394ee41a7554fb9a1c015881dd65
+      internalID: -2702869278651115768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_10
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e03a7fd7c010be4b9a8fb25200cd6fc
+      internalID: 7996349311198570580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_11
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bd826c774c13d488627f669a61827a
+      internalID: 8492544486458906509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d303a58cc5dcb4d8f073f860f829fd
+      internalID: -309110856038353447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_13
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aed65a8eea42fe47afe1b10d86061d3
+      internalID: 7438692470678912584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tsukuyomi attack animation_14
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 125
+        height: 90
+      alignment: 9
+      pivot: {x: 0.436, y: 0.321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7cad7284b07ef45a7b939209f4a819
+      internalID: 7249723035210555053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 224f0e9eefd288242929c361b16f790c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tsukuyomi attack animation_0: 2992908530541434891
+      tsukuyomi attack animation_1: 5378645517384496134
+      tsukuyomi attack animation_10: 7996349311198570580
+      tsukuyomi attack animation_11: 8492544486458906509
+      tsukuyomi attack animation_12: -309110856038353447
+      tsukuyomi attack animation_13: 7438692470678912584
+      tsukuyomi attack animation_14: 7249723035210555053
+      tsukuyomi attack animation_2: 6826740701306633944
+      tsukuyomi attack animation_3: -1897806214121666961
+      tsukuyomi attack animation_4: 2603811160445967334
+      tsukuyomi attack animation_5: 6194380647787129726
+      tsukuyomi attack animation_6: 6204710929222479220
+      tsukuyomi attack animation_7: -3411880892900608697
+      tsukuyomi attack animation_8: 6925031547856559740
+      tsukuyomi attack animation_9: -2702869278651115768
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

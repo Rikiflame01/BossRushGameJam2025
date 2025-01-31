@@ -58,13 +58,24 @@ public class CollisionEnemyDamage : MonoBehaviour
         rb.linearVelocity = savedVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player")){
-            if (collision.gameObject.TryGetComponent<HealthManager>(out HealthManager healthManager))
+        if (other.CompareTag("Player"))
+        {
+            if (other.TryGetComponent<HealthManager>(out HealthManager healthManager))
             {
                 healthManager.TakeDamage(_damage);
             }
+            if (other.TryGetComponent<Knockback>(out Knockback knockBack))
+            {
+                knockBack.PlayKnockBack(transform.position);
+            }
+            CameraShake._instance.Shake();
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            Destroy(gameObject);
         }
     }
 }

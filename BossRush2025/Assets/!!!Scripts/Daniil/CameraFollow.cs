@@ -26,9 +26,10 @@ public class CameraFollow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _offset = new Vector3(0f, 0f, -10f);
         _player = FindAnyObjectByType<Movement>().transform;
-        _offset = transform.position - _player.position;
         _gameManager = FindAnyObjectByType<GameManager>();
+        StartCoroutine(StartAnim());
     }
     void FixedUpdate()
     {
@@ -59,6 +60,12 @@ public class CameraFollow : MonoBehaviour
     {
         transform.DOMove(_gameManager.RitualCenter.position + _offset, _specialMovementDuration);
         StartCoroutine(DisableForTime(duration));
+    }
+    private IEnumerator StartAnim()
+    {
+        StartCoroutine(DisableForTime(4.5f));
+        yield return new WaitForSeconds(1f);
+        transform.DOMove(new Vector3(0, -_maxY, -10), 3.5f);
     }
     private IEnumerator DisableForTime(float time)
     {
