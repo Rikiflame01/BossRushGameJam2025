@@ -34,6 +34,7 @@ public class WaveAttack : MonoBehaviour
             _finishedAttack = true;
             return;
         }
+        AudioManager._instance.PlaySFX("Susanoo Wave attack");
 
         int randomWavePos = Random.Range(0, 2);
         Wave wave = Instantiate(_wavePrefab, randomWavePos == 0 ? _upSpawnWavePosition.position : _downSpawnWavePosition.position, Quaternion.identity).GetComponent<Wave>();

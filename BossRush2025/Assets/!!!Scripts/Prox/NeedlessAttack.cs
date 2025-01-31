@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class NeedlessAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject _needlesProjectilePrefab;
+    [SerializeField] private string _needlesProjectile = "NeedlessProjectile";
     [SerializeField] private float _circleRadius = 2f;
-    [SerializeField] private float _delay = 1f;
-    [SerializeField] private int _countOfProjectiles = 8;
+    public float delay = 1.5f;
+    public int countOfProjectiles = 6;
     private GameObject _player;
     private bool _stopAttack = false;
 
@@ -22,7 +22,7 @@ public class NeedlessAttack : MonoBehaviour
     private IEnumerator SpawnProjectiles()
     {
         _finishedAttack = false;
-        for (int i = 0; i < _countOfProjectiles; i++)
+        for (int i = 0; i < countOfProjectiles; i++)
         {
             if (_stopAttack)
             {
@@ -30,7 +30,7 @@ public class NeedlessAttack : MonoBehaviour
                 yield break;
             }
 
-            yield return new WaitForSeconds(_delay);
+            yield return new WaitForSeconds(delay);
 
             if (_stopAttack)
             {
@@ -39,10 +39,11 @@ public class NeedlessAttack : MonoBehaviour
             }
 
             Vector2 spawnProjectilePos = GetRandomPointOnCircle();
-            GameObject spawnedProjectile = Instantiate(_needlesProjectilePrefab, spawnProjectilePos, Quaternion.identity);
+            GameObject spawnedProjectile = PoolManager._instance.GetObject(_needlesProjectile);
+            spawnedProjectile.transform.position = spawnProjectilePos;
             spawnedProjectile.GetComponent<NeedlesProjectile>().SetTarget(_player);
         }
-        _finishedAttack = false;
+        _finishedAttack = true;
     }
     Vector2 GetRandomPointOnCircle()
     {
@@ -56,5 +57,6 @@ public class NeedlessAttack : MonoBehaviour
     public void StopAttack()
     {
         _stopAttack = true;
+        _finishedAttack = true;
     }
 }

@@ -3,15 +3,16 @@ using System.Collections;
 
 public class AllRoundFire : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    public string projectileName = "Projectile";
     public int rows = 3;
     public int projectilesPerRow = 6;
     public float angleOffset = 10f;
     public float projectileSpeed = 2f;
-    public float projectileLifetime = 5f;
     public float rowDelay = 0.2f;
 
     public bool _finishedAttack { get; private set; } = true;
+
+    private Coroutine _fireCoroutine;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class AllRoundFire : MonoBehaviour
 
     public void FireAllRound()
     {
-        StartCoroutine(FireAllRoundWithDelay());
+        _fireCoroutine = StartCoroutine(FireAllRoundWithDelay());
     }
 
     private IEnumerator FireAllRoundWithDelay()
@@ -41,20 +42,27 @@ public class AllRoundFire : MonoBehaviour
                 float angle = baseAngle + (360f / projectilesPerRow) * i;
                 Vector3 direction = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
 
-                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                GameObject projectile = PoolManager._instance.GetObject(projectileName);
+                projectile.transform.position = transform.position;
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
 
                 if (rb != null)
                 {
                     rb.linearVelocity = direction * projectileSpeed;
                 }
-
-                Destroy(projectile, projectileLifetime);
             }
 
             yield return new WaitForSeconds(rowDelay);
         }
         _finishedAttack = true;
     }
-
+    public void StopAttack()
+    {
+        if(_fireCoroutine != null)
+        {
+            StopCoroutine(_fireCoroutine);
+            _fireCoroutine = null;
+        }
+        _finishedAttack = true;
+    }
 }

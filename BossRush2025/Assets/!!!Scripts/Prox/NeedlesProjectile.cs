@@ -8,18 +8,32 @@ public class NeedlesProjectile : MonoBehaviour
     [SerializeField] private float _flySpeed = 8f;
 
     [SerializeField] private string _destroyParticles = "CrystalSplash";
+    [SerializeField] private string _name = "NeedlessProjectile";
  
     private GameObject _target;
     private Vector3 _flyDirection;
+
+    private Coroutine _rotateCoroutine;
     private bool _attack = false;
     private bool _lookAtTarget = false;
     private bool _spin = true;
 
     void Start()
     {
-        StartCoroutine(RotateDelay());
+        if(_rotateCoroutine != null)
+            _rotateCoroutine = StartCoroutine(RotateDelay());
     }
-
+    void OnEnable()
+    {
+        _rotateCoroutine = StartCoroutine(RotateDelay());
+    }
+    void OnDisable()
+    {
+        _rotateCoroutine = null;
+        _attack = false;
+        _lookAtTarget = false;
+        _spin = true;
+    }
     void Update()
     {
         
@@ -83,12 +97,12 @@ public class NeedlesProjectile : MonoBehaviour
 
                 CameraShake._instance.Shake(0.5f, 0.5f);
                 PoolManager._instance.GetObject(_destroyParticles).transform.position = transform.position;
-                Destroy(gameObject);
+                PoolManager._instance.ReturnObject(gameObject, _name);
             }
             else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
             {
                 PoolManager._instance.GetObject(_destroyParticles).transform.position = transform.position;
-                Destroy(gameObject);
+                PoolManager._instance.ReturnObject(gameObject, _name);
             }
         }
     }

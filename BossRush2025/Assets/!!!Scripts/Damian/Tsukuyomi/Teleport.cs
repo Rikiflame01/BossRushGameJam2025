@@ -6,22 +6,25 @@ using DG.Tweening;
 
 public class Teleport : MonoBehaviour
 {
-    public GameObject pointPrefab;
-    public GameObject projectilePrefab;
+    public string pointName;
+    public string projectileName;
     public Transform arenaBounds;
     private Transform player;
     public int projectileCount = 12;
+    public int repeatTimes = 3;
     public float projectileSpeed = 10f;
     public float teleportDuration = 0.5f;
     public float attackInterval = 1f;
     public float minDistanceFromPlayer = 2f;
     public float maxDistanceFromPlayer = 10f;
     public float minDistanceBetweenPoints = 2f;
-    public float projectileLifetime = 5f;
 
     [SerializeField] private string _teleportParticles;
     public bool _finishedAttack { get; private set; } = true;
 
+    private Coroutine _teleportCoroutine, _translateCoroutine;
+
+    private List<GameObject> instantiatedPoints = new List<GameObject>();
     private List<Vector3> teleportPoints = new List<Vector3>();
     private Vector3 originalPosition;
     private void Start()
@@ -38,7 +41,7 @@ public class Teleport : MonoBehaviour
     }
     private void StartTeleportSequence()
     {
-        StartCoroutine(TeleportAndAttackRoutine());
+        _teleportCoroutine = StartCoroutine(TeleportAndAttackRoutine());
     }
 
     private void LateUpdate()
@@ -49,12 +52,11 @@ public class Teleport : MonoBehaviour
     {
         _finishedAttack = false;
         teleportPoints.Clear();
-        List<GameObject> instantiatedPoints = new List<GameObject>();
 
         FireProjectiles(transform.position);
         yield return new WaitForSeconds(attackInterval);
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < repeatTimes; i++)
         {
             Vector3 randomPosition;
             int maxAttempts = 10;
@@ -78,7 +80,8 @@ public class Teleport : MonoBehaviour
 
             teleportPoints.Add(randomPosition);
 
-            GameObject point = Instantiate(pointPrefab, randomPosition, Quaternion.identity);
+            GameObject point = PoolManager._instance.GetObject(pointName);
+            point.transform.position = randomPosition;
             instantiatedPoints.Add(point);
         }
 
@@ -89,13 +92,13 @@ public class Teleport : MonoBehaviour
             yield return new WaitForSeconds(attackInterval);
         }
 
-        yield return StartCoroutine(SmoothTeleport(originalPosition));
+        yield return _translateCoroutine = StartCoroutine(SmoothTeleport(originalPosition));
 
         foreach (GameObject point in instantiatedPoints)
         {
-            Destroy(point);
+            PoolManager._instance.ReturnObject(point, pointName);
         }
-
+        instantiatedPoints.Clear();
         teleportPoints.Clear();
         _finishedAttack = true;
     }
@@ -110,7 +113,7 @@ public class Teleport : MonoBehaviour
             yield return new WaitForSeconds(0.15f * Mathf.Abs(i));
         }
         PoolManager._instance.GetObject(_teleportParticles).transform.position = transform.position;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(teleportDuration);
         PoolManager._instance.GetObject(_teleportParticles).transform.position = targetPosition;
         transform.localScale = Vector3.zero;
         transform.DOScale(1, 0.15f);
@@ -168,7 +171,8 @@ public class Teleport : MonoBehaviour
 
             Vector3 projectileMoveDirection = new Vector3(projectileDirX, projectileDirY, 0).normalized;
 
-            GameObject projectile = Instantiate(projectilePrefab, position, Quaternion.identity);
+            GameObject projectile = PoolManager._instance.GetObject(projectileName);
+            projectile.transform.position = transform.position;
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
@@ -177,7 +181,26 @@ public class Teleport : MonoBehaviour
             }
         }
     }
-
+    public void StopTeleport()
+    {
+        if(_teleportCoroutine != null)
+        {
+            StopCoroutine(_teleportCoroutine);
+            _teleportCoroutine = null;
+        }
+        if (_translateCoroutine != null)
+        {
+            StopCoroutine(_translateCoroutine);
+            _translateCoroutine = null;
+        }
+        foreach (GameObject point in instantiatedPoints)
+        {
+            PoolManager._instance.ReturnObject(point, pointName);
+        }
+        instantiatedPoints.Clear();
+        transform.localScale = Vector3.one;
+        _finishedAttack = true;
+    }
     private void OnDrawGizmos()
     {
         if (arenaBounds != null)

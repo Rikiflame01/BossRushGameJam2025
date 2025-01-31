@@ -33,9 +33,8 @@ public class ProjectileCollisionHandler : MonoBehaviour
         _currentParticles.GetComponent<ParticleSystem>().Play();
         PoolManager._instance.ReturnObject(gameObject, _name);
     }
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject other = col.gameObject;
         if (other.CompareTag("Player"))
         {
             if (other.TryGetComponent<HealthManager>(out HealthManager healthManager))

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6610105203751622982}
   - component: {fileID: 4705249475966182169}
   - component: {fileID: 1102787513799217760}
+  - component: {fileID: 5173175806291871019}
   m_Layer: 0
   m_Name: TsukuyomiBoss
   m_TagString: Enemy
@@ -41,9 +42,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7569727971011940595}
+  - {fileID: 1577052577796786748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6140146649278711121
@@ -99,7 +101,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 1
 --- !u!50 &8068414319991072475
 Rigidbody2D:
@@ -186,13 +188,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstTrack: 
-  _secondTrack: 
+  _firstTrack: Tsukuyomi phase 1
+  _secondTrack: Tsukuyomi phase 2
   _speed: 8
   _maxMoveDistance: 6
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _attackActiveIcons: []
-  _attackPassiveIcons: []
+  _attackActiveIcons:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 515738ad346049145bf3624f6e89b964, type: 3}
+  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
+  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
+  - {fileID: -3800604128172127214, guid: 6326d7ccc8e491242bc8895949751b72, type: 3}
+  _attackPassiveIcons:
+  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
+  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
+  - {fileID: 21300000, guid: 553beb4cdecd1084ba5d1722f53b687a, type: 3}
+  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
   _bossRoar: Roar
   _bossHealth: {fileID: 0}
   _attackDelay: 0.5
@@ -235,9 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 150
+  _health: 250
   _takeDamageSFX: Boss damage
   _dieParticles: 
+  _immortal: 0
 --- !u!114 &5174361049791288082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,16 +298,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
-  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  projectilePrefab: {fileID: 8609673021236226423, guid: f7a164218460a594ba34ef3652b63c4f, type: 3}
   arenaBounds: {fileID: 0}
   projectileCount: 12
+  repeatTimes: 3
   projectileSpeed: 5
   teleportDuration: 0.5
   attackInterval: 1
-  minDistanceFromPlayer: 2
-  maxDistanceFromPlayer: 5
+  minDistanceFromPlayer: 3
+  maxDistanceFromPlayer: 15
   minDistanceBetweenPoints: 2
   projectileLifetime: 5
+  _teleportParticles: TeleportParticles
 --- !u!114 &8416561198155043603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,15 +317,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134342089851537814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec70a6c03ac268b4ab73bdc65ca52798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preparationTime: 1
   pullStrength: 5
-  pullDuration: 3
+  pullDuration: 0.8
   shakeMagnitude: 0.1
+  _gravityEffect: GravityEffect
 --- !u!114 &6482276214057807117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,11 +339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3a7fc7e930b0e4e919248bec7c63e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  projectilePrefab: {fileID: 8609673021236226423, guid: f7a164218460a594ba34ef3652b63c4f, type: 3}
   rows: 3
   projectilesPerRow: 6
   angleOffset: 10
-  projectileSpeed: 2
+  projectileSpeed: 5
   projectileLifetime: 5
   rowDelay: 0.2
 --- !u!114 &6610105203751622982
@@ -343,10 +358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e6e6daabaf8ed488344f15fd6fcc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackPoint: {fileID: 1577052577796786748}
+  _attackDelay: 0.35
   _damage: 5
-  _followSpeed: 5
-  _followTime: 1
-  _areaDamageSize: 3
+  followSpeed: 8
+  repeatTimes: 3
+  _followTime: 0.5
+  _areaDamageSize: 3.5
 --- !u!114 &4705249475966182169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,9 +377,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725fb19308232aa45ab8d256a81c5898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needlesProjectilePrefab: {fileID: 3445519810601986421, guid: 10437457974ffb446bfffeac858cc8f2, type: 3}
-  _circleRadius: 3
+  _needlesProjectile: NeedlessProjectile
+  _circleRadius: -5
+  delay: 1.15
+  countOfProjectiles: 3
 --- !u!114 &1102787513799217760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342089851537814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a696bc7bc035f26439e1b370323af39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crescentMoonPrefab: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+--- !u!114 &5173175806291871019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,10 +403,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134342089851537814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a696bc7bc035f26439e1b370323af39e, type: 3}
+  m_Script: {fileID: 11500000, guid: 00e0926195b2ed543936d609c8962ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crescentMoonPrefab: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+  lunarDiskPrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  spawnPoint: {fileID: 8209114420021179794}
+  diskLifetime: 10
+  diskSpeed: 15
+  spinSpeed: 360
+  projectilePrefab: {fileID: 8609673021236226423, guid: 832c971c629c72e489ff2718e837c7da, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 3
+  repeatTimes: 1
+--- !u!1 &5427471516151732925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577052577796786748}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577052577796786748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427471516151732925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.38, y: 1.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8209114420021179794}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8796119640942387622
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 8796119640942387622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.864, y: 1.072, z: 0}
+  m_LocalPosition: {x: -0.06, y: 1.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -423,7 +495,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.09657478, g: 0, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.12132406, b: 1, a: 1}
   m_Intensity: 13.69
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0

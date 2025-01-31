@@ -227,11 +227,11 @@ public class Susano : EntityState
         _finishedCoroutine = false;
         _isAccelerationAttack = true;
         _animator.SetBool(_accelerationAnim, true);
-
+        _audioManager.PlaySFX("Susanoo dropping hat");
         DisableMovement();
 
         yield return new WaitForSeconds(0.8f);
-
+        _audioManager.PlaySFX("Susanoo Spinning attack");
         Vector2 moveDirection = -(transform.position - _player.transform.position).normalized;
         _accelerationDirection = moveDirection;
         _rb.constraints = RigidbodyConstraints2D.None;
@@ -258,6 +258,7 @@ public class Susano : EntityState
         for (int i = 0; i < enemiesCounts; i++)
         {
             yield return new WaitForSeconds(_summonDelay);
+            _audioManager.PlaySFX("Susanoo Minions summon");
             GameObject spawnedEnemy = _poolManager.GetObject(_enemy);
             Vector2 randomPlace = Random.insideUnitCircle * 9f;
             float distanceToBoss = Vector2.Distance(transform.position, randomPlace);
@@ -331,6 +332,7 @@ public class Susano : EntityState
         FlashSphere();
         DisableMovement();
         yield return new WaitForSeconds(_chargeTime);
+        _audioManager.PlaySFX("Susanoo Shot");
         Vector2 direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         int helpInt = 1;
@@ -350,6 +352,8 @@ public class Susano : EntityState
         _finishedCoroutine = false;
         for (int i = 0; i < _projectileCount; i++)
         {
+            _audioManager.PlaySFX("Susanoo Shot");
+
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
             currentProjectile.transform.position = transform.position;
             currentProjectile.transform.eulerAngles = new Vector3(0f, 0f, Random.Range(0f, 360f));
@@ -372,6 +376,7 @@ public class Susano : EntityState
 
         for (int i = -board; i < board + currentProjectileCount % 2; i++)
         {
+            _audioManager.PlaySFX("Susanoo Shot");
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
             currentProjectile.transform.position = transform.position;
             float currentAngle = startAngle + (i + angleCof) * currentAttackAngle;
@@ -385,6 +390,7 @@ public class Susano : EntityState
     private void AxisShooting()
     {
         GameObject currentProjectile = _poolManager.GetObject(_axisProjectile);
+        _audioManager.PlaySFX("Susanoo Bubble");
     }
     void Disappear()
     {
@@ -562,6 +568,7 @@ public class Susano : EntityState
     }
     private void FlashSphere()
     {
+        _audioManager.PlaySFX("Boss Casting");
         _sphereFlash.LightOn(3, 0.2f, 0.8f);
     }
     private void BossDie()

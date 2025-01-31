@@ -101,6 +101,7 @@ public class Movement : MonoBehaviour
         _progressTransform = _ritualProgress.GetComponent<RectTransform>();
         _originalScale = transform.localScale.x;
 
+        StartCoroutine(DisableForTime());
     }
 
     private Vector2 Direction() => _moveInput.action.ReadValue<Vector2>();
@@ -121,17 +122,18 @@ public class Movement : MonoBehaviour
                     {
                         _playStep = _playerRb.linearVelocity.x != 0f || _playerRb.linearVelocity.y != 0f;
                     }
-                }
-                if (_playStep)
-                {
-                    _stepTime += Time.deltaTime;
-                    if(_stepTime >= _stepDelay)
+                    if (_playStep)
                     {
-                        _stepTime = 0;
-                        AudioManager._instance.PlaySFX("Step " + _currentStep);
-                        _currentStep++;
-                        if (_currentStep > 4) _currentStep = 1;
+                        _stepTime += Time.deltaTime;
+                        if (_stepTime >= _stepDelay)
+                        {
+                            _stepTime = 0;
+                            AudioManager._instance.PlaySFX("Step " + _currentStep);
+                            _currentStep++;
+                            if (_currentStep > 4) _currentStep = 1;
+                        }
                     }
+                    
                 }
                 break;
         }
@@ -360,5 +362,11 @@ public class Movement : MonoBehaviour
         _setFireKey.action.started -= StartSettingFire;
         _setFireKey.action.canceled -= EndSettingFire;
         this.enabled = false;
+    }
+    private IEnumerator DisableForTime()
+    {
+        _disable = true;
+        yield return new WaitForSeconds(4.5f);
+        _disable = false;
     }
 }

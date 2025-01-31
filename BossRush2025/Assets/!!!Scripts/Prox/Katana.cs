@@ -26,11 +26,6 @@ public class Katana : MonoBehaviour
         _katanaAttackKey.action.performed += Attack;
     }
 
-    void Update()
-    {
-
-    }
-
     public void Attack(InputAction.CallbackContext context)
     {
         if (!_canAttack)
@@ -52,7 +47,7 @@ public class Katana : MonoBehaviour
                     knockBack.PlayKnockBack(_katanaAttackPos.position);
                 }
 
-                CameraShake._instance.Shake();
+                //CameraShake._instance.Shake(0.05f, 0.05f);
             }
         }
         _canAttack = false;

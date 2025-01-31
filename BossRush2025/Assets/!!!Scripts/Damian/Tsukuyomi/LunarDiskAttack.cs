@@ -8,7 +8,7 @@ public class LunarDiskAttack : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     [Header("Disk Configuration")]
-    [SerializeField] private float diskLifetime = 5f;
+    public float diskLifetime = 5f;
     [SerializeField] private float diskSpeed = 2f;
     [SerializeField] private float spinSpeed = 50f;
 
@@ -17,10 +17,12 @@ public class LunarDiskAttack : MonoBehaviour
     [SerializeField] private float projectileSpeed = 4f;
     [SerializeField] private float projectileLifetime = 3f;
 
+    public int repeatTimes = 1;
     private bool isDiskActive = false;
     private bool isPaused = false;
 
-    private GameObject currentDisk;
+    private GameObject firstCurrentDisk;
+    private GameObject secondCurrentDisk;
 
     void Start()
     {
@@ -62,7 +64,7 @@ public class LunarDiskAttack : MonoBehaviour
     {
         isDiskActive = true;
         isPaused = false;
-
+        
         SpawnLunarDisk();
 
         isDiskActive = false;
@@ -71,21 +73,35 @@ public class LunarDiskAttack : MonoBehaviour
 
     private void SpawnLunarDisk()
     {
-        if (lunarDiskPrefab != null && spawnPoint != null)
+        if (lunarDiskPrefab != null && spawnPoint != null) 
         {
-            currentDisk = Instantiate(lunarDiskPrefab, spawnPoint.position, Quaternion.identity);
-
-            LunarDiskBehaviour diskBehavior = currentDisk.GetComponent<LunarDiskBehaviour>();
-            if (diskBehavior != null)
+            bool isVertical = Random.Range(0, 2) == 0;
+            for (int i = 0; i < repeatTimes; i++) 
             {
-                diskBehavior.Initialize(
-                    diskSpeed,
-                    spinSpeed,
-                    diskLifetime,
-                    projectilePrefab,
-                    projectileSpeed,
-                    projectileLifetime
-                );
+                LunarDiskBehaviour diskBehavior;
+                if (isVertical) 
+                {
+                    firstCurrentDisk = Instantiate(lunarDiskPrefab, spawnPoint.position, Quaternion.identity);
+                    diskBehavior = firstCurrentDisk.GetComponent<LunarDiskBehaviour>();
+                }
+                else
+                {
+                    secondCurrentDisk = Instantiate(lunarDiskPrefab, spawnPoint.position, Quaternion.identity);
+                    diskBehavior = secondCurrentDisk.GetComponent<LunarDiskBehaviour>();
+                }
+                if (diskBehavior != null)
+                {
+                    diskBehavior.Initialize(
+                        diskSpeed,
+                        spinSpeed,
+                        diskLifetime,
+                        projectilePrefab,
+                        projectileSpeed,
+                        projectileLifetime,
+                        isVertical
+                    );
+                }
+                isVertical = !isVertical;
             }
         }
     }
@@ -95,9 +111,13 @@ public class LunarDiskAttack : MonoBehaviour
         isDiskActive = false;
         isPaused = false;
 
-        if (currentDisk != null)
+        if (firstCurrentDisk != null)
         {
-            Destroy(currentDisk);
+            Destroy(firstCurrentDisk);
+        }
+        if (secondCurrentDisk != null)
+        {
+            Destroy(secondCurrentDisk);
         }
     }
 }

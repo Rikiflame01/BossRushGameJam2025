@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6051430920989263815}
@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  _rotateSpeed: 150
+  _rotateSpeed: 500
   _flySpeed: 15
+  _destroyParticles: CrystalSplash
 --- !u!60 &6174170650402102648
 PolygonCollider2D:
   m_ObjectHideFlags: 0

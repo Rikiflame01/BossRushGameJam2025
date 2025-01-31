@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: aa456945915cd1e4180b406904640298
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8706878130473942577
+    second: fight tsukyyom background sprites_0
+  - first:
+      213: -3038950050734569770
+    second: fight tsukyyom background sprites_1
+  - first:
+      213: 3211390440889092324
+    second: fight tsukyyom background sprites_2
+  - first:
+      213: 1978669852072515771
+    second: fight tsukyyom background sprites_3
+  - first:
+      213: -1336375988660395312
+    second: fight tsukyyom background sprites_4
+  - first:
+      213: -6468406221524238350
+    second: fight tsukyyom background sprites_5
+  - first:
+      213: 7876006176482647386
+    second: fight tsukyyom background sprites_6
+  - first:
+      213: -2250665943991785869
+    second: fight tsukyyom background sprites_7
+  - first:
+      213: 6587466306683309858
+    second: fight tsukyyom background sprites_8
+  - first:
+      213: -2353378138195031556
+    second: fight tsukyyom background sprites_9
+  - first:
+      213: -8667515015669437853
+    second: fight tsukyyom background sprites_10
+  - first:
+      213: 5754393379942645328
+    second: fight tsukyyom background sprites_11
+  - first:
+      213: -728715424688907
+    second: fight tsukyyom background sprites_12
+  - first:
+      213: 733344445119546419
+    second: fight tsukyyom background sprites_13
+  - first:
+      213: -1773883127731757909
+    second: fight tsukyyom background sprites_14
+  - first:
+      213: 2548815226021246462
+    second: fight tsukyyom background sprites_15
+  - first:
+      213: 4645951453119622741
+    second: fight tsukyyom background sprites_16
+  - first:
+      213: -8538471840400954970
+    second: fight tsukyyom background sprites_17
+  - first:
+      213: 1501459954871070203
+    second: fight tsukyyom background sprites_18
+  - first:
+      213: -5339731416773377141
+    second: fight tsukyyom background sprites_19
+  - first:
+      213: -1385129324007083669
+    second: fight tsukyyom background sprites_20
+  - first:
+      213: 3393311217804312873
+    second: fight tsukyyom background sprites_21
+  - first:
+      213: 4501323110388064416
+    second: fight tsukyyom background sprites_22
+  - first:
+      213: 519144776550503731
+    second: fight tsukyyom background sprites_23
+  - first:
+      213: 3301833042902942743
+    second: fight tsukyyom background sprites_24
+  - first:
+      213: 3185217548380707597
+    second: fight tsukyyom background sprites_25
+  - first:
+      213: -3852127548236940464
+    second: fight tsukyyom background sprites_26
+  - first:
+      213: -1524114566506728928
+    second: fight tsukyyom background sprites_27
+  - first:
+      213: 4567196720880264315
+    second: fight tsukyyom background sprites_28
+  - first:
+      213: -5373345713143793819
+    second: fight tsukyyom background sprites_29
+  - first:
+      213: -3474702899684273277
+    second: fight tsukyyom background sprites_30
+  - first:
+      213: -1055490155899844899
+    second: fight tsukyyom background sprites_31
+  - first:
+      213: -6218649729836907581
+    second: fight tsukyyom background sprites_32
+  - first:
+      213: -1257867521747148830
+    second: fight tsukyyom background sprites_33
+  - first:
+      213: 83096119701857690
+    second: fight tsukyyom background sprites_34
+  - first:
+      213: 7628905809489428259
+    second: fight tsukyyom background sprites_35
+  - first:
+      213: 2270097245156117677
+    second: fight tsukyyom background sprites_36
+  - first:
+      213: -8552371775558519909
+    second: fight tsukyyom background sprites_37
+  - first:
+      213: 8690282640854072845
+    second: fight tsukyyom background sprites_38
+  - first:
+      213: -2906847541226928464
+    second: fight tsukyyom background sprites_39
+  - first:
+      213: 5398758262382595819
+    second: fight tsukyyom background sprites_40
+  - first:
+      213: -1993538071042015305
+    second: fight tsukyyom background sprites_41
+  - first:
+      213: -6595518602303133102
+    second: fight tsukyyom background sprites_42
+  - first:
+      213: -4872561617327263585
+    second: fight tsukyyom background sprites_43
+  - first:
+      213: 5958178163722632006
+    second: fight tsukyyom background sprites_44
+  - first:
+      213: 3233607617540124445
+    second: fight tsukyyom background sprites_45
+  - first:
+      213: 7566681447245388582
+    second: fight tsukyyom background sprites_46
+  - first:
+      213: -7179731196722782218
+    second: fight tsukyyom background sprites_47
+  - first:
+      213: 8518325368065141753
+    second: fight tsukyyom background sprites_48
+  - first:
+      213: -5290587422964847185
+    second: fight tsukyyom background sprites_49
+  - first:
+      213: 3262319342576464103
+    second: fight tsukyyom background sprites_50
+  - first:
+      213: -9130722313228813222
+    second: fight tsukyyom background sprites_51
+  - first:
+      213: 6197738625090844137
+    second: fight tsukyyom background sprites_52
+  - first:
+      213: -6531276139107277713
+    second: fight tsukyyom background sprites_53
+  - first:
+      213: -4428733427671756342
+    second: fight tsukyyom background sprites_54
+  - first:
+      213: 957136571362334376
+    second: fight tsukyyom background sprites_55
+  - first:
+      213: -9008433266982588374
+    second: fight tsukyyom background sprites_56
+  - first:
+      213: -1839896451245819264
+    second: fight tsukyyom background sprites_57
+  - first:
+      213: -7024016135716795429
+    second: fight tsukyyom background sprites_58
+  - first:
+      213: 2584494841374426330
+    second: fight tsukyyom background sprites_59
+  - first:
+      213: 7272153978661411555
+    second: fight tsukyyom background sprites_60
+  - first:
+      213: -4631048061097063950
+    second: fight tsukyyom background sprites_61
+  - first:
+      213: -2249564317729382640
+    second: fight tsukyyom background sprites_62
+  - first:
+      213: 3712570595100299850
+    second: fight tsukyyom background sprites_63
+  - first:
+      213: -7321954205718514551
+    second: fight tsukyyom background sprites_64
+  - first:
+      213: 8002528901066013801
+    second: fight tsukyyom background sprites_65
+  - first:
+      213: -5262097152982510899
+    second: fight tsukyyom background sprites_66
+  - first:
+      213: -4230463732201178878
+    second: fight tsukyyom background sprites_67
+  - first:
+      213: -3896943585800877491
+    second: fight tsukyyom background sprites_68
+  - first:
+      213: 7865239864749616495
+    second: fight tsukyyom background sprites_69
+  - first:
+      213: -2911190085076516999
+    second: fight tsukyyom background sprites_70
+  - first:
+      213: -237014177471494498
+    second: fight tsukyyom background sprites_71
+  - first:
+      213: -3872976954205526982
+    second: fight tsukyyom background sprites_72
+  - first:
+      213: 7862201826416105718
+    second: fight tsukyyom background sprites_73
+  - first:
+      213: 5884935509869682392
+    second: fight tsukyyom background sprites_74
+  - first:
+      213: -3046957833304534744
+    second: fight tsukyyom background sprites_75
+  - first:
+      213: -3655834865031719175
+    second: fight tsukyyom background sprites_76
+  - first:
+      213: 31755200527523272
+    second: fight tsukyyom background sprites_77
+  - first:
+      213: 4352162170077580296
+    second: fight tsukyyom background sprites_78
+  - first:
+      213: -723719135769755944
+    second: fight tsukyyom background sprites_79
+  - first:
+      213: 3927788934952522696
+    second: fight tsukyyom background sprites_80
+  - first:
+      213: -6865103079939802590
+    second: fight tsukyyom background sprites_81
+  - first:
+      213: -9114397384455935828
+    second: fight tsukyyom background sprites_82
+  - first:
+      213: 9093361693220372896
+    second: fight tsukyyom background sprites_83
+  - first:
+      213: 1613698655481649106
+    second: fight tsukyyom background sprites_84
+  - first:
+      213: 7371350286395257895
+    second: fight tsukyyom background sprites_85
+  - first:
+      213: 5823236315809992684
+    second: fight tsukyyom background sprites_86
+  - first:
+      213: 7052709435445959072
+    second: fight tsukyyom background sprites_87
+  - first:
+      213: -2204605203773493577
+    second: fight tsukyyom background sprites_88
+  - first:
+      213: -6280940618819576543
+    second: fight tsukyyom background sprites_89
+  - first:
+      213: 8249909878404284545
+    second: fight tsukyyom background sprites_90
+  - first:
+      213: -8075708619978415721
+    second: fight tsukyyom background sprites_91
+  - first:
+      213: 2391795368785750699
+    second: fight tsukyyom background sprites_92
+  - first:
+      213: -6803390042558925383
+    second: fight tsukyyom background sprites_93
+  - first:
+      213: 4082301515778278672
+    second: fight tsukyyom background sprites_94
+  - first:
+      213: 8619965447830794472
+    second: fight tsukyyom background sprites_95
+  - first:
+      213: 3777681546850034951
+    second: fight tsukyyom background sprites_96
+  - first:
+      213: -7563300795641343808
+    second: fight tsukyyom background sprites_97
+  - first:
+      213: 5645014769985831714
+    second: fight tsukyyom background sprites_98
+  - first:
+      213: -5753442203627460059
+    second: fight tsukyyom background sprites_99
+  - first:
+      213: -4823362747482845744
+    second: fight tsukyyom background sprites_100
+  - first:
+      213: -4159307323804837325
+    second: fight tsukyyom background sprites_101
+  - first:
+      213: 1825425992467211334
+    second: fight tsukyyom background sprites_102
+  - first:
+      213: 5656606634955651995
+    second: fight tsukyyom background sprites_103
+  - first:
+      213: 8709674612034185940
+    second: fight tsukyyom background sprites_104
+  - first:
+      213: -7954006119882102371
+    second: fight tsukyyom background sprites_105
+  - first:
+      213: 2386327223024517810
+    second: fight tsukyyom background sprites_106
+  - first:
+      213: -3450106390801506788
+    second: fight tsukyyom background sprites_107
+  - first:
+      213: -883747758346309001
+    second: fight tsukyyom background sprites_108
+  - first:
+      213: -5772637398258106273
+    second: fight tsukyyom background sprites_109
+  - first:
+      213: 2595264229348056268
+    second: fight tsukyyom background sprites_110
+  - first:
+      213: -5632778629612109575
+    second: fight tsukyyom background sprites_111
+  - first:
+      213: 1378503130549514280
+    second: fight tsukyyom background sprites_112
+  - first:
+      213: 7704764063235820413
+    second: fight tsukyyom background sprites_113
+  - first:
+      213: -2922144349721996706
+    second: fight tsukyyom background sprites_114
+  - first:
+      213: 1813625377964319250
+    second: fight tsukyyom background sprites_115
+  - first:
+      213: 2986935696781989097
+    second: fight tsukyyom background sprites_116
+  - first:
+      213: 3495765816722161840
+    second: fight tsukyyom background sprites_117
+  - first:
+      213: 2212575375533204308
+    second: fight tsukyyom background sprites_118
+  - first:
+      213: -3749987174945687198
+    second: fight tsukyyom background sprites_119
+  - first:
+      213: 6842362684051817928
+    second: fight tsukyyom background sprites_120
+  - first:
+      213: -8319541112512262634
+    second: fight tsukyyom background sprites_121
+  - first:
+      213: 621149062511284082
+    second: fight tsukyyom background sprites_122
+  - first:
+      213: 7072875396291847633
+    second: fight tsukyyom background sprites_123
+  - first:
+      213: -5601424042964404586
+    second: fight tsukyyom background sprites_124
+  - first:
+      213: 6309304291403971094
+    second: fight tsukyyom background sprites_125
+  - first:
+      213: 5750021176870577490
+    second: fight tsukyyom background sprites_126
+  - first:
+      213: 5543554194095384508
+    second: fight tsukyyom background sprites_127
+  - first:
+      213: 3906708427069903793
+    second: fight tsukyyom background sprites_128
+  - first:
+      213: -3303603293904719391
+    second: fight tsukyyom background sprites_129
+  - first:
+      213: -9138436841774858701
+    second: fight tsukyyom background sprites_130
+  - first:
+      213: 6667273405207356089
+    second: fight tsukyyom background sprites_131
+  - first:
+      213: -1588397394182073865
+    second: fight tsukyyom background sprites_132
+  - first:
+      213: 5117655122616164180
+    second: fight tsukyyom background sprites_133
+  - first:
+      213: 8909601753302282685
+    second: fight tsukyyom background sprites_134
+  - first:
+      213: 3311046869591091213
+    second: fight tsukyyom background sprites_135
+  - first:
+      213: -6143542142770240090
+    second: fight tsukyyom background sprites_136
+  - first:
+      213: -5182379440967738195
+    second: fight tsukyyom background sprites_137
+  - first:
+      213: 1938868049723419097
+    second: fight tsukyyom background sprites_138
+  - first:
+      213: 4278336354050828965
+    second: fight tsukyyom background sprites_139
+  - first:
+      213: 473656742098989283
+    second: fight tsukyyom background sprites_140
+  - first:
+      213: 8366040488458329275
+    second: fight tsukyyom background sprites_141
+  - first:
+      213: 1918898216907168612
+    second: fight tsukyyom background sprites_142
+  - first:
+      213: -3092890308669730186
+    second: fight tsukyyom background sprites_143
+  - first:
+      213: -6235386799075220250
+    second: fight tsukyyom background sprites_144
+  - first:
+      213: 258310457132961588
+    second: fight tsukyyom background sprites_145
+  - first:
+      213: -852097166859699807
+    second: fight tsukyyom background sprites_146
+  - first:
+      213: -2019890150691867973
+    second: fight tsukyyom background sprites_147
+  - first:
+      213: -5633344799601899060
+    second: fight tsukyyom background sprites_148
+  - first:
+      213: -1525691281806901854
+    second: fight tsukyyom background sprites_149
+  - first:
+      213: 1657723356990606589
+    second: fight tsukyyom background sprites_150
+  - first:
+      213: 1262824546159674687
+    second: fight tsukyyom background sprites_151
+  - first:
+      213: -5305823838789721539
+    second: fight tsukyyom background sprites_152
+  - first:
+      213: 5542466715438505841
+    second: fight tsukyyom background sprites_153
+  - first:
+      213: 176601800799304040
+    second: fight tsukyyom background sprites_154
+  - first:
+      213: -152042765196489423
+    second: fight tsukyyom background sprites_155
+  - first:
+      213: -9135459971018601712
+    second: fight tsukyyom background sprites_156
+  - first:
+      213: 1338330338098029797
+    second: fight tsukyyom background sprites_157
+  - first:
+      213: -3651433362862436910
+    second: fight tsukyyom background sprites_158
+  - first:
+      213: 4362710706409592479
+    second: fight tsukyyom background sprites_159
+  - first:
+      213: 3990494104722053211
+    second: fight tsukyyom background sprites_160
+  - first:
+      213: 457065948360951563
+    second: fight tsukyyom background sprites_161
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 885
+        width: 508
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1cb7aa874fa2780800000000000000
+      internalID: -8706878130473942577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d68fc7a70b73d5d0800000000000000
+      internalID: -3038950050734569770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 337
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e887406796219c20800000000000000
+      internalID: 3211390440889092324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_3
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 306
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb89e8c3fb5a57b10800000000000000
+      internalID: 1978669852072515771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 768
+        width: 508
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d229856e1d347de0800000000000000
+      internalID: -1336375988660395312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 694
+        width: 510
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fffe1700da9b36a0800000000000000
+      internalID: -6468406221524238350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 371
+        width: 510
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f86bb34b16b6b50800000000000000
+      internalID: 6587466306683309858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_9
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 444
+        width: 373
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf907b25d0f175fd0800000000000000
+      internalID: -2353378138195031556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_42
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 295
+        width: 143
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25aad3896c20874a0800000000000000
+      internalID: -6595518602303133102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_43
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 314
+        width: 59
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f907105660f216cb0800000000000000
+      internalID: -4872561617327263585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_44
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 314
+        width: 59
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b3d2dd873bfa250800000000000000
+      internalID: 5958178163722632006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_77
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 106
+        width: 98
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cdd637cf21d07000800000000000000
+      internalID: 31755200527523272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_78
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 183
+        width: 64
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c0e585f6cf56c30800000000000000
+      internalID: 4352162170077580296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_79
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 191
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de7a4bc745d4f5f0800000000000000
+      internalID: -723719135769755944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight tsukyyom background sprites_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 827
+        width: 508
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5cf749a643448449e8f38d38e0b45e
+      internalID: 7876006176482647386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c61d0198d9e49384bb71302a05e548de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fight tsukyyom background sprites_0: -8706878130473942577
+      fight tsukyyom background sprites_1: -3038950050734569770
+      fight tsukyyom background sprites_10: -8667515015669437853
+      fight tsukyyom background sprites_100: -4823362747482845744
+      fight tsukyyom background sprites_101: -4159307323804837325
+      fight tsukyyom background sprites_102: 1825425992467211334
+      fight tsukyyom background sprites_103: 5656606634955651995
+      fight tsukyyom background sprites_104: 8709674612034185940
+      fight tsukyyom background sprites_105: -7954006119882102371
+      fight tsukyyom background sprites_106: 2386327223024517810
+      fight tsukyyom background sprites_107: -3450106390801506788
+      fight tsukyyom background sprites_108: -883747758346309001
+      fight tsukyyom background sprites_109: -5772637398258106273
+      fight tsukyyom background sprites_11: 5754393379942645328
+      fight tsukyyom background sprites_110: 2595264229348056268
+      fight tsukyyom background sprites_111: -5632778629612109575
+      fight tsukyyom background sprites_112: 1378503130549514280
+      fight tsukyyom background sprites_113: 7704764063235820413
+      fight tsukyyom background sprites_114: -2922144349721996706
+      fight tsukyyom background sprites_115: 1813625377964319250
+      fight tsukyyom background sprites_116: 2986935696781989097
+      fight tsukyyom background sprites_117: 3495765816722161840
+      fight tsukyyom background sprites_118: 2212575375533204308
+      fight tsukyyom background sprites_119: -3749987174945687198
+      fight tsukyyom background sprites_12: -728715424688907
+      fight tsukyyom background sprites_120: 6842362684051817928
+      fight tsukyyom background sprites_121: -8319541112512262634
+      fight tsukyyom background sprites_122: 621149062511284082
+      fight tsukyyom background sprites_123: 7072875396291847633
+      fight tsukyyom background sprites_124: -5601424042964404586
+      fight tsukyyom background sprites_125: 6309304291403971094
+      fight tsukyyom background sprites_126: 5750021176870577490
+      fight tsukyyom background sprites_127: 5543554194095384508
+      fight tsukyyom background sprites_128: 3906708427069903793
+      fight tsukyyom background sprites_129: -3303603293904719391
+      fight tsukyyom background sprites_13: 733344445119546419
+      fight tsukyyom background sprites_130: -9138436841774858701
+      fight tsukyyom background sprites_131: 6667273405207356089
+      fight tsukyyom background sprites_132: -1588397394182073865
+      fight tsukyyom background sprites_133: 5117655122616164180
+      fight tsukyyom background sprites_134: 8909601753302282685
+      fight tsukyyom background sprites_135: 3311046869591091213
+      fight tsukyyom background sprites_136: -6143542142770240090
+      fight tsukyyom background sprites_137: -5182379440967738195
+      fight tsukyyom background sprites_138: 1938868049723419097
+      fight tsukyyom background sprites_139: 4278336354050828965
+      fight tsukyyom background sprites_14: -1773883127731757909
+      fight tsukyyom background sprites_140: 473656742098989283
+      fight tsukyyom background sprites_141: 8366040488458329275
+      fight tsukyyom background sprites_142: 1918898216907168612
+      fight tsukyyom background sprites_143: -3092890308669730186
+      fight tsukyyom background sprites_144: -6235386799075220250
+      fight tsukyyom background sprites_145: 258310457132961588
+      fight tsukyyom background sprites_146: -852097166859699807
+      fight tsukyyom background sprites_147: -2019890150691867973
+      fight tsukyyom background sprites_148: -5633344799601899060
+      fight tsukyyom background sprites_149: -1525691281806901854
+      fight tsukyyom background sprites_15: 2548815226021246462
+      fight tsukyyom background sprites_150: 1657723356990606589
+      fight tsukyyom background sprites_151: 1262824546159674687
+      fight tsukyyom background sprites_152: -5305823838789721539
+      fight tsukyyom background sprites_153: 5542466715438505841
+      fight tsukyyom background sprites_154: 176601800799304040
+      fight tsukyyom background sprites_155: -152042765196489423
+      fight tsukyyom background sprites_156: -9135459971018601712
+      fight tsukyyom background sprites_157: 1338330338098029797
+      fight tsukyyom background sprites_158: -3651433362862436910
+      fight tsukyyom background sprites_159: 4362710706409592479
+      fight tsukyyom background sprites_16: 4645951453119622741
+      fight tsukyyom background sprites_160: 3990494104722053211
+      fight tsukyyom background sprites_161: 457065948360951563
+      fight tsukyyom background sprites_17: -8538471840400954970
+      fight tsukyyom background sprites_18: 1501459954871070203
+      fight tsukyyom background sprites_19: -5339731416773377141
+      fight tsukyyom background sprites_2: 3211390440889092324
+      fight tsukyyom background sprites_20: -1385129324007083669
+      fight tsukyyom background sprites_21: 3393311217804312873
+      fight tsukyyom background sprites_22: 4501323110388064416
+      fight tsukyyom background sprites_23: 519144776550503731
+      fight tsukyyom background sprites_24: 3301833042902942743
+      fight tsukyyom background sprites_25: 3185217548380707597
+      fight tsukyyom background sprites_26: -3852127548236940464
+      fight tsukyyom background sprites_27: -1524114566506728928
+      fight tsukyyom background sprites_28: 4567196720880264315
+      fight tsukyyom background sprites_29: -5373345713143793819
+      fight tsukyyom background sprites_3: 1978669852072515771
+      fight tsukyyom background sprites_30: -3474702899684273277
+      fight tsukyyom background sprites_31: -1055490155899844899
+      fight tsukyyom background sprites_32: -6218649729836907581
+      fight tsukyyom background sprites_33: -1257867521747148830
+      fight tsukyyom background sprites_34: 83096119701857690
+      fight tsukyyom background sprites_35: 7628905809489428259
+      fight tsukyyom background sprites_36: 2270097245156117677
+      fight tsukyyom background sprites_37: -8552371775558519909
+      fight tsukyyom background sprites_38: 8690282640854072845
+      fight tsukyyom background sprites_39: -2906847541226928464
+      fight tsukyyom background sprites_4: -1336375988660395312
+      fight tsukyyom background sprites_40: 5398758262382595819
+      fight tsukyyom background sprites_41: -1993538071042015305
+      fight tsukyyom background sprites_42: -6595518602303133102
+      fight tsukyyom background sprites_43: -4872561617327263585
+      fight tsukyyom background sprites_44: 5958178163722632006
+      fight tsukyyom background sprites_45: 3233607617540124445
+      fight tsukyyom background sprites_46: 7566681447245388582
+      fight tsukyyom background sprites_47: -7179731196722782218
+      fight tsukyyom background sprites_48: 8518325368065141753
+      fight tsukyyom background sprites_49: -5290587422964847185
+      fight tsukyyom background sprites_5: -6468406221524238350
+      fight tsukyyom background sprites_50: 3262319342576464103
+      fight tsukyyom background sprites_51: -9130722313228813222
+      fight tsukyyom background sprites_52: 6197738625090844137
+      fight tsukyyom background sprites_53: -6531276139107277713
+      fight tsukyyom background sprites_54: -4428733427671756342
+      fight tsukyyom background sprites_55: 957136571362334376
+      fight tsukyyom background sprites_56: -9008433266982588374
+      fight tsukyyom background sprites_57: -1839896451245819264
+      fight tsukyyom background sprites_58: -7024016135716795429
+      fight tsukyyom background sprites_59: 2584494841374426330
+      fight tsukyyom background sprites_6: 7876006176482647386
+      fight tsukyyom background sprites_60: 7272153978661411555
+      fight tsukyyom background sprites_61: -4631048061097063950
+      fight tsukyyom background sprites_62: -2249564317729382640
+      fight tsukyyom background sprites_63: 3712570595100299850
+      fight tsukyyom background sprites_64: -7321954205718514551
+      fight tsukyyom background sprites_65: 8002528901066013801
+      fight tsukyyom background sprites_66: -5262097152982510899
+      fight tsukyyom background sprites_67: -4230463732201178878
+      fight tsukyyom background sprites_68: -3896943585800877491
+      fight tsukyyom background sprites_69: 7865239864749616495
+      fight tsukyyom background sprites_7: -2250665943991785869
+      fight tsukyyom background sprites_70: -2911190085076516999
+      fight tsukyyom background sprites_71: -237014177471494498
+      fight tsukyyom background sprites_72: -3872976954205526982
+      fight tsukyyom background sprites_73: 7862201826416105718
+      fight tsukyyom background sprites_74: 5884935509869682392
+      fight tsukyyom background sprites_75: -3046957833304534744
+      fight tsukyyom background sprites_76: -3655834865031719175
+      fight tsukyyom background sprites_77: 31755200527523272
+      fight tsukyyom background sprites_78: 4352162170077580296
+      fight tsukyyom background sprites_79: -723719135769755944
+      fight tsukyyom background sprites_8: 6587466306683309858
+      fight tsukyyom background sprites_80: 3927788934952522696
+      fight tsukyyom background sprites_81: -6865103079939802590
+      fight tsukyyom background sprites_82: -9114397384455935828
+      fight tsukyyom background sprites_83: 9093361693220372896
+      fight tsukyyom background sprites_84: 1613698655481649106
+      fight tsukyyom background sprites_85: 7371350286395257895
+      fight tsukyyom background sprites_86: 5823236315809992684
+      fight tsukyyom background sprites_87: 7052709435445959072
+      fight tsukyyom background sprites_88: -2204605203773493577
+      fight tsukyyom background sprites_89: -6280940618819576543
+      fight tsukyyom background sprites_9: -2353378138195031556
+      fight tsukyyom background sprites_90: 8249909878404284545
+      fight tsukyyom background sprites_91: -8075708619978415721
+      fight tsukyyom background sprites_92: 2391795368785750699
+      fight tsukyyom background sprites_93: -6803390042558925383
+      fight tsukyyom background sprites_94: 4082301515778278672
+      fight tsukyyom background sprites_95: 8619965447830794472
+      fight tsukyyom background sprites_96: 3777681546850034951
+      fight tsukyyom background sprites_97: -7563300795641343808
+      fight tsukyyom background sprites_98: 5645014769985831714
+      fight tsukyyom background sprites_99: -5753442203627460059
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

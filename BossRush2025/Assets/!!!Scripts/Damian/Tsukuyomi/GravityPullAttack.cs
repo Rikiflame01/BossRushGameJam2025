@@ -9,6 +9,8 @@ public class GravityPullAttack : MonoBehaviour
 
     [SerializeField] private float shakeMagnitude = 0.1f;
 
+    [SerializeField] private string _gravityEffect;
+    
     private Transform player;
     private Rigidbody2D playerRb;
     private Movement playerMovement;
@@ -40,9 +42,6 @@ public class GravityPullAttack : MonoBehaviour
             case "Start":
                 if (!isPulling)
                 {
-                    if (playerMovement != null)
-                        playerMovement.enabled = false;
-
                     StartCoroutine(GravityPull());
                 }
                 break;
@@ -68,6 +67,7 @@ public class GravityPullAttack : MonoBehaviour
 
     private IEnumerator GravityPull()
     {
+        PoolManager._instance.GetObject(_gravityEffect).transform.position = transform.position;
         if (player == null || playerRb == null) yield break;
 
         isPulling = true;
@@ -91,6 +91,8 @@ public class GravityPullAttack : MonoBehaviour
         }
 
         transform.localPosition = originalPos;
+        if (playerMovement != null)
+            playerMovement.enabled = false;
 
         float elapsedTime = 0f;
         while (elapsedTime < pullDuration && isPulling)
