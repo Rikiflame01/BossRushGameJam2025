@@ -7031,6 +7031,7 @@ MonoBehaviour:
   _health: 10
   _takeDamageSFX: 
   _dieParticles: 
+  _immortal: 0
 --- !u!114 &213096185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65564,6 +65565,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 544839945}
+    - target: {fileID: 3142207235454753896, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142207235454753896, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3720756962741641989, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_Name
       value: Player
@@ -65580,6 +65589,10 @@ PrefabInstance:
       propertyPath: _ritualProgress
       value: 
       objectReference: {fileID: 845752881}
+    - target: {fileID: 5624437466262993758, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7665682072808817288, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

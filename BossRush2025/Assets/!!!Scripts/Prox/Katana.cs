@@ -14,6 +14,7 @@ public class Katana : MonoBehaviour
     [Space]
     [SerializeField] private Transform _katanaAttackPos;
     [SerializeField] private InputActionReference _katanaAttackKey;
+    [SerializeField] private Animator _animator;
     private bool _canAttack = true;
 
     private string _katanaSound = "Katana ";
@@ -36,6 +37,7 @@ public class Katana : MonoBehaviour
         if (!_canAttack)
             return;
 
+        _animator.SetTrigger("KatanaAttack");
         List<RaycastHit2D> collidingObjects = Physics2D.CircleCastAll(_katanaAttackPos.position, _attackRadius, Vector2.zero).ToList();
         foreach (RaycastHit2D hit in collidingObjects)
         {

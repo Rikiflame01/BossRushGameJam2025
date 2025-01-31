@@ -22,6 +22,8 @@ public class Bow : MonoBehaviour
     public Transform _target;
 
     [SerializeField] private InputActionReference _bowKey;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Movement _playerMovement;
     void Start() 
     {
         _poolManager = FindAnyObjectByType<PoolManager>();
@@ -43,6 +45,11 @@ public class Bow : MonoBehaviour
             {
                 //indicate full charge
             }
+
+            if (transform.position.x > _target.position.x)
+                _playerMovement.transform.localScale = new Vector3(_playerMovement._originalScale, _playerMovement.transform.localScale.y);
+            else
+                _playerMovement.transform.localScale = new Vector3(-_playerMovement._originalScale, _playerMovement.transform.localScale.y);
         }
     }
     void StartCharge(InputAction.CallbackContext context)
@@ -52,10 +59,14 @@ public class Bow : MonoBehaviour
         _bowSlider.gameObject.SetActive(true);
         _bowSlider.value = 0f;
         _audioManager.PlaySFX("Tension");
+        _playerMovement.SetCanRotate(false);
+        _animator.SetBool("ChargingBow", true);
     }
     void ReleaseArrow(InputAction.CallbackContext context)
     {
         _isChargeNow = false;
+        _playerMovement.SetCanRotate(true);
+        _animator.SetBool("ChargingBow", false);
         if (Time.time - _startTime > _chargeTime)
         {
             _target = SetTarget();
