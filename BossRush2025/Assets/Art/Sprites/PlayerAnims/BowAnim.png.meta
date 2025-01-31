@@ -63,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -100,14 +100,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -118,12 +118,12 @@ TextureImporter:
       name: BowAnim_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 34
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: BowAnim_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 1
+        x: 50
+        y: 0
         width: 50
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: BowAnim_2
       rect:
         serializedVersion: 2
-        x: 101
-        y: 1
-        width: 49
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: BowAnim_3
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1
-        width: 48
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: BowAnim_4
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1
-        width: 45
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: BowAnim_5
       rect:
         serializedVersion: 2
-        x: 251
-        y: 1
-        width: 39
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 250
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9e8b57b7a17f84d418c00027fdab6070
     internalID: 0
     vertices: []
     indices: 

@@ -1283,7 +1283,6 @@ MonoBehaviour:
   minDistanceFromPlayer: 8
   maxDistanceFromPlayer: 10
   minDistanceBetweenPoints: 10
-  projectileLifetime: 6
   _teleportParticles: 
 --- !u!114 &213096184
 MonoBehaviour:
@@ -54823,6 +54822,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2535559264663281740, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142207235454753896, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142207235454753896, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4723107735738678597, guid: fa15749544c985d46aece9c35b8fc0c8, type: 3}
+    - target: {fileID: 3142207235454753896, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3720756962741641989, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_Name
       value: Player
@@ -54839,6 +54854,18 @@ PrefabInstance:
       propertyPath: _ritualProgress
       value: 
       objectReference: {fileID: 845752881}
+    - target: {fileID: 5314045966816923621, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7667294
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314045966816923621, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0761586
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421945043435906448, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: _attackRadius
+      value: 2.16
+      objectReference: {fileID: 0}
     - target: {fileID: 7665682072808817288, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54878,6 +54905,14 @@ PrefabInstance:
     - target: {fileID: 7665682072808817288, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142021406188034249, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142021406188034249, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55905,7 +55940,7 @@ MonoBehaviour:
     initialSize: 5
   - poolPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
     initialSize: 3
-  - poolPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
+  - poolPrefab: {fileID: 8609673021236226423, guid: f5d05c250e07e3745b1b87c15148ce68, type: 3}
     initialSize: 3
 --- !u!4 &2063118322
 Transform:

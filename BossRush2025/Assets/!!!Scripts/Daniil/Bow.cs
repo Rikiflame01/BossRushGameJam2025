@@ -45,11 +45,13 @@ public class Bow : MonoBehaviour
             {
                 //indicate full charge
             }
-
-            if (transform.position.x > _target.position.x)
-                _playerMovement.transform.localScale = new Vector3(_playerMovement._originalScale, _playerMovement.transform.localScale.y);
-            else
-                _playerMovement.transform.localScale = new Vector3(-_playerMovement._originalScale, _playerMovement.transform.localScale.y);
+            if (_target != null)
+            {
+                if (transform.position.x > _target.position.x)
+                    _playerMovement.transform.localScale = new Vector3(_playerMovement._originalScale, _playerMovement.transform.localScale.y);
+                else
+                    _playerMovement.transform.localScale = new Vector3(-_playerMovement._originalScale, _playerMovement.transform.localScale.y);
+            }
         }
     }
     void StartCharge(InputAction.CallbackContext context)
