@@ -109,11 +109,9 @@ GameObject:
   - component: {fileID: 127702487637680248}
   - component: {fileID: 5889886708555688964}
   - component: {fileID: 5345122053790243117}
-  - component: {fileID: 604635567638852700}
   - component: {fileID: 4946540265044919009}
   - component: {fileID: 7899630702105191800}
   - component: {fileID: 1644537662774830651}
-  - component: {fileID: 7869570107584997546}
   - component: {fileID: 8025528433828562047}
   - component: {fileID: 3921880831365220361}
   - component: {fileID: 2324010061491103581}
@@ -121,6 +119,8 @@ GameObject:
   - component: {fileID: 5615337222477811484}
   - component: {fileID: 7610597514900787108}
   - component: {fileID: 6671926049554934917}
+  - component: {fileID: 3368846455567691626}
+  - component: {fileID: 691968875705175627}
   m_Layer: 0
   m_Name: AmaterasuBoss
   m_TagString: Enemy
@@ -189,12 +189,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8075360694388469374, guid: 533be048ac29d8a45b22f1e97bf41717, type: 3}
+  m_Sprite: {fileID: 225036921, guid: df2b5c37cd5a89c43adf7f1903fac11f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 8.625, y: 5.55}
+  m_Size: {x: 6.75, y: 6.825}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -264,52 +264,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: 0.17}
-    oldSize: {x: 13.218391, y: 8.505747}
-    newSize: {x: 8.625, y: 5.55}
+    pivot: {x: 0.555, y: 0.2}
+    oldSize: {x: 0.89, y: 0.96}
+    newSize: {x: 6.75, y: 6.825}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 2.24, y: 2.24}
   m_EdgeRadius: 0
---- !u!114 &604635567638852700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firstTrack: Tsukuyomi phase 1
-  _secondTrack: Tsukuyomi phase 2
-  _speed: 8
-  _maxMoveDistance: 6
-  _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _attackActiveIcons:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 515738ad346049145bf3624f6e89b964, type: 3}
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
-  - {fileID: -3800604128172127214, guid: 6326d7ccc8e491242bc8895949751b72, type: 3}
-  _attackPassiveIcons:
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 553beb4cdecd1084ba5d1722f53b687a, type: 3}
-  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
-  _bossRoar: Roar
-  _bossHealth: {fileID: 0}
-  _attackDelay: 0.5
-  _destroyParticles: TeleportParticles
-  _arcProjectileCount: 5
-  _arcDelay: 0.2
-  _arcAngle: 40
-  _arcWaveDelay: 0.7
-  _arcProjectile: ArcProjectile
 --- !u!195 &4946540265044919009
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -361,28 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textPrefab: {fileID: 3495584881204525371, guid: 7a8c354e147cac44ca933a811350d8f5, type: 3}
---- !u!95 &7869570107584997546
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 52f55ab538e2ba246adedc35ffc30db0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8025528433828562047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,11 +378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileName: Projectile
-  rows: 3
+  rows: 5
   projectilesPerRow: 6
-  angleOffset: 10
+  angleOffset: 15
   projectileSpeed: 5
-  rowDelay: 0.2
+  rowDelay: 0.3
 --- !u!114 &2676099537988198068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +452,68 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 3
   repeatTimes: 1
+--- !u!95 &3368846455567691626
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235118639246445327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4554355d6cbe244488795067d94101f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &691968875705175627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235118639246445327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dd75fd3ea6fcd4fa933c8e55750fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstTrack: 
+  _secondTrack: 
+  _speed: 10
+  _maxMoveDistance: 10
+  _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
+  _attackActiveIcons: []
+  _attackPassiveIcons: []
+  _bossRoar: BossRoar
+  _bossHealth: {fileID: 0}
+  _attackDelay: 0.5
+  _destroyParticles: 
+  _smiles: {fileID: 39470668055134600, guid: de3de0a6cee04b94588cc91a6b4c6336, type: 3}
+  _spawnSmilePos: {x: 14.27, y: 17}
+  _smileDuration: 10
+  _spawnPoints: {x: 18.5, y: 14}
+  _enemy: 
+  _summonDelay: 0.3
+  _enemyAppearParticle: 
+  _randomProjectileCount: 0
+  _randomDelay: 0.5
+  _arcProjectileCount: 5
+  _arcDelay: 0.2
+  _arcAngle: 40
+  _arcWaveDelay: 0.7
+  _randomShootProjectile: SunProjectile
+  _axisProjectile: Sun
+  _axisDelay: 0
+  _axisCount: 0
 --- !u!1 &7240236357355639331
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5621819971459816690}
+  - component: {fileID: 1333828304297546115}
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -536,9 +540,64 @@ Transform:
   m_GameObject: {fileID: 7240236357355639331}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 1.03, z: 0}
+  m_LocalPosition: {x: -2.82, y: -1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4359804708735922587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1333828304297546115
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240236357355639331}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -3673299416061730073, guid: 24ae6c064b54b0a4b9e1df0e06bb646c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 1
+  m_Size: {x: 6.2, y: 3.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0

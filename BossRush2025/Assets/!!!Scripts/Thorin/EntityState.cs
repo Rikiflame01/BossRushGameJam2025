@@ -89,7 +89,8 @@ public abstract class EntityState : MonoBehaviour
     {
         StartCoroutine(BossRoar());
         StartCoroutine(PlayTrackWithDelay(_firstTrack));
-        _attackCycle = StartCoroutine(StartAttacks());
+        if(_attackCycle == null)
+            _attackCycle = StartCoroutine(StartAttacks());
         _bossHealth.DOScale(1f, 0.35f);
     }
 
