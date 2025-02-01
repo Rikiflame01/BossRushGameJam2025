@@ -97,6 +97,8 @@ public class Bow : MonoBehaviour
     void OnDisable()
     {
         _isChargeNow = false;
+        _playerMovement.SetCanRotate(true);
+        _animator.SetBool("ChargingBow", false);
         _bowSlider.gameObject.SetActive(false);
         _bowSlider.value = 0f;
         _bowKey.action.started -= StartCharge;

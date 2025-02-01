@@ -118,7 +118,6 @@ public class Movement : MonoBehaviour
                     if (!_isDash) 
                     {
                         _lastDirection = Direction();
-                        RotatePlayer();
                     }
                     _playerRb.linearVelocity = _lastDirection * _speed;
                     if (!_isDash)
@@ -143,6 +142,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        RotatePlayer();
         Vector2 direction = Direction();
         _animator.SetFloat("InputX", direction.x);
         _animator.SetFloat("InputY", direction.y);
@@ -181,10 +181,31 @@ public class Movement : MonoBehaviour
                     {
                         _startRitualAngle = _targetRitualAngle;
                         _targetRitualAngle = _startRitualAngle + (_clockwise ? -2 : 2) * Mathf.PI;
-                        if(_circleNumber < 3) _circleNumber++;
+                        if(_circleNumber < 3)
+                        {
+                            _circleNumber++;
+
+                            float healthToHeal = 0;
+                            switch (_circleNumber)
+                            {
+                                case 1:
+                                    healthToHeal = 1;
+                                    break;
+
+                                case 2:
+                                    healthToHeal = 3;
+                                    break;
+
+                                case 3:
+                                    healthToHeal = 5;
+                                    break;
+                            } 
+                            _healthManager.AddHealth(healthToHeal);
+                        }
                         AudioManager._instance.PlaySFX("Circle complete");
                         _circleTxt.text = _circleNumber.ToString();
                         ClearLeafs();
+
                     }
                     _ritualProgress.fillAmount = currentFloat / targetFloat;
                 }

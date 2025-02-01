@@ -17,6 +17,7 @@ public class Healthbar : MonoBehaviour
     void Start()
     {
         _healthManager._onHit += (float hitDamage)=> { UpdateHealthBar(hitDamage); StartCoroutine(StartAnimDelay()); };
+        _healthManager._onAddHealth += (float heal)=> { UpdateHealthBar(heal); StartCoroutine(StartAnimDelay()); };
     }
 
     void Update()
@@ -24,9 +25,9 @@ public class Healthbar : MonoBehaviour
         if (_startAnim)
         {
             float fillAmount = _healthManager.GetHealth() / _healthManager._maxHealth;
-            if (fillAmount < _healthBarEffect.fillAmount)
+            if (fillAmount != _healthBarEffect.fillAmount)
             {
-                _healthBarEffect.fillAmount = Math.Clamp(_healthBarEffect.fillAmount - _takeDamageAnimSpeed * Time.deltaTime, fillAmount, 1);
+                _healthBarEffect.fillAmount = Math.Clamp(_healthBarEffect.fillAmount + ((fillAmount < _healthBarEffect.fillAmount ? -1 : 1) * _takeDamageAnimSpeed * Time.deltaTime), fillAmount, 1);
             }
             else
                 _startAnim = false;
