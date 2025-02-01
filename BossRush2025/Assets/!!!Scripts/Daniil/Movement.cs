@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
@@ -67,6 +68,7 @@ public class Movement : MonoBehaviour
     private bool _clockwise = false;
     private int _circleNumber = 0;
     private RectTransform _progressTransform;
+    private Vector2 _lastMoveRitualPos;
 
     private GameManager _gameManager;
     private AudioManager _audioManager;
@@ -142,16 +144,63 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        RotatePlayer();
-        Vector2 direction = Direction();
-        _animator.SetFloat("InputX", direction.x);
-        _animator.SetFloat("InputY", direction.y);
+        if (_currentState == State.Run)
+        {
+            RotatePlayer();
+            Vector2 direction = Direction();
+            _animator.SetFloat("InputX", direction.x);
+            _animator.SetFloat("InputY", direction.y);
+        }
 
         switch (_currentState)
         {
             case State.Ritual:
                 _currentAngle += _ritualSpeed * Time.deltaTime * Direction().x;
                 transform.position = (Vector2)_ritualCenter.position + new Vector2(Mathf.Cos(_currentAngle), Mathf.Sin(_currentAngle)) * _ritualRadius;
+                    
+                Vector3 dir = _ritualCenter.transform.position - transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                Vector2 moveDirection = new Vector2();
+                Vector2 inputDirection = Direction();
+
+                if (transform.position.y > _lastMoveRitualPos.y)
+                    moveDirection.y = 1;
+                else if (transform.position.y < _lastMoveRitualPos.y)
+                    moveDirection.y = -1;
+
+                bool rotated = false;
+                if (angle >= 50f && angle <= 130f)
+                {
+                    moveDirection.x = inputDirection.x;
+                    moveDirection.y = 0;
+                }
+                else if (angle <= -30f && angle >= -140f)
+                {
+                    rotated = true;
+                    if (inputDirection.x == 1)
+                        transform.localScale = new Vector2(-_originalScale, transform.localScale.y);
+                    else if (inputDirection.x == -1)
+                        transform.localScale = new Vector2(_originalScale, transform.localScale.y);
+
+                    moveDirection.x = inputDirection.x;
+                    moveDirection.y = 0;
+                }
+                else if (angle >= 130f && angle <= -140f)
+                {
+                    moveDirection.x = 0;
+                }
+                else if (angle >= 50f && angle <= -30f)
+                {
+                    moveDirection.x = 0;
+                }
+
+                if (!rotated)
+                    RotatePlayer();
+
+                _animator.SetFloat("InputX", moveDirection.x);
+                _animator.SetFloat("InputY", moveDirection.y);
+                _lastMoveRitualPos = transform.position;
+
                 if (_isRitual)
                 {
                     if (_currentAngle > _startRitualAngle && _clockwise)
@@ -208,6 +257,7 @@ public class Movement : MonoBehaviour
 
                     }
                     _ritualProgress.fillAmount = currentFloat / targetFloat;
+
                 }
                 break;
         }
