@@ -17,6 +17,7 @@ public class HealthManager : MonoBehaviour
     private bool _isAlive = true;
     private bool _receivceDamage = true;
     public event Action<float> _onHit;
+    public event Action<float> _onAddHealth;
     public event Action _onDie;
 
     void Start()
@@ -62,6 +63,7 @@ public class HealthManager : MonoBehaviour
             return;
 
         _health = Math.Clamp(_health + health, 0, _maxHealth);
+        _onAddHealth?.Invoke(health);
     }
 
     public void SetHealth(float health)
