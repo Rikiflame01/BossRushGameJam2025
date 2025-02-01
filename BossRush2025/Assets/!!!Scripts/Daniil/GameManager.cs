@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager _instance;
 
-    void Start()
+    void Awake()
     {
         if (_instance == null)
         {
@@ -43,7 +43,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
+    void Start()
+    {
         _poolManager = FindAnyObjectByType<PoolManager>();
         FindAnyObjectByType<Movement>().GetComponent<HealthManager>()._onDie += GameOver;
     }
