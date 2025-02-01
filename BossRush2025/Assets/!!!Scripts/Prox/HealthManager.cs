@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private float _health = 10f;
     [SerializeField] private string _takeDamageSFX;
     [SerializeField] private string _dieParticles;
+    [SerializeField] private UnityEvent _onHitEvent;
 
     [Header("Properties")]
     [SerializeField] private bool _immortal = false;
@@ -42,6 +44,7 @@ public class HealthManager : MonoBehaviour
             _health = Math.Clamp(_health - damage, 0, _maxHealth);
 
         _onHit?.Invoke(damage);
+        _onHitEvent?.Invoke();
         if(_audioManager!= null)
             _audioManager.PlaySFX(_takeDamageSFX);
         if (_health == 0)
