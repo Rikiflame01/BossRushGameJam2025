@@ -136,7 +136,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 12
     textureCompression: 1
@@ -154,12 +154,12 @@ TextureImporter:
       name: DashForward_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 8
-        width: 32
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 53
+        height: 83
+      alignment: 9
+      pivot: {x: 0.491, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: DashForward_1
       rect:
         serializedVersion: 2
-        x: 109
-        y: 4
-        width: 43
-        height: 65
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 53
+        y: 0
+        width: 53
+        height: 83
+      alignment: 9
+      pivot: {x: 0.491, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -198,12 +198,12 @@ TextureImporter:
       name: DashForward_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 3
-        width: 47
-        height: 79
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 106
+        y: 0
+        width: 53
+        height: 83
+      alignment: 9
+      pivot: {x: 0.491, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: DashForward_3
       rect:
         serializedVersion: 2
-        x: 213
-        y: 2
-        width: 50
-        height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 159
+        y: 0
+        width: 53
+        height: 83
+      alignment: 9
+      pivot: {x: 0.491, y: 0.77}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,12 +242,12 @@ TextureImporter:
       name: DashForward_4
       rect:
         serializedVersion: 2
-        x: 265
+        x: 212
         y: 0
         width: 53
         height: 83
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.491, y: 0.8}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -264,12 +264,12 @@ TextureImporter:
       name: DashForward_5
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 265
+        y: 0
+        width: 53
+        height: 83
+      alignment: 9
+      pivot: {x: 0.491, y: 0.8}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,270 +278,6 @@ TextureImporter:
       bones: []
       spriteID: b0ce330009ca88000800000000000000
       internalID: 38470331311320075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_6
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 11
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5376b9d4809e3110800000000000000
-      internalID: 1242589447463531357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_7
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 5
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd5ef0996f5669df0800000000000000
-      internalID: -173839425802869281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_8
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 6
-        width: 12
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 784f63a0277e1a920800000000000000
-      internalID: 2999933303789122695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_9
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 15
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c13c866c4341d14a0800000000000000
-      internalID: -6621113660265151716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_10
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 8
-        width: 26
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 231cd85cb2699d640800000000000000
-      internalID: 5105276767343329586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_11
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 16
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d97d841d7f8f3500800000000000000
-      internalID: 378178661100911063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_12
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 4
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ac287e0afe0943a0800000000000000
-      internalID: -6680792105080050526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_13
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31724eb29d899ec80800000000000000
-      internalID: -8292929180314360045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_14
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 1
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf72c39e8f12f20c0800000000000000
-      internalID: -4598419341573347332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_15
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 0
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6eb0d4c693411ee0800000000000000
-      internalID: -1292177303252451733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_16
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 0
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a745d91556582e320800000000000000
-      internalID: 2585775806271542394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashForward_17
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 6
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8f0c1ff4e0b95ba0800000000000000
-      internalID: -6099649722717565045
       vertices: []
       indices: 
       edges: []
@@ -562,22 +298,10 @@ TextureImporter:
     nameFileIdTable:
       DashForward_0: -4459511346873167764
       DashForward_1: -1343619582598641933
-      DashForward_10: 5105276767343329586
-      DashForward_11: 378178661100911063
-      DashForward_12: -6680792105080050526
-      DashForward_13: -8292929180314360045
-      DashForward_14: -4598419341573347332
-      DashForward_15: -1292177303252451733
-      DashForward_16: 2585775806271542394
-      DashForward_17: -6099649722717565045
       DashForward_2: 8079221769922095415
       DashForward_3: -5299246763135356839
       DashForward_4: -6041925554777185077
       DashForward_5: 38470331311320075
-      DashForward_6: 1242589447463531357
-      DashForward_7: -173839425802869281
-      DashForward_8: 2999933303789122695
-      DashForward_9: -6621113660265151716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

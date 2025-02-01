@@ -100,7 +100,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 12
     textureCompression: 1
@@ -118,12 +118,12 @@ TextureImporter:
       name: DashLeft_0
       rect:
         serializedVersion: 2
-        x: 55
+        x: 0
         y: 0
-        width: 53
+        width: 88
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.8, y: 0.586}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: DashLeft_1
       rect:
         serializedVersion: 2
-        x: 134
+        x: 88
         y: 0
-        width: 52
+        width: 88
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.722, y: 0.56}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: DashLeft_2
       rect:
         serializedVersion: 2
-        x: 186
+        x: 176
         y: 0
-        width: 79
+        width: 88
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.56}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,8 +188,8 @@ TextureImporter:
         y: 0
         width: 88
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.19, y: 0.56}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,8 +210,8 @@ TextureImporter:
         y: 0
         width: 88
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.16777872, y: 0.6173676}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -220,28 +220,6 @@ TextureImporter:
       bones: []
       spriteID: dac10c1b0fa79e1b0800000000000000
       internalID: -5626831085229826899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashLeft_5
-      rect:
-        serializedVersion: 2
-        x: 422
-        y: 2
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3fd74d8bdd58a660800000000000000
-      internalID: 7397265585505558332
       vertices: []
       indices: 
       edges: []
@@ -265,7 +243,6 @@ TextureImporter:
       DashLeft_2: 6847651692737371945
       DashLeft_3: -8891218050606284241
       DashLeft_4: -5626831085229826899
-      DashLeft_5: 7397265585505558332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

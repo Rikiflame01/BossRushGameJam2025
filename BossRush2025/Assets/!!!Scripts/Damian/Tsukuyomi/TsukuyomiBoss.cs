@@ -32,6 +32,7 @@ public class TsukuyomiBoss : EntityState
     private bool _canLunarDisk = true;
 
     [SerializeField] float _attackDelay;
+    [SerializeField] string _destroyParticles;
 
     private Collider2D _collider;
     private Flash _flash;
@@ -72,7 +73,7 @@ public class TsukuyomiBoss : EntityState
         _gameManager.PlayerDie += StopAttack;
         _healthManager._onDie += _gameManager.DefeatedBoss;
         _healthManager._onDie += BossDie;
-
+        _flash = GetComponentInChildren<Flash>();
         ChangeState(State.Idle);
     }
     protected override IEnumerator StartAttacks()
@@ -177,6 +178,7 @@ public class TsukuyomiBoss : EntityState
     }
     private IEnumerator ArcShooting(int currentProjectileCount)
     {
+        FlashSphere();
         _finishedArcAttack = false;
         for (int j = 0; j < 3; j++)
         {
@@ -218,11 +220,33 @@ public class TsukuyomiBoss : EntityState
     {
         _isRitual = false;
         StopCurrentAttack();
-        _attackCycle = StartCoroutine(StartAttacks());
+        if (_attackCycle == null)
+        {
+            _attackCycle = StartCoroutine(StartAttacks());
+        }
     }
     private void BossDie()
     {
-        _bossHealth.DOScale(0f, 0.35f);
+        AudioManager._instance.StopBGM();
+        StopAttack();
+        _collider.enabled = false;
+        StartCoroutine(DeathAnim());
+    }
+    private IEnumerator DeathAnim()
+    {
+        yield return new WaitForSeconds(1f);
+        float index = 1f;
+        for (float i = 1f; i >= 0f; i -= 0.05f)
+        {
+            transform.DOScaleX(i * index, 0.1f * Mathf.Abs(i));
+            index *= -1f;
+            yield return new WaitForSeconds(0.1f * Mathf.Abs(i));
+        }
+        transform.localScale = Vector3.zero;
+        GameObject destroyParticles = PoolManager._instance.GetObject(_destroyParticles);
+        destroyParticles.transform.position = transform.position;
+        AudioManager._instance.PlayBGM("Victory");
+        this.enabled = false;
     }
     void OnDestroy()
     {
@@ -334,8 +358,10 @@ public class TsukuyomiBoss : EntityState
 
         _collider.enabled = true;
         _audioManager.PlayBGM(_secondTrack);
-
-        _attackCycle = StartCoroutine(StartAttacks());
+        if (_attackCycle == null)
+        {
+            _attackCycle = StartCoroutine(StartAttacks());
+        }
     }
     private void FlashSphere()
     {

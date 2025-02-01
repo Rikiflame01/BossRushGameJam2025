@@ -1,0 +1,1135 @@
+fileFormatVersion: 2
+guid: b5cb884b447993f4fb1757a40582cda4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1448536736245724789
+    second: AmaterasuMap_0
+  - first:
+      213: 193309071781375301
+    second: AmaterasuMap_1
+  - first:
+      213: -6313183751645557580
+    second: AmaterasuMap_2
+  - first:
+      213: 6674836275139388320
+    second: AmaterasuMap_3
+  - first:
+      213: 4065808116618040225
+    second: AmaterasuMap_4
+  - first:
+      213: 8537341542874405273
+    second: AmaterasuMap_5
+  - first:
+      213: -1921097168756502695
+    second: AmaterasuMap_6
+  - first:
+      213: -6567282926939948685
+    second: AmaterasuMap_7
+  - first:
+      213: 907945236341634660
+    second: AmaterasuMap_8
+  - first:
+      213: 534976633851208639
+    second: AmaterasuMap_9
+  - first:
+      213: -6654480820782567216
+    second: AmaterasuMap_10
+  - first:
+      213: -6196873138926970129
+    second: AmaterasuMap_11
+  - first:
+      213: -2946949127874468678
+    second: AmaterasuMap_12
+  - first:
+      213: 301058076042916905
+    second: AmaterasuMap_13
+  - first:
+      213: -1645322952883163653
+    second: AmaterasuMap_14
+  - first:
+      213: -6255760087002592383
+    second: AmaterasuMap_15
+  - first:
+      213: 7580471064205182708
+    second: AmaterasuMap_16
+  - first:
+      213: 412653729844434011
+    second: AmaterasuMap_17
+  - first:
+      213: -8848626100724922869
+    second: AmaterasuMap_18
+  - first:
+      213: 2527286080957256390
+    second: AmaterasuMap_19
+  - first:
+      213: 3964054362034010759
+    second: AmaterasuMap_20
+  - first:
+      213: 3906216493030967999
+    second: AmaterasuMap_21
+  - first:
+      213: -4840085003256011154
+    second: AmaterasuMap_22
+  - first:
+      213: -368703825902836965
+    second: AmaterasuMap_23
+  - first:
+      213: -7022757752551141407
+    second: AmaterasuMap_24
+  - first:
+      213: -9125809347993075721
+    second: AmaterasuMap_25
+  - first:
+      213: -8502232917237634061
+    second: AmaterasuMap_26
+  - first:
+      213: -8801643725278065519
+    second: AmaterasuMap_27
+  - first:
+      213: -780209899170677113
+    second: AmaterasuMap_28
+  - first:
+      213: 7190805485109327499
+    second: AmaterasuMap_29
+  - first:
+      213: -5856988655457544962
+    second: AmaterasuMap_30
+  - first:
+      213: -7338691521249492943
+    second: AmaterasuMap_31
+  - first:
+      213: -7113882197312637372
+    second: AmaterasuMap_32
+  - first:
+      213: 473436642074993999
+    second: AmaterasuMap_33
+  - first:
+      213: 3904286610629792204
+    second: AmaterasuMap_34
+  - first:
+      213: -8047853809465158776
+    second: AmaterasuMap_35
+  - first:
+      213: 565624278252680531
+    second: AmaterasuMap_36
+  - first:
+      213: 7767358753318150153
+    second: AmaterasuMap_37
+  - first:
+      213: -7833254102323292405
+    second: AmaterasuMap_38
+  - first:
+      213: 3331053412035865264
+    second: AmaterasuMap_39
+  - first:
+      213: 6258475052074206345
+    second: AmaterasuMap_40
+  - first:
+      213: 483103841858713761
+    second: AmaterasuMap_41
+  - first:
+      213: -6753927361312741898
+    second: AmaterasuMap_42
+  - first:
+      213: -620893479909905140
+    second: AmaterasuMap_43
+  - first:
+      213: -3464663844271418764
+    second: AmaterasuMap_44
+  - first:
+      213: 6465032770618719311
+    second: AmaterasuMap_45
+  - first:
+      213: -6991998697152418137
+    second: AmaterasuMap_46
+  - first:
+      213: 2510496360140716985
+    second: AmaterasuMap_47
+  - first:
+      213: 3492401629272592608
+    second: AmaterasuMap_48
+  - first:
+      213: -5267016523494741267
+    second: AmaterasuMap_49
+  - first:
+      213: 3059402321043841267
+    second: AmaterasuMap_50
+  - first:
+      213: 8164286755739329900
+    second: AmaterasuMap_51
+  - first:
+      213: 1771941799638230329
+    second: AmaterasuMap_52
+  - first:
+      213: -759652156377672518
+    second: AmaterasuMap_53
+  - first:
+      213: 4853571577128611379
+    second: AmaterasuMap_54
+  - first:
+      213: -9124964543996004101
+    second: AmaterasuMap_55
+  - first:
+      213: -5371201013826557028
+    second: AmaterasuMap_56
+  - first:
+      213: -8727931961193417195
+    second: AmaterasuMap_57
+  - first:
+      213: 4026535564268384687
+    second: AmaterasuMap_58
+  - first:
+      213: -3775301059477415240
+    second: AmaterasuMap_59
+  - first:
+      213: -4396139054564412403
+    second: AmaterasuMap_60
+  - first:
+      213: -4316311861320796648
+    second: AmaterasuMap_61
+  - first:
+      213: -2980410770011167761
+    second: AmaterasuMap_62
+  - first:
+      213: -1855005745765942728
+    second: AmaterasuMap_63
+  - first:
+      213: -6523843955146226873
+    second: AmaterasuMap_64
+  - first:
+      213: 8475234370753192609
+    second: AmaterasuMap_65
+  - first:
+      213: -8354687294415578464
+    second: AmaterasuMap_66
+  - first:
+      213: -723955310618818248
+    second: AmaterasuMap_67
+  - first:
+      213: 4625122360033611691
+    second: AmaterasuMap_68
+  - first:
+      213: 6346932606328858577
+    second: AmaterasuMap_69
+  - first:
+      213: 8769527302631272815
+    second: AmaterasuMap_70
+  - first:
+      213: -8331101852793843644
+    second: AmaterasuMap_71
+  - first:
+      213: 5644162198536308719
+    second: AmaterasuMap_72
+  - first:
+      213: 2970973952497781311
+    second: AmaterasuMap_73
+  - first:
+      213: -8460049261565550459
+    second: AmaterasuMap_74
+  - first:
+      213: -5447479298006369438
+    second: AmaterasuMap_75
+  - first:
+      213: 6560279779800584584
+    second: AmaterasuMap_76
+  - first:
+      213: -576434436049890773
+    second: AmaterasuMap_77
+  - first:
+      213: -9147688304342014875
+    second: AmaterasuMap_78
+  - first:
+      213: -1501262185304958555
+    second: AmaterasuMap_79
+  - first:
+      213: -1961484753630994626
+    second: AmaterasuMap_80
+  - first:
+      213: 1964167208536104002
+    second: AmaterasuMap_81
+  - first:
+      213: 4008398226371572783
+    second: AmaterasuMap_82
+  - first:
+      213: 8052958950427613726
+    second: AmaterasuMap_83
+  - first:
+      213: 3536740821283113251
+    second: AmaterasuMap_84
+  - first:
+      213: -1837896687080131278
+    second: AmaterasuMap_85
+  - first:
+      213: 6302060770647467163
+    second: AmaterasuMap_86
+  - first:
+      213: -3935207722404862120
+    second: AmaterasuMap_87
+  - first:
+      213: 8589386448234972243
+    second: AmaterasuMap_88
+  - first:
+      213: 7844488545162433289
+    second: AmaterasuMap_89
+  - first:
+      213: -1355839572031036386
+    second: AmaterasuMap_90
+  - first:
+      213: 2907765842325116876
+    second: AmaterasuMap_91
+  - first:
+      213: -2387213751447160991
+    second: AmaterasuMap_92
+  - first:
+      213: -8118684526006115072
+    second: AmaterasuMap_93
+  - first:
+      213: 1144443612673753876
+    second: AmaterasuMap_94
+  - first:
+      213: 4904417124481203052
+    second: AmaterasuMap_95
+  - first:
+      213: -2474596272738110400
+    second: AmaterasuMap_96
+  - first:
+      213: -6219710660009883488
+    second: AmaterasuMap_97
+  - first:
+      213: -7327659618986984288
+    second: AmaterasuMap_98
+  - first:
+      213: -7663160454343263337
+    second: AmaterasuMap_99
+  - first:
+      213: -5588421241857718807
+    second: AmaterasuMap_100
+  - first:
+      213: -7516453484542688354
+    second: AmaterasuMap_101
+  - first:
+      213: 3579453540839199235
+    second: AmaterasuMap_102
+  - first:
+      213: -5962075569603380886
+    second: AmaterasuMap_103
+  - first:
+      213: 1991625175814492790
+    second: AmaterasuMap_104
+  - first:
+      213: -8205912173999209484
+    second: AmaterasuMap_105
+  - first:
+      213: -4402553292388287106
+    second: AmaterasuMap_106
+  - first:
+      213: 5014255099832236933
+    second: AmaterasuMap_107
+  - first:
+      213: 4884294868825924741
+    second: AmaterasuMap_108
+  - first:
+      213: 3600881990398262875
+    second: AmaterasuMap_109
+  - first:
+      213: -1946438492764812527
+    second: AmaterasuMap_110
+  - first:
+      213: 1269542442586070374
+    second: AmaterasuMap_111
+  - first:
+      213: -2292445726444519133
+    second: AmaterasuMap_112
+  - first:
+      213: 8508825961137271130
+    second: AmaterasuMap_113
+  - first:
+      213: -5709340212790585656
+    second: AmaterasuMap_114
+  - first:
+      213: -1825223208409448041
+    second: AmaterasuMap_115
+  - first:
+      213: -7465981812860665904
+    second: AmaterasuMap_116
+  - first:
+      213: 8767739063162359130
+    second: AmaterasuMap_117
+  - first:
+      213: 1436606279334010888
+    second: AmaterasuMap_118
+  - first:
+      213: -1864561431934958403
+    second: AmaterasuMap_119
+  - first:
+      213: -195296007348832400
+    second: AmaterasuMap_120
+  - first:
+      213: 9063729489621922829
+    second: AmaterasuMap_121
+  - first:
+      213: 565902571750092090
+    second: AmaterasuMap_122
+  - first:
+      213: -8914415105561162023
+    second: AmaterasuMap_123
+  - first:
+      213: -6423662683728752056
+    second: AmaterasuMap_124
+  - first:
+      213: 4197343627052953323
+    second: AmaterasuMap_125
+  - first:
+      213: -8381537474620599930
+    second: AmaterasuMap_126
+  - first:
+      213: 8093802209383945578
+    second: AmaterasuMap_127
+  - first:
+      213: -3807859254407863979
+    second: AmaterasuMap_128
+  - first:
+      213: 4178401955366112388
+    second: AmaterasuMap_129
+  - first:
+      213: -3184313115507326571
+    second: AmaterasuMap_130
+  - first:
+      213: 397871519354210843
+    second: AmaterasuMap_131
+  - first:
+      213: 3610700121992670941
+    second: AmaterasuMap_132
+  - first:
+      213: 302138316863261624
+    second: AmaterasuMap_133
+  - first:
+      213: -6462104937639893522
+    second: AmaterasuMap_134
+  - first:
+      213: -4327855347015765791
+    second: AmaterasuMap_135
+  - first:
+      213: -3257564445555446701
+    second: AmaterasuMap_136
+  - first:
+      213: 2485481760313990238
+    second: AmaterasuMap_137
+  - first:
+      213: -1049707066104800663
+    second: AmaterasuMap_138
+  - first:
+      213: 3616075441277427901
+    second: AmaterasuMap_139
+  - first:
+      213: 5303761606940698497
+    second: AmaterasuMap_140
+  - first:
+      213: -2989342860268638833
+    second: AmaterasuMap_141
+  - first:
+      213: 1228833026146676834
+    second: AmaterasuMap_142
+  - first:
+      213: -2438990770126591884
+    second: AmaterasuMap_143
+  - first:
+      213: -4615457069470070988
+    second: AmaterasuMap_144
+  - first:
+      213: -5585965411244289233
+    second: AmaterasuMap_145
+  - first:
+      213: -4922044291016692546
+    second: AmaterasuMap_146
+  - first:
+      213: 5288369704468394780
+    second: AmaterasuMap_147
+  - first:
+      213: 318190162172029620
+    second: AmaterasuMap_148
+  - first:
+      213: 239273937053567918
+    second: AmaterasuMap_149
+  - first:
+      213: 3363732425818587870
+    second: AmaterasuMap_150
+  - first:
+      213: 4708845931758392804
+    second: AmaterasuMap_151
+  - first:
+      213: 7928877263877887296
+    second: AmaterasuMap_152
+  - first:
+      213: 4030224647650671367
+    second: AmaterasuMap_153
+  - first:
+      213: 8987019030453012702
+    second: AmaterasuMap_154
+  - first:
+      213: -1280094101446288585
+    second: AmaterasuMap_155
+  - first:
+      213: -216765511026807520
+    second: AmaterasuMap_156
+  - first:
+      213: 1865499914690004744
+    second: AmaterasuMap_157
+  - first:
+      213: -5954043900500806450
+    second: AmaterasuMap_158
+  - first:
+      213: -2789385094855342825
+    second: AmaterasuMap_159
+  - first:
+      213: -901275826519960979
+    second: AmaterasuMap_160
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AmaterasuMap_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576b708ac7c3a1410800000000000000
+      internalID: 1448536736245724789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54da36b9395cea200800000000000000
+      internalID: 193309071781375301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc066993d01368a0800000000000000
+      internalID: -6313183751645557580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a323993a38c1ac50800000000000000
+      internalID: 6674836275139388320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 344
+        width: 498
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a31be3c0f6ac6830800000000000000
+      internalID: 4065808116618040225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 342
+        width: 497
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999d63586eaba7670800000000000000
+      internalID: 8537341542874405273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_150
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 270
+        width: 498
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed24168c1d06eae20800000000000000
+      internalID: 3363732425818587870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_151
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 299
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e590882d6e295140800000000000000
+      internalID: 4708845931758392804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_152
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 260
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045dc1dccd7090e60800000000000000
+      internalID: 7928877263877887296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_153
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 259
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bfd38c6fb3ee730800000000000000
+      internalID: 4030224647650671367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_154
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 179
+        width: 168
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8c3d3613e48bc70800000000000000
+      internalID: 8987019030453012702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_155
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 209
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b983c62313c3ee0800000000000000
+      internalID: -1280094101446288585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_156
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 187
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02de0bb8ae4edfcf0800000000000000
+      internalID: -216765511026807520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_157
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 4
+        width: 200
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8078e9fd94693e910800000000000000
+      internalID: 1865499914690004744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_158
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 137
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4719d4e9cfe5da0800000000000000
+      internalID: -5954043900500806450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_159
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 136
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715c067f80d1a49d0800000000000000
+      internalID: -2789385094855342825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuMap_160
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 37
+        width: 71
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6291a339660e73f0800000000000000
+      internalID: -901275826519960979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2d08bd6c77a6a5d4a9a53d2a75c1aa0e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AmaterasuMap_0: 1448536736245724789
+      AmaterasuMap_1: 193309071781375301
+      AmaterasuMap_10: -6654480820782567216
+      AmaterasuMap_100: -5588421241857718807
+      AmaterasuMap_101: -7516453484542688354
+      AmaterasuMap_102: 3579453540839199235
+      AmaterasuMap_103: -5962075569603380886
+      AmaterasuMap_104: 1991625175814492790
+      AmaterasuMap_105: -8205912173999209484
+      AmaterasuMap_106: -4402553292388287106
+      AmaterasuMap_107: 5014255099832236933
+      AmaterasuMap_108: 4884294868825924741
+      AmaterasuMap_109: 3600881990398262875
+      AmaterasuMap_11: -6196873138926970129
+      AmaterasuMap_110: -1946438492764812527
+      AmaterasuMap_111: 1269542442586070374
+      AmaterasuMap_112: -2292445726444519133
+      AmaterasuMap_113: 8508825961137271130
+      AmaterasuMap_114: -5709340212790585656
+      AmaterasuMap_115: -1825223208409448041
+      AmaterasuMap_116: -7465981812860665904
+      AmaterasuMap_117: 8767739063162359130
+      AmaterasuMap_118: 1436606279334010888
+      AmaterasuMap_119: -1864561431934958403
+      AmaterasuMap_12: -2946949127874468678
+      AmaterasuMap_120: -195296007348832400
+      AmaterasuMap_121: 9063729489621922829
+      AmaterasuMap_122: 565902571750092090
+      AmaterasuMap_123: -8914415105561162023
+      AmaterasuMap_124: -6423662683728752056
+      AmaterasuMap_125: 4197343627052953323
+      AmaterasuMap_126: -8381537474620599930
+      AmaterasuMap_127: 8093802209383945578
+      AmaterasuMap_128: -3807859254407863979
+      AmaterasuMap_129: 4178401955366112388
+      AmaterasuMap_13: 301058076042916905
+      AmaterasuMap_130: -3184313115507326571
+      AmaterasuMap_131: 397871519354210843
+      AmaterasuMap_132: 3610700121992670941
+      AmaterasuMap_133: 302138316863261624
+      AmaterasuMap_134: -6462104937639893522
+      AmaterasuMap_135: -4327855347015765791
+      AmaterasuMap_136: -3257564445555446701
+      AmaterasuMap_137: 2485481760313990238
+      AmaterasuMap_138: -1049707066104800663
+      AmaterasuMap_139: 3616075441277427901
+      AmaterasuMap_14: -1645322952883163653
+      AmaterasuMap_140: 5303761606940698497
+      AmaterasuMap_141: -2989342860268638833
+      AmaterasuMap_142: 1228833026146676834
+      AmaterasuMap_143: -2438990770126591884
+      AmaterasuMap_144: -4615457069470070988
+      AmaterasuMap_145: -5585965411244289233
+      AmaterasuMap_146: -4922044291016692546
+      AmaterasuMap_147: 5288369704468394780
+      AmaterasuMap_148: 318190162172029620
+      AmaterasuMap_149: 239273937053567918
+      AmaterasuMap_15: -6255760087002592383
+      AmaterasuMap_150: 3363732425818587870
+      AmaterasuMap_151: 4708845931758392804
+      AmaterasuMap_152: 7928877263877887296
+      AmaterasuMap_153: 4030224647650671367
+      AmaterasuMap_154: 8987019030453012702
+      AmaterasuMap_155: -1280094101446288585
+      AmaterasuMap_156: -216765511026807520
+      AmaterasuMap_157: 1865499914690004744
+      AmaterasuMap_158: -5954043900500806450
+      AmaterasuMap_159: -2789385094855342825
+      AmaterasuMap_16: 7580471064205182708
+      AmaterasuMap_160: -901275826519960979
+      AmaterasuMap_17: 412653729844434011
+      AmaterasuMap_18: -8848626100724922869
+      AmaterasuMap_19: 2527286080957256390
+      AmaterasuMap_2: -6313183751645557580
+      AmaterasuMap_20: 3964054362034010759
+      AmaterasuMap_21: 3906216493030967999
+      AmaterasuMap_22: -4840085003256011154
+      AmaterasuMap_23: -368703825902836965
+      AmaterasuMap_24: -7022757752551141407
+      AmaterasuMap_25: -9125809347993075721
+      AmaterasuMap_26: -8502232917237634061
+      AmaterasuMap_27: -8801643725278065519
+      AmaterasuMap_28: -780209899170677113
+      AmaterasuMap_29: 7190805485109327499
+      AmaterasuMap_3: 6674836275139388320
+      AmaterasuMap_30: -5856988655457544962
+      AmaterasuMap_31: -7338691521249492943
+      AmaterasuMap_32: -7113882197312637372
+      AmaterasuMap_33: 473436642074993999
+      AmaterasuMap_34: 3904286610629792204
+      AmaterasuMap_35: -8047853809465158776
+      AmaterasuMap_36: 565624278252680531
+      AmaterasuMap_37: 7767358753318150153
+      AmaterasuMap_38: -7833254102323292405
+      AmaterasuMap_39: 3331053412035865264
+      AmaterasuMap_4: 4065808116618040225
+      AmaterasuMap_40: 6258475052074206345
+      AmaterasuMap_41: 483103841858713761
+      AmaterasuMap_42: -6753927361312741898
+      AmaterasuMap_43: -620893479909905140
+      AmaterasuMap_44: -3464663844271418764
+      AmaterasuMap_45: 6465032770618719311
+      AmaterasuMap_46: -6991998697152418137
+      AmaterasuMap_47: 2510496360140716985
+      AmaterasuMap_48: 3492401629272592608
+      AmaterasuMap_49: -5267016523494741267
+      AmaterasuMap_5: 8537341542874405273
+      AmaterasuMap_50: 3059402321043841267
+      AmaterasuMap_51: 8164286755739329900
+      AmaterasuMap_52: 1771941799638230329
+      AmaterasuMap_53: -759652156377672518
+      AmaterasuMap_54: 4853571577128611379
+      AmaterasuMap_55: -9124964543996004101
+      AmaterasuMap_56: -5371201013826557028
+      AmaterasuMap_57: -8727931961193417195
+      AmaterasuMap_58: 4026535564268384687
+      AmaterasuMap_59: -3775301059477415240
+      AmaterasuMap_6: -1921097168756502695
+      AmaterasuMap_60: -4396139054564412403
+      AmaterasuMap_61: -4316311861320796648
+      AmaterasuMap_62: -2980410770011167761
+      AmaterasuMap_63: -1855005745765942728
+      AmaterasuMap_64: -6523843955146226873
+      AmaterasuMap_65: 8475234370753192609
+      AmaterasuMap_66: -8354687294415578464
+      AmaterasuMap_67: -723955310618818248
+      AmaterasuMap_68: 4625122360033611691
+      AmaterasuMap_69: 6346932606328858577
+      AmaterasuMap_7: -6567282926939948685
+      AmaterasuMap_70: 8769527302631272815
+      AmaterasuMap_71: -8331101852793843644
+      AmaterasuMap_72: 5644162198536308719
+      AmaterasuMap_73: 2970973952497781311
+      AmaterasuMap_74: -8460049261565550459
+      AmaterasuMap_75: -5447479298006369438
+      AmaterasuMap_76: 6560279779800584584
+      AmaterasuMap_77: -576434436049890773
+      AmaterasuMap_78: -9147688304342014875
+      AmaterasuMap_79: -1501262185304958555
+      AmaterasuMap_8: 907945236341634660
+      AmaterasuMap_80: -1961484753630994626
+      AmaterasuMap_81: 1964167208536104002
+      AmaterasuMap_82: 4008398226371572783
+      AmaterasuMap_83: 8052958950427613726
+      AmaterasuMap_84: 3536740821283113251
+      AmaterasuMap_85: -1837896687080131278
+      AmaterasuMap_86: 6302060770647467163
+      AmaterasuMap_87: -3935207722404862120
+      AmaterasuMap_88: 8589386448234972243
+      AmaterasuMap_89: 7844488545162433289
+      AmaterasuMap_9: 534976633851208639
+      AmaterasuMap_90: -1355839572031036386
+      AmaterasuMap_91: 2907765842325116876
+      AmaterasuMap_92: -2387213751447160991
+      AmaterasuMap_93: -8118684526006115072
+      AmaterasuMap_94: 1144443612673753876
+      AmaterasuMap_95: 4904417124481203052
+      AmaterasuMap_96: -2474596272738110400
+      AmaterasuMap_97: -6219710660009883488
+      AmaterasuMap_98: -7327659618986984288
+      AmaterasuMap_99: -7663160454343263337
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 448bb18519d7760439b8bb1650d63acf
+guid: 3c675b4b490f2414aaaa4ba05a5d336f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2311659948842064771
-    second: Player_0
+      213: 3603960279310803312
+    second: BowHoldRun 1_0
+  - first:
+      213: 3446764197288502222
+    second: BowHoldRun 1_1
+  - first:
+      213: 3046385027447886915
+    second: BowHoldRun 1_2
+  - first:
+      213: 5097316254916708222
+    second: BowHoldRun 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -85,7 +94,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: 12
     textureCompression: 1
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
+      name: BowHoldRun_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d7465c336855befd0800000000000000
-      internalID: -2311659948842064771
+      spriteID: 20d689c069419e941bd2ee510f63e19d
+      internalID: 1436561081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowHoldRun_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d74803b11cc0f499a94afa0baeded3
+      internalID: 1615384311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowHoldRun_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fb6ed3f410ec245aba14b85c037991
+      internalID: 1896548832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowHoldRun_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 39
+      alignment: 9
+      pivot: {x: 0.327, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cdcb21dfd492b4a9c95b67833faeda
+      internalID: -1256829038
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e161d2763cba846488d71923ac270278
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player_0: -2311659948842064771
+      BowHoldRun_0: 1436561081
+      BowHoldRun_1: 1615384311
+      BowHoldRun_2: 1896548832
+      BowHoldRun_3: -1256829038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

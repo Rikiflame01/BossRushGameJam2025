@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5396550145999977214}
   - component: {fileID: 2088303725982826792}
   - component: {fileID: -1856876203559901770}
-  - component: {fileID: -2730367553727315768}
+  - component: {fileID: 3678031857588438481}
   m_Layer: 7
   m_Name: TeleportProjectile
   m_TagString: Untagged
@@ -132,8 +132,8 @@ MonoBehaviour:
   _name: TeleportProjectile
   _damage: 5
   _destroyParticles: PurpleSplash
---- !u!61 &-2730367553727315768
-BoxCollider2D:
+--- !u!58 &3678031857588438481
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,14 +167,4 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.13, y: 0.13}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 1
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5

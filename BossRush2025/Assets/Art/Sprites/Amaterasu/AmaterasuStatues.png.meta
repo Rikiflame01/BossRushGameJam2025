@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f2432ae244603d4b9c252e555f954e0
+guid: d91a086454a548749b99bd528209e0f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3113543468612812383
-    second: SusanooPlayer_0
+      213: -1679645430438807149
+    second: AmaterasuStatues_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -85,7 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: 12
     textureCompression: 1
@@ -100,23 +100,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SusanooPlayer_0
+      name: AmaterasuStatues_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 69
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5e7767d947853b20800000000000000
-      internalID: 3113543468612812383
+      spriteID: 39936125163b0b8e0800000000000000
+      internalID: -1679645430438807149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuStatues_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 69
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9596b08192362a429f5137296e75409
+      internalID: 1066955814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuStatues_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 69
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3ddb68c64150a439b7ec3e309743f3
+      internalID: 450219042
       vertices: []
       indices: 
       edges: []
@@ -125,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 588a19ac721642b419151b4432c4d9a0
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SusanooPlayer_0: 3113543468612812383
+      AmaterasuStatues_0: -1679645430438807149
+      AmaterasuStatues_1: 1066955814
+      AmaterasuStatues_2: 450219042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

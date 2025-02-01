@@ -108,7 +108,6 @@ public class Teleport : MonoBehaviour
         for(float i = 1f; i >= 0f; i -= 0.2f)
         {
             transform.DOScaleX(i * index, 0.15f * Mathf.Abs(i));
-            Debug.Log(i * index);
             index *= -1f;
             yield return new WaitForSeconds(0.15f * Mathf.Abs(i));
         }

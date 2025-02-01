@@ -115,7 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 12
     textureCompression: 1
@@ -133,12 +133,12 @@ TextureImporter:
       name: DashBack_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 43
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.687}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: DashBack_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 43
-        width: 32
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 55
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.687}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: DashBack_2
       rect:
         serializedVersion: 2
-        x: 121
-        y: 44
-        width: 32
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 110
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.725}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: DashBack_3
       rect:
         serializedVersion: 2
-        x: 172
-        y: 36
-        width: 39
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 165
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.49199995, y: 0.61}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: DashBack_4
       rect:
         serializedVersion: 2
-        x: 227
-        y: 77
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 220
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.325}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: DashBack_5
       rect:
         serializedVersion: 2
-        x: 227
-        y: 11
-        width: 40
-        height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 275
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.225}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: DashBack_6
       rect:
         serializedVersion: 2
-        x: 253
-        y: 78
-        width: 26
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 330
+        y: 0
+        width: 55
+        height: 88
+      alignment: 9
+      pivot: {x: 0.492, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,94 +279,6 @@ TextureImporter:
       bones: []
       spriteID: b12cf4357252eab40800000000000000
       internalID: 5453337049623937563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashBack_7
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 66
-        width: 68
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 317fca218ed4da5c0800000000000000
-      internalID: -4202617218125727981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashBack_8
-      rect:
-        serializedVersion: 2
-        x: 283
-        y: 64
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 230647e21b7ca9fa0800000000000000
-      internalID: -5793098406856204238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashBack_9
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 1
-        width: 35
-        height: 80
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dbc1edd2a8183cab0800000000000000
-      internalID: -4989001531721376579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashBack_10
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 0
-        width: 62
-        height: 83
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66889d81db43d50f0800000000000000
-      internalID: -1126686345002383258
       vertices: []
       indices: 
       edges: []
@@ -387,15 +299,11 @@ TextureImporter:
     nameFileIdTable:
       DashBack_0: 6044380962195770185
       DashBack_1: -7728189129715576392
-      DashBack_10: -1126686345002383258
       DashBack_2: -8826503239839100080
       DashBack_3: 8538073072105391709
       DashBack_4: 750042943403573121
       DashBack_5: 5746389203585139163
       DashBack_6: 5453337049623937563
-      DashBack_7: -4202617218125727981
-      DashBack_8: -5793098406856204238
-      DashBack_9: -4989001531721376579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,1091 @@
+fileFormatVersion: 2
+guid: c7507ac33dfc31a43b3e998693b46628
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1401870149706317254
+    second: AmaterasuFightMap_0
+  - first:
+      213: 1571571853592038213
+    second: AmaterasuFightMap_1
+  - first:
+      213: 68094862467613725
+    second: AmaterasuFightMap_2
+  - first:
+      213: -3661601278758708560
+    second: AmaterasuFightMap_3
+  - first:
+      213: -3167300194982343885
+    second: AmaterasuFightMap_4
+  - first:
+      213: 6881574967341686574
+    second: AmaterasuFightMap_5
+  - first:
+      213: 843064378654479387
+    second: AmaterasuFightMap_6
+  - first:
+      213: 4731438698921161870
+    second: AmaterasuFightMap_7
+  - first:
+      213: 7999376416648714728
+    second: AmaterasuFightMap_8
+  - first:
+      213: 2473133951531226486
+    second: AmaterasuFightMap_9
+  - first:
+      213: -2894788858019337385
+    second: AmaterasuFightMap_10
+  - first:
+      213: 5436377485228594780
+    second: AmaterasuFightMap_11
+  - first:
+      213: -5329095052986165330
+    second: AmaterasuFightMap_12
+  - first:
+      213: 121939125195684912
+    second: AmaterasuFightMap_13
+  - first:
+      213: -3058173906182406231
+    second: AmaterasuFightMap_14
+  - first:
+      213: -2180487875743380378
+    second: AmaterasuFightMap_15
+  - first:
+      213: -689010267623344207
+    second: AmaterasuFightMap_16
+  - first:
+      213: 3954317950421902935
+    second: AmaterasuFightMap_17
+  - first:
+      213: -7790671713411832132
+    second: AmaterasuFightMap_18
+  - first:
+      213: 710931018460892687
+    second: AmaterasuFightMap_19
+  - first:
+      213: -8473318980222632740
+    second: AmaterasuFightMap_20
+  - first:
+      213: 171317564278500585
+    second: AmaterasuFightMap_21
+  - first:
+      213: -7120373580130226357
+    second: AmaterasuFightMap_22
+  - first:
+      213: 9116432746138305242
+    second: AmaterasuFightMap_23
+  - first:
+      213: 7644862966865088304
+    second: AmaterasuFightMap_24
+  - first:
+      213: 6978494402898241554
+    second: AmaterasuFightMap_25
+  - first:
+      213: -4879454741991135201
+    second: AmaterasuFightMap_26
+  - first:
+      213: 2713775152784306073
+    second: AmaterasuFightMap_27
+  - first:
+      213: -314432202438151527
+    second: AmaterasuFightMap_28
+  - first:
+      213: 4042798001959592917
+    second: AmaterasuFightMap_29
+  - first:
+      213: 7193416719998940338
+    second: AmaterasuFightMap_30
+  - first:
+      213: -805183487425602215
+    second: AmaterasuFightMap_31
+  - first:
+      213: -9074832785705989774
+    second: AmaterasuFightMap_32
+  - first:
+      213: -4078628578486795408
+    second: AmaterasuFightMap_33
+  - first:
+      213: 7773778968979506439
+    second: AmaterasuFightMap_34
+  - first:
+      213: -8456505162112172711
+    second: AmaterasuFightMap_35
+  - first:
+      213: -2905557174391439504
+    second: AmaterasuFightMap_36
+  - first:
+      213: -3750832876804960759
+    second: AmaterasuFightMap_37
+  - first:
+      213: -2789794862954874123
+    second: AmaterasuFightMap_38
+  - first:
+      213: -6872993098487433778
+    second: AmaterasuFightMap_39
+  - first:
+      213: -8396537347087282535
+    second: AmaterasuFightMap_40
+  - first:
+      213: 8602431944911911775
+    second: AmaterasuFightMap_41
+  - first:
+      213: -9043147316330982277
+    second: AmaterasuFightMap_42
+  - first:
+      213: 488591566518432682
+    second: AmaterasuFightMap_43
+  - first:
+      213: 7243284656988511604
+    second: AmaterasuFightMap_44
+  - first:
+      213: 6820650889468638364
+    second: AmaterasuFightMap_45
+  - first:
+      213: 4444175562817706758
+    second: AmaterasuFightMap_46
+  - first:
+      213: 6574302090866942999
+    second: AmaterasuFightMap_47
+  - first:
+      213: 508637287700817252
+    second: AmaterasuFightMap_48
+  - first:
+      213: 426112815834061962
+    second: AmaterasuFightMap_49
+  - first:
+      213: 2725623461286625248
+    second: AmaterasuFightMap_50
+  - first:
+      213: 7433698656446336346
+    second: AmaterasuFightMap_51
+  - first:
+      213: -4920489073577633156
+    second: AmaterasuFightMap_52
+  - first:
+      213: -4938186250581150214
+    second: AmaterasuFightMap_53
+  - first:
+      213: 3235299498997724078
+    second: AmaterasuFightMap_54
+  - first:
+      213: -74260207785588369
+    second: AmaterasuFightMap_55
+  - first:
+      213: 2815540195983083014
+    second: AmaterasuFightMap_56
+  - first:
+      213: 7448500487060239499
+    second: AmaterasuFightMap_57
+  - first:
+      213: 7910424723025323563
+    second: AmaterasuFightMap_58
+  - first:
+      213: 2774092577914303310
+    second: AmaterasuFightMap_59
+  - first:
+      213: -3878414054916522855
+    second: AmaterasuFightMap_60
+  - first:
+      213: -8089563559333854988
+    second: AmaterasuFightMap_61
+  - first:
+      213: -2289959920065250248
+    second: AmaterasuFightMap_62
+  - first:
+      213: 3983857881191359435
+    second: AmaterasuFightMap_63
+  - first:
+      213: 2288437900375003752
+    second: AmaterasuFightMap_64
+  - first:
+      213: -8448576278128101769
+    second: AmaterasuFightMap_65
+  - first:
+      213: -1695846736676210894
+    second: AmaterasuFightMap_66
+  - first:
+      213: 1674715371918370270
+    second: AmaterasuFightMap_67
+  - first:
+      213: 5485585284996612623
+    second: AmaterasuFightMap_68
+  - first:
+      213: 2841756033022578653
+    second: AmaterasuFightMap_69
+  - first:
+      213: 7019412646096224136
+    second: AmaterasuFightMap_70
+  - first:
+      213: -2734683543722803101
+    second: AmaterasuFightMap_71
+  - first:
+      213: 44098416329751245
+    second: AmaterasuFightMap_72
+  - first:
+      213: -2913785497657135016
+    second: AmaterasuFightMap_73
+  - first:
+      213: 6933103439104350647
+    second: AmaterasuFightMap_74
+  - first:
+      213: 8766979077654057465
+    second: AmaterasuFightMap_75
+  - first:
+      213: 8687511016186639642
+    second: AmaterasuFightMap_76
+  - first:
+      213: 8950697186531186158
+    second: AmaterasuFightMap_77
+  - first:
+      213: 1129935196321045088
+    second: AmaterasuFightMap_78
+  - first:
+      213: -6364049973450633773
+    second: AmaterasuFightMap_79
+  - first:
+      213: 5355026802119047588
+    second: AmaterasuFightMap_80
+  - first:
+      213: -2370540118085017669
+    second: AmaterasuFightMap_81
+  - first:
+      213: 5628054029399223031
+    second: AmaterasuFightMap_82
+  - first:
+      213: -8085991159075876849
+    second: AmaterasuFightMap_83
+  - first:
+      213: -2173284391451976485
+    second: AmaterasuFightMap_84
+  - first:
+      213: 8374754391466132057
+    second: AmaterasuFightMap_85
+  - first:
+      213: -5021985199557101249
+    second: AmaterasuFightMap_86
+  - first:
+      213: 5336566299628885418
+    second: AmaterasuFightMap_87
+  - first:
+      213: 5027511850919750220
+    second: AmaterasuFightMap_88
+  - first:
+      213: 3299215315820108812
+    second: AmaterasuFightMap_89
+  - first:
+      213: -7811902939471367580
+    second: AmaterasuFightMap_90
+  - first:
+      213: -3101436845666009174
+    second: AmaterasuFightMap_91
+  - first:
+      213: -7300942445384619735
+    second: AmaterasuFightMap_92
+  - first:
+      213: -499517269042922629
+    second: AmaterasuFightMap_93
+  - first:
+      213: -7494266508169752806
+    second: AmaterasuFightMap_94
+  - first:
+      213: 3016473171271963288
+    second: AmaterasuFightMap_95
+  - first:
+      213: 6813840637432749281
+    second: AmaterasuFightMap_96
+  - first:
+      213: -6754989395956717095
+    second: AmaterasuFightMap_97
+  - first:
+      213: 4409331761111401815
+    second: AmaterasuFightMap_98
+  - first:
+      213: 7293368969684017674
+    second: AmaterasuFightMap_99
+  - first:
+      213: -382809811435505436
+    second: AmaterasuFightMap_100
+  - first:
+      213: -6491441353537691283
+    second: AmaterasuFightMap_101
+  - first:
+      213: 6601014634605819918
+    second: AmaterasuFightMap_102
+  - first:
+      213: -2523789987108464219
+    second: AmaterasuFightMap_103
+  - first:
+      213: -3468069595255790490
+    second: AmaterasuFightMap_104
+  - first:
+      213: -241821887309564967
+    second: AmaterasuFightMap_105
+  - first:
+      213: -169078507247294238
+    second: AmaterasuFightMap_106
+  - first:
+      213: -7856599820164620444
+    second: AmaterasuFightMap_107
+  - first:
+      213: -3116654193263386082
+    second: AmaterasuFightMap_108
+  - first:
+      213: -8024132451101357235
+    second: AmaterasuFightMap_109
+  - first:
+      213: 94842531155830202
+    second: AmaterasuFightMap_110
+  - first:
+      213: 3709543381013124546
+    second: AmaterasuFightMap_111
+  - first:
+      213: -369326996807086573
+    second: AmaterasuFightMap_112
+  - first:
+      213: 8079472548352193363
+    second: AmaterasuFightMap_113
+  - first:
+      213: 6036441423288173586
+    second: AmaterasuFightMap_114
+  - first:
+      213: 8883134672435404938
+    second: AmaterasuFightMap_115
+  - first:
+      213: 8383094327293469558
+    second: AmaterasuFightMap_116
+  - first:
+      213: -2203208794949764011
+    second: AmaterasuFightMap_117
+  - first:
+      213: -1490317985332358285
+    second: AmaterasuFightMap_118
+  - first:
+      213: 6658978276446893138
+    second: AmaterasuFightMap_119
+  - first:
+      213: 8701045904050435785
+    second: AmaterasuFightMap_120
+  - first:
+      213: 8895616575031264649
+    second: AmaterasuFightMap_121
+  - first:
+      213: -3600098158097291003
+    second: AmaterasuFightMap_122
+  - first:
+      213: 9001747584823338453
+    second: AmaterasuFightMap_123
+  - first:
+      213: 2694666292079167495
+    second: AmaterasuFightMap_124
+  - first:
+      213: -2199763014400411604
+    second: AmaterasuFightMap_125
+  - first:
+      213: -1507371752813721838
+    second: AmaterasuFightMap_126
+  - first:
+      213: 1651406339906988148
+    second: AmaterasuFightMap_127
+  - first:
+      213: -4526917038695222033
+    second: AmaterasuFightMap_128
+  - first:
+      213: 8943124721117431052
+    second: AmaterasuFightMap_129
+  - first:
+      213: -3345460667422156478
+    second: AmaterasuFightMap_130
+  - first:
+      213: 6404133065435287483
+    second: AmaterasuFightMap_131
+  - first:
+      213: -7875062120843488314
+    second: AmaterasuFightMap_132
+  - first:
+      213: -5642804641025286635
+    second: AmaterasuFightMap_133
+  - first:
+      213: 5394903618931361688
+    second: AmaterasuFightMap_134
+  - first:
+      213: -1384349735598801486
+    second: AmaterasuFightMap_135
+  - first:
+      213: -7324705231878344335
+    second: AmaterasuFightMap_136
+  - first:
+      213: 4741083397418095894
+    second: AmaterasuFightMap_137
+  - first:
+      213: -2670436053468462868
+    second: AmaterasuFightMap_138
+  - first:
+      213: 3466740111758824732
+    second: AmaterasuFightMap_139
+  - first:
+      213: -8767717423702796923
+    second: AmaterasuFightMap_140
+  - first:
+      213: 5718002625411221266
+    second: AmaterasuFightMap_141
+  - first:
+      213: -5119312214316358874
+    second: AmaterasuFightMap_142
+  - first:
+      213: 1896225635384152745
+    second: AmaterasuFightMap_143
+  - first:
+      213: -6116942689715658986
+    second: AmaterasuFightMap_144
+  - first:
+      213: 8795293059419856670
+    second: AmaterasuFightMap_145
+  - first:
+      213: -6765727159725583942
+    second: AmaterasuFightMap_146
+  - first:
+      213: 9124264806436616048
+    second: AmaterasuFightMap_147
+  - first:
+      213: -8860316279951520485
+    second: AmaterasuFightMap_148
+  - first:
+      213: 7839117774560861729
+    second: AmaterasuFightMap_149
+  - first:
+      213: 7317121251375408759
+    second: AmaterasuFightMap_150
+  - first:
+      213: 1162533735199662262
+    second: AmaterasuFightMap_151
+  - first:
+      213: 7105617362562578922
+    second: AmaterasuFightMap_152
+  - first:
+      213: 1501325969097365070
+    second: AmaterasuFightMap_153
+  - first:
+      213: 7048538466495766536
+    second: AmaterasuFightMap_154
+  - first:
+      213: 2724737929104838998
+    second: AmaterasuFightMap_155
+  - first:
+      213: -7103083220352124641
+    second: AmaterasuFightMap_156
+  - first:
+      213: -4964426064641435678
+    second: AmaterasuFightMap_157
+  - first:
+      213: 1268513492853693886
+    second: AmaterasuFightMap_158
+  - first:
+      213: 3608790382123879031
+    second: AmaterasuFightMap_159
+  - first:
+      213: -991147522949532872
+    second: AmaterasuFightMap_160
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AmaterasuFightMap_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a320889b68e8b8ce0800000000000000
+      internalID: -1401870149706317254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b0b5836485fc510800000000000000
+      internalID: 1571571853592038213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d144968aaebe1f000800000000000000
+      internalID: 68094862467613725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 686
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba987679016f2dc0800000000000000
+      internalID: -3661601278758708560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 344
+        width: 498
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b4d05f04d7b04d0800000000000000
+      internalID: -3167300194982343885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_150
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 270
+        width: 498
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77661b6a203ab8560800000000000000
+      internalID: 7317121251375408759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_152
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 260
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9f36518593c9260800000000000000
+      internalID: 7105617362562578922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_153
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 259
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e461e18b308c5d410800000000000000
+      internalID: 1501325969097365070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_154
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 179
+        width: 168
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8002829f36071d160800000000000000
+      internalID: 7048538466495766536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_155
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 209
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651d352d5b630d520800000000000000
+      internalID: 2724737929104838998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_156
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 187
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19bfd0e177cc6d90800000000000000
+      internalID: -7103083220352124641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_157
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 4
+        width: 200
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e75b5ffbc0da1bb0800000000000000
+      internalID: -4964426064641435678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_159
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 137
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a075b7bbff41230800000000000000
+      internalID: 3608790382123879031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_160
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 136
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833b596449cbe32f0800000000000000
+      internalID: -991147522949532872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuFightMap_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 342
+        width: 497
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a9c05449dbbc44b918395e54ce5e20
+      internalID: 6881574967341686574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5ac43be71b75c6346a42e4c00e0c9bc9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AmaterasuFightMap_0: -1401870149706317254
+      AmaterasuFightMap_1: 1571571853592038213
+      AmaterasuFightMap_10: -2894788858019337385
+      AmaterasuFightMap_100: -382809811435505436
+      AmaterasuFightMap_101: -6491441353537691283
+      AmaterasuFightMap_102: 6601014634605819918
+      AmaterasuFightMap_103: -2523789987108464219
+      AmaterasuFightMap_104: -3468069595255790490
+      AmaterasuFightMap_105: -241821887309564967
+      AmaterasuFightMap_106: -169078507247294238
+      AmaterasuFightMap_107: -7856599820164620444
+      AmaterasuFightMap_108: -3116654193263386082
+      AmaterasuFightMap_109: -8024132451101357235
+      AmaterasuFightMap_11: 5436377485228594780
+      AmaterasuFightMap_110: 94842531155830202
+      AmaterasuFightMap_111: 3709543381013124546
+      AmaterasuFightMap_112: -369326996807086573
+      AmaterasuFightMap_113: 8079472548352193363
+      AmaterasuFightMap_114: 6036441423288173586
+      AmaterasuFightMap_115: 8883134672435404938
+      AmaterasuFightMap_116: 8383094327293469558
+      AmaterasuFightMap_117: -2203208794949764011
+      AmaterasuFightMap_118: -1490317985332358285
+      AmaterasuFightMap_119: 6658978276446893138
+      AmaterasuFightMap_12: -5329095052986165330
+      AmaterasuFightMap_120: 8701045904050435785
+      AmaterasuFightMap_121: 8895616575031264649
+      AmaterasuFightMap_122: -3600098158097291003
+      AmaterasuFightMap_123: 9001747584823338453
+      AmaterasuFightMap_124: 2694666292079167495
+      AmaterasuFightMap_125: -2199763014400411604
+      AmaterasuFightMap_126: -1507371752813721838
+      AmaterasuFightMap_127: 1651406339906988148
+      AmaterasuFightMap_128: -4526917038695222033
+      AmaterasuFightMap_129: 8943124721117431052
+      AmaterasuFightMap_13: 121939125195684912
+      AmaterasuFightMap_130: -3345460667422156478
+      AmaterasuFightMap_131: 6404133065435287483
+      AmaterasuFightMap_132: -7875062120843488314
+      AmaterasuFightMap_133: -5642804641025286635
+      AmaterasuFightMap_134: 5394903618931361688
+      AmaterasuFightMap_135: -1384349735598801486
+      AmaterasuFightMap_136: -7324705231878344335
+      AmaterasuFightMap_137: 4741083397418095894
+      AmaterasuFightMap_138: -2670436053468462868
+      AmaterasuFightMap_139: 3466740111758824732
+      AmaterasuFightMap_14: -3058173906182406231
+      AmaterasuFightMap_140: -8767717423702796923
+      AmaterasuFightMap_141: 5718002625411221266
+      AmaterasuFightMap_142: -5119312214316358874
+      AmaterasuFightMap_143: 1896225635384152745
+      AmaterasuFightMap_144: -6116942689715658986
+      AmaterasuFightMap_145: 8795293059419856670
+      AmaterasuFightMap_146: -6765727159725583942
+      AmaterasuFightMap_147: 9124264806436616048
+      AmaterasuFightMap_148: -8860316279951520485
+      AmaterasuFightMap_149: 7839117774560861729
+      AmaterasuFightMap_15: -2180487875743380378
+      AmaterasuFightMap_150: 7317121251375408759
+      AmaterasuFightMap_151: 1162533735199662262
+      AmaterasuFightMap_152: 7105617362562578922
+      AmaterasuFightMap_153: 1501325969097365070
+      AmaterasuFightMap_154: 7048538466495766536
+      AmaterasuFightMap_155: 2724737929104838998
+      AmaterasuFightMap_156: -7103083220352124641
+      AmaterasuFightMap_157: -4964426064641435678
+      AmaterasuFightMap_158: 1268513492853693886
+      AmaterasuFightMap_159: 3608790382123879031
+      AmaterasuFightMap_16: -689010267623344207
+      AmaterasuFightMap_160: -991147522949532872
+      AmaterasuFightMap_17: 3954317950421902935
+      AmaterasuFightMap_18: -7790671713411832132
+      AmaterasuFightMap_19: 710931018460892687
+      AmaterasuFightMap_2: 68094862467613725
+      AmaterasuFightMap_20: -8473318980222632740
+      AmaterasuFightMap_21: 171317564278500585
+      AmaterasuFightMap_22: -7120373580130226357
+      AmaterasuFightMap_23: 9116432746138305242
+      AmaterasuFightMap_24: 7644862966865088304
+      AmaterasuFightMap_25: 6978494402898241554
+      AmaterasuFightMap_26: -4879454741991135201
+      AmaterasuFightMap_27: 2713775152784306073
+      AmaterasuFightMap_28: -314432202438151527
+      AmaterasuFightMap_29: 4042798001959592917
+      AmaterasuFightMap_3: -3661601278758708560
+      AmaterasuFightMap_30: 7193416719998940338
+      AmaterasuFightMap_31: -805183487425602215
+      AmaterasuFightMap_32: -9074832785705989774
+      AmaterasuFightMap_33: -4078628578486795408
+      AmaterasuFightMap_34: 7773778968979506439
+      AmaterasuFightMap_35: -8456505162112172711
+      AmaterasuFightMap_36: -2905557174391439504
+      AmaterasuFightMap_37: -3750832876804960759
+      AmaterasuFightMap_38: -2789794862954874123
+      AmaterasuFightMap_39: -6872993098487433778
+      AmaterasuFightMap_4: -3167300194982343885
+      AmaterasuFightMap_40: -8396537347087282535
+      AmaterasuFightMap_41: 8602431944911911775
+      AmaterasuFightMap_42: -9043147316330982277
+      AmaterasuFightMap_43: 488591566518432682
+      AmaterasuFightMap_44: 7243284656988511604
+      AmaterasuFightMap_45: 6820650889468638364
+      AmaterasuFightMap_46: 4444175562817706758
+      AmaterasuFightMap_47: 6574302090866942999
+      AmaterasuFightMap_48: 508637287700817252
+      AmaterasuFightMap_49: 426112815834061962
+      AmaterasuFightMap_5: 6881574967341686574
+      AmaterasuFightMap_50: 2725623461286625248
+      AmaterasuFightMap_51: 7433698656446336346
+      AmaterasuFightMap_52: -4920489073577633156
+      AmaterasuFightMap_53: -4938186250581150214
+      AmaterasuFightMap_54: 3235299498997724078
+      AmaterasuFightMap_55: -74260207785588369
+      AmaterasuFightMap_56: 2815540195983083014
+      AmaterasuFightMap_57: 7448500487060239499
+      AmaterasuFightMap_58: 7910424723025323563
+      AmaterasuFightMap_59: 2774092577914303310
+      AmaterasuFightMap_6: 843064378654479387
+      AmaterasuFightMap_60: -3878414054916522855
+      AmaterasuFightMap_61: -8089563559333854988
+      AmaterasuFightMap_62: -2289959920065250248
+      AmaterasuFightMap_63: 3983857881191359435
+      AmaterasuFightMap_64: 2288437900375003752
+      AmaterasuFightMap_65: -8448576278128101769
+      AmaterasuFightMap_66: -1695846736676210894
+      AmaterasuFightMap_67: 1674715371918370270
+      AmaterasuFightMap_68: 5485585284996612623
+      AmaterasuFightMap_69: 2841756033022578653
+      AmaterasuFightMap_7: 4731438698921161870
+      AmaterasuFightMap_70: 7019412646096224136
+      AmaterasuFightMap_71: -2734683543722803101
+      AmaterasuFightMap_72: 44098416329751245
+      AmaterasuFightMap_73: -2913785497657135016
+      AmaterasuFightMap_74: 6933103439104350647
+      AmaterasuFightMap_75: 8766979077654057465
+      AmaterasuFightMap_76: 8687511016186639642
+      AmaterasuFightMap_77: 8950697186531186158
+      AmaterasuFightMap_78: 1129935196321045088
+      AmaterasuFightMap_79: -6364049973450633773
+      AmaterasuFightMap_8: 7999376416648714728
+      AmaterasuFightMap_80: 5355026802119047588
+      AmaterasuFightMap_81: -2370540118085017669
+      AmaterasuFightMap_82: 5628054029399223031
+      AmaterasuFightMap_83: -8085991159075876849
+      AmaterasuFightMap_84: -2173284391451976485
+      AmaterasuFightMap_85: 8374754391466132057
+      AmaterasuFightMap_86: -5021985199557101249
+      AmaterasuFightMap_87: 5336566299628885418
+      AmaterasuFightMap_88: 5027511850919750220
+      AmaterasuFightMap_89: 3299215315820108812
+      AmaterasuFightMap_9: 2473133951531226486
+      AmaterasuFightMap_90: -7811902939471367580
+      AmaterasuFightMap_91: -3101436845666009174
+      AmaterasuFightMap_92: -7300942445384619735
+      AmaterasuFightMap_93: -499517269042922629
+      AmaterasuFightMap_94: -7494266508169752806
+      AmaterasuFightMap_95: 3016473171271963288
+      AmaterasuFightMap_96: 6813840637432749281
+      AmaterasuFightMap_97: -6754989395956717095
+      AmaterasuFightMap_98: 4409331761111401815
+      AmaterasuFightMap_99: 7293368969684017674
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
