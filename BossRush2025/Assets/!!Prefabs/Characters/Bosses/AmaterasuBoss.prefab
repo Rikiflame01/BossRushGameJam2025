@@ -113,14 +113,11 @@ GameObject:
   - component: {fileID: 7899630702105191800}
   - component: {fileID: 1644537662774830651}
   - component: {fileID: 8025528433828562047}
-  - component: {fileID: 3921880831365220361}
   - component: {fileID: 2324010061491103581}
-  - component: {fileID: 2676099537988198068}
   - component: {fileID: 5615337222477811484}
-  - component: {fileID: 7610597514900787108}
   - component: {fileID: 6671926049554934917}
-  - component: {fileID: 3368846455567691626}
-  - component: {fileID: 691968875705175627}
+  - component: {fileID: 8846952001858800536}
+  - component: {fileID: 3012127153645690339}
   m_Layer: 0
   m_Name: AmaterasuBoss
   m_TagString: Enemy
@@ -310,6 +307,9 @@ MonoBehaviour:
   _health: 250
   _takeDamageSFX: Boss damage
   _dieParticles: 
+  _onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _immortal: 0
 --- !u!114 &1644537662774830651
 MonoBehaviour:
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf878aabf3f1a408036e0d9f6a599e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointName: TeleportPoint
-  projectileName: TeleportProjectile
+  pointName: SunStar
+  projectileName: SunTeleportProjectile
   arenaBounds: {fileID: 0}
   projectileCount: 9
   repeatTimes: 3
@@ -348,23 +348,6 @@ MonoBehaviour:
   maxDistanceFromPlayer: 15
   minDistanceBetweenPoints: 2
   _teleportParticles: TeleportParticles
---- !u!114 &3921880831365220361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec70a6c03ac268b4ab73bdc65ca52798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preparationTime: 1
-  pullStrength: 5
-  pullDuration: 0.8
-  shakeMagnitude: 0.1
-  _gravityEffect: GravityEffect
 --- !u!114 &2324010061491103581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,48 +360,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3a7fc7e930b0e4e919248bec7c63e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileName: Projectile
+  projectileName: SunAllFireProjectile
   rows: 5
   projectilesPerRow: 6
   angleOffset: 15
   projectileSpeed: 5
   rowDelay: 0.3
---- !u!114 &2676099537988198068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e6e6daabaf8ed488344f15fd6fcc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackPoint: {fileID: 5621819971459816690}
-  _attackDelay: 0.35
-  _damage: 5
-  followSpeed: 8
-  repeatTimes: 3
-  _followTime: 0.5
-  _areaDamageSize: 3.5
 --- !u!114 &5615337222477811484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725fb19308232aa45ab8d256a81c5898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _needlesProjectile: NeedlessProjectile
-  _circleRadius: -5
-  delay: 1.15
-  countOfProjectiles: 3
---- !u!114 &7610597514900787108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,10 +375,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4235118639246445327}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a696bc7bc035f26439e1b370323af39e, type: 3}
+  m_Script: {fileID: 11500000, guid: 725fb19308232aa45ab8d256a81c5898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crescentMoonPrefab: {fileID: 748422808426213104, guid: ef702c208a9d3094a8364ad251a4d449, type: 3}
+  _needlesProjectile: NeedlessProjectile
+  _circleRadius: -5
+  delay: 1.15
+  countOfProjectiles: 3
 --- !u!114 &6671926049554934917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,11 +399,11 @@ MonoBehaviour:
   diskLifetime: 10
   diskSpeed: 15
   spinSpeed: 360
-  projectilePrefab: {fileID: 8609673021236226423, guid: 832c971c629c72e489ff2718e837c7da, type: 3}
+  projectilePrefab: {fileID: 2635725616969769001, guid: 606fd56f0c20e63418b20d2a8e7cb84d, type: 3}
   projectileSpeed: 10
   projectileLifetime: 3
   repeatTimes: 1
---- !u!95 &3368846455567691626
+--- !u!95 &8846952001858800536
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -474,7 +425,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &691968875705175627
+--- !u!114 &3012127153645690339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,9 +442,18 @@ MonoBehaviour:
   _speed: 10
   _maxMoveDistance: 10
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _attackActiveIcons: []
-  _attackPassiveIcons: []
-  _bossRoar: BossRoar
+  _attackActiveIcons:
+  - {fileID: -2559147622226923847, guid: b5c67797a79a43e4f994ae4bf3f73a07, type: 3}
+  - {fileID: 21300000, guid: e1a175e105851dd409f8b39b45e3b507, type: 3}
+  - {fileID: 21300000, guid: ecde2fdeb5ec82b4ba499f0721050bba, type: 3}
+  - {fileID: 21300000, guid: c927786f3912c0044a98204d3e456cd6, type: 3}
+  - {fileID: 21300000, guid: 80be6f5b9c01f6a4e8fbfb2f7e428746, type: 3}
+  _attackPassiveIcons:
+  - {fileID: 21300000, guid: a7b3abf1d54e0b44eb03fe811b15da9d, type: 3}
+  - {fileID: 21300000, guid: ecde2fdeb5ec82b4ba499f0721050bba, type: 3}
+  - {fileID: 21300000, guid: a7b3abf1d54e0b44eb03fe811b15da9d, type: 3}
+  - {fileID: 21300000, guid: 22da6dd9445b87e4aa662490261bce8c, type: 3}
+  _bossRoar: Roar
   _bossHealth: {fileID: 0}
   _attackDelay: 0.5
   _destroyParticles: 
@@ -501,9 +461,9 @@ MonoBehaviour:
   _spawnSmilePos: {x: 14.27, y: 17}
   _smileDuration: 10
   _spawnPoints: {x: 18.5, y: 14}
-  _enemy: 
+  _enemy: SunMinion
   _summonDelay: 0.3
-  _enemyAppearParticle: 
+  _enemyAppearParticle: SunMinionAppear
   _randomProjectileCount: 0
   _randomDelay: 0.5
   _arcProjectileCount: 5
@@ -512,8 +472,8 @@ MonoBehaviour:
   _arcWaveDelay: 0.7
   _randomShootProjectile: SunProjectile
   _axisProjectile: Sun
-  _axisDelay: 0
-  _axisCount: 0
+  _axisDelay: 0.2
+  _axisCount: 5
 --- !u!1 &7240236357355639331
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5621819971459816690}
-  - component: {fileID: 1333828304297546115}
+  - component: {fileID: 4371540719709744217}
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -546,7 +506,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4359804708735922587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1333828304297546115
+--- !u!212 &4371540719709744217
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,7 +555,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 6.2, y: 3.6}
+  m_Size: {x: 0.31, y: 0.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

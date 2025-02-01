@@ -6908,6 +6908,9 @@ MonoBehaviour:
   _health: 10
   _takeDamageSFX: 
   _dieParticles: 
+  _onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _immortal: 0
 --- !u!114 &213096185
 MonoBehaviour:
@@ -7519,7 +7522,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: af591e00a9673d845819db91c9ed8320, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fd10b7152a2e6ad479ee4b9183b14d96, type: 2}
 --- !u!1 &268892064
 GameObject:
   m_ObjectHideFlags: 0

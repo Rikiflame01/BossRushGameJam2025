@@ -5160,7 +5160,7 @@ Transform:
   m_GameObject: {fileID: 35079730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9459853, y: -5.312904, z: 4.3493366}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5632,7 +5632,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1760200329}
@@ -6216,7 +6216,7 @@ Transform:
   m_GameObject: {fileID: 273743655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35584,7 +35584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 543047191}
-  _healthManager: {fileID: 0}
+  _healthManager: {fileID: 8416561199314671840}
   _healthBarEffect: {fileID: 1880990832}
   _takeDamageAnimSpeed: 3
   _startAnimDelay: 0.5
@@ -47468,7 +47468,7 @@ Transform:
   m_GameObject: {fileID: 1760200328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9459853, y: -0.68709624, z: -4.3493366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53436,26 +53436,24 @@ MonoBehaviour:
   Pools:
   - poolPrefab: {fileID: 5436074031425866473, guid: ad5d0b186ae955341b4be4a7a3a3434a, type: 3}
     initialSize: 2
-  - poolPrefab: {fileID: 5096765225283467205, guid: 7dbba6bbdc8adad4fbdf99ff7e9bd673, type: 3}
+  - poolPrefab: {fileID: 2773757735692605520, guid: b7a3820273c75a94da5d936519bd3415, type: 3}
     initialSize: 1
-  - poolPrefab: {fileID: 6110334454872371786, guid: 28d202c1bef0356469003133bba9cc95, type: 3}
+  - poolPrefab: {fileID: 3899923669965663351, guid: 1e828d5832ed44c42a1327050b6f0824, type: 3}
     initialSize: 1
   - poolPrefab: {fileID: 2656310103509958673, guid: ccae241723bce1d42a895a80fcc8a3a9, type: 3}
     initialSize: 10
-  - poolPrefab: {fileID: 6564380006802709355, guid: 3070adafcb9bbc2419c4e0febd0c8ea1, type: 3}
-    initialSize: 1
-  - poolPrefab: {fileID: 4157096828497784343, guid: daa5916c2409b104fa1e9703417b621b, type: 3}
-    initialSize: 1
-  - poolPrefab: {fileID: 2773757735692605520, guid: b7a3820273c75a94da5d936519bd3415, type: 3}
-    initialSize: 1
-  - poolPrefab: {fileID: 5621877104373639575, guid: 39c12ac52e0c6cb4990fb2ccb4b4e997, type: 3}
-    initialSize: 4
-  - poolPrefab: {fileID: 3899923669965663351, guid: 1e828d5832ed44c42a1327050b6f0824, type: 3}
-    initialSize: 1
-  - poolPrefab: {fileID: 1344474935023243406, guid: b8fc47c389f2c3648ab049137f0be07e, type: 3}
-    initialSize: 3
-  - poolPrefab: {fileID: 5492643981545061248, guid: 007d5d4ee8a3e4a41b969de84afee4e6, type: 3}
-    initialSize: 1
+  - poolPrefab: {fileID: 3721810124868409476, guid: 867145b4a3f21cc41b47fa34e8e1cfc4, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 4520721352026388762, guid: 53715416cb3bb7f4fb17fe5ddf035add, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 322251100546885979, guid: 3dd22b3088d4b17489597c34172b2f6f, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 2276676177845249060, guid: 4e583ad874375124a815d2d854d2b794, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 6110334454872371786, guid: 4aee439dbe3663146b77f4cb5e85826f, type: 3}
+    initialSize: 10
+  - poolPrefab: {fileID: 174406430651373024, guid: 25ff2da47f9cf8b499529475b5117238, type: 3}
+    initialSize: 10
 --- !u!4 &2063118322
 Transform:
   m_ObjectHideFlags: 0
@@ -54423,6 +54421,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8416561199314671840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7899630702105191800, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
+  m_PrefabInstance: {fileID: 5866642936411309366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134342091548295773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

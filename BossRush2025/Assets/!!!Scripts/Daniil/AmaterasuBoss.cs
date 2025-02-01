@@ -41,6 +41,7 @@ public class AmaterasuBoss : EntityState
     [SerializeField] private GameObject _smiles;
     [SerializeField] private Vector2 _spawnSmilePos;
     [SerializeField] private float _smileDuration;
+    private List<GameObject> _smileList;
 
     [Header("Summon Enemies")]
     [SerializeField] private Vector2 _spawnPoints;
@@ -146,7 +147,8 @@ public class AmaterasuBoss : EntityState
                     yield return new WaitForSeconds(0.8f);
                     break;
                 case 5:
-                    SpawnEnemiesAttack();
+                    _inScriptAttack = StartCoroutine(SpawnEnemiesAttack());
+                    yield return new WaitForSeconds(0.7f);
                     break;
             }
 
@@ -172,7 +174,7 @@ public class AmaterasuBoss : EntityState
                 if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 3);
             }
             _lastAttack = randomAttack;
-            _currentAttackIndex = randomAttack + 4;
+            _currentAttackIndex = randomAttack + 5;
 
             SignToNextAttack(randomAttack - 1, false);
             yield return new WaitForSeconds(1f);
@@ -185,15 +187,15 @@ public class AmaterasuBoss : EntityState
                     break;
                 case 2:
                     TsukuyomiAllRoundFire?.Invoke();
-                    yield return new WaitForSeconds(0.6f);
+                    yield return new WaitForSeconds(_allRoundFire.GetAttackTime());
                     break;
                 case 3:
-                    _tsukuyomiNeedlesAttack?.Invoke();
-                    yield return new WaitUntil(() => _needlesAttack._finishedAttack);
+                    _inScriptAttack = StartCoroutine(RandomShooting());
+                    yield return new WaitUntil(() => _finishedCoroutine);
                     break;
                 case 4:
-                    _tsukuyomiCrescentAttack?.Invoke();
-                    StartCoroutine(NoCrescent());
+                    _inScriptAttack = StartCoroutine(AxisShooting());
+                    yield return new WaitUntil(() => _finishedCoroutine);
                     break;
             }
             yield return new WaitForSeconds(_attackDelay);
@@ -287,6 +289,7 @@ public class AmaterasuBoss : EntityState
             spawnPos.x *= -1;
         }
         GameObject smile = Instantiate(_smiles, spawnPos, Quaternion.identity);
+        _smileList.Add(smile);
         spawnPos.y *= -1;
         smile.transform.DOMove(spawnPos, _smileDuration);
         Destroy(smile, _smileDuration);
@@ -369,7 +372,14 @@ public class AmaterasuBoss : EntityState
         switch (_currentAttackIndex)
         {
             case 1:
-                _swordAttacks.StopAttack();
+                foreach(GameObject smile in _smileList)
+                {
+                    if (smile != null)
+                    {
+                        Destroy(smile);
+                    }
+                }
+                _smileList.Clear();
                 break;
             case 2:
                 _teleport.StopTeleport();
@@ -386,13 +396,30 @@ public class AmaterasuBoss : EntityState
                     StopCoroutine(_inScriptAttack);
                     _inScriptAttack = null;
                 }
-                _finishedCoroutine = true;
                 break;
             case 6:
-                _allRoundFire.StopAttack();
+                if (_inScriptAttack != null)
+                {
+                    StopCoroutine(_inScriptAttack);
+                    _inScriptAttack = null;
+                }
                 break;
             case 7:
-                _needlesAttack.StopAttack();
+                _allRoundFire.StopAttack();
+                break;
+            case 8:
+                if (_inScriptAttack != null)
+                {
+                    StopCoroutine(_inScriptAttack);
+                    _inScriptAttack = null;
+                }
+                break;
+            case 9:
+                if (_inScriptAttack != null)
+                {
+                    StopCoroutine(_inScriptAttack);
+                    _inScriptAttack = null;
+                }
                 break;
         }
     }

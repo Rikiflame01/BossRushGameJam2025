@@ -56,6 +56,10 @@ public class AllRoundFire : MonoBehaviour
         }
         _finishedAttack = true;
     }
+    public float GetAttackTime()
+    {
+        return rowDelay * rows;
+    }
     public void StopAttack()
     {
         if(_fireCoroutine != null)
