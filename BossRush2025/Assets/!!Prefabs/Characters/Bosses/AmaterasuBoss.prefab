@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 127702487637680248}
   - component: {fileID: 5889886708555688964}
   - component: {fileID: 5345122053790243117}
-  - component: {fileID: 604635567638852700}
   - component: {fileID: 4946540265044919009}
   - component: {fileID: 7899630702105191800}
   - component: {fileID: 1644537662774830651}
@@ -273,43 +272,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.24, y: 2.24}
   m_EdgeRadius: 0
---- !u!114 &604635567638852700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b618971763050504e927953208d36e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firstTrack: Tsukuyomi phase 1
-  _secondTrack: Tsukuyomi phase 2
-  _speed: 8
-  _maxMoveDistance: 6
-  _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
-  _attackActiveIcons:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 515738ad346049145bf3624f6e89b964, type: 3}
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
-  - {fileID: -3800604128172127214, guid: 6326d7ccc8e491242bc8895949751b72, type: 3}
-  _attackPassiveIcons:
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
-  - {fileID: 21300000, guid: 553beb4cdecd1084ba5d1722f53b687a, type: 3}
-  - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
-  _bossRoar: Roar
-  _bossHealth: {fileID: 0}
-  _attackDelay: 0.5
-  _destroyParticles: TeleportParticles
-  _arcProjectileCount: 5
-  _arcDelay: 0.2
-  _arcAngle: 40
-  _arcWaveDelay: 0.7
-  _arcProjectile: ArcProjectile
 --- !u!195 &4946540265044919009
 NavMeshAgent:
   m_ObjectHideFlags: 0

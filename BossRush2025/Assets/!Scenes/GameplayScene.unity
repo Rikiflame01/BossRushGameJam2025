@@ -7004,17 +7004,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf878aabf3f1a408036e0d9f6a599e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPrefab: {fileID: 488548548138421451, guid: 5d73027d53be3b84ab95f855fb650c0c, type: 3}
-  projectilePrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
+  pointName: 
+  projectileName: 
   arenaBounds: {fileID: 0}
   projectileCount: 25
+  repeatTimes: 3
   projectileSpeed: 6
   teleportDuration: 0
   attackInterval: 3
   minDistanceFromPlayer: 8
   maxDistanceFromPlayer: 10
   minDistanceBetweenPoints: 10
-  projectileLifetime: 6
   _teleportParticles: 
 --- !u!114 &213096184
 MonoBehaviour:
@@ -65724,7 +65724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692907461223059489, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: SusanooBoss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

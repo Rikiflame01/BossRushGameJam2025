@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: bb6ff8c4f15ece94c8a80d34f55737d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5600046941802947453
+    second: AmaterasuAttack_0
+  - first:
+      213: 8647827131411244391
+    second: AmaterasuAttack_1
+  - first:
+      213: -5768997651003604576
+    second: AmaterasuAttack_2
+  - first:
+      213: 1910610379380139382
+    second: AmaterasuAttack_3
+  - first:
+      213: -7663638333294705870
+    second: AmaterasuAttack_4
+  - first:
+      213: 3607851431399538213
+    second: AmaterasuAttack_5
+  - first:
+      213: 7586608416003818596
+    second: AmaterasuAttack_6
+  - first:
+      213: -451329903776238524
+    second: AmaterasuAttack_7
+  - first:
+      213: -2954746573280433236
+    second: AmaterasuAttack_8
+  - first:
+      213: 2489017557044419816
+    second: AmaterasuAttack_9
+  - first:
+      213: -2347324766728327709
+    second: AmaterasuAttack_10
+  - first:
+      213: -6537013399995175721
+    second: AmaterasuAttack_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AmaterasuAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c925c0af2a842b0800000000000000
+      internalID: -5600046941802947453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765a0c635f0430870800000000000000
+      internalID: 8647827131411244391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a10edda33760ffa0800000000000000
+      internalID: -5768997651003604576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_3
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675a027640ad38a10800000000000000
+      internalID: 1910610379380139382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23307e02a8945a590800000000000000
+      internalID: -7663638333294705870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_5
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e34faf2c9a11230800000000000000
+      internalID: 3607851431399538213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46485e5a82c094960800000000000000
+      internalID: 7586608416003818596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 444f7e008dd8cb9f0800000000000000
+      internalID: -451329903776238524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_8
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab215285a1aef6d0800000000000000
+      internalID: -2954746573280433236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmaterasuAttack_9
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 0
+        width: 89
+        height: 96
+      alignment: 9
+      pivot: {x: 0.555, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13e17cda701bba428a5dfd784ce014f
+      internalID: 1610348239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c9a4d70af76ea0849aa94ab47174a53f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AmaterasuAttack_0: -5600046941802947453
+      AmaterasuAttack_1: 8647827131411244391
+      AmaterasuAttack_2: -5768997651003604576
+      AmaterasuAttack_3: 1910610379380139382
+      AmaterasuAttack_4: -7663638333294705870
+      AmaterasuAttack_5: 3607851431399538213
+      AmaterasuAttack_6: 7586608416003818596
+      AmaterasuAttack_7: -451329903776238524
+      AmaterasuAttack_8: -2954746573280433236
+      AmaterasuAttack_9: 1610348239
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
