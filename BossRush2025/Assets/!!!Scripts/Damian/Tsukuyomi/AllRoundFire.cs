@@ -17,11 +17,13 @@ public class AllRoundFire : MonoBehaviour
     private void Start()
     {
         TsukuyomiBoss.TsukuyomiAllRoundFire += FireAllRound;
+        AmaterasuBoss.TsukuyomiAllRoundFire += FireAllRound;
     }
 
     private void OnDestroy()
     {
         TsukuyomiBoss.TsukuyomiAllRoundFire -= FireAllRound;
+        AmaterasuBoss.TsukuyomiAllRoundFire -= FireAllRound;
     }
 
 

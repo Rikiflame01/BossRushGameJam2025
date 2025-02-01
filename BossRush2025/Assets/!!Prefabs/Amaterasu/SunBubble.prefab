@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5292966055712199176}
   - component: {fileID: 264092965167562077}
   - component: {fileID: 8811120097096909593}
-  - component: {fileID: 6216383251564302113}
+  - component: {fileID: 6748905067361889515}
   m_Layer: 0
   m_Name: SunBubble
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,14 +102,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42885c6bd1c7c7f4586b59fc872b666d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: AxisProjectile
+  _name: SunBubble
   _damage: 4
-  _destroyParticles: WaterSplash
+  _destroyParticles: FireParticles
   _maxRadiusSpeed: 5
   _angleSpeed: 0.35
   _maxRadius: 2.5
   _acceleration: 20
-  _lifeTime: 10
+  _lifeTime: 6
 --- !u!58 &8811120097096909593
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!95 &6216383251564302113
+--- !u!95 &6748905067361889515
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 4520721352026388762}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a01a2b388388e04f88fa5f3713370c0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1923469496ed32a4f871010b64375325, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 using DG.Tweening;
 
 public class AmaterasuBoss : EntityState
@@ -10,12 +12,8 @@ public class AmaterasuBoss : EntityState
     private Teleport _teleport;
     public static event Action TsukuyomiAllRoundFire;
     private AllRoundFire _allRoundFire;
-    public static event Action _tsukuyomiCrescentAttack;
-    public static event Action _tsukuyomiSwordStrikeAttack;
-    private SwordStrikeAttack _swordAttacks;
     public static event Action _tsukuyomiNeedlesAttack;
     private NeedlessAttack _needlesAttack;
-    public static Action<string> _TsukuyomiGravityPull;
 
     public static Action<string> _tsukuyomiLunarDiskAttack;
     private LunarDiskAttack _lunarDiskAttack;
@@ -31,6 +29,8 @@ public class AmaterasuBoss : EntityState
     private bool _canNeedles = true;
     private bool _canLunarDisk = true;
 
+    private int _attackAnim = Animator.StringToHash("attack");
+    [SerializeField] private Light2D _sun;
     [SerializeField] float _attackDelay;
     [SerializeField] string _destroyParticles;
 
@@ -41,7 +41,7 @@ public class AmaterasuBoss : EntityState
     [SerializeField] private GameObject _smiles;
     [SerializeField] private Vector2 _spawnSmilePos;
     [SerializeField] private float _smileDuration;
-    private List<GameObject> _smileList;
+    private List<GameObject> _smileList = new List<GameObject>();
 
     [Header("Summon Enemies")]
     [SerializeField] private Vector2 _spawnPoints;
@@ -67,7 +67,7 @@ public class AmaterasuBoss : EntityState
     [SerializeField] private int _axisCount;
 
     private bool _canAxisProjectile = true;
-    private bool _finishedCoroutine = true;
+    public bool _finishedCoroutine = true;
     private int _lastAttack = -1;
 
     protected override void HandleIdle() { }
@@ -83,7 +83,6 @@ public class AmaterasuBoss : EntityState
 
     protected override void Initialize()
     {
-        _swordAttacks = GetComponent<SwordStrikeAttack>();
         _teleport = GetComponent<Teleport>();
         _allRoundFire = GetComponent<AllRoundFire>();
         _needlesAttack = GetComponent<NeedlessAttack>();
@@ -129,6 +128,8 @@ public class AmaterasuBoss : EntityState
             {
                 case 1:
                     SpawnTwoSmiles();
+                    EnableMovement();
+                    _animator.SetTrigger(_attackAnim);
                     yield return new WaitForSeconds(_smileDuration * 0.7f);
                     break;
 
@@ -142,11 +143,13 @@ public class AmaterasuBoss : EntityState
                     yield return new WaitUntil(() => _allRoundFire._finishedAttack);
                     break;
                 case 4:
+                    _animator.SetTrigger(_attackAnim);
                     TestLunarDiskStart();
                     StartCoroutine(NoLunarDisk());
                     yield return new WaitForSeconds(0.8f);
                     break;
                 case 5:
+                    _animator.SetTrigger(_attackAnim);
                     _inScriptAttack = StartCoroutine(SpawnEnemiesAttack());
                     yield return new WaitForSeconds(0.7f);
                     break;
@@ -159,20 +162,16 @@ public class AmaterasuBoss : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.1f && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.3f && !_navMeshAgent.pathPending);
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
         yield return new WaitForSeconds(1f);
+        _finishedCoroutine = true;
         while (_isRitual)
         {
-            int randomAttack = UnityEngine.Random.Range(1, 4);
-            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 4);
-            if (!_canNeedles && randomAttack == 3)
-            {
-                randomAttack = UnityEngine.Random.Range(1, 3);
-                if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 3);
-            }
+            int randomAttack = UnityEngine.Random.Range(1, 5);
+            if (_lastAttack == randomAttack) randomAttack = UnityEngine.Random.Range(1, 5);
             _lastAttack = randomAttack;
             _currentAttackIndex = randomAttack + 5;
 
@@ -260,11 +259,11 @@ public class AmaterasuBoss : EntityState
     }
     private IEnumerator SpawnEnemiesAttack()
     {
+        Vector2 randomPlace = _spawnPoints;
         bool changeX = false;
         FlashSphere();
         for (int i = 0; i < 4; i++)
         {
-            Vector2 randomPlace = _spawnPoints;
             yield return new WaitForSeconds(_summonDelay);
             _audioManager.PlaySFX("Susanoo Minions summon");
             GameObject spawnedEnemy = _poolManager.GetObject(_enemy);
@@ -310,10 +309,7 @@ public class AmaterasuBoss : EntityState
     {
         _isRitual = false;
         StopCurrentAttack();
-        if (_attackCycle == null)
-        {
-            _attackCycle = StartCoroutine(StartAttacks());
-        }
+        _attackCycle = StartCoroutine(StartAttacks());
     }
     private void BossDie()
     {
@@ -325,18 +321,30 @@ public class AmaterasuBoss : EntityState
     private IEnumerator DeathAnim()
     {
         yield return new WaitForSeconds(1f);
-        float index = 1f;
-        for (float i = 1f; i >= 0f; i -= 0.05f)
+        Vector3 originalPos = transform.localPosition;
+        float shakeTimer = 0f;
+
+        while (shakeTimer < 2f)
         {
-            transform.DOScaleX(i * index, 0.1f * Mathf.Abs(i));
-            index *= -1f;
-            yield return new WaitForSeconds(0.1f * Mathf.Abs(i));
+            float offsetX = UnityEngine.Random.Range(-1f, 1f) * 0.1f;
+            float offsetY = UnityEngine.Random.Range(-1f, 1f) * 0.1f;
+
+            transform.localPosition = originalPos + new Vector3(offsetX, offsetY, 0f);
+
+            shakeTimer += Time.deltaTime;
+            yield return null;
         }
-        transform.localScale = Vector3.zero;
-        GameObject destroyParticles = PoolManager._instance.GetObject(_destroyParticles);
-        destroyParticles.transform.position = transform.position;
-        AudioManager._instance.PlayBGM("Victory");
+        transform.localPosition = originalPos;
+        StartCoroutine(WinLight());
         this.enabled = false;
+    }
+    private IEnumerator WinLight()
+    {
+        for(float i = 1f; i < 100f; i += 50f * Time.deltaTime)
+        {
+            _sun.intensity = i;
+            yield return null;
+        }
     }
     void OnDestroy()
     {
@@ -422,6 +430,7 @@ public class AmaterasuBoss : EntityState
                 }
                 break;
         }
+        _finishedCoroutine = true;
     }
     #endregion
 
@@ -432,22 +441,21 @@ public class AmaterasuBoss : EntityState
             _phase = 2;
             _animator.SetInteger(_phaseAnim, 2);
 
-            _swordAttacks.followSpeed += 2.5f;
-            _swordAttacks.repeatTimes += 1;
-
             _teleport.repeatTimes += 1;
-            _teleport.teleportDuration -= 0.2f;
+            _teleport.teleportDuration -= 0.1f;
             _teleport.projectileCount += 4;
-            _teleport.attackInterval -= 0.5f;
+            _teleport.attackInterval -= 0.1f;
 
-            _allRoundFire.rows += 1;
-            _allRoundFire.rowDelay += 0.2f;
-            _allRoundFire.projectileSpeed += 1;
-
-            _needlesAttack.delay -= 0.5f;
-            _needlesAttack.countOfProjectiles += 2;
+            _allRoundFire.rows += 4;
 
             _lunarDiskAttack.repeatTimes++;
+
+            _axisCount += 2;
+            _arcDelay -= 0.05f;
+            _arcWaveDelay -= 0.15f;
+
+            _randomDelay -= 0.1f;
+            _randomProjectileCount += 2;
 
             StartCoroutine(PhaseTranslate());
         }

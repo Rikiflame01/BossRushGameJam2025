@@ -9,15 +9,18 @@ public class SmilesScript : MonoBehaviour
     public float projectileSpeed = 2f;
     public float rowDelay = 0.2f;
 
+    private Transform _sprite;
+
     [SerializeField] private float _speedRotation;
 
     void Start()
     {
         StartCoroutine(FireAllRoundWithDelay());
+        _sprite = transform.GetChild(0);
     }
     void Update()
     {
-        transform.Rotate(Vector3.forward, _speedRotation * Time.deltaTime);
+        _sprite.Rotate(Vector3.forward, _speedRotation * Time.deltaTime);
     }
     private IEnumerator FireAllRoundWithDelay()
     {

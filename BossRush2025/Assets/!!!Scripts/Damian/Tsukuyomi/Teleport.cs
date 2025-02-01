@@ -33,11 +33,13 @@ public class Teleport : MonoBehaviour
         originalPosition = transform.position;
 
         TsukuyomiBoss.TsukuyomiTeleport += StartTeleportSequence;
+        AmaterasuBoss.TsukuyomiTeleport += StartTeleportSequence;
     }
 
     private void OnDestroy()
     {
         TsukuyomiBoss.TsukuyomiTeleport -= StartTeleportSequence;
+        AmaterasuBoss.TsukuyomiTeleport -= StartTeleportSequence;
     }
     private void StartTeleportSequence()
     {

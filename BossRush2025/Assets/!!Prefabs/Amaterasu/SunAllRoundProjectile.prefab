@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5646f077c29bd14b97ca58860012a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Projectile
+  _name: SunAllRoundProjectile
   _damage: 5
-  _destroyParticles: PurpleSplash
+  _destroyParticles: SunParticles
 --- !u!61 &7186061116184234211
 BoxCollider2D:
   m_ObjectHideFlags: 0

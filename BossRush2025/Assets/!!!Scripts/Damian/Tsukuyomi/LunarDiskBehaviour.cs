@@ -5,7 +5,7 @@ using System.Collections;
 public class LunarDiskBehaviour : MonoBehaviour
 {
     [SerializeField] private float _damage = 5f;
-    [SerializeField] private string _destroyParticles = "CrystalSplash";
+    [SerializeField] private string _destroyParticles;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotateSpeed;
@@ -71,6 +71,7 @@ public class LunarDiskBehaviour : MonoBehaviour
     private void Start()
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack += HandleLunarDisk;
+        AmaterasuBoss._tsukuyomiLunarDiskAttack += HandleLunarDisk;
 
         if(!isVertical)
         {
@@ -88,8 +89,9 @@ public class LunarDiskBehaviour : MonoBehaviour
     private void OnDisable()
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack -= HandleLunarDisk;
-        GameObject _currentParticles = PoolManager._instance.GetObject(_destroyParticles);
-        _currentParticles.transform.position = transform.position;
+        AmaterasuBoss._tsukuyomiLunarDiskAttack -= HandleLunarDisk;
+        //GameObject _currentParticles = PoolManager._instance.GetObject(_destroyParticles);
+        //_currentParticles.transform.position = transform.position;
     }
 
     private void HandleLunarDisk(string command)

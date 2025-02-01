@@ -27,11 +27,13 @@ public class LunarDiskAttack : MonoBehaviour
     void Start()
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack += HandleLunarDisk;
+        AmaterasuBoss._tsukuyomiLunarDiskAttack += HandleLunarDisk;
     }
 
     void OnDisable()
     {
         TsukuyomiBoss._tsukuyomiLunarDiskAttack -= HandleLunarDisk;
+        AmaterasuBoss._tsukuyomiLunarDiskAttack -= HandleLunarDisk;
     }
 
     public void HandleLunarDisk(string command)

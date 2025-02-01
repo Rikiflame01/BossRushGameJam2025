@@ -116,8 +116,8 @@ GameObject:
   - component: {fileID: 2324010061491103581}
   - component: {fileID: 5615337222477811484}
   - component: {fileID: 6671926049554934917}
-  - component: {fileID: 8846952001858800536}
   - component: {fileID: 3012127153645690339}
+  - component: {fileID: 3286646426954771756}
   m_Layer: 0
   m_Name: AmaterasuBoss
   m_TagString: Enemy
@@ -347,7 +347,7 @@ MonoBehaviour:
   minDistanceFromPlayer: 3
   maxDistanceFromPlayer: 15
   minDistanceBetweenPoints: 2
-  _teleportParticles: TeleportParticles
+  _teleportParticles: SunTeleportParticles
 --- !u!114 &2324010061491103581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3a7fc7e930b0e4e919248bec7c63e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileName: SunAllFireProjectile
+  projectileName: SunAllRoundProjectile
   rows: 5
   projectilesPerRow: 6
   angleOffset: 15
@@ -403,28 +403,6 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 3
   repeatTimes: 1
---- !u!95 &8846952001858800536
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235118639246445327}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4554355d6cbe244488795067d94101f6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3012127153645690339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +452,28 @@ MonoBehaviour:
   _axisProjectile: Sun
   _axisDelay: 0.2
   _axisCount: 5
+--- !u!95 &3286646426954771756
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235118639246445327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4554355d6cbe244488795067d94101f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7240236357355639331
 GameObject:
   m_ObjectHideFlags: 0

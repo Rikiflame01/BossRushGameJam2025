@@ -134,7 +134,7 @@ public class TsukuyomiBoss : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.1f && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.3f && !_navMeshAgent.pathPending);
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
@@ -162,7 +162,7 @@ public class TsukuyomiBoss : EntityState
                     break;
                 case 2:
                     TsukuyomiAllRoundFire?.Invoke();
-                    yield return new WaitForSeconds(0.6f);
+                    yield return new WaitForSeconds(_allRoundFire.GetAttackTime());
                     break;
                 case 3:
                     _tsukuyomiNeedlesAttack?.Invoke();

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: SunProjectile
   _damage: 3
-  _destroyParticles: PurpleSplash
+  _destroyParticles: SunParticles
   _speed: 8
 --- !u!58 &-3756458164658544003
 CircleCollider2D:

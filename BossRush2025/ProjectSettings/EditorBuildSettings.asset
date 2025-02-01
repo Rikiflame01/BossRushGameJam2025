@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/!Scenes/GameplayScene.unity
     guid: 97bad8a1ae041384e83cb162d1a2739a
-  - enabled: 1
+  - enabled: 0
     path: Assets/!Scenes/TsukuyomiScene.unity
     guid: cfc3b28f3daad6f49bada19764977ae5
+  - enabled: 1
+    path: Assets/!Scenes/AmaterasuScene.unity
+    guid: 14d4cb81ade2d934aab2035d0f68a710
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

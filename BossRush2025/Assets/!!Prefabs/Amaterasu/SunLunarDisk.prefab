@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  _destroyParticles: CrystalSplash
+  _destroyParticles: FireParticles
   moveSpeed: 12
   rotateSpeed: 360
   lifeTime: 8
