@@ -6,9 +6,11 @@ public class Intro : MonoBehaviour
 {
     [SerializeField] private float _durationOfIntro = 7f;
     [SerializeField] private VideoPlayer _videoPlayer;
+    [SerializeField] private GameObject _introBackground;
 
     void Start()
     {
+        _introBackground.SetActive(false);
         StartCoroutine(IntroDuration());
     }
 
