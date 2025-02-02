@@ -106,6 +106,8 @@ public class Teleport : MonoBehaviour
     }
     private IEnumerator SmoothTeleport(Vector3 targetPosition)
     {
+        AudioManager._instance.PlaySFX("Tsukuyomi Teleport");
+
         float index = 1f;
         for(float i = 1f; i >= 0f; i -= 0.2f)
         {
@@ -164,6 +166,8 @@ public class Teleport : MonoBehaviour
 
     private void FireProjectiles(Vector3 position)
     {
+        AudioManager._instance.PlaySFX("Tsukuyomi teleport attack (purple circles)");
+
         for (int i = 0; i < projectileCount; i++)
         {
             float randomAngle = UnityEngine.Random.Range(0f, 360f);

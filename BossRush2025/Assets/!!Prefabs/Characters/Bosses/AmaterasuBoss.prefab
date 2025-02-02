@@ -339,11 +339,11 @@ MonoBehaviour:
   pointName: SunStar
   projectileName: SunTeleportProjectile
   arenaBounds: {fileID: 0}
-  projectileCount: 9
-  repeatTimes: 3
-  projectileSpeed: 5
-  teleportDuration: 0.5
-  attackInterval: 1
+  projectileCount: 7
+  repeatTimes: 2
+  projectileSpeed: 6.5
+  teleportDuration: 0.3
+  attackInterval: 0.3
   minDistanceFromPlayer: 3
   maxDistanceFromPlayer: 15
   minDistanceBetweenPoints: 2
@@ -362,9 +362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileName: SunAllRoundProjectile
   rows: 5
-  projectilesPerRow: 6
-  angleOffset: 15
-  projectileSpeed: 5
+  projectilesPerRow: 8
+  angleOffset: 22.5
+  projectileSpeed: 8
   rowDelay: 0.3
 --- !u!114 &5615337222477811484
 MonoBehaviour:
@@ -397,8 +397,8 @@ MonoBehaviour:
   lunarDiskPrefab: {fileID: 8609673021236226423, guid: b01cdbf01543c5640b767eb105b8db31, type: 3}
   spawnPoint: {fileID: 4359804708735922587}
   diskLifetime: 10
-  diskSpeed: 15
-  spinSpeed: 360
+  diskSpeed: 18
+  spinSpeed: 720
   projectilePrefab: {fileID: 2635725616969769001, guid: 606fd56f0c20e63418b20d2a8e7cb84d, type: 3}
   projectileSpeed: 10
   projectileLifetime: 3
@@ -433,25 +433,30 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 22da6dd9445b87e4aa662490261bce8c, type: 3}
   _bossRoar: Roar
   _bossHealth: {fileID: 0}
+  _sun: {fileID: 0}
   _attackDelay: 0.5
   _destroyParticles: 
   _smiles: {fileID: 39470668055134600, guid: de3de0a6cee04b94588cc91a6b4c6336, type: 3}
   _spawnSmilePos: {x: 14.27, y: 17}
   _smileDuration: 10
+  _smileAngleOffset: 10
+  _countPerRow: 5
+  _rowDelay: 0.4
   _spawnPoints: {x: 18.5, y: 14}
   _enemy: SunMinion
   _summonDelay: 0.3
   _enemyAppearParticle: SunMinionAppear
-  _randomProjectileCount: 0
-  _randomDelay: 0.5
+  _randomProjectileCount: 7
+  _randomDelay: 0.2
   _arcProjectileCount: 5
   _arcDelay: 0.2
-  _arcAngle: 40
-  _arcWaveDelay: 0.7
+  _arcAngle: 45
+  _arcWaveDelay: 0.35
   _randomShootProjectile: SunProjectile
-  _axisProjectile: Sun
+  _axisProjectile: SunBubble
   _axisDelay: 0.2
-  _axisCount: 5
+  _axisCount: 6
+  _finishedCoroutine: 1
 --- !u!95 &3286646426954771756
 Animator:
   serializedVersion: 7
@@ -559,5 +564,5 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0

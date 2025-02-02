@@ -78,6 +78,8 @@ public class LunarDiskAttack : MonoBehaviour
         if (lunarDiskPrefab != null && spawnPoint != null) 
         {
             bool isVertical = Random.Range(0, 2) == 0;
+            AudioManager._instance.PlaySFX("Moon attack");
+
             for (int i = 0; i < repeatTimes; i++) 
             {
                 LunarDiskBehaviour diskBehavior;

@@ -105,10 +105,10 @@ MonoBehaviour:
   _name: SunBubble
   _damage: 4
   _destroyParticles: FireParticles
-  _maxRadiusSpeed: 5
-  _angleSpeed: 0.35
+  _maxRadiusSpeed: 6
+  _angleSpeed: 0.6
   _maxRadius: 2.5
-  _acceleration: 20
+  _acceleration: 30
   _lifeTime: 6
 --- !u!58 &8811120097096909593
 CircleCollider2D:

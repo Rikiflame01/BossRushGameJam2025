@@ -16,8 +16,8 @@ public class Healthbar : MonoBehaviour
 
     void Start()
     {
-        _healthManager._onHit += (float hitDamage)=> { UpdateHealthBar(hitDamage); StartCoroutine(StartAnimDelay()); };
-        _healthManager._onAddHealth += (float heal)=> { UpdateHealthBar(heal); StartCoroutine(StartAnimDelay()); };
+        _healthManager._onHit += (float hitDamage)=> { if (gameObject.activeSelf) { UpdateHealthBar(hitDamage); StartCoroutine(StartAnimDelay()); } };
+        _healthManager._onAddHealth += (float heal)=> { if (gameObject.activeSelf) { UpdateHealthBar(heal); StartCoroutine(StartAnimDelay()); } };
     }
 
     void Update()

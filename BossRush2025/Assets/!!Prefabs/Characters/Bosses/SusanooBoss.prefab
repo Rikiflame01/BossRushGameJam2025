@@ -181,22 +181,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067822bcec8c4db4885ea4690a33d442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstTrack: Susanoo Phase 1
-  _secondTrack: Susanoo Phase 2
+  _firstTrack: Susanoo P1 Mix
+  _secondTrack: Susanoo P2 Mix
   _speed: 4
   _maxMoveDistance: 5
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
   _attackActiveIcons:
   - {fileID: -357941818, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
-  - {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: 2276937417260167175, guid: 287d077fd140bda4eb7069698217e721, type: 3}
+  - {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
   - {fileID: -428795043, guid: bc3ce6a717c580148ad975d07bb51280, type: 3}
   _attackPassiveIcons:
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
   - {fileID: -1860743042, guid: 108a2485f701c634ab046993dade7ad0, type: 3}
   _bossRoar: Roar
+  _bossHealth: {fileID: 0}
   _componentsToDisableOnDisappear:
   - {fileID: 8989028932586246324}
   _attackDelay: 1
@@ -208,11 +209,6 @@ MonoBehaviour:
   _jumpAttackRadius: 3
   _jumpAttackDamage: 8
   _jumpShadow: JumpShadow
-  _minEnemyCount: 2
-  _maxEnemyCount: 4
-  _enemy: Enemy
-  _summonDelay: 0.3
-  _enemyAppearParticle: WaterAppearParticles
   _chargeTime: 1
   _angleBetweenProjectiles: 30
   _projectileCount: 3
@@ -220,6 +216,11 @@ MonoBehaviour:
   _accelerationSpeed: 15
   _accelerationAttack: 7
   _accelerationAttackTime: 5
+  _minEnemyCount: 2
+  _maxEnemyCount: 4
+  _enemy: Enemy
+  _summonDelay: 0.3
+  _enemyAppearParticle: WaterAppearParticles
   _finishedCoroutine: 1
   _randomProjectileCount: 0
   _randomDelay: 0.3
@@ -264,9 +265,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9768586cf91f54dac6f1f0a16c190f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
+  _health: 250
   _takeDamageSFX: Boss damage
   _dieParticles: 
+  _onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _immortal: 0
 --- !u!114 &1631012741786938865
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using DG.Tweening;
 
 public class TsukuyomiBoss : EntityState
@@ -114,6 +115,7 @@ public class TsukuyomiBoss : EntityState
                     break;
 
                 case 3:
+                    FlashSphere();
                     TsukuyomiAllRoundFire?.Invoke();
                     yield return new WaitUntil(() => _allRoundFire._finishedAttack);
                     break;
@@ -162,6 +164,7 @@ public class TsukuyomiBoss : EntityState
                     break;
                 case 2:
                     TsukuyomiAllRoundFire?.Invoke();
+                    FlashSphere();
                     yield return new WaitForSeconds(_allRoundFire.GetAttackTime());
                     break;
                 case 3:
@@ -220,10 +223,7 @@ public class TsukuyomiBoss : EntityState
     {
         _isRitual = false;
         StopCurrentAttack();
-        if (_attackCycle == null)
-        {
-            _attackCycle = StartCoroutine(StartAttacks());
-        }
+        _attackCycle = StartCoroutine(StartAttacks());
     }
     private void BossDie()
     {
@@ -234,7 +234,10 @@ public class TsukuyomiBoss : EntityState
     }
     private IEnumerator DeathAnim()
     {
-        yield return new WaitForSeconds(1f);
+
+        yield return new WaitForSeconds(2f);
+
+        AudioManager._instance.PlaySFX("Tsukuyomi death");
         float index = 1f;
         for (float i = 1f; i >= 0f; i -= 0.05f)
         {
@@ -335,6 +338,8 @@ public class TsukuyomiBoss : EntityState
 
             _lunarDiskAttack.repeatTimes++;
 
+            GetComponentInChildren<Light2D>().color = Color.white;
+
             StartCoroutine(PhaseTranslate());
         }
     }
@@ -358,14 +363,11 @@ public class TsukuyomiBoss : EntityState
 
         _collider.enabled = true;
         _audioManager.PlayBGM(_secondTrack);
-        if (_attackCycle == null)
-        {
-            _attackCycle = StartCoroutine(StartAttacks());
-        }
+        _attackCycle = StartCoroutine(StartAttacks());
     }
     private void FlashSphere()
     {
-        _audioManager.PlaySFX("Boss Casting");
+        _audioManager.PlaySFX("Tsukuyomi Casting");
         _flash.LightOn(3, 0.2f, 0.8f);
     }
     #region LunarDisk

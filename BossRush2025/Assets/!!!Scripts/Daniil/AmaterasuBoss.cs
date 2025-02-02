@@ -22,8 +22,6 @@ public class AmaterasuBoss : EntityState
 
     //for triggering the string Actions from another script: TsukuyomiBoss._tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
     //for triggerig the string Actions from this script _tsukuyomiLunarDiskAttack?.Invoke("Start or Pause or Resume or Stop");
-    private bool _canCrescent = true;
-    private bool _canGravity = true;
     private int _currentAttackIndex;
 
     private bool _canNeedles = true;
@@ -41,6 +39,11 @@ public class AmaterasuBoss : EntityState
     [SerializeField] private GameObject _smiles;
     [SerializeField] private Vector2 _spawnSmilePos;
     [SerializeField] private float _smileDuration;
+    [SerializeField] private float _smileAngleOffset;
+    [SerializeField] private int _countPerRow;
+    [SerializeField] private float _rowDelay;
+
+    private int _repeatSmiles = 1;
     private List<GameObject> _smileList = new List<GameObject>();
 
     [Header("Summon Enemies")]
@@ -127,9 +130,11 @@ public class AmaterasuBoss : EntityState
             switch (randomAttack)
             {
                 case 1:
+
+                    _animator.SetTrigger(_attackAnim);
+                    yield return new WaitForSeconds(0.5f);
                     SpawnTwoSmiles();
                     EnableMovement();
-                    _animator.SetTrigger(_attackAnim);
                     yield return new WaitForSeconds(_smileDuration * 0.7f);
                     break;
 
@@ -144,12 +149,14 @@ public class AmaterasuBoss : EntityState
                     break;
                 case 4:
                     _animator.SetTrigger(_attackAnim);
+                    yield return new WaitForSeconds(0.5f);
                     TestLunarDiskStart();
                     StartCoroutine(NoLunarDisk());
                     yield return new WaitForSeconds(0.8f);
                     break;
                 case 5:
                     _animator.SetTrigger(_attackAnim);
+                    yield return new WaitForSeconds(0.5f);
                     _inScriptAttack = StartCoroutine(SpawnEnemiesAttack());
                     yield return new WaitForSeconds(0.7f);
                     break;
@@ -282,16 +289,30 @@ public class AmaterasuBoss : EntityState
     }
     private void SpawnTwoSmiles()
     {
+        _audioManager.PlaySFX("Amaterasu Head attack");
         Vector2 spawnPos = _spawnSmilePos;
-        if(UnityEngine.Random.Range(0, 2) == 0)
+        if (UnityEngine.Random.Range(0, 2) == 0)
         {
             spawnPos.x *= -1;
         }
-        GameObject smile = Instantiate(_smiles, spawnPos, Quaternion.identity);
-        _smileList.Add(smile);
-        spawnPos.y *= -1;
-        smile.transform.DOMove(spawnPos, _smileDuration);
-        Destroy(smile, _smileDuration);
+        if (UnityEngine.Random.Range(0, 2) == 0)
+        {
+            spawnPos.y *= -1;
+        }
+        for (int i = 0; i < _repeatSmiles; i++)
+        {
+            
+            GameObject smile = Instantiate(_smiles, spawnPos, Quaternion.identity);
+            smile.GetComponent<SmilesScript>().Initialize(_countPerRow, _rowDelay, _smileAngleOffset);
+            _smileList.Add(smile);
+            smile.transform.DOMove(new Vector2(spawnPos.x, -spawnPos.y), _smileDuration);
+            Destroy(smile, _smileDuration);
+            if (UnityEngine.Random.Range(0, 2) == 0)
+            {
+                spawnPos.y *= -1;
+            }
+            spawnPos.x *= -1;
+        }
     }
     #endregion
 
@@ -323,7 +344,7 @@ public class AmaterasuBoss : EntityState
         yield return new WaitForSeconds(1f);
         Vector3 originalPos = transform.localPosition;
         float shakeTimer = 0f;
-
+        CameraShake._instance.Shake(4f, 0.25f);
         while (shakeTimer < 2f)
         {
             float offsetX = UnityEngine.Random.Range(-1f, 1f) * 0.1f;
@@ -334,6 +355,7 @@ public class AmaterasuBoss : EntityState
             shakeTimer += Time.deltaTime;
             yield return null;
         }
+        _audioManager.PlaySFX("Amaterasu Death");
         transform.localPosition = originalPos;
         StartCoroutine(WinLight());
         this.enabled = false;
@@ -368,12 +390,6 @@ public class AmaterasuBoss : EntityState
         _canLunarDisk = false;
         yield return new WaitForSeconds(_lunarDiskAttack.diskLifetime + 0.8f);
         _canLunarDisk = true;
-    }
-    private IEnumerator NoCrescent()
-    {
-        _canCrescent = false;
-        yield return new WaitForSeconds(7f);
-        _canCrescent = true;
     }
     private void StopCurrentAttack()
     {
@@ -457,6 +473,11 @@ public class AmaterasuBoss : EntityState
             _randomDelay -= 0.1f;
             _randomProjectileCount += 2;
 
+            _countPerRow -= 1;
+            _rowDelay += 0.1f;
+            _smileAngleOffset += 10f;
+            _repeatSmiles++;
+
             StartCoroutine(PhaseTranslate());
         }
     }
@@ -487,7 +508,7 @@ public class AmaterasuBoss : EntityState
     }
     private void FlashSphere()
     {
-        _audioManager.PlaySFX("Boss Casting");
+        _audioManager.PlaySFX("Amaterasu Casting");
         _flash.LightOn(3, 0.2f, 0.8f);
     }
     #region LunarDisk

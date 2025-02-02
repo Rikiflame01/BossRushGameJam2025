@@ -18,6 +18,12 @@ public class SmilesScript : MonoBehaviour
         StartCoroutine(FireAllRoundWithDelay());
         _sprite = transform.GetChild(0);
     }
+    public void Initialize(int newProjectilesPerRow, float newRowDelay, float newAngleOffset)
+    {
+        projectilesPerRow = newProjectilesPerRow;
+        rowDelay = newRowDelay;
+        angleOffset = newAngleOffset; if(Random.Range(0, 2) == 0) { angleOffset *= -1; }
+    }
     void Update()
     {
         _sprite.Rotate(Vector3.forward, _speedRotation * Time.deltaTime);
@@ -43,7 +49,7 @@ public class SmilesScript : MonoBehaviour
                     rb.linearVelocity = direction * projectileSpeed;
                 }
             }
-
+            AudioManager._instance.PlaySFX("Amaterasu Fireball");
             yield return new WaitForSeconds(rowDelay);
         }
     }

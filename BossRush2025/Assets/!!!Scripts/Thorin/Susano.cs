@@ -127,6 +127,7 @@ public class Susano : EntityState
         ChangeState(State.Idle);
         yield return new WaitForSeconds(1.3f);
         ChangeState(State.Walking);
+        _finishedCoroutine = true;
         int attackTimes = Random.Range(3 + _phase, 5 + _phase);
         int attackedTimes = 0;
         while (attackedTimes < attackTimes)
@@ -190,6 +191,7 @@ public class Susano : EntityState
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
+        _finishedCoroutine = true;
         yield return new WaitForSeconds(1f);
         while (_isRitual)
         {

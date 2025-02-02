@@ -129,6 +129,7 @@ public class LunarDiskBehaviour : MonoBehaviour
             elapsedLifetime += Time.deltaTime;
             yield return null;
         }
+        AudioManager._instance.PlaySFX("Tsukuyomi moon spliting");
 
         SpawnProjectile(Vector2.up);
         SpawnProjectile(Vector2.left);

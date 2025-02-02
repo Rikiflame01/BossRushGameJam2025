@@ -53,7 +53,10 @@ public class SwordStrikeAttack : MonoBehaviour
 
             _needMove = true;
             _direction = -(transform.position - _player.transform.position).normalized;
-            yield return new WaitForSeconds(_followTime);
+            yield return new WaitForSeconds(0.2f);
+            AudioManager._instance.PlaySFX("Tsukuyomi Melee attack");
+
+            yield return new WaitForSeconds(_followTime - 0.2f);
             _needMove = false;
             AreaDamage();
             yield return new WaitForSeconds(_attackDelay);

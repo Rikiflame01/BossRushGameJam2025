@@ -194,7 +194,7 @@ MonoBehaviour:
   _maxMoveDistance: 6
   _attackIcon: {fileID: 3495584881204525371, guid: dbd52dc7d3a679c48a28bac28a06851e, type: 3}
   _attackActiveIcons:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 4e603581a36d1e945accfa80e05a78b9, type: 3}
   - {fileID: 21300000, guid: 515738ad346049145bf3624f6e89b964, type: 3}
   - {fileID: 21300000, guid: 4ef704a3c15fe0b45b2676f985098cdc, type: 3}
   - {fileID: 21300000, guid: 50e0d80128568b44f9778de4962f07c8, type: 3}
@@ -207,7 +207,7 @@ MonoBehaviour:
   _bossRoar: Roar
   _bossHealth: {fileID: 0}
   _attackDelay: 0.5
-  _destroyParticles: TeleportParticles
+  _destroyParticles: DestroyTsukuyomiParticles
   _arcProjectileCount: 5
   _arcDelay: 0.2
   _arcAngle: 40
@@ -250,6 +250,9 @@ MonoBehaviour:
   _health: 250
   _takeDamageSFX: Boss damage
   _dieParticles: 
+  _onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _immortal: 0
 --- !u!114 &5174361049791288082
 MonoBehaviour:
@@ -472,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 8796119640942387622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 1.97, z: 0}
+  m_LocalPosition: {x: 0.07, y: 3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

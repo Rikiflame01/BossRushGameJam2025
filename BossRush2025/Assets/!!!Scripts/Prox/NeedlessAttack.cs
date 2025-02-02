@@ -38,6 +38,7 @@ public class NeedlessAttack : MonoBehaviour
                 yield break;
             }
 
+            AudioManager._instance.PlaySFX("Needle appears");
             Vector2 spawnProjectilePos = GetRandomPointOnCircle();
             GameObject spawnedProjectile = PoolManager._instance.GetObject(_needlesProjectile);
             spawnedProjectile.transform.position = spawnProjectilePos;

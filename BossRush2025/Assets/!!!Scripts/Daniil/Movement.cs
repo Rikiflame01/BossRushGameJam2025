@@ -242,11 +242,11 @@ public class Movement : MonoBehaviour
                                     break;
 
                                 case 2:
-                                    healthToHeal = 3;
+                                    healthToHeal = 2;
                                     break;
 
                                 case 3:
-                                    healthToHeal = 5;
+                                    healthToHeal = 2;
                                     break;
                             } 
                             _healthManager.AddHealth(healthToHeal);
@@ -298,7 +298,7 @@ public class Movement : MonoBehaviour
     #region Dash
     public void Dash(InputAction.CallbackContext callback)
     {
-        if (!_canDash || (Direction().x == 0f && Direction().y == 0))
+        if ((!_canDash || (Direction().x == 0f && Direction().y == 0) ) && _currentState == State.Run)
             return;
         _canDash = false;
         _isDash = true;

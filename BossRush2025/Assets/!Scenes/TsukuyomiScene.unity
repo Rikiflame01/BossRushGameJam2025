@@ -48063,6 +48063,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f69ad20d763a556418259203d61faa80, type: 3}
   - {fileID: 8300000, guid: a6b67de3d0a17a143a22634a4f55e7a8, type: 3}
   - {fileID: 8300000, guid: ce30bbfe4f77fcb428815dfc12b6b213, type: 3}
+  - {fileID: 8300000, guid: 30b142fa2d330224a869724a8b7f5229, type: 3}
+  - {fileID: 8300000, guid: 2cf009c8fd972a549851efa3aa3ca280, type: 3}
+  - {fileID: 8300000, guid: 16a8ccb68fda0e64193f6e25caaedbe2, type: 3}
+  - {fileID: 8300000, guid: 3058066921f246545b0937faf18e01eb, type: 3}
+  - {fileID: 8300000, guid: 34cb841911870494daaa851718a0a3fb, type: 3}
+  - {fileID: 8300000, guid: 515dfeae06b4aa84d8d2989185b80609, type: 3}
+  - {fileID: 8300000, guid: 838f00e8b00a68c4c82d19eb7c8272e1, type: 3}
+  - {fileID: 8300000, guid: b11817e9b300b0048bf8ca823e4250f1, type: 3}
+  - {fileID: 8300000, guid: 84d3b515dcdd0b146920f82172835b9c, type: 3}
 --- !u!114 &1788772000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48124,7 +48133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextRoomIndex: 2
-  _fade: {fileID: 0}
+  _fade: {fileID: 701423664}
 --- !u!212 &1791454648
 SpriteRenderer:
   m_ObjectHideFlags: 0

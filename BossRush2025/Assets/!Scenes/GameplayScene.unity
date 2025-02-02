@@ -54815,8 +54815,8 @@ MonoBehaviour:
   bgmSource: {fileID: 544839949}
   sfxSource: {fileID: 1705274830}
   bgmClips:
-  - {fileID: 8300000, guid: 63e5065acc59d0145849a1a529be7d87, type: 3}
-  - {fileID: 8300000, guid: 908d671bc942d754aad6429b65159bcd, type: 3}
+  - {fileID: 8300000, guid: 1bb1e7332e3913443bf48502a3ab9c79, type: 3}
+  - {fileID: 8300000, guid: 00f81d8fe4d08844180c08cd30cde2ff, type: 3}
   - {fileID: 8300000, guid: 6f2ddd7070bfe4848bf6dfdaa8bd554f, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: f44ebc0571d47ef44bdd9621f5ec3568, type: 3}
@@ -64351,10 +64351,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 604447345512464825, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: _health
-      value: 250
-      objectReference: {fileID: 0}
     - target: {fileID: 1631012741786938865, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: _upSpawnWavePosition
       value: 
@@ -64367,18 +64363,6 @@ PrefabInstance:
       propertyPath: _bossHealth
       value: 
       objectReference: {fileID: 1340468989}
-    - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: '_attackActiveIcons.Array.data[1]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 3fc4c11e63131c24ab90819f413b061d, type: 3}
-    - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: '_attackActiveIcons.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2276937417260167175, guid: 287d077fd140bda4eb7069698217e721, type: 3}
-    - target: {fileID: 3780742884025277583, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
-      propertyPath: '_attackActiveIcons.Array.data[3]'
-      value: 
-      objectReference: {fileID: 21300000, guid: bfe66adc4cd7e454392d6335054069ea, type: 3}
     - target: {fileID: 4312701852677153529, guid: 8d571126f3f26bf48b2d4a5e9bbbfa44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

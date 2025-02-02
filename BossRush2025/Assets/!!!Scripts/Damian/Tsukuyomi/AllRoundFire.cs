@@ -35,13 +35,14 @@ public class AllRoundFire : MonoBehaviour
     private IEnumerator FireAllRoundWithDelay()
     {
         _finishedAttack = false;
+        float randomIndex = Random.Range(0, 2) == 0 ? 1f : -1f;
         for (int row = 0; row < rows; row++)
         {
             float baseAngle = row * angleOffset;
 
             for (int i = 0; i < projectilesPerRow; i++)
             {
-                float angle = baseAngle + (360f / projectilesPerRow) * i;
+                float angle = baseAngle + (360f / projectilesPerRow) * i * randomIndex;
                 Vector3 direction = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
 
                 GameObject projectile = PoolManager._instance.GetObject(projectileName);

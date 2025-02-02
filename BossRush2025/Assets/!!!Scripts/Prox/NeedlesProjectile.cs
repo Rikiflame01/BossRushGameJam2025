@@ -15,7 +15,6 @@ public class NeedlesProjectile : MonoBehaviour
 
     private Coroutine _rotateCoroutine;
     private bool _attack = false;
-    private bool _lookAtTarget = false;
     private bool _spin = true;
 
     void Start()
@@ -31,7 +30,6 @@ public class NeedlesProjectile : MonoBehaviour
     {
         _rotateCoroutine = null;
         _attack = false;
-        _lookAtTarget = false;
         _spin = true;
     }
     void Update()
@@ -47,10 +45,6 @@ public class NeedlesProjectile : MonoBehaviour
             transform.eulerAngles += new Vector3(0, 0, _rotateSpeed * Time.deltaTime);
         }
         
-        if (_lookAtTarget)
-        {
-            LookAtTarget();
-        }
     }
 
     void LookAtTarget()
@@ -68,13 +62,12 @@ public class NeedlesProjectile : MonoBehaviour
 
     private IEnumerator RotateDelay()
     {
-        yield return new WaitForSeconds(1f);
-        transform.eulerAngles = Vector3.zero;
+        yield return new WaitForSeconds(2f);
         _spin = false; 
-        _lookAtTarget = true;
-        yield return new WaitForSeconds(1f); 
-        _lookAtTarget = false;
+        transform.eulerAngles = Vector3.zero;
+        LookAtTarget();
         _attack = true;
+        AudioManager._instance.PlaySFX("Needle throw");
 
         _flyDirection = -(transform.position - _target.transform.position).normalized;
     }
