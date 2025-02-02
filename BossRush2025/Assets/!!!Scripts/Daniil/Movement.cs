@@ -354,7 +354,7 @@ public class Movement : MonoBehaviour
         if (_circleNumber > 0 && !_isRitual)
         {
             _fireCoroutine = StartCoroutine(FireRitual());
-            Camera.main.DOOrthoSize(10, 1f);
+            Camera.main.DOOrthoSize(11, 1f);
         }
     }
     private void EndSettingFire(InputAction.CallbackContext callback)
