@@ -69,7 +69,23 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"SFX Clip {sfxName} not found!");
         }
     }
-
+    public void SpecialSFX(string sfxName)
+    {
+        AudioClip clip = GetClipByName(sfxClips, sfxName);
+        if (clip != null)
+        {
+            sfxSource.clip = clip;
+            sfxSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"BGM Clip {sfxName} not found!");
+        }
+    }
+    public void StopSpecialSFX()
+    {
+        sfxSource.Stop();
+    }
     public void SetSFXVolume(float volume)
     {
         sfxSource.volume = Mathf.Clamp01(volume);

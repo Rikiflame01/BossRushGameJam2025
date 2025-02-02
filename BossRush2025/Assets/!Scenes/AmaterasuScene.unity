@@ -47308,6 +47308,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bed17fea046abfa448827ec64ae1f8a6, type: 3}
   - {fileID: 8300000, guid: 353ae4c3a1add004f824393e09b9307a, type: 3}
   - {fileID: 8300000, guid: 7fa6fda859daa0c479b883d15d775871, type: 3}
+  - {fileID: 8300000, guid: 0d81e0fa1d591da47b9dbe7991371537, type: 3}
 --- !u!114 &1788772000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53273,52 +53274,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2324010061491103581, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: rowDelay
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: _sun
       value: 
       objectReference: {fileID: 2085900394}
     - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _arcAngle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _arcDelay
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _axisCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _axisDelay
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: _bossHealth
       value: 
       objectReference: {fileID: 1781532158}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _firstTrack
-      value: Amaterasu master
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _randomDelay
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _arcWaveDelay
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _axisProjectile
-      value: SunBubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012127153645690339, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _randomProjectileCount
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4235118639246445327, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: m_Name
       value: AmaterasuBoss
@@ -53363,42 +53328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6671926049554934917, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: diskSpeed
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6671926049554934917, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: spinSpeed
-      value: 720
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899630702105191800, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: _health
-      value: 250
-      objectReference: {fileID: 0}
     - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: arenaBounds
       value: 
       objectReference: {fileID: 481055778}
-    - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: repeatTimes
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: attackInterval
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: projectileCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: projectileSpeed
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
-      propertyPath: teleportDuration
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

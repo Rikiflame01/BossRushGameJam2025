@@ -310,7 +310,6 @@ MonoBehaviour:
   _onHitEvent:
     m_PersistentCalls:
       m_Calls: []
-  _immortal: 0
 --- !u!114 &1644537662774830651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +364,7 @@ MonoBehaviour:
   projectilesPerRow: 8
   angleOffset: 22.5
   projectileSpeed: 8
-  rowDelay: 0.3
+  rowDelay: 0.6
 --- !u!114 &5615337222477811484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84dd75fd3ea6fcd4fa933c8e55750fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstTrack: 
+  _firstTrack: Amaterasu master
   _secondTrack: 
   _speed: 10
   _maxMoveDistance: 10
@@ -455,7 +454,7 @@ MonoBehaviour:
   _randomShootProjectile: SunProjectile
   _axisProjectile: SunBubble
   _axisDelay: 0.2
-  _axisCount: 6
+  _axisCount: 4
   _finishedCoroutine: 1
 --- !u!95 &3286646426954771756
 Animator:

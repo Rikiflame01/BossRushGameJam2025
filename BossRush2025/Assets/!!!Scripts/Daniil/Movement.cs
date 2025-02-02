@@ -362,12 +362,14 @@ public class Movement : MonoBehaviour
         if (_fireCoroutine == null) return;
         StopCoroutine(_fireCoroutine);
         _fireCoroutine = null;
+        _audioManager.StopSpecialSFX();
         _fireProgress.enabled = false;
         Camera.main.DOOrthoSize(12.54f, 1f);
     }
     private IEnumerator FireRitual()
     {
         _fireProgress.enabled = true;
+        _audioManager.SpecialSFX("Burning SFX");
         float startTime = Time.time;
         while(Time.time - startTime < _fireChargeTime)
         {
@@ -378,7 +380,6 @@ public class Movement : MonoBehaviour
         ClearLeafs();
         _isRitual = false;
         _ritualProgress.enabled = false;
-
         _gameManager.RitualEnd(_circleNumber);
         EnableComponents();
         _circleNumber = 0;
