@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private InputActionReference _setFireKey;
     [SerializeField] private Image _fireProgress;
+    [SerializeField] private Image _fireBackProgress;
     [SerializeField] private float _fireChargeTime;
     
     private Coroutine _fireCoroutine;
@@ -233,11 +234,11 @@ public class Movement : MonoBehaviour
                         if(_circleNumber < 3)
                         {
                             _circleNumber++;
-
                             float healthToHeal = 0;
                             switch (_circleNumber)
                             {
                                 case 1:
+                                    _fireBackProgress.enabled = true;
                                     healthToHeal = 1;
                                     break;
 
@@ -380,6 +381,7 @@ public class Movement : MonoBehaviour
         _circleNumber = 0;
         _circleTxt.enabled = false;
         _fireProgress.enabled = false;
+        _fireBackProgress.enabled = false;
         _currentTime = 0;
         _currentState = State.Run;
     }
@@ -435,7 +437,7 @@ public class Movement : MonoBehaviour
             component.enabled = true;
         }
     }
-    private void DisableComponents()
+    public void DisableComponents()
     {
         foreach (Behaviour component in _componentsToDisable)
         {

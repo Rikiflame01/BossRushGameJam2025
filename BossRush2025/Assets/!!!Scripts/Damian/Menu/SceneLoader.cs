@@ -4,18 +4,19 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public SoundMenuManager soundMenuManager;
-    public void LoadScene(string sceneName)
+    private int _startScene = 0;
+    public void LoadScene()
     {
-        if (!string.IsNullOrEmpty(sceneName))
+        soundMenuManager.PlaySFX("Play");
+        _startScene = PlayerPrefs.GetInt("StartScene", _startScene);
+        if (_startScene == 0)
         {
-            {
-                soundMenuManager.PlaySFX("Play");
-                SceneManager.LoadScene(sceneName);
-            }
+            PlayerPrefs.SetInt("StartScene", 1);
+            SceneManager.LoadScene("DummyScene");
         }
         else
         {
-            Debug.LogError("Scene name is not set");
+            SceneManager.LoadScene("GameplayScene");
         }
     }
 
