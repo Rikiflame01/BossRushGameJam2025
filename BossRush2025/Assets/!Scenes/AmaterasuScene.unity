@@ -5075,6 +5075,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!1 &34282313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2642747621243557187, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+  m_PrefabInstance: {fileID: 734203844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &35079730
 GameObject:
   m_ObjectHideFlags: 0
@@ -22802,6 +22807,18 @@ PrefabInstance:
     - target: {fileID: 1531035370488517701, guid: fdab6610326e99243913b734c04f46b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 913448482}
+    - target: {fileID: 1531035370488517701, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684972963502158861, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425194751431921911, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2602371832863471244, guid: fdab6610326e99243913b734c04f46b4, type: 3}
       propertyPath: _healthManager
@@ -22903,9 +22920,45 @@ PrefabInstance:
       propertyPath: m_text
       value: Amaterasu
       objectReference: {fileID: 0}
+    - target: {fileID: 4219718643657384501, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219718643657384501, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919125130711302808, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 913448482}
+    - target: {fileID: 4919125130711302808, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919125130711302808, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351347345531749533, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 6812953014782806698, guid: fdab6610326e99243913b734c04f46b4, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908362107495979124, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 34282313}
+    - target: {fileID: 8908362107495979124, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908362107495979124, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28681,7 +28734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea58892a179b4144bcd160f5be659b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fade: {fileID: 0}
+  _fade: {fileID: 701423664}
   _changeSceneDelay: 1
 --- !u!114 &913448483
 MonoBehaviour:
