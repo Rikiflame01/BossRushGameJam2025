@@ -214,6 +214,8 @@ public class AmaterasuBoss : EntityState
         _finishedCoroutine = false;
         for (int j = 0; j < 3; j++)
         {
+            _audioManager.PlaySFX("Amaterasu Fireball");
+
             Vector2 direction = _player.transform.position - transform.position;
             float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             float angleCof = 0f;
@@ -243,7 +245,7 @@ public class AmaterasuBoss : EntityState
         _finishedCoroutine = false;
         for (int i = 0; i < _randomProjectileCount; i++)
         {
-            _audioManager.PlaySFX("Susanoo Shot");
+            _audioManager.PlaySFX("Amaterasu Fireball");
 
             GameObject currentProjectile = _poolManager.GetObject(_randomShootProjectile);
             currentProjectile.transform.position = transform.position;
@@ -469,9 +471,10 @@ public class AmaterasuBoss : EntityState
 
             _lunarDiskAttack.repeatTimes++;
 
-            _axisCount += 2;
+            _axisCount += 1;
             _arcDelay -= 0.05f;
             _arcWaveDelay -= 0.15f;
+            _arcProjectileCount += 2;
 
             _randomDelay -= 0.1f;
             _randomProjectileCount += 2;

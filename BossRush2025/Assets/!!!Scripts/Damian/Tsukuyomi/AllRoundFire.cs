@@ -39,7 +39,6 @@ public class AllRoundFire : MonoBehaviour
         for (int row = 0; row < rows; row++)
         {
             float baseAngle = row * angleOffset;
-
             for (int i = 0; i < projectilesPerRow; i++)
             {
                 float angle = baseAngle + (360f / projectilesPerRow) * i * randomIndex;

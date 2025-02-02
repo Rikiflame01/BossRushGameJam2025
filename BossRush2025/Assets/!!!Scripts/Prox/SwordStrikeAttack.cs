@@ -41,6 +41,7 @@ public class SwordStrikeAttack : MonoBehaviour
     public IEnumerator StartSwordStrikeAttack()
     {
         _finishedAttack = false;
+        _stopAttack = false;
         for (int i = 0; i < repeatTimes; i++)
         {
             if (_stopAttack)

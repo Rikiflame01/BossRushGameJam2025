@@ -364,7 +364,7 @@ MonoBehaviour:
   projectilesPerRow: 8
   angleOffset: 22.5
   projectileSpeed: 8
-  rowDelay: 0.6
+  rowDelay: 0.5
 --- !u!114 &5615337222477811484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,9 +446,9 @@ MonoBehaviour:
   _summonDelay: 0.3
   _enemyAppearParticle: SunMinionAppear
   _randomProjectileCount: 7
-  _randomDelay: 0.2
+  _randomDelay: 0.12
   _arcProjectileCount: 5
-  _arcDelay: 0.2
+  _arcDelay: 0.15
   _arcAngle: 45
   _arcWaveDelay: 0.35
   _randomShootProjectile: SunProjectile

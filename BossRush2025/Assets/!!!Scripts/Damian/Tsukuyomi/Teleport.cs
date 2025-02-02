@@ -200,7 +200,10 @@ public class Teleport : MonoBehaviour
         }
         foreach (GameObject point in instantiatedPoints)
         {
-            PoolManager._instance.ReturnObject(point, pointName);
+            if (point != null)
+            {
+                PoolManager._instance.ReturnObject(point, pointName);
+            }
         }
         instantiatedPoints.Clear();
         transform.localScale = Vector3.one;
