@@ -23,14 +23,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = _paused ? 0f : 1f;
     }
 
-    void OnDisable()
-    {
-        _pauseKey.action.performed -= (InputAction.CallbackContext context)=> PauseTrigger();
-    }
-    void OnEnable()
-    {
-        _pauseKey.action.performed += (InputAction.CallbackContext context)=> PauseTrigger();
-    }
     void OnDestroy()
     {
         _pauseKey.action.performed -= (InputAction.CallbackContext context)=> PauseTrigger();

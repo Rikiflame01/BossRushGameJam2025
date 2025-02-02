@@ -498,7 +498,6 @@ public class AmaterasuBoss : EntityState
 
         EnableMovement();
 
-        _audioManager.StopBGM();
         StartCoroutine(BossRoar());
         yield return new WaitForSeconds(2f);
 
