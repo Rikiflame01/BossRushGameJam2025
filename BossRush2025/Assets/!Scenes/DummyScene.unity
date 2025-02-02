@@ -6072,17 +6072,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &131182291 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5225811926246124502, guid: fdab6610326e99243913b734c04f46b4, type: 3}
-  m_PrefabInstance: {fileID: 135240405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &135240405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6184,6 +6173,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+--- !u!114 &135240406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3666969256696251254, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+  m_PrefabInstance: {fileID: 135240405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &135240407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4656898197066946471, guid: fdab6610326e99243913b734c04f46b4, type: 3}
+  m_PrefabInstance: {fileID: 135240405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &137720485
 GameObject:
   m_ObjectHideFlags: 0
@@ -18163,7 +18174,7 @@ PrefabInstance:
     - target: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _fireProgress
       value: 
-      objectReference: {fileID: 1308747855}
+      objectReference: {fileID: 135240407}
     - target: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _ritualProgress
       value: 
@@ -18171,7 +18182,7 @@ PrefabInstance:
     - target: {fileID: 4624328582792821634, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _fireBackProgress
       value: 
-      objectReference: {fileID: 131182291}
+      objectReference: {fileID: 135240406}
     - target: {fileID: 5421945043435906448, guid: 8cef2b6697cd57344a8bed60d02f3274, type: 3}
       propertyPath: _attackRadius
       value: 3
@@ -26744,17 +26755,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &1308747855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6429790373098826942, guid: fdab6610326e99243913b734c04f46b4, type: 3}
-  m_PrefabInstance: {fileID: 135240405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1309599906
 GameObject:
   m_ObjectHideFlags: 0
