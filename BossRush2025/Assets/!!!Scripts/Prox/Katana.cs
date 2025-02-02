@@ -15,6 +15,7 @@ public class Katana : MonoBehaviour
     [SerializeField] private Transform _katanaAttackPos;
     [SerializeField] private InputActionReference _katanaAttackKey;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Bow _bow;
     private bool _canAttack = true;
 
     private string _katanaSound = "Katana ";
@@ -29,7 +30,7 @@ public class Katana : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (!_canAttack)
+        if (!_canAttack || _bow._isChargeNow)
             return;
 
         _animator.SetTrigger("KatanaAttack");

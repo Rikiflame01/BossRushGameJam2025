@@ -52,6 +52,7 @@ MonoBehaviour:
   _katanaAttackPos: {fileID: 3205970344129620720}
   _katanaAttackKey: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _animator: {fileID: 7214598329128149098}
+  _bow: {fileID: 3188223377830208523}
 --- !u!1 &2535559264663281740
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ SpriteRenderer:
   m_Size: {x: 1.8, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &3720756962741641989
@@ -233,7 +234,7 @@ SpriteRenderer:
   m_Size: {x: 1.8, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!50 &8844179665983882897
@@ -328,6 +329,7 @@ MonoBehaviour:
   _ritualSpeed: 1
   _setFireKey: {fileID: -6623807848389636131, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _fireProgress: {fileID: 0}
+  _fireBackProgress: {fileID: 0}
   _fireChargeTime: 5
   _circleTxt: {fileID: 0}
   _sakuraLeaves: SakuraLeaf
@@ -347,7 +349,9 @@ MonoBehaviour:
   _health: 20
   _takeDamageSFX: Damage player
   _dieParticles: 
-  _immortal: 0
+  _onHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7837603271414527383
 MonoBehaviour:
   m_ObjectHideFlags: 0
