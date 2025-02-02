@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using DG.Tweening;
 public class SmilesScript : MonoBehaviour
 {
     public string projectileName = "Projectile";
@@ -15,6 +15,8 @@ public class SmilesScript : MonoBehaviour
 
     void Start()
     {
+        transform.localScale = Vector3.zero;
+
         StartCoroutine(FireAllRoundWithDelay());
         _sprite = transform.GetChild(0);
     }

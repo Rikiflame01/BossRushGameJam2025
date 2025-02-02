@@ -29,7 +29,7 @@ public class SwordStrikeAttack : MonoBehaviour
     {
         _player = GameObject.FindFirstObjectByType<Movement>().gameObject;
         _animator = GetComponent<Animator>();
-        TsukuyomiBoss._tsukuyomiSwordStrikeAttack += ()=> StartCoroutine(StartSwordStrikeAttack());
+        TsukuyomiBoss._tsukuyomiSwordStrikeAttack += VoidSwordAttacks;
     }
     void FixedUpdate()
     {
@@ -37,6 +37,10 @@ public class SwordStrikeAttack : MonoBehaviour
         {
             transform.Translate(_direction * followSpeed * Time.fixedDeltaTime);
         }
+    }
+    private void VoidSwordAttacks()
+    {
+        StartCoroutine(StartSwordStrikeAttack());
     }
     public IEnumerator StartSwordStrikeAttack()
     {
@@ -105,5 +109,9 @@ public class SwordStrikeAttack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_attackPoint.position, _areaDamageSize);
+    }
+    void OnDestroy()
+    {
+        TsukuyomiBoss._tsukuyomiSwordStrikeAttack -= VoidSwordAttacks;
     }
 }

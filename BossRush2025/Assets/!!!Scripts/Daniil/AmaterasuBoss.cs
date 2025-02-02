@@ -144,6 +144,7 @@ public class AmaterasuBoss : EntityState
                     break;
 
                 case 3:
+                    FlashSphere();
                     TsukuyomiAllRoundFire?.Invoke();
                     yield return new WaitUntil(() => _allRoundFire._finishedAttack);
                     break;
@@ -169,7 +170,7 @@ public class AmaterasuBoss : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.3f && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.7f && !_navMeshAgent.pathPending);
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
@@ -193,6 +194,7 @@ public class AmaterasuBoss : EntityState
                     break;
                 case 2:
                     TsukuyomiAllRoundFire?.Invoke();
+                    FlashSphere();
                     yield return new WaitForSeconds(_allRoundFire.GetAttackTime());
                     break;
                 case 3:
@@ -210,12 +212,12 @@ public class AmaterasuBoss : EntityState
     #region Susanoo attacks
     private IEnumerator ArcShooting(int currentProjectileCount)
     {
-        FlashSphere();
         _finishedCoroutine = false;
         for (int j = 0; j < 3; j++)
         {
             _audioManager.PlaySFX("Amaterasu Fireball");
 
+            FlashSphere();
             Vector2 direction = _player.transform.position - transform.position;
             float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             float angleCof = 0f;
@@ -505,7 +507,6 @@ public class AmaterasuBoss : EntityState
         yield return new WaitForSeconds(2f);
 
         _collider.enabled = true;
-        _audioManager.PlayBGM(_secondTrack);
         if (_attackCycle == null)
         {
             _attackCycle = StartCoroutine(StartAttacks());
