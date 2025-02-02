@@ -16,7 +16,7 @@ public class SmilesScript : MonoBehaviour
     void Start()
     {
         transform.localScale = Vector3.zero;
-
+        transform.DOScale(1f, 0.5f);
         StartCoroutine(FireAllRoundWithDelay());
         _sprite = transform.GetChild(0);
     }
