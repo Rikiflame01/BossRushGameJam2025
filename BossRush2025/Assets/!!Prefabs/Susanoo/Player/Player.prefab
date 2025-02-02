@@ -52,6 +52,7 @@ MonoBehaviour:
   _katanaAttackPos: {fileID: 3205970344129620720}
   _katanaAttackKey: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _animator: {fileID: 7214598329128149098}
+  _bow: {fileID: 3188223377830208523}
 --- !u!1 &2535559264663281740
 GameObject:
   m_ObjectHideFlags: 0

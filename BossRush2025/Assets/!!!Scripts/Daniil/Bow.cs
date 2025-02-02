@@ -16,7 +16,7 @@ public class Bow : MonoBehaviour
 
     [SerializeField] private float _chargeTime;
     private float _startTime;
-    private bool _isChargeNow;
+    public bool _isChargeNow { get; private set; }
 
     [SerializeField] private float _targetMaxDistance;
     public Transform _target;
