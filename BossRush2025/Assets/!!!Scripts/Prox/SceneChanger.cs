@@ -16,6 +16,7 @@ public class SceneChanger : MonoBehaviour
     {
         _fade.FadeIn();
         yield return new WaitForSecondsRealtime(_changeSceneDelay);
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneIndex);
     }
 }

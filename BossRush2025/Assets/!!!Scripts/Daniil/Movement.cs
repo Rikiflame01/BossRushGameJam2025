@@ -353,6 +353,7 @@ public class Movement : MonoBehaviour
         if (_circleNumber > 0 && !_isRitual)
         {
             _fireCoroutine = StartCoroutine(FireRitual());
+            Camera.main.DOOrthoSize(10, 1f);
         }
     }
     private void EndSettingFire(InputAction.CallbackContext callback)
@@ -361,6 +362,7 @@ public class Movement : MonoBehaviour
         StopCoroutine(_fireCoroutine);
         _fireCoroutine = null;
         _fireProgress.enabled = false;
+        Camera.main.DOOrthoSize(12.54f, 1f);
     }
     private IEnumerator FireRitual()
     {
@@ -369,6 +371,7 @@ public class Movement : MonoBehaviour
         while(Time.time - startTime < _fireChargeTime)
         {
             _fireProgress.fillAmount = (Time.time - startTime) / _fireChargeTime;
+            CameraShake._instance.Shake(0.3f, Time.deltaTime);
             yield return null;
         }
         ClearLeafs();
