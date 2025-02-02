@@ -289,7 +289,6 @@ public class AmaterasuBoss : EntityState
     }
     private void SpawnTwoSmiles()
     {
-        _audioManager.PlaySFX("Amaterasu Head attack");
         Vector2 spawnPos = _spawnSmilePos;
         if (UnityEngine.Random.Range(0, 2) == 0)
         {
@@ -341,6 +340,10 @@ public class AmaterasuBoss : EntityState
     }
     private IEnumerator DeathAnim()
     {
+        _audioManager.StopBGM();
+        _player.GetComponent<Movement>().DisableComponents();
+        _player.GetComponent<Movement>().enabled = false;
+
         yield return new WaitForSeconds(1f);
         Vector3 originalPos = transform.localPosition;
         float shakeTimer = 0f;

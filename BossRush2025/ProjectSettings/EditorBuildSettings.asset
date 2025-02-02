@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!Scenes/AmaterasuScene.unity
     guid: 14d4cb81ade2d934aab2035d0f68a710
+  - enabled: 1
+    path: Assets/!Scenes/DummyScene.unity
+    guid: 8ec2cbd61c44c7c49b5c65e7810da345
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
