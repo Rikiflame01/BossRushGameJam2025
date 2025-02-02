@@ -22622,7 +22622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &701423664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52429,6 +52429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1927338833}
   - component: {fileID: 1927338834}
+  - component: {fileID: 1927338835}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -52481,6 +52482,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1927338835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927338832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea58892a179b4144bcd160f5be659b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fade: {fileID: 701423664}
+  _changeSceneDelay: 1
 --- !u!1 &1938961067
 GameObject:
   m_ObjectHideFlags: 0
