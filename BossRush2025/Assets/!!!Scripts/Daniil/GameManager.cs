@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -113,6 +114,7 @@ public class GameManager : MonoBehaviour
     public void DefeatedBoss()
     {
         BossDefeat?.Invoke();
+        PlayerPrefs.SetInt("Boss " + SceneManager.GetActiveScene().buildIndex, 1);
         StartCoroutine(WaitToMask());
     }
     private IEnumerator WaitToMask()

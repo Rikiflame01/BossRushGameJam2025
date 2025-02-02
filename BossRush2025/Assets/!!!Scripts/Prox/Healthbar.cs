@@ -16,8 +16,8 @@ public class Healthbar : MonoBehaviour
 
     void Start()
     {
-        _healthManager._onHit += (float hitDamage)=> { if (gameObject.activeSelf) { UpdateHealthBar(hitDamage); StartCoroutine(StartAnimDelay()); } };
-        _healthManager._onAddHealth += (float heal)=> { if (gameObject.activeSelf) { UpdateHealthBar(heal); StartCoroutine(StartAnimDelay()); } };
+        _healthManager._onHit += UpdateHealthBar;
+        _healthManager._onAddHealth += UpdateHealthBar;
     }
 
     void Update()
@@ -37,11 +37,18 @@ public class Healthbar : MonoBehaviour
     void UpdateHealthBar(float healthPart)
     {
         _healthBar.fillAmount = _healthManager.GetHealth()  / _healthManager._maxHealth;
+        StartCoroutine(StartAnimDelay());
     }
 
     private IEnumerator StartAnimDelay()
     {
         yield return new WaitForSeconds(_startAnimDelay);
         _startAnim = true;
+    }
+
+    void OnDisable()
+    {
+        _healthManager._onHit -= UpdateHealthBar;
+        _healthManager._onAddHealth -= UpdateHealthBar;
     }
 }
