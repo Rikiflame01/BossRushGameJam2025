@@ -203,7 +203,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062092659852539651}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -837,10 +837,10 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3735104440037324649
@@ -1257,7 +1257,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6176697214300367096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2584,6 +2584,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
+      propertyPath: m_text
+      value: Tsukuyomi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
+      propertyPath: m_fontSize
+      value: 41.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 41.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263077001057863980, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
@@ -2613,7 +2629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062341925854113668, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 205
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 9062341925854113668, guid: 3675b0b55ca67ec4bb2e1ca4b26992a4, type: 3}
       propertyPath: m_SizeDelta.y

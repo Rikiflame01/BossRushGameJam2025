@@ -10,8 +10,12 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         _pauseKey.action.performed += (InputAction.CallbackContext context)=> PauseTrigger();
+        GameManager._instance.PlayerDie += DisableIt;
     }
-
+    void DisableIt()
+    {
+        this.enabled = false;
+    }
     public void PauseTrigger()
     {
         _paused = !_paused;
@@ -19,6 +23,14 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = _paused ? 0f : 1f;
     }
 
+    void OnDisable()
+    {
+        _pauseKey.action.performed -= (InputAction.CallbackContext context)=> PauseTrigger();
+    }
+    void OnEnable()
+    {
+        _pauseKey.action.performed += (InputAction.CallbackContext context)=> PauseTrigger();
+    }
     void OnDestroy()
     {
         _pauseKey.action.performed -= (InputAction.CallbackContext context)=> PauseTrigger();

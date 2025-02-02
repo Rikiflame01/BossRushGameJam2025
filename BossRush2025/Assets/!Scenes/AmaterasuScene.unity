@@ -22983,7 +22983,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 734203844}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -22994,7 +22994,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 734203844}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -53369,7 +53369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7899630702105191800, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: _health
-      value: 10
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8025528433828562047, guid: 2f74ae456d2aeed4b9e162b4a6799485, type: 3}
       propertyPath: arenaBounds
