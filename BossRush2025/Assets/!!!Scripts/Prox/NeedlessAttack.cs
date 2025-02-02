@@ -14,11 +14,14 @@ public class NeedlessAttack : MonoBehaviour
 
     void Start()
     {
-        TsukuyomiBoss._tsukuyomiNeedlesAttack += ()=> StartCoroutine(SpawnProjectiles());
+        TsukuyomiBoss._tsukuyomiNeedlesAttack += VoidSpawnProjectiles;
         
         _player = GameObject.FindFirstObjectByType<Movement>().gameObject;
     }
-
+    private void VoidSpawnProjectiles()
+    {
+        StartCoroutine(SpawnProjectiles());
+    }
     private IEnumerator SpawnProjectiles()
     {
         _stopAttack = false;
@@ -60,5 +63,9 @@ public class NeedlessAttack : MonoBehaviour
     {
         _stopAttack = true;
         _finishedAttack = true;
+    }
+    void OnDestroy()
+    {
+        TsukuyomiBoss._tsukuyomiNeedlesAttack -= VoidSpawnProjectiles;
     }
 }

@@ -187,7 +187,7 @@ public class Susano : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.1f && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.5f && !_navMeshAgent.pathPending);
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();

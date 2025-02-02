@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
     private float _defaultSpeed;
 
     [Header("Ritual Properties")]
+    [SerializeField] private ParticleSystem _burnParticles;
     [SerializeField] private InputActionReference _ritualKey;
     [SerializeField] private Image _ritualProgress;
     [SerializeField] private float _ritualSpeed = 5.0f;
@@ -234,6 +235,8 @@ public class Movement : MonoBehaviour
                         if(_circleNumber < 3)
                         {
                             _circleNumber++;
+                            GameObject _currentParticles = _poolManager.GetObject("SakuraWave");
+                            _currentParticles.transform.position = Vector3.zero;
                             float healthToHeal = 0;
                             switch (_circleNumber)
                             {
@@ -362,6 +365,7 @@ public class Movement : MonoBehaviour
         if (_fireCoroutine == null) return;
         StopCoroutine(_fireCoroutine);
         _fireCoroutine = null;
+        _burnParticles.Stop();
         _audioManager.StopSpecialSFX();
         _fireProgress.enabled = false;
         Camera.main.DOOrthoSize(12.54f, 1f);
@@ -370,6 +374,7 @@ public class Movement : MonoBehaviour
     {
         _fireProgress.enabled = true;
         _audioManager.SpecialSFX("Burning SFX");
+        _burnParticles.Play();
         float startTime = Time.time;
         while(Time.time - startTime < _fireChargeTime)
         {
@@ -388,6 +393,7 @@ public class Movement : MonoBehaviour
         _fireBackProgress.enabled = false;
         _currentTime = 0;
         _currentState = State.Run;
+        _burnParticles.Stop();
     }
     private void ChangeRitualDirection(bool Clockwise)
     {

@@ -136,7 +136,7 @@ public class TsukuyomiBoss : EntityState
         ChangeState(State.Idle);
         _navMeshAgent.SetDestination(_gameManager.RitualCenter.position);
         _isRitual = true;
-        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.3f && !_navMeshAgent.pathPending);
+        yield return new WaitUntil(() => _navMeshAgent.remainingDistance < 0.65f && !_navMeshAgent.pathPending);
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
@@ -182,10 +182,10 @@ public class TsukuyomiBoss : EntityState
     }
     private IEnumerator ArcShooting(int currentProjectileCount)
     {
-        FlashSphere();
         _finishedArcAttack = false;
         for (int j = 0; j < 3; j++)
         {
+            FlashSphere();
             Vector2 direction = _player.transform.position - transform.position;
             float startAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             float angleCof = 0f;
