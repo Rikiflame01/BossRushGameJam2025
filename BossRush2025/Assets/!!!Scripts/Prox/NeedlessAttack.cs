@@ -21,6 +21,7 @@ public class NeedlessAttack : MonoBehaviour
 
     private IEnumerator SpawnProjectiles()
     {
+        _stopAttack = false;
         _finishedAttack = false;
         for (int i = 0; i < countOfProjectiles; i++)
         {

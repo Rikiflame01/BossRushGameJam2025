@@ -140,6 +140,7 @@ public class TsukuyomiBoss : EntityState
         transform.position = _gameManager.RitualCenter.position;
         _animator.SetBool(_stateAnim, true);
         _gameManager.RitualBegin();
+        _finishedArcAttack = true;
         yield return new WaitForSeconds(1f);
         while (_isRitual)
         {
